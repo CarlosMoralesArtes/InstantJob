@@ -3,3 +3,139 @@
     display: inline-block !important;
     margin: 10px;
 }
+
+.card img{
+    padding: 2px;
+}
+
+/* Estil per a totes les pagines - Titols */
+h1{
+    font-size: 35px !important;
+}
+
+h2{
+    font-size: 25px !important;
+}
+
+p{
+    font-size: 15px !important;
+}
+
+.card-title p{
+    color: black !important;
+}
+
+body{
+    background-color: #FBFBFB !important;
+    text-align: center;
+}
+
+.navbar{
+    background-color: #48B5D6 !important;
+}
+
+.titol{
+    padding: 50px;
+}
+
+.segonApartat{
+    background-color: #0196C1;
+    width: 100%;
+    padding: 70px;
+    padding-top: 40px;
+}
+
+.serveiSeparat{
+    background-color: white;
+    padding: 2px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.serveiSeparat2{
+    background-color: white;
+    padding: 2px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+
+.serveiSeparat img{
+    border-radius: 5px;
+}
+
+.serveiSeparat p{
+    color: black !important;
+    text-align: left;
+    font-size: 15px !important;
+}
+
+.serveiSeparat2 p{
+    color: black !important;
+    text-align: left;
+    font-size: 15px !important;
+}
+
+.segonApartat h2, .segonApartat p{
+    color: white;
+}
+
+.header{
+    display: inline-block;
+}
+
+.navInici{
+    background-color: #48B5D6;
+    padding: 20px;
+}
+
+button{
+    background-color: #046C95 !important;
+    padding: 7px;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    border-radius: 50px !important;
+    color: white;
+    border: 0px;
+}
+
+.imatgeIniciSessio{
+    display: inline-block !important;
+    background-color: #B3E0EE;
+    border-radius: 100%;
+    height: auto;
+}
+
+.form-control{
+    background-color: #B3E0EE !important;
+}
+
+.imatgeIniciSessio img{
+    width: 15px;
+    margin: 10px;
+}
+
+.lletraIniciSessio{
+    align-items: center;
+    display: inline-block !important;
+}
+
+/* Estils del footer */
+footer{
+    text-align: center;
+    background-color: #48B5D6;
+    color: white;
+    width: 100%;
+    padding: 30px;
+}
+
+.footer-content{
+    display: inline-block;
+}
+
+.footer-content img{
+    width: 20px;
+}
