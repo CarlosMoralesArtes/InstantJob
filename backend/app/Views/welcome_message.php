@@ -308,6 +308,8 @@
 
 <!-- SCRIPTS -->
 
+<script src="TypeScript\script.js"></script>
+
 <script>
 	function toggleMenu() {
 		var menuItems = document.getElementsByClassName('menu-item');
