@@ -1,0 +1,5 @@
+/* Estil que serveix per alinear les targetes */
+.card{
+    display: inline-block !important;
+    margin: 10px;
+}
