@@ -33,3 +33,11 @@ function obrir2(){
         popup.classList.remove('active');
     });
 }
+
+function openNav(){
+	document.getElementById('mySidenav').style.width="250px";
+}
+
+function closeNav(){
+	document.getElementById("mySidenav").style.width="0";
+}
