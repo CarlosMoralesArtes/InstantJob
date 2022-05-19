@@ -6,7 +6,7 @@
 	<meta name="description" content="The small framework with powerful features">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
-	<link rel="stylesheet" href="..\..\estilo\style.css">
+	<link rel="stylesheet" href="estilo\style.css">
 </head>
 
 <body>
@@ -66,7 +66,7 @@ echo form_close();
 ?>
 
 <!-- SCRIPTS -->
-<script src="..\..\TypeScript\script.js"></script>
+<script src="TypeScript\script.js"></script>
 <!-- -->
 
 </body>
