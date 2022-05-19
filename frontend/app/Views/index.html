@@ -7,6 +7,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <script src="Typescript/script.js"></script>
 
   <!-- Bootstrap CSS v5.0.2 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -24,7 +26,8 @@
         <img src="./imgs/imatgeUsuari.png">
     </div>
     <div class="lletraIniciSessio col-5">
-        <p>Inicia Sessio a</p>
+      <a class="registre" onclick="obrir()" id="btn-abrir-popup">Inicia Sessio</a>
+      <a class="registre" onclick="obrir2()" id="btn-abrir-popup2">Registra't</a>
     </div>
     </div>
     <div class="header col-2">
@@ -34,6 +37,36 @@
 </head>
 
 <body>
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h3>Iniciar Sessio</h3>
+      <form action="">
+        <div class="contenedor-inputs">
+          <input type="text" placeholder="Usuari">
+          <input type="email" placeholder="Contrasenya">
+        </div>
+        <input type="submit" class="btn-submit" value="Iniciar Sessio">
+      </form>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay2">
+    <div class="popup" id="popup2">
+      <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h3>Registra't</h3>
+      <form action="">
+        <div class="contenedor-inputs">
+          <input type="text" placeholder="Nom">
+          <input type="email" placeholder="Cognoms">
+          <input type="number" placeholder="Teléfon">
+          <input type="password" placeholder="Contrasenya">
+        </div>
+        <input type="submit" class="btn-submit" value="Iniciar Sessio">
+      </form>
+    </div>
+  </div>
+
   <!-- Titul de la pàgina principal -->
     <div class="titol">
       <p>InstantJob, es l’ajuda de creixement rápid per a la teva empresa</p>
