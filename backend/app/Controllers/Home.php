@@ -10,18 +10,7 @@ class Home extends BaseController
 	}
     public function index()
     {
-        helper('form');
         return view('welcome_message');
-        if($_SESSION['logged_in']){
-            $this->load->view('admin/vista/administrador');
-         }else{
-            $this->load->view('admin/login/index');
-         }
-    }
-    public function formulari()
-    {
-        helper('form');
-        return view('form');
     }
     public function formulariIniciSessio()
     {

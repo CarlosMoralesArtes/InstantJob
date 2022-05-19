@@ -15,8 +15,8 @@
 
 <?php
 
-$ruta = site_url()."/home/formulari";
-$attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
+$ruta = site_url()."/home/formulariIniciSessio";
+$attributes = array ('enctype' => "multipart/form-data", 'method' => "post");
 // Form open que serveix per iniciar el formulari
 echo form_open($ruta, $attributes);
 form_hidden('username', 'johndoe');

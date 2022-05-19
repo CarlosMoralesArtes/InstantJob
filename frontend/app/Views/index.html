@@ -19,16 +19,14 @@
       <img src="./imgs/imatgePre.png" width="50px">
     </div>
     <div class="header col-6 form-outline">
-      <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control" />
+      <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
     </div>
     <div class="header col-2">
-      <div class="imatgeIniciSessio col-2">
-        <img src="./imgs/imatgeUsuari.png">
+      <a class="registre" onclick="obrir()" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
     </div>
-    <div class="lletraIniciSessio col-5">
-      <a class="registre" onclick="obrir()" id="btn-abrir-popup">Inicia Sessio</a>
-      <a class="registre" onclick="obrir2()" id="btn-abrir-popup2">Registra't</a>
-    </div>
+     <!-- <div class="imatgeIniciSessio col-2">
+      <img onclick="obrir2()" id="btn-abrir-popup2" src="./imgs/configuracio.png">
+    </div> -->
     </div>
     <div class="header col-2">
       <button>Pujar Producte</button>
@@ -40,13 +38,25 @@
   <div class="overlay" id="overlay">
     <div class="popup" id="popup">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-      <h3>Iniciar Sessio</h3>
-      <form action="">
-        <div class="contenedor-inputs">
-          <input type="text" placeholder="Usuari">
-          <input type="email" placeholder="Contrasenya">
-        </div>
+      <h2 class="title">Iniciar Sessio</h2>
+      <p>Completa els camps</p>
+      <br>
+      <div class="targetaIniciSessio">
+        <form>
+          <div class="input-container">
+            <input type="#{type}" id="#{label}" required="required"/>
+            <label for="#{label}">Usuari</label>
+            <div class="bar"></div>
+          </div>
+          <div class="input-container">
+            <input type="#{type}" id="#{label}" required="required"/>
+            <label for="#{label}">Contrasenya</label>
+            <div class="bar"></div>
+          </div>
+          </form>
+          </div>
         <input type="submit" class="btn-submit" value="Iniciar Sessio">
+        <p class="pasarRegistre">Si no tens un compte Registra’t</p>
       </form>
     </div>
   </div>
