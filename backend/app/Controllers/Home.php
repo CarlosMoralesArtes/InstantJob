@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\UsuariModel;
+
 class Home extends BaseController
 {
     public function __construct(){
@@ -19,17 +21,17 @@ class Home extends BaseController
         
         // Apartat de les normes que es comproven del formulari
         $regles = [
-            "codiU"    => "required",
-            "password"    => "required"
+            "id_cliente"    => "required",
+            "contrasena"    => "required"
         ];
 
         // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
         $missatges = [
-            "codiU" => [
-                "required" => "codiU obligatori"
+            "id_cliente" => [
+                "required" => "id_cliente obligatori"
             ],
-            "password" => [
-                "required" => "Contrasenya obligatori"
+            "contrasena" => [
+                "required" => "contrasena obligatori"
             ]
         ];
 
@@ -43,23 +45,23 @@ class Home extends BaseController
             }
             if(count($data) == 1){
                 echo "El usuari o la contrasenya es incorrecte.";
-                return view('v4morales\iniciarSessio.php');
+                return view('iniciar_sesion');
             } else {
                 $session = session();
                 $session->start();
                 $session->set('id_cliente',$data["id_cliente"]);
                 if($data["id_cliente"] == $dades["id_cliente"]){
                     if($data["contrasena"] == $dades["contrasena"]){
-                        return view('v4morales\planaPrincipal.php', $data);
+                        return view('form', $data);
                     } else {
                         echo "Usuari o contrasenya incorrecte. ";
-                        return view('v4morales\iniciarSessio.php', $dades);
+                        return view('iniciar_sesion', $dades);
                     }
                 }
             }
         } else {
             $dades["validation"]=$this->validator;
-            return view('v4morales\iniciarSessio.php', $dades);
+            return view('iniciar_sesion', $dades);
         }
     }
 }
