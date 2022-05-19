@@ -52,3 +52,165 @@ CRITICAL - 2022-05-19 01:23:22 --> Invalid file: v4morales\index.php
 #5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #7 {main}
+CRITICAL - 2022-05-19 02:08:15 --> Invalid file: v4morales\iniciarSessio.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v4morales\\inici...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('v4morales\\inici...', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(75): view('v4morales\\inici...', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:19:23 --> Invalid file: v4morales\iniciarSessio.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v4morales\\inici...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('v4morales\\inici...', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('v4morales\\inici...', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:24:07 --> Invalid file: v4morales\iniciarSessio.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v4morales\\inici...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('v4morales\\inici...', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('v4morales\\inici...', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:36:35 --> Invalid file: v4morales\iniciarSessio.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v4morales\\inici...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('v4morales\\inici...', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('v4morales\\inici...', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:38:49 --> Invalid file: v4morales\iniciarSessio.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v4morales\\inici...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('v4morales\\inici...', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('v4morales\\inici...', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:40:05 --> Invalid file: v4morales\iniciarSessio.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v4morales\\inici...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('v4morales\\inici...', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('v4morales\\inici...', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:40:53 --> Invalid file: v4morales\iniciarSessio.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v4morales\\inici...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('v4morales\\inici...', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('v4morales\\inici...', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:41:01 --> Invalid file: v4morales\iniciarSessio.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v4morales\\inici...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('v4morales\\inici...', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('v4morales\\inici...', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:54:05 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message')
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:56:53 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message')
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:57:07 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message')
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:58:12 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 02:59:37 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 03:07:18 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 03:19:28 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 03:19:41 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message')
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 03:20:00 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message')
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-19 03:26:58 --> Invalid file: wolcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('wolcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('wolcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(70): view('wolcome_message', Array)
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
