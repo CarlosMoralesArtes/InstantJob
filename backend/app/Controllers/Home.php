@@ -12,7 +12,12 @@ class Home extends BaseController
 	}
     public function index()
     {
+<<<<<<< HEAD
+        helper('form');
+        return view('iniciar_sesion');
+=======
         return view('welcome_message');
+>>>>>>> fbf70486ce2219ceabc142dc2ce91a22439b84ad
     }
     public function formulariIniciSessio()
     {
@@ -28,7 +33,7 @@ class Home extends BaseController
         // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
         $missatges = [
             "id_cliente" => [
-                "required" => "id_cliente obligatori"
+                "required" => "Usuario obligatori"
             ],
             "contrasena" => [
                 "required" => "contrasena obligatori"
@@ -63,5 +68,8 @@ class Home extends BaseController
             $dades["validation"]=$this->validator;
             return view('iniciar_sesion', $dades);
         }
+    }
+    public function registrarse(){
+        return view('registro');
     }
 }

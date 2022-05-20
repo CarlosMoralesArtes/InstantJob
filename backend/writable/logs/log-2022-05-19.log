@@ -214,3 +214,12 @@ CRITICAL - 2022-05-19 03:26:58 --> Invalid file: wolcome_message.php
 #5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #7 {main}
+CRITICAL - 2022-05-19 04:56:45 --> Invalid file: welcome_message.php
+#0 C:\wamp64\www\InstantJob\backend\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('welcome_message...')
+#1 C:\wamp64\www\InstantJob\backend\system\Common.php(1089): CodeIgniter\View\View->render('welcome_message', Array, true)
+#2 C:\wamp64\www\InstantJob\backend\app\Controllers\Home.php(16): view('welcome_message')
+#3 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#4 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\wamp64\www\InstantJob\backend\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\InstantJob\backend\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
