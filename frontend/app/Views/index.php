@@ -24,12 +24,9 @@
     <div class="header col-2">
       <a class="registre" onclick="obrir()" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
     </div>
-     <!-- <div class="imatgeIniciSessio col-2">
-      <img onclick="obrir2()" id="btn-abrir-popup2" src="./imgs/configuracio.png">
-    </div> -->
     </div>
     <div class="header col-2">
-      <button>Pujar Producte</button>
+    <a class="boto" href="pujarProducte">Pujar Producte</a>
     </div>
   </nav>
 </head>
@@ -43,6 +40,57 @@
       <br>
       <div class="targetaIniciSessio">
         <form>
+        <?php
+
+        $ruta = site_url()."/c4morales/home/formulariIniciSessio";
+        $attributes = array ('enctype' => "multipart/form-data", 'method' => "post");
+        // Form open que serveix per iniciar el formulari
+        echo form_open($ruta, $attributes);
+
+        echo form_label('CodiU ');
+        echo "<br>";
+        // En $data es coloquen els atributs de la pregunta
+        $data = array('name' => 'codiU',
+                    'type' => '#{type}',
+                    'id'  => '#{label}',
+                    'value' => set_value('codiU'));
+        // En el form input es l'apartat on pots colocar text en el formulari
+        echo form_input($data);
+        echo "<br>";
+        if(!empty($validation)){
+          if($validation->getError('codiU')) {
+            echo $validation->getError('codiU');
+            echo "<br>";
+          }
+        }
+        echo "<div class='bar'></div>";
+        echo "<br>";
+
+        echo form_label('Contrasenya ');
+        echo "<br>";
+        // En $data es coloquen els atributs de la pregunta
+        $data = array('name' => 'codiU',
+                      'type' => '#{type}',
+                      'id'  => '#{label}',
+                      'value' => set_value('codiU'));
+        // En el form input es l'apartat on pots colocar text en el formulari
+        echo form_password($data);
+        echo "<br>";
+        if(!empty($validation)){
+          if($validation->getError('password')) {
+            echo $validation->getError('password');
+            echo "<br>";
+          }
+        }
+        echo "<br>";
+        echo "<div class='bar'></div>";
+
+        // El form submit es per mostrar el boto de enviar
+        echo form_submit('mysubmit', 'Enviar');
+
+        // El form close es per tancar el formulari
+        echo form_close();
+    ?>
           <div class="input-container">
             <input type="#{type}" id="#{label}" required="required"/>
             <label for="#{label}">Usuari</label>
@@ -56,7 +104,46 @@
           </form>
           </div>
         <input type="submit" class="btn-submit" value="Iniciar Sessio">
-        <p class="pasarRegistre">Si no tens un compte Registra’t</p>
+        <p class="pasarRegistre2">Si no tens un compte <p onclick="obrir2()" id="btn-abrir-popup2" class="pasarRegistre"> Registra’t</p></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay2">
+    <div class="popup" id="popup2">
+      <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h2 class="title">Registra't</h2>
+      <p>Completa els camps</p>
+      <br>
+      <div class="targetaIniciSessio">
+        <form>
+        <?php
+        ?>
+          <div class="input-container">
+            <input type="#{type}" id="#{label}" required="required"/>
+            <label for="#{label}">Coloca el Nom</label>
+            <div class="bar"></div>
+          </div>
+          <div class="input-container">
+            <input type="#{type}" id="#{label}" required="required"/>
+            <label for="#{label}">Coloca el Primer Cognom</label>
+            <div class="bar"></div>
+          </div>
+          <div class="input-container">
+            <input type="#{type}" id="#{label}" required="required"/>
+            <label for="#{label}">Coloca el email</label>
+            <div class="bar"></div>
+          </div>
+          <div class="input-container">
+            <input type="#{type}" id="#{label}" required="required"/>
+            <label for="#{label}">Coloca la contrasenya</label>
+            <div class="bar"></div>
+          </div>
+          </form>
+          </div>
+        <input type="submit" class="btn-submit" value="Iniciar Sessio">
+        <p class="pasarRegistre2">Ja tens un compte? <p onclick="obrir()" id="btn-abrir-popup2" class="pasarRegistre"> Inicia Sessio</p></p>
+
       </form>
     </div>
   </div>

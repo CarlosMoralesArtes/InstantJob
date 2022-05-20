@@ -98,13 +98,14 @@ body{
     padding: 20px;
 }
 
-button{
+.boto{
     background-color: #046C95 !important;
-    padding: 7px;
+    padding: 10px;
     padding-left: 35px !important;
     padding-right: 35px !important;
     border-radius: 50px !important;
-    color: white;
+    color: white !important;
+	text-decoration: none;
     border: 0px;
 	font-size: 15px !important;
 }
@@ -342,6 +343,14 @@ button{
 
 .pasarRegistre{
 	color: #0075FF;
+	cursor: pointer !important;
+	display: inline-block;
+	margin-left: 5px;
+	font-weight: bold;
+}
+
+.pasarRegistre2{
+	display: inline-block !important;
 }
 
 .btn-submit{
