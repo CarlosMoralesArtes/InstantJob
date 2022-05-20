@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 *{
     font-family: 'Montserrat', sans-serif;
@@ -27,8 +27,8 @@ p{
     font-size: 15px !important;
 }
 
-.card-title p{
-    color: black !important;
+.title{
+    font-size: 30px !important;
 }
 
 body{
@@ -106,6 +106,12 @@ button{
     border-radius: 50px !important;
     color: white;
     border: 0px;
+	font-size: 15px !important;
+}
+
+.buscadorTop{
+	width: 95% !important;
+	color: black !important;
 }
 
 .imatgeIniciSessio{
@@ -132,8 +138,12 @@ button{
 .registre{
 	cursor: pointer !important;
 	text-decoration: none !important;
-	color: white !important;
+	color: #0196C1 !important;
 	text-align: left !important;
+	background-color: white;
+	padding: 10px;
+    border-radius: 50px !important;
+	border: 2px solid #0196C1;
 }
 
 .sidenav {
@@ -141,6 +151,7 @@ button{
 	width: 300px;
 	background-color: #0196C1 !important;
 	padding: 50px;
+	position: fixed !important;
 	transition: 0.5s;
 }
 	
@@ -156,9 +167,53 @@ button{
 	color: rgb(151, 151, 255);
 }
 
-/* ------------------------- */
-/* POPUP */
-/* ------------------------- */
+.pujarProducteCaixa{
+	background-color: #48B5D6;
+	color: white;
+	text-align: left;
+    padding: 2px;
+    display: inline-block;
+	width: 100%;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.missatges{
+	background-color: #0196C1;
+	color: white;
+	text-align: left;
+    padding: 2px;
+    display: inline-block;
+	width: 100%;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.buscadorContactes{
+	margin-left: 460px;
+}
+
+.tarifes{
+	background-color: #48B5D6;
+	display: inline-block;
+	padding: 2px;
+	margin: 10px;
+	color: white;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border-radius: 10px;
+  	align-items: top;
+}
+
+.tarifes p{
+	margin-top: 20px;
+}
+
+.botoTarifes{
+	margin-bottom: 20px;
+}
 
 .overlay {
 	background: rgba(0,0,0,.3);
@@ -180,11 +235,11 @@ button{
 .popup {
 	background: #F8F8F8;
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
-	border-radius: 3px;
+	border-radius: 20px;
 	font-family: 'Montserrat', sans-serif;
 	padding: 20px;
 	text-align: center;
-	width: 600px;
+	width: 700px;
 	
 	transition: .3s ease all;
 	transform: scale(0.7);
@@ -234,12 +289,13 @@ button{
 
 .popup form .btn-submit {
 	padding: 0 20px;
+	width: 100%;
 	height: 40px;
 	line-height: 40px;
 	border: none;
 	color: #fff;
 	background: #5E7DE3;
-	border-radius: 3px;
+	border-radius: 10px;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	cursor: pointer;
@@ -250,9 +306,6 @@ button{
 	background: rgba(94,125,227, .9);
 }
 
-/* ------------------------- */
-/* ANIMACIONES */
-/* ------------------------- */
 .popup.active {	transform: scale(1); opacity: 1; }
 .popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
 .popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
@@ -286,6 +339,87 @@ button{
 	from { opacity: 0; }
 	to { opacity: 1; }
 }
+
+.pasarRegistre{
+	color: #0075FF;
+}
+
+.btn-submit{
+	background-color: #046C95 !important;
+	width: 80%;
+	margin-bottom: 20px;
+    padding: 7px;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    border-radius: 50px !important;
+    color: white;
+    border: 0px;
+	font-size: 15px !important;
+}
+
+.targetaIniciSessio .input-container {
+	position: relative;
+	margin: 0 60px 50px;
+  }
+.targetaIniciSessio .input-container input {
+	outline: none;
+	z-index: 1;
+	position: relative;
+	background: none;
+	width: 100%;
+	height: 60px;
+	border: 0;
+	color: black;
+	font-size: 24px;
+	font-weight: 400;
+}
+.targetaIniciSessio .input-container input:focus ~ label {
+	color: black;
+	transform: translate(-12%, -50%) scale(0.75);
+}
+.targetaIniciSessio .input-container input:focus ~ .bar:before, .targetaIniciSessio .input-container input:focus ~ .bar:after {
+	width: 50%;
+}
+.targetaIniciSessio .input-container input:valid ~ label {
+	color: black;
+	transform: translate(-12%, -50%) scale(0.75);
+}
+.targetaIniciSessio .input-container label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: black;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 60px;
+	transition: 0.2s ease;
+}
+.targetaIniciSessio .input-container .bar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: black;
+	width: 100%;
+	height: 1px;
+}
+.targetaIniciSessio .input-container .bar:before, .targetaIniciSessio .input-container .bar:after {
+	content: "";
+	position: absolute;
+	background: #0196C1;
+	width: 0;
+	height: 2px;
+	transition: 0.2s ease;
+}
+.targetaIniciSessio .input-container .bar:before {
+	left: 50%;
+}
+.targetaIniciSessio .input-container .bar:after {
+	right: 50%;
+}
+.targetaIniciSessio .button-container {
+	margin: 0 60px;
+	text-align: center;
+}  
 
 /* Estils del footer */
 footer{

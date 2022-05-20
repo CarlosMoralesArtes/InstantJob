@@ -6,6 +6,6 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('pujaProductes.html');
+        return view('index.html');
     }
 }

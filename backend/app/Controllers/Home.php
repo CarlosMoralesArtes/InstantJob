@@ -12,13 +12,12 @@ class Home extends BaseController
 	}
     public function index()
     {
+<<<<<<< HEAD
         helper('form');
         return view('iniciar_sesion');
-    }
-    public function formulari()
-    {
-        helper('form');
-        return view('form');
+=======
+        return view('welcome_message');
+>>>>>>> fbf70486ce2219ceabc142dc2ce91a22439b84ad
     }
     public function formulariIniciSessio()
     {
