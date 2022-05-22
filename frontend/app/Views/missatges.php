@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+  <script src="Typescript/script.js"></script>
 
   <!-- Bootstrap CSS v5.0.2 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <nav class="navInici">
     <div class="header col-1">
@@ -32,7 +32,7 @@
 </head>
 
 <body>
-  <div class="overlay" id="overlay">
+<div class="overlay" id="overlay">
     <div class="popup" id="popup">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
       <h2 class="title">Iniciar Sessio</h2>
@@ -102,7 +102,6 @@
       <p>Completa els camps</p>
       <br>
       <div class="targetaIniciSessio">
-        <form>
           <?php
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -191,147 +190,35 @@
             // El form close es per tancar el formulari
             echo form_close();
           ?>
-          </form>
           </div>
-      </form>
     </div>
   </div>
 
-  <!-- Titul de la pàgina principal -->
-    <div class="titol">
-      <p>InstantJob, es l’ajuda de creixement rápid per a la teva empresa</p>
-      <h1>Benvingut a InstantJob</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <h2 class="center-align">¿Que estas buscant avui?</h2>
-            <br>
-          <div class="carousel">
-            <div class="carousel__contenedor">
-              <button aria-label="Anterior" class="carousel__anterior">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <br>
-              <div class="carousel__lista">
-                <div class="carousel__elemento">
-                  <img src="imgs/fontaneriaBlau.png" alt="Rock and Roll Hall of Fame">
-                  <p>Fontaneria</p>
-                </div>
-                <div class="carousel__elemento">
-                  <img src="imgs/carpinteria.png" alt="Constitution Square - Tower I">
-                  <p>Carpinteria</p>
-                </div>
-                <div class="carousel__elemento">
-                  <img src="imgs/pintor.png" alt="Empire State Building">
-                  <p>Pintor</p>
-                </div>
-                <div class="carousel__elemento">
-                  <img src="imgs/5.png" alt="Harmony Tower">
-                  <p>Harmony Tower</p>
-                </div>
-        
-                <div class="carousel__elemento">
-                  <img src="imgs/6.png" alt="Empire State Building">
-                  <p>Empire State Building</p>
-                </div>
-                <div class="carousel__elemento">
-                  <img src="imgs/7.png" alt="Harmony Tower">
-                  <p>Harmony Tower</p>
-                </div>
-                <div class="carousel__elemento">
-                  <img src="imgs/8.png" alt="Empire State Building">
-                  <p>Empire State Building</p>
-                </div>
-                <div class="carousel__elemento">
-                  <img src="imgs/9.png" alt="Harmony Tower">
-                  <p>Harmony Tower</p>
-                </div>
-              </div>
+  <div id="mySidenav" class="sidenav">
+  <div class="usuari">
+      <img src="./imgs/imatgePre.png" width="50px" height="50px">
+      <p>Nom Usuari</p><br>
+      <p>a</p>
+    </div>
+    <a href="serveis">Serveis</a>
+    <a href="missatges">Missatges</a>
+    <a href="#">Guardats</a>
+    <a href="#">Estadistiques</a>
+    <a href="#">Tarifes</a>
+    <a href="#">Ajuda</a>
+  </div>
 
-              <button aria-label="Siguiente" class="carousel__siguiente">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-
-            <div role="tablist" class="carousel__indicadores"></div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <div class="segonApartat">
-    <h2>La benvinguda al estiu</h2>
-    <p>Molts serveis a la teva disponibilitat!</p>
-    <div class="serveiSeparat2 col-6" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Carpinteria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-6" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <h2>Productes destacats del moment</h2><br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
+  <br>
+  <br>
+  <div class="missatges col-5">
+    <div class="card-body">
+      <input id="search-input-sidenav" placeholder="Escriu aqui el contacte al que vols enviar-li un missatge" type="search" id="form1" class="form-control" />
+      <br>
+      <p class="card-title">Missatges</p>
+      <p class="card-text"></p>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-  <!-- Script Global -->
-  <script src="Typescript/script.js"></script>
+  
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -340,24 +227,4 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
 </body>
-<footer>
-  <div class="footer-content col-4">
-    <img src="./imgs/Logo_InstantJob_Blanca.png">
-    <p>Servei Tècnic</p>
-    <p>Tel. 99 999 999</p>
-  </div>
-  <div class="footer-content col-4">
-    <p>Informació Legal</p>
-    <p>Avís Legal</p>
-    <p>Política de Privacitat</p>
-    <p>Política de Cookies</p>
-  </div>
-  <!-- Categories que s'agafaran de typescript -->
-  <div class="footer-content col-3">
-    <p>Categories</p>
-    <p>Avís Legal</p>
-    <p>Política de Privacitat</p>
-    <p>Política de Cookies</p>
-  </div>
-</footer>
 </html>

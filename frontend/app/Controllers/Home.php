@@ -17,12 +17,17 @@ class Home extends BaseController
 
     public function missatges()
     {
-        return view('missatges.html');
+        return view('missatges.php');
     }
 
-    public function pujarProducte()
+    public function pujaProductes()
     {
-        return view('pujaProductes.html');
+        return view('pujaProductes.php');
+    }
+
+    public function serveis()
+    {
+        return view('serveis.php');
     }
 
     public function formulariIniciSessio(){

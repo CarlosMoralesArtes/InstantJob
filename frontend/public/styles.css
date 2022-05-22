@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+
 *{
     font-family: 'Montserrat', sans-serif;
 }
@@ -20,7 +34,7 @@ h1{
 }
 
 h2{
-    font-size: 25px !important;
+    font-size: 20px !important;
 }
 
 p{
@@ -32,7 +46,7 @@ p{
 }
 
 body{
-    background-color: #FBFBFB !important;
+    background-color: #EBEBEB !important;
     text-align: center;
 }
 
@@ -98,6 +112,12 @@ body{
     padding: 20px;
 }
 
+.navIniciServeis{
+	background-color: #48B5D6;
+    /* background: url() */
+    padding: 20px;
+}
+
 .boto{
     background-color: #046C95 !important;
     padding: 10px;
@@ -136,36 +156,39 @@ body{
     display: inline-block !important;
 }
 
-.registre{
-	cursor: pointer !important;
-	text-decoration: none !important;
-	color: #0196C1 !important;
-	text-align: left !important;
-	background-color: white;
-	padding: 10px;
-    border-radius: 50px !important;
-	border: 2px solid #0196C1;
+.usuari img{
+	display: inline-block !important;
+}
+
+.usuari p{
+	display: inline-block !important;
 }
 
 .sidenav {
 	height: 100%;
 	width: 300px;
-	background-color: #0196C1 !important;
-	padding: 50px;
+	background-color: #0196C1;
 	position: fixed !important;
 	transition: 0.5s;
+	padding-top: 15px;
 }
 	
 .sidenav a {
-	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 25px;
 	color: white;
 	display: block;
+	background-color: #48B5D6;
+	padding: 10px;
+	margin: 5px;
+}
+
+.ajuda{
+	margin-top: 50px !important;
 }
 
 .sidenav a:hover {
-	color: rgb(151, 151, 255);
+	color: white;
 }
 
 .pujarProducteCaixa{
@@ -216,6 +239,12 @@ body{
 	margin-bottom: 20px;
 }
 
+.headerServeis{
+	padding: 10vh;
+	text-align: left;
+	color: white;
+}
+
 .overlay {
 	background: rgba(0,0,0,.3);
 	position: fixed;
@@ -231,6 +260,10 @@ body{
 
 .overlay.active {
 	visibility: visible;
+}
+
+.glider-slide img{
+	max-width: 30% !important;
 }
 
 .popup {
@@ -290,7 +323,7 @@ body{
 
 .popup form .btn-submit {
 	padding: 0 20px;
-	width: 100%;
+	width: 83%;
 	height: 40px;
 	line-height: 40px;
 	border: none;
@@ -428,7 +461,109 @@ body{
 .targetaIniciSessio .button-container {
 	margin: 0 60px;
 	text-align: center;
-}  
+}
+
+/* --- --- CONTENEDOR PRINCIPAL --- --- */
+
+.contenido-principal {
+	margin-bottom: 50px;
+	display: flex;
+	align-items: center;
+}
+
+.contenido-principal__imagen {
+	vertical-align: top;
+	margin-right: 20px;
+	width: 50%;
+	max-width: 550px;
+}
+
+.contenido-principal__contenedor {
+	width: 50%;
+}
+
+.contenido-principal__titulo {
+	font-weight: normal;
+	font-size: 28px;
+}
+
+.contenido-principal__resumen {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 30px;
+	color: #CFCFCF;
+}
+
+/* --- --- CAROUSEL --- --- */
+.carousel__contenedor {
+	position: relative;
+}
+
+.carousel__anterior,
+.carousel__siguiente {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: none;
+	top: calc(50% - 35px);
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	color: rgb(0, 0, 0);
+	opacity: 20%;
+}
+
+.carousel__anterior:hover,
+.carousel__siguiente:hover {
+	opacity: 100%;
+}
+
+.carousel__anterior {
+	left: -30px;
+}
+
+.carousel__siguiente {
+	right: -30px;
+}
+
+.carousel__lista {
+	overflow: hidden;
+}
+
+.carousel__elemento {
+	text-align: center;
+}
+
+.carousel__elemento img{
+	padding-bottom: 20px;
+}
+
+.carousel__indicadores .glider-dot {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background: rgb(0, 0, 0);
+	opacity: .2;
+	border-radius: 0;
+}
+
+.carousel__indicadores .glider-dot:hover {
+	opacity: .5;
+}
+
+.carousel__indicadores .glider-dot.active {
+	opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+	.contenido-principal {
+		flex-direction: column;
+	}
+
+	.contenido-principal > * {
+		width: 100%;
+	}
+}
 
 /* Estils del footer */
 footer{
@@ -444,5 +579,6 @@ footer{
 }
 
 .footer-content img{
-    width: 20px;
+    width: 120px;
+	margin-bottom: 20px;
 }
