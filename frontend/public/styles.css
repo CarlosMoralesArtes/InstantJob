@@ -163,11 +163,27 @@ body{
     display: inline-block !important;
 }
 
-.usuari img{
+.usuari{
+	padding: 20px;
+}
+
+.imatgeUsuari{
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
 	display: inline-block !important;
 }
 
+.estrellesUsuari{
+	margin-top: -50px;
+	margin-left: 10px;
+	width: 15px !important;
+}
+
 .usuari p{
+	align-items: center;
+	color: white;
+	padding-left: 10px;
 	display: inline-block !important;
 }
 
