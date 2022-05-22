@@ -1,4 +1,34 @@
-function obrir(){
+window.addEventListener('load', function(){
+	new Glider(document.querySelector('.carousel__lista'), {
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: '.carousel__indicadores',
+		arrows: {
+			prev: '.carousel__anterior',
+			next: '.carousel__siguiente'
+		},
+		responsive: [
+			{
+			  // screens greater than >= 775px
+			  breakpoint: 450,
+			  settings: {
+				// Set to `auto` and provide item width to adjust to viewport
+				slidesToShow: 2,
+				slidesToScroll: 2
+			  }
+			},{
+			  // screens greater than >= 1024px
+			  breakpoint: 800,
+			  settings: {
+				slidesToShow: 4,
+				slidesToScroll: 4
+			  }
+			}
+		]
+	});
+});
+
+window.onload = function(){
     var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
         overlay = document.getElementById('overlay'),
         popup = document.getElementById('popup'),
@@ -7,6 +37,8 @@ function obrir(){
     btnAbrirPopup.addEventListener('click', function(){
         overlay.classList.add('active');
         popup.classList.add('active');
+        overlay2.classList.remove('active');
+        popup2.classList.remove('active');
     });
 
     btnCerrarPopup.addEventListener('click', function(e){
@@ -14,23 +46,23 @@ function obrir(){
         overlay.classList.remove('active');
         popup.classList.remove('active');
     });
-}
 
-function obrir2(){
-    var btnAbrirPopup = document.getElementById('btn-abrir-popup2'),
-        overlay = document.getElementById('overlay2'),
-        popup = document.getElementById('popup2'),
-        btnCerrarPopup = document.getElementById('btn-cerrar-popup2');
+    var btnAbrirPopup2 = document.getElementById('btn-abrir-popup2'),
+        overlay2 = document.getElementById('overlay2'),
+        popup2 = document.getElementById('popup2'),
+        btnCerrarPopup2 = document.getElementById('btn-cerrar-popup2');
 
-    btnAbrirPopup.addEventListener('click', function(){
-        overlay.classList.add('active');
-        popup.classList.add('active');
-    });
-
-    btnCerrarPopup.addEventListener('click', function(e){
-        e.preventDefault();
+    btnAbrirPopup2.addEventListener('click', function(){
+        overlay2.classList.add('active');
+        popup2.classList.add('active');
         overlay.classList.remove('active');
         popup.classList.remove('active');
+    });
+
+    btnCerrarPopup2.addEventListener('click', function(e2){
+        e2.preventDefault();
+        overlay2.classList.remove('active');
+        popup2.classList.remove('active');
     });
 }
 
