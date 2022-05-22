@@ -102,7 +102,6 @@
       <p>Completa els camps</p>
       <br>
       <div class="targetaIniciSessio">
-        <form>
           <?php
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -191,9 +190,7 @@
             // El form close es per tancar el formulari
             echo form_close();
           ?>
-          </form>
           </div>
-      </form>
     </div>
   </div>
 
@@ -262,6 +259,7 @@
   <div class="segonApartat">
     <h2>La benvinguda al estiu</h2>
     <p>Molts serveis a la teva disponibilitat!</p>
+    <br>
     <div class="serveiSeparat2 col-6" style="width: 18rem;">
       <img src="./imgs/imatgePre.png" width="100%" height="150px">
       <div class="card-body">

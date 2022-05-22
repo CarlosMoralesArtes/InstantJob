@@ -36,6 +36,7 @@ $routes->get('/missatges', 'Home::missatges');
 $routes->get('/pujaProductes', 'Home::pujaProductes');
 $routes->get('/', 'Home::home');
 $routes->get('/serveis', 'Home::serveis');
+$routes->get('/tarifes', 'Home::tarifes');
 
 /*
  * --------------------------------------------------------------------

@@ -16,7 +16,7 @@
 
     <nav class="navInici">
     <div class="header col-1">
-      <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
+    <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
     </div>
     <div class="header col-6 form-outline">
       <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
@@ -194,42 +194,38 @@
     </div>
   </div>
 
-  <div id="mySidenav" class="sidenav">
-    <div class="usuari">
-      <img src="./imgs/imatgePre.png" width="50px" height="50px">
-      <p>Nom Usuari</p><br>
-      <p>a</p>
-    </div>
-    <a href="serveis">Serveis</a>
-    <a href="missatges">Missatges</a>
-    <a href="#">Guardats</a>
-    <a href="#">Estadistiques</a>
-    <a href="tarifes">Tarifes</a>
-    <a class="ajuda" href="#">Ajuda</a>
+  <div class="tarifes col-3">
+    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <p>Vendre productes</p>
+    <p>Parlar amb el client</p>
+    <br>
+    <p>Gratis</p>
+    <button class="btn-submit">Colocar</button>
   </div>
 
-  <br>
-  <div class="container">
-    <div class="pujarProducteCaixa col-6">
-      <div class="card-body">
-        <p class="card-title">Que vas a pujar?</p>
-        <p class="card-title">Selecciona la categoria</p>
-        <img src="imgs/fontaneriaBlanc.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/pintorBlanc.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
-        <p class="card-text"></p>
-      </div>
-    </div>
+  <div class="tarifes col-3">
+    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <p>Vendre productes</p>
+    <p>Parlar amb el client</p>
+    <p>Posicionar l’anunci</p>
+    <p>Anunci distintiu</p>
     <br>
-    <div class="pujarProducteCaixa col-6">
-      <div class="card-body">
-        <p class="card-title">Que vas a pujar?</p>
-        <p class="card-title">Selecciona la categoria</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
+    <p>9,99€</p>
+    <button class="btn-submit">Colocar</button>
   </div>
-  
+
+  <div class="tarifes col-3">
+    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <p>Vendre productes</p>
+    <p>Parlar amb el client</p>
+    <p>Posicionar l’anunci</p>
+    <p>Anunci distintiu</p>
+    <p>Contador de visites</p>
+    <p>Anunci destacat</p>
+    <br>
+    <p>19,99</p>
+    <button class="btn-submit">Colocar</button>
+  </div>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -238,4 +234,24 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
 </body>
+<footer>
+  <div class="footer-content col-4">
+    <img src="./imgs/Logo_InstantJob_Blanca.png">
+    <p>Servei Tècnic</p>
+    <p>Tel. 99 999 999</p>
+  </div>
+  <div class="footer-content col-4">
+    <p>Informació Legal</p>
+    <p>Avís Legal</p>
+    <p>Política de Privacitat</p>
+    <p>Política de Cookies</p>
+  </div>
+  <!-- Categories que s'agafaran de typescript -->
+  <div class="footer-content col-3">
+    <p>Categories</p>
+    <p>Avís Legal</p>
+    <p>Política de Privacitat</p>
+    <p>Política de Cookies</p>
+  </div>
+</footer>
 </html>
