@@ -1,14 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {  }
+@media (max-width: 576px) { 
+	.sidenav{
+		display: none;
+	}
+}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {  }
+@media (min-width: 768px) {
+	.sidenav{
+		display: block;
+	}
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -156,11 +163,27 @@ body{
     display: inline-block !important;
 }
 
-.usuari img{
+.usuari{
+	padding: 20px;
+}
+
+.imatgeUsuari{
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
 	display: inline-block !important;
 }
 
+.estrellesUsuari{
+	margin-top: -50px;
+	margin-left: 10px;
+	width: 15px !important;
+}
+
 .usuari p{
+	align-items: center;
+	color: white;
+	padding-left: 10px;
 	display: inline-block !important;
 }
 
@@ -196,11 +219,17 @@ body{
 	color: white;
 	text-align: left;
     padding: 2px;
-    display: inline-block;
+    display: block;
 	width: 100%;
     border-radius: 5px;
     margin-bottom: 50px;
     margin-left: 20px;
+	margin-right: 150px !important;
+	float: right;
+}
+
+.card-body img{
+	width: 100px !important;
 }
 
 .missatges{
@@ -260,6 +289,7 @@ body{
 
 .overlay.active {
 	visibility: visible;
+	z-index: 5;
 }
 
 .glider-slide img{
@@ -496,6 +526,7 @@ body{
 /* --- --- CAROUSEL --- --- */
 .carousel__contenedor {
 	position: relative;
+	z-index: 2;
 }
 
 .carousel__anterior,

@@ -16,23 +16,21 @@
 </head>
 
 <body>
-  <header>
   <nav class="navInici">
-      <div class="header col-1">
-        <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
-      </div>
-      <div class="header col-6 form-outline">
-        <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
-      </div>
-      <div class="header col-2">
-        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
-      </div>
-      </div>
-      <div class="header col-2">
-      <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
-      </div>
-    </nav>
-  </header>
+    <div class="header col-1">
+    <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
+    </div>
+    <div class="header col-6 form-outline">
+      <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
+    </div>
+    <div class="header col-2">
+      <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
+    </div>
+    </div>
+    <div class="header col-2">
+    <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
+    </div>
+  </nav>
 <div class="overlay" id="overlay">
     <div class="popup" id="popup">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
@@ -195,31 +193,60 @@
     </div>
   </div>
 
-  <div id="mySidenav" class="sidenav">
-  <div class="usuari">
-      <img src="./imgs/imatgePre.png" width="50px" height="50px">
-      <p>Nom Usuari</p><br>
-      <p>a</p>
-    </div>
-    <a href="serveis">Serveis</a>
-    <a href="missatges">Missatges</a>
-    <a href="#">Guardats</a>
-    <a href="#">Estadistiques</a>
-    <a href="#">Tarifes</a>
-    <a href="#">Ajuda</a>
+  <div class="tarifes col-3">
+    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <p>Vendre productes</p>
+    <p>Parlar amb el client</p>
+    <br>
+    <p>Gratis</p>
+    <button class="btn-submit">Colocar</button>
   </div>
 
-  <br>
-  <br>
-  <div class="missatges col-5">
-    <div class="card-body">
-      <input id="search-input-sidenav" placeholder="Escriu aqui el contacte al que vols enviar-li un missatge" type="search" id="form1" class="form-control" />
-      <br>
-      <p class="card-title">Missatges</p>
-      <p class="card-text"></p>
-    </div>
+  <div class="tarifes col-3">
+    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <p>Vendre productes</p>
+    <p>Parlar amb el client</p>
+    <p>Posicionar l’anunci</p>
+    <p>Anunci distintiu</p>
+    <br>
+    <p>9,99€</p>
+    <button class="btn-submit">Colocar</button>
   </div>
-  
+
+  <div class="tarifes col-3">
+    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <p>Vendre productes</p>
+    <p>Parlar amb el client</p>
+    <p>Posicionar l’anunci</p>
+    <p>Anunci distintiu</p>
+    <p>Contador de visites</p>
+    <p>Anunci destacat</p>
+    <br>
+    <p>19,99</p>
+    <button class="btn-submit">Colocar</button>
+  </div>
+
+  <footer>
+    <div class="footer-content col-4">
+      <img src="./imgs/Logo_InstantJob_Blanca.png">
+      <p>Servei Tècnic</p>
+      <p>Tel. 99 999 999</p>
+    </div>
+    <div class="footer-content col-4">
+      <p>Informació Legal</p>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
+    </div>
+    <!-- Categories que s'agafaran de typescript -->
+    <div class="footer-content col-3">
+      <p>Categories</p>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
+    </div>
+  </footer>
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

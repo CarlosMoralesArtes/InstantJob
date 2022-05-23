@@ -30,6 +30,11 @@ class Home extends BaseController
         return view('serveis.php');
     }
 
+    public function tarifes()
+    {
+        return view('tarifes.php');
+    }
+
     public function formulariIniciSessio(){
         // Aquest apartat rep les dades del formulari
         $dades=$this->request->getVar();

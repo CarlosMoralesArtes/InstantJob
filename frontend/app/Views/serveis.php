@@ -13,16 +13,15 @@
   <!-- Bootstrap CSS v5.0.2 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-  <nav class="navIniciServeis">
-    <header class="headerServeis">
-      <h1>Nom categoria</h1>
-      <h2>Numero de serveis</h2>
-    </header>
-  </nav>
 </head>
 
 <body>
+    <nav class="navIniciServeis">
+      <header class="headerServeis">
+        <h1>Nom categoria</h1>
+        <h2>Numero de serveis</h2>
+      </header>
+    </nav>
     <br>
     <h2>Serveis Destacats</h2><br>
     <div class="serveiSeparat2 col-4" style="width: 18rem;">
@@ -127,6 +126,28 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    <div class="footer-content col-4">
+      <img src="./imgs/Logo_InstantJob_Blanca.png">
+      <p>Servei Tècnic</p>
+      <p>Tel. 99 999 999</p>
+    </div>
+    <div class="footer-content col-4">
+      <p>Informació Legal</p>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
+    </div>
+    <!-- Categories que s'agafaran de typescript -->
+    <div class="footer-content col-3">
+      <p>Categories</p>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
+    </div>
+  </footer>
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -135,24 +156,4 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
 </body>
-<footer>
-  <div class="footer-content col-4">
-    <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png"></a>
-    <p>Servei Tècnic</p>
-    <p>Tel. 99 999 999</p>
-  </div>
-  <div class="footer-content col-4">
-    <p>Informació Legal</p>
-    <p>Avís Legal</p>
-    <p>Política de Privacitat</p>
-    <p>Política de Cookies</p>
-  </div>
-  <!-- Categories que s'agafaran de typescript -->
-  <div class="footer-content col-3">
-    <p>Categories</p>
-    <p>Avís Legal</p>
-    <p>Política de Privacitat</p>
-    <p>Política de Cookies</p>
-  </div>
-</footer>
 </html>

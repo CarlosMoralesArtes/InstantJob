@@ -13,25 +13,26 @@
 
   <!-- Bootstrap CSS v5.0.2 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-  <nav class="navInici">
-    <div class="header col-1">
-    <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
-    </div>
-    <div class="header col-6 form-outline">
-      <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
-    </div>
-    <div class="header col-2">
-      <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
-    </div>
-    </div>
-    <div class="header col-2">
-    <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
-    </div>
-  </nav>
 </head>
 
 <body>
+  <header>
+  <nav class="navInici">
+      <div class="header col-1">
+        <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
+      </div>
+      <div class="header col-6 form-outline">
+        <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
+      </div>
+      <div class="header col-2">
+        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
+      </div>
+      </div>
+      <div class="header col-2">
+      <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
+      </div>
+    </nav>
+  </header>
   <div class="overlay" id="overlay">
     <div class="popup" id="popup">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
@@ -102,7 +103,6 @@
       <p>Completa els camps</p>
       <br>
       <div class="targetaIniciSessio">
-        <form>
           <?php
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -191,9 +191,7 @@
             // El form close es per tancar el formulari
             echo form_close();
           ?>
-          </form>
           </div>
-      </form>
     </div>
   </div>
 
@@ -262,6 +260,7 @@
   <div class="segonApartat">
     <h2>La benvinguda al estiu</h2>
     <p>Molts serveis a la teva disponibilitat!</p>
+    <br>
     <div class="serveiSeparat2 col-6" style="width: 18rem;">
       <img src="./imgs/imatgePre.png" width="100%" height="150px">
       <div class="card-body">
