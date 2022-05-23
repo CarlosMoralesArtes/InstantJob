@@ -59,10 +59,11 @@
         // En $data es coloquen els atributs de la pregunta
         $data = array('name' => 'correo',
                     'required' => 'required',
+                    'type' => 'email',
                     'value' => set_value('correo'));
         // En el form input es l'apartat on pots colocar text en el formulari
         echo form_input($data);
-        echo form_label('correo', '#{label}');
+        echo form_label('Correo', '#{label}');
         echo "<div class='bar'></div>";
         echo "<br>";
         echo "</div>";
