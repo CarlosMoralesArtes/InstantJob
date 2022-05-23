@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="..\styles.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
@@ -41,7 +42,7 @@
       <br>
       <div class="targetaIniciSessio">
         <?php
-        $ruta = "iniciar";
+        $ruta = "home/formulariIniciSessio";
         $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
         // Form open que serveix per iniciar el formulari
         echo form_open($ruta, $attributes);
@@ -56,41 +57,38 @@
 
 
         // En $data es coloquen els atributs de la pregunta
-        $data = array('name' => 'id_cliente',
-                    'placeholder' => $id_cliente,
+        $data = array('name' => 'correo',
                     'required' => 'required',
-                    'value' => set_value('id_cliente'));
+                    'value' => set_value('correo'));
         // En el form input es l'apartat on pots colocar text en el formulari
         echo form_input($data);
-        echo form_label('id_cliente', '#{label}');
+        echo form_label('correo', '#{label}');
         echo "<div class='bar'></div>";
         echo "<br>";
         echo "</div>";
-        if(!empty($validation)){
-          if($validation->getError('id_cliente')) {
-            echo $validation->getError('id_cliente');
-            echo "<br>";
-          }
-        }
+        // if(!empty($validation)){
+        //   if($validation->getError('id_cliente')) {
+        //     echo $validation->getError('id_cliente');
+        //     echo "<br>";
+        //   }
+        // }
 
         echo "<div class='input-container'>";
         // En $data es coloquen els atributs de la pregunta
         $data = array('name' => 'contrasena',
-                    'placeholder' => $contrasena,
-                    'required' => 'required',
-                    'value' => set_value('contrasena'));
+                    'required' => 'required');
         // En el form input es l'apartat on pots colocar text en el formulari
         echo form_input($data);
         echo form_label('Contrasena', '#{label}');
         echo "<div class='bar'></div>";
         echo "<br>";
         echo "</div>";
-        if(!empty($validation)){
-          if($validation->getError('contrasena')) {
-            echo $validation->getError('contrasena');
-            echo "<br>";
-          }
-        }
+        // if(!empty($validation)){
+        //   if($validation->getError('contrasena')) {
+        //     echo $validation->getError('contrasena');
+        //     echo "<br>";
+        //   }
+        // }
         echo "<br>";
         echo form_submit('mysubmit', 'Iniciar!');
 
@@ -338,6 +336,7 @@
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
+  <script src="..\Typescript/script.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

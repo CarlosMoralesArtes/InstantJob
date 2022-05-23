@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class UsuariModel extends model
 {
     protected $table = 'cliente';
-    protected $primaryKey = 'id_cliente';
+    protected $primaryKey = 'correo';
     protected $returnType = 'array';
     protected $allowedFields = [
         "id_cliente",

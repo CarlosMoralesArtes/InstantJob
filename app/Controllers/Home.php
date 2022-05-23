@@ -44,13 +44,13 @@ class Home extends BaseController
         
         // Apartat de les normes que es comproven del formulari
         $regles = [
-            "id_cliente"    => "required",
+            "correo"    => "required",
             "contrasena"    => "required"
         ];
 
         // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
         $missatges = [
-            "id_cliente" => [
+            "correo" => [
                 "required" => "Usuario obligatori"
             ],
             "contrasena" => [
@@ -62,7 +62,7 @@ class Home extends BaseController
         if($this->validate($regles, $missatges)){
             //el codi que rep la funció cal especificar-lo en la uri com a segment
             $obj_persona = new UsuariModel();
-            $data = $obj_persona ->find($dades["id_cliente"]);
+            $data = $obj_persona ->find($dades["correo"]);
             if(empty($data)){
                 $data = ["no"];
             }
@@ -72,8 +72,8 @@ class Home extends BaseController
             } else {
                 $session = session();
                 $session->start();
-                $session->set('id_cliente',$data["id_cliente"]);
-                if($data["id_cliente"] == $dades["id_cliente"]){
+                $session->set('correo',$data["correo"]);
+                if($data["correo"] == $dades["correo"]){
                     if($data["contrasena"] == $dades["contrasena"]){
                         return view('eric', $data);
                     } else {
