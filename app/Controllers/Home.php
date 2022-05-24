@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\UsuariModel;
 
+// session_start();
+
 class Home extends BaseController
 {
     //El constructor per l'ajut dels helpers
@@ -16,6 +18,10 @@ class Home extends BaseController
     public function index()
     {
         return view('iniciar_sesion');
+    }
+
+    public function clear(){
+        return view('clear');
     }
 
     //Redireccionament del registre
@@ -105,10 +111,10 @@ class Home extends BaseController
             } else {
                 $session = session();
                 $session->start();
-                $session->set('correo',$data["correo"]);
                 if($data["correo"] == $dades["correo"]){
                     if($data["contrasena"] == $dades["contrasena"]){
-                        return view('eric', $data);
+                        $session->set('user',$data["nombre"]);
+                        return view('iniciar_sesion', $data);
                     } else {
                         echo "Usuari o contrasenya incorrecte. ";
                         return view('iniciar_sesion', $dades);

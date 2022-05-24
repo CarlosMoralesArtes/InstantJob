@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+  <?php
+  session_start();
+
+  ?>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -25,9 +29,27 @@
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
       </div>
+      
+      <?php
+
+        if(!isset( $_SESSION['user'] ) ) {
+
+      ?>
+
       <div class="header col-2">
         <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
       </div>
+      
+
+      <?php
+      }else {
+          echo $_SESSION['user'];
+          echo("<form action='clear' method='POST'><input type='submit' value='Clear session' /></form>");
+      }
+      ?>
+
+
+
       </div>
       <div class="header col-2">
       <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
