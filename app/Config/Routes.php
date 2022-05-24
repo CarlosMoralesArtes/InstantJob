@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 // $routes->get('/missatges', 'Home::missatges');
 $routes->get('/pujaProductes', 'Home::pujaProductes');
-$routes->get('/', 'Home::home');
+$routes->get('/index', 'Home::home');
 // $routes->get('/serveis', 'Home::serveis');
 // $routes->get('/tarifes', 'Home::tarifes');
 // $routes->get('/iniciar', 'Home::formulariIniciSessio');
