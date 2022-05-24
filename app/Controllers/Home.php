@@ -6,39 +6,21 @@ use App\Models\UsuariModel;
 
 class Home extends BaseController
 {
-
+    //El constructor per l'ajut dels helpers
     public function __construct(){
 		helper(['form', 'url', 'download']);
 		$db = \Config\Database::connect();
 	}
 
+    //La funcio de la paguina principal
     public function index()
     {
         return view('iniciar_sesion');
     }
 
-    public function missatges()
-    {
-        return view('missatges.php');
-    }
-
-    public function pujaProductes()
-    {
-        return view('pujaProductes.php');
-    }
-
-    public function serveis()
-    {
-        return view('serveis.php');
-    }
-
-    public function tarifes()
-    {
-        return view('tarifes.php');
-    }
-
+    //Redireccionament del registre
     public function registrarse(){
-        return view('registrarse');
+        return view('iniciar_sesion');
     }
 
     // Funcio de la comprovacio i insercio del formulari de registre
@@ -51,17 +33,13 @@ class Home extends BaseController
         $regles = [
             "nombre"    => "required",
             "apellidos"    => "required",
-            // "repcontrasenya"    => "required|matches[password]",
-            "correo"    => "required|valid_email",
+            "correo"    => "is_unique[cliente.correo,correo]",
             "contrasena" => "required"
+            // "repcontrasenya"    => "required|matches[password]",
         ];
 
         // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
         $missatges = [
-            // "codiU" => [
-            //     "required" => "codiU obligatori",
-            //     // "is_unique"
-            // ],
             "nombre" => [
                 "required" => "nom obligatori"
             ],
@@ -70,12 +48,15 @@ class Home extends BaseController
                 // "matches" => "Les contrasenyes tenen que coincidir."
             ],
             "correo" => [
-                "required" => "Correu obligatori",
-                "valid_email" => "No pots invertarte el correu."
+                "is_unique" => "El correu ja te una compte creada"
             ],
             "contrasena" => [
-                "required" => "Telefon obligatori",
+                "required" => "Telefon obligatori"
             ]
+            // "repcontrasenya" => [
+            //     "required" => "Repeticio de contraseña obligatori",
+            //     "matches" => "Les contrasenyes tenen que coincidir."
+            // ]
         ];
 
         // Validador del formulari on es comproven que estiguin tots els requisits

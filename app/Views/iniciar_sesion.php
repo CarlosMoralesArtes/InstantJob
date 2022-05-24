@@ -110,7 +110,7 @@
       <br>
       <div class="targetaIniciSessio">
           <?php
-            $ruta = site_url()."/home/formulari";
+            $ruta = site_url()."home/formulari";
             $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
             // Form open que serveix per iniciar el formulari
             echo form_open($ruta, $attributes);
@@ -152,6 +152,8 @@
             echo form_label('Email', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
+            
+            echo "<br>";
             echo "</div>";
 
 
@@ -178,6 +180,13 @@
             echo form_submit('submit', 'Registrar-se');
             // El form close es per tancar el formulari
             echo form_close();
+
+            if(!empty($validation)){
+              if($validation->getError('correo')) {
+                echo $validation->getError('correo');
+                echo "<br>";
+              }
+            }
           ?>
           </div>
     </div>
@@ -329,6 +338,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
+    <?php
+
+if(!empty($validation)){
+  if($validation->getError('correo')) {
+    echo "<script src='Typescript/errorregister.js'></script>";
+    echo "<script src='..\Typescript/errorregister.js'></script>";
+  }
+}
+
+?>
 </body>
 <footer>
   <div class="footer-content col-4">
