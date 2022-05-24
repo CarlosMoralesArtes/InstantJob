@@ -183,3 +183,15 @@ CRITICAL - 2022-05-24 05:50:42 --> ini_set(): A session is active. You cannot ch
 #16 C:\wamp64\www\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #17 {main}
 >>>>>>> a327172058787605a70e3cf5347a14faf3aafb91
+CRITICAL - 2022-05-24 06:06:36 --> Cannot redeclare App\Controllers\Home::index()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-24 06:06:40 --> Cannot redeclare App\Controllers\Home::index()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-24 06:06:40 --> Cannot redeclare App\Controllers\Home::index()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-24 06:07:16 --> Cannot redeclare App\Controllers\Home::index()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
