@@ -20,7 +20,7 @@
   <header>
   <nav class="navInici">
       <div class="header col-1">
-        <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
+        <a href="home/home"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
       </div>
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
