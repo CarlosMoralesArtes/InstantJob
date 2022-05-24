@@ -4,37 +4,76 @@ namespace App\Controllers;
 
 use App\Models\UsuariModel;
 
+// session_start();
+
 class Home extends BaseController
 {
-
+    //El constructor per l'ajut dels helpers
     public function __construct(){
 		helper(['form', 'url', 'download']);
 		$db = \Config\Database::connect();
 	}
 
+    //La funcio de la paguina principal
     public function index()
     {
         return view('iniciar_sesion');
     }
 
-    public function missatges()
-    {
-        return view('missatges.php');
+    public function clear(){
+        return view('clear');
     }
 
-    public function pujaProductes()
-    {
-        return view('pujaProductes.php');
+    //Redireccionament del registre
+    public function registrarse(){
+        return view('iniciar_sesion');
     }
 
-    public function serveis()
+    // Funcio de la comprovacio i insercio del formulari de registre
+    public function formulari()
     {
-        return view('serveis.php');
-    }
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+        
+        // Apartat de les normes que es comproven del formulari
+        $regles = [
+            "nombre"    => "required",
+            "apellidos"    => "required",
+            "correo"    => "is_unique[cliente.correo,correo]",
+            "contrasena" => "required"
+            // "repcontrasenya"    => "required|matches[password]",
+        ];
 
-    public function tarifes()
-    {
-        return view('tarifes.php');
+        // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
+        $missatges = [
+            "nombre" => [
+                "required" => "nom obligatori"
+            ],
+            "apellidos" => [
+                "required" => "Cognoms obligatoris"
+                // "matches" => "Les contrasenyes tenen que coincidir."
+            ],
+            "correo" => [
+                "is_unique" => "El correu ja te una compte creada"
+            ],
+            "contrasena" => [
+                "required" => "Telefon obligatori"
+            ]
+            // "repcontrasenya" => [
+            //     "required" => "Repeticio de contraseña obligatori",
+            //     "matches" => "Les contrasenyes tenen que coincidir."
+            // ]
+        ];
+
+        // Validador del formulari on es comproven que estiguin tots els requisits
+        if($this->validate($regles, $missatges)){
+            $usuari = new \App\Models\UsuariModel();
+			$usuari->insert($dades);
+            return view('eric', $dades);
+        } else {
+            $dades["validation"]=$this->validator;
+            return view('iniciar_sesion', $dades);
+        }
     }
 
     public function formulariIniciSessio()
@@ -72,10 +111,10 @@ class Home extends BaseController
             } else {
                 $session = session();
                 $session->start();
-                $session->set('correo',$data["correo"]);
                 if($data["correo"] == $dades["correo"]){
                     if($data["contrasena"] == $dades["contrasena"]){
-                        return view('eric', $data);
+                        $session->set('user',$data["nombre"]);
+                        return view('iniciar_sesion', $data);
                     } else {
                         echo "Usuari o contrasenya incorrecte. ";
                         return view('iniciar_sesion', $dades);

@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+  <?php
+  session_start();
+
+  ?>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -25,9 +29,27 @@
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
       </div>
+      
+      <?php
+
+        if(!isset( $_SESSION['user'] ) ) {
+
+      ?>
+
       <div class="header col-2">
         <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
       </div>
+      
+
+      <?php
+      }else {
+          echo $_SESSION['user'];
+          echo("<form action='clear' method='POST'><input type='submit' value='Clear session' /></form>");
+      }
+      ?>
+
+
+
       </div>
       <div class="header col-2">
       <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
@@ -110,11 +132,13 @@
       <br>
       <div class="targetaIniciSessio">
           <?php
+            $ruta = site_url()."home/formulari";
+            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nom',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'nombre',
                           'required' => 'required',
                           'value' => set_value('nom'));
             // En el form input es l'apartat on pots colocar text en el formulari
@@ -123,38 +147,26 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('nom')) {
-                echo $validation->getError('nom');
-                echo "<br>";
-              }
-            }
-    
+
+
+
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'primerCognom',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'apellidos',
                           'required' => 'required',
                           'value' => set_value('primerCognom'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo form_label('Primer Cognom', '#{label}');
+            echo form_label('Cognoms', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('primerCognom')) {
-                echo $validation->getError('primerCognom');
-                echo "<br>";
-              }
-            }
+
+
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'email',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'correo',
                           'required' => 'required',
                           'value' => set_value('email'));
             // En el form input es l'apartat on pots colocar text en el formulari
@@ -162,19 +174,20 @@
             echo form_label('Email', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
+            
+            echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('email')) {
-                echo $validation->getError('email');
-                echo "<br>";
-              }
-            }
-    
+
+
+
+            echo form_hidden('latitud', '2');
+            echo form_hidden('logitud', '2');
+
+
+
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'contrasenya',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'contrasena',
                           'required' => 'required',
                           'value' => set_value('contrasenya'));
             // En el form input es l'apartat on pots colocar text en el formulari
@@ -183,23 +196,25 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('contrasenya')) {
-                echo $validation->getError('contrasenya');
-                echo "<br>";
-              }
-            }
 
             echo "<br>";
 
-            echo "<input type='submit' class='btn-submit' value='Registrar-se'>";
-            
+            echo form_submit('submit', 'Registrar-se');
             // El form close es per tancar el formulari
             echo form_close();
+
+            if(!empty($validation)){
+              if($validation->getError('correo')) {
+                echo $validation->getError('correo');
+                echo "<br>";
+              }
+            }
           ?>
           </div>
     </div>
   </div>
+
+
 
   <!-- Titul de la pàgina principal -->
     <div class="titol">
@@ -345,6 +360,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
+    <?php
+
+if(!empty($validation)){
+  if($validation->getError('correo')) {
+    echo "<script src='Typescript/errorregister.js'></script>";
+    echo "<script src='..\Typescript/errorregister.js'></script>";
+  }
+}
+
+?>
 </body>
 <footer>
   <div class="footer-content col-4">
