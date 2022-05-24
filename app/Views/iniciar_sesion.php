@@ -110,11 +110,13 @@
       <br>
       <div class="targetaIniciSessio">
           <?php
+            $ruta = site_url()."/home/formulari";
+            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nom',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'nombre',
                           'required' => 'required',
                           'value' => set_value('nom'));
             // En el form input es l'apartat on pots colocar text en el formulari
@@ -123,38 +125,26 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('nom')) {
-                echo $validation->getError('nom');
-                echo "<br>";
-              }
-            }
-    
+
+
+
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'primerCognom',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'apellidos',
                           'required' => 'required',
                           'value' => set_value('primerCognom'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo form_label('Primer Cognom', '#{label}');
+            echo form_label('Cognoms', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('primerCognom')) {
-                echo $validation->getError('primerCognom');
-                echo "<br>";
-              }
-            }
+
+
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'email',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'correo',
                           'required' => 'required',
                           'value' => set_value('email'));
             // En el form input es l'apartat on pots colocar text en el formulari
@@ -163,18 +153,17 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('email')) {
-                echo $validation->getError('email');
-                echo "<br>";
-              }
-            }
-    
+
+
+
+            echo form_hidden('latitud', '2');
+            echo form_hidden('logitud', '2');
+
+
+
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'contrasenya',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'contrasena',
                           'required' => 'required',
                           'value' => set_value('contrasenya'));
             // En el form input es l'apartat on pots colocar text en el formulari
@@ -183,23 +172,18 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('contrasenya')) {
-                echo $validation->getError('contrasenya');
-                echo "<br>";
-              }
-            }
 
             echo "<br>";
 
-            echo "<input type='submit' class='btn-submit' value='Registrar-se'>";
-            
+            echo form_submit('submit', 'Registrar-se');
             // El form close es per tancar el formulari
             echo form_close();
           ?>
           </div>
     </div>
   </div>
+
+
 
   <!-- Titul de la pàgina principal -->
     <div class="titol">

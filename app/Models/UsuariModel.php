@@ -12,6 +12,7 @@ class UsuariModel extends model
     protected $allowedFields = [
         "id_cliente",
         "nombre",
+        "apellidos",
         "contrasena",
         "latitud",
         "logitud",
