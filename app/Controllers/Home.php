@@ -20,6 +20,11 @@ class Home extends BaseController
         return view('iniciar_sesion');
     }
 
+    public function pujaProductes()
+    {
+        return view('pujaProductes.php');
+    }
+
     public function clear(){
         return view('clear');
     }
