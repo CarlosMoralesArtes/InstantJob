@@ -72,13 +72,9 @@ function openNav(){
 
 function closeNav(){
 	document.getElementById("mySidenav").style.width="0";
-<<<<<<< HEAD
 }
 
 $('ul li').on('click', function() {
 	$('li').removeClass('active');
 	$(this).addClass('active');
 });
-=======
-}
->>>>>>> a327172058787605a70e3cf5347a14faf3aafb91
