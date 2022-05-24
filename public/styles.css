@@ -25,6 +25,27 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Estils per els botons */
+.btn-primary{
+	background-color: #0196C1 !important;
+	border: 0px !important;
+}
+
+.btn-primary:hover{
+	background-color: white !important;
+	color: black !important;
+}
+
+.btn-light:hover{
+	background-color: #0196C1 !important;
+	color: white !important;
+	border: 0px !important;
+}
+
+ul a{
+	color: white !important;
+}
+
 /* Estil que serveix per alinear les targetes */
 .card{
     display: inline-block !important;
@@ -222,10 +243,9 @@ body{
     display: block;
 	width: 100%;
     border-radius: 5px;
-    margin-bottom: 50px;
-    margin-left: 20px;
-	margin-right: 150px !important;
 	float: right;
+	margin-top: 20px;
+	margin-right: 12px;	
 }
 
 .card-body img{
@@ -595,6 +615,71 @@ body{
 		width: 100%;
 	}
 }
+
+.sidebar-navigation {
+	display: inline-block;
+	min-height: 150vh;
+	width: 80px;
+	background-color: #0196C1;
+	float: left;
+  }
+  .sidebar-navigation img{
+	  width: 30px;
+  }
+  .sidebar-navigation ul {
+	text-align: center;
+	color: white;
+	list-style: none;
+	padding-left: 0px !important;
+  }
+  .sidebar-navigation ul li {
+	padding: 28px 0;
+	cursor: pointer;
+	transition: all ease-out 120ms;
+  }
+  .sidebar-navigation ul li i {
+	display: block;
+	font-size: 24px;
+	transition: all ease 450ms;
+  }
+  .sidebar-navigation ul li .tooltip {
+	display: inline-block;
+	position: absolute;
+	background-color: #48B5D6;
+	padding: 8px 15px;
+	border-radius: 3px;
+	margin-top: -26px;
+	left: 90px;
+	opacity: 0;
+	visibility: hidden;
+	font-size: 13px;
+	letter-spacing: 0.5px;
+  }
+  .sidebar-navigation ul li .tooltip:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: -4px;
+	top: 10px;
+	transform: rotate(45deg);
+	width: 10px;
+	height: 10px;
+	background-color: inherit;
+  }
+  .sidebar-navigation ul li:hover {
+	background-color: #48B5D6;
+	width: 100%;
+  }
+  .sidebar-navigation ul li:hover .tooltip {
+	visibility: visible;
+	opacity: 1;
+  }
+  .sidebar-navigation ul li.active {
+	background-color: #48B5D6;
+  }
+  .sidebar-navigation ul li.active i {
+	color: white;
+  }
 
 /* Estils del footer */
 footer{

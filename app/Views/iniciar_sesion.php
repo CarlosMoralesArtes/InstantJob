@@ -219,11 +219,11 @@
               <div class="carousel__lista">
                 <div class="carousel__elemento">
                   <img src="imgs/fontaneriaBlau.png" alt="Rock and Roll Hall of Fame">
-                  <p>Fontaneria</p>
+                  <p>Lampista</p>
                 </div>
                 <div class="carousel__elemento">
                   <img src="imgs/carpinteria.png" alt="Constitution Square - Tower I">
-                  <p>Carpinteria</p>
+                  <p>Fuster</p>
                 </div>
                 <div class="carousel__elemento">
                   <img src="imgs/pintor.png" alt="Empire State Building">
@@ -231,24 +231,24 @@
                 </div>
                 <div class="carousel__elemento">
                   <img src="imgs/5.png" alt="Harmony Tower">
-                  <p>Harmony Tower</p>
+                  <p>Informàtic</p>
                 </div>
         
                 <div class="carousel__elemento">
                   <img src="imgs/6.png" alt="Empire State Building">
-                  <p>Empire State Building</p>
+                  <p>Administratiu</p>
                 </div>
                 <div class="carousel__elemento">
                   <img src="imgs/7.png" alt="Harmony Tower">
-                  <p>Harmony Tower</p>
+                  <p>Jardiner</p>
                 </div>
                 <div class="carousel__elemento">
                   <img src="imgs/8.png" alt="Empire State Building">
-                  <p>Empire State Building</p>
+                  <p>Medicina</p>
                 </div>
                 <div class="carousel__elemento">
                   <img src="imgs/9.png" alt="Harmony Tower">
-                  <p>Harmony Tower</p>
+                  <p>Obrers</p>
                 </div>
               </div>
 
