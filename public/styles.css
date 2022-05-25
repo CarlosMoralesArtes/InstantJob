@@ -56,7 +56,7 @@
 }
 
 #contenedor_carga{
-	background-color: rgba(250,240,245,1);
+	background-color: #48B5D6;
 	height: 100%;
 	width: 100%;
 	position: fixed;
@@ -67,7 +67,7 @@
 }
 
 #carga{
-	border: 15px solid #ccc;
+	border: 15px solid white;
 	border-top-color: #0196C1;
 	border-top-style: groove;
 	height: 100px;
@@ -82,6 +82,15 @@
 	animation: girar 1.5s linear infinite;
 }
 
+.tarifaCentrada{
+	margin-left: 150px !important;
+	margin-top: 50px !important;
+}
+
+.tarifaCentrada img{
+	border-radius: 5px;
+}
+
 @keyframes girar{
 	from{
 		transform: rotate(0deg);
@@ -89,6 +98,24 @@
 	to{
 		transform: rotate(360deg);
 	}
+}
+
+.tarifaCentrada .col-3{
+	width: 30% !important;
+	position: relative;
+	height: 700px;
+}
+
+.row > *{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.botoTarifa{
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
 }
 
 .header img{
@@ -345,6 +372,10 @@ body{
 	padding: 5px;
 }
 
+.input-container input{
+	width: 100%;
+}
+
 .imatge{
 	background-color: blue;
 }
@@ -393,17 +424,23 @@ body{
 	margin: 10px;
 	color: white;
 	margin-top: 50px;
-	margin-bottom: 50px;
-	border-radius: 10px;
+	margin-bottom: 10px !important;
+	border-radius: 5px;
   	align-items: top;
 }
 
 .tarifes p{
 	margin-top: 20px;
+	font-size: 20px !important;
 }
 
-.botoTarifes{
-	margin-bottom: 20px;
+.botoTarifa .btn-submit{
+	margin-bottom: 50px;
+	font-size: 17px !important;
+}
+
+.botoTarifa .btn-submit:hover{
+	background-color: #0196C1 !important;
 }
 
 .headerServeis{
@@ -706,8 +743,15 @@ body{
 }
 
 .carousel__elemento p{
-	color: white !important;
+	color: black !important;
+}
+
+.glider-slide{
 	text-decoration: none !important;
+}
+
+.seleccionat{
+	background-color: #0196C1;
 }
 
 .carousel__elemento:hover {

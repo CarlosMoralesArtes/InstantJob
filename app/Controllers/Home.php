@@ -25,6 +25,21 @@ class Home extends BaseController
         return view('iniciar_sesion');
     }
 
+    //Redireccionament de la footer a avis legal
+    public function avislegal(){
+        return view('avis_legal');
+    }
+
+    //Redireccionament de la footer a la politica de privacitat
+    public function politicaprivacitat(){
+        return view('politica_privacitat');
+    }
+
+    //Redireccionament de la footer a politica de cookies
+    public function politicacookies(){
+        return view('politica_de_cookies');
+    }
+
     //Redireccionament de missatges
     public function missatges(){
         return view('missatges');

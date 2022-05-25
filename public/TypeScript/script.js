@@ -1,3 +1,8 @@
+// Creacio dels arrays
+var botonsSeleccionats = new Array;
+
+var contador = 0;
+
 window.addEventListener('load', function(){
 	new Glider(document.querySelector('.carousel__lista'), {
 		slidesToShow: 1,
@@ -30,9 +35,11 @@ window.addEventListener('load', function(){
 
 window.onload = function(){
     // Apartat de la animació de carrega de la pàgina
-    var contenedor = document.getElementById('contenedor_carga');
-    contenedor.style.visibility = 'hidden';
-    contenedor.style.opacity = '0';
+    setTimeout(function(){
+      var contenedor = document.getElementById('contenedor_carga');
+      contenedor.style.visibility = 'hidden';
+      contenedor.style.opacity = '0';
+    }, 100);
 
     var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
         overlay = document.getElementById('overlay'),
@@ -77,6 +84,26 @@ function openNav(){
 
 function closeNav(){
 	document.getElementById("mySidenav").style.width="0";
+}
+
+function ImatgeSeleccionada(clicked){
+  var imatge = document.getElementById(clicked);
+  for (let i = 0; i < botonsSeleccionats.length; i++) {
+    if(botonsSeleccionats[i] == clicked){
+      contador++;
+    }
+  }
+  if(contador != 0){
+    imatge.classList.remove('seleccionat');
+    var myIndex = botonsSeleccionats.indexOf(clicked);
+    if (myIndex !== -1) {
+      botonsSeleccionats.splice(myIndex, 1);
+    }
+    contador = 0;
+  } else {
+    imatge.classList.add('seleccionat');
+    botonsSeleccionats.push(clicked);
+  }
 }
 
 // $('ul li').on('click', function() {

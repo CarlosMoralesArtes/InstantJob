@@ -226,152 +226,37 @@
 
   <!-- Titul de la pàgina principal -->
     <div class="titol">
-      <p>InstantJob, es l’ajuda de creixement rápid per a la teva empresa</p>
-      <h1>Benvingut a InstantJob</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <h2 class="center-align">¿Que estas buscant avui?</h2>
-            <br>
-          <div class="carousel">
-            <div class="carousel__contenedor">
-              <button aria-label="Anterior" class="carousel__anterior">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <br>
-              <div class="carousel__lista">
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista">
-                  <p>Lampista</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/carpinteria.png" alt="Categoria de fuster">
-                  <p>Fuster</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/pintor.png" alt="Categoria de pintors">
-                  <p>Pintor</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/informatic_blau.png" alt="Categoria d'informatic">
-                  <p>Informàtic</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu">
-                  <p>Administratiu</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/jardiner_blau.png" alt="Categoria de jardiners">
-                  <p>Jardiner</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/medicina_blau.png" alt="Categoria de medicina">
-                  <p>Medicina</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/obrer_blau.png" alt="Categoria d'obrers">
-                  <p>Obrers</p>
-                </div>
-              </a>
-              </div>
+      <h1>Avís Legal</h1>
+      <p class="informacioLegal">En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSICE) a continuación se detallan los datos identificativos de la empresa:<br>
+Nombre empresa: InstantJob<br>
+Razón social: Eric i Carlos<br>
+Email: info@instantjob.es<br>
 
-              <button aria-label="Siguiente" class="carousel__siguiente">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
+FINALIDAD DE LA PÁGINA WEB.<br>
 
-            <div role="tablist" class="carousel__indicadores"></div>
-          </div>
-          </div>
-        </div>
-      </div>
+Venta de artículos de moda, ropa, complementos, que se encuentran en nuestra tienda online, en nuestra pagina web<br>
+
+El presente aviso legal (en adelante, el «Aviso Legal») regula el uso del sitio web: www.instantjob.es<br>
+
+LEGISLACIÓN.<br>
+
+Con carácter general las relaciones entre 38097223T (InstantJob) con los Usuarios de sus servicios telemáticos, presentes en este sitio web, se encuentran sometidas a la legislación y jurisdicción españolas.<br>
+
+USO Y ACCESO DE USUARIOS.<br>
+
+El Usuario queda informado, y acepta, que el acceso a la presente web no supone, en modo alguno, el inicio de una relación comercial con Eric i Carlos (InstantJob) o cualquiera de sus delegaciones.<br>
+
+PROPIEDAD INTELECTUAL E INDUSTRIAL.<br>
+
+Los derechos de propiedad intelectual del contenido de las páginas web, su diseño gráfico y códigos son titularidad de Eric i Carlos (InstantJob) y, por tanto, queda prohibida su reproducción, distribución, comunicación pública, transformación o cualquier otra actividad que se pueda realizar con los contenidos de sus páginas web ni aun citando las fuentes, salvo consentimiento por escrito de Eric i Carlos (ANUSSKA MODA).<br>
+
+CONTENIDO DE LA WEB Y ENLACES (LINKS).<br>
+
+Eric i Carlos (InstantJob) se reserva el derecho a actualizar, modificar o eliminar la información contenida en sus páginas web pudiendo incluso limitar o no permitir el acceso a dicha información a ciertos usuarios.<br>
+
+Eric i Carlos (InstantJob) no asume responsabilidad alguna por la información contenida en páginas web de terceros a las que se pueda acceder por «links» o enlaces desde cualquier página web propiedad de Eric i Carlos (InstantJob). La presencia de «links» o enlaces en las páginas web de Eric i Carlos (InstantJob) tiene finalidad meramente informativa y en ningún caso supone sugerencia, invitación o recomendación sobre los mismos.</p>
     </div>
-  <div class="segonApartat">
-    <h2>La benvinguda al estiu</h2>
-    <p>Molts serveis a la teva disponibilitat!</p>
-    <br>
-    <div class="serveiSeparat2 col-6" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Carpinteria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-6" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <h2>Productes destacats del moment</h2><br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
@@ -412,9 +297,9 @@ if(isset( $_SESSION['iniciar'] ) ) {
     <div class="footer-content col-4">
       <br>
       <h3>Informació Legal</h3>
-      <a href="avislegal">Avís Legal</a><br>
-      <a href="politicaprivacitat">Política de Privacitat</a><br>
-      <a href="politicacookies">Política de Cookies</a>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
     </div>
     <!-- Categories que s'agafaran de typescript -->
     <div class="footer-content col-4">
