@@ -97,6 +97,10 @@ h2{
     font-size: 20px !important;
 }
 
+h3{
+	font-size: 17px !important;
+}
+
 p{
     font-size: 15px !important;
 }
@@ -131,7 +135,6 @@ body{
     display: inline-block;
     border-radius: 5px;
     margin-bottom: 50px;
-    margin-left: 20px;
 }
 
 .serveiSeparat2{
@@ -290,13 +293,32 @@ body{
 	padding: 5px;
 }
 
+.pujarProducteCaixa input:checked{
+	border-radius: 10px;
+	background-color: #0196C1;
+	border: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	color: white;
+	padding: 5px;
+}
+
+.imatge{
+	background-color: blue;
+}
+
 .pujarProducteCaixa label{
 	font-size: 15px;
+}
+
+.row{
+	margin: 20px;
 }
 
 .card-body img{
 	width: 100px !important;
 	margin: 2px;
+	border-radius: 100%;
 }
 
 .card-body img:hover{
@@ -637,6 +659,27 @@ body{
 
 .carousel__elemento {
 	text-align: center;
+	padding: 20px;
+	text-decoration: none !important;
+}
+
+.carousel__elemento p{
+	color: white !important;
+	text-decoration: none !important;
+}
+
+.carousel__elemento:hover {
+	animation: augmentarTamany 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes augmentarTamany{
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.1);
+	}
 }
 
 .carousel__elemento img{

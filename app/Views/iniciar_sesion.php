@@ -234,39 +234,54 @@
               </button>
               <br>
               <div class="carousel__lista">
+              <a href="serveis">
                 <div class="carousel__elemento">
                   <img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista">
                   <p>Lampista</p>
                 </div>
+              </a>
+              <a href="serveis">
                 <div class="carousel__elemento">
                   <img src="imgs/carpinteria.png" alt="Categoria de fuster">
                   <p>Fuster</p>
                 </div>
+              </a>
+              <a href="serveis">
                 <div class="carousel__elemento">
                   <img src="imgs/pintor.png" alt="Categoria de pintors">
                   <p>Pintor</p>
                 </div>
+              </a>
+              <a href="serveis">
                 <div class="carousel__elemento">
                   <img src="imgs/informatic_blau.png" alt="Categoria d'informatic">
                   <p>Informàtic</p>
                 </div>
-        
+              </a>
+              <a href="serveis">
                 <div class="carousel__elemento">
                   <img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu">
                   <p>Administratiu</p>
                 </div>
+              </a>
+              <a href="serveis">
                 <div class="carousel__elemento">
                   <img src="imgs/jardiner_blau.png" alt="Categoria de jardiners">
                   <p>Jardiner</p>
                 </div>
+              </a>
+              <a href="serveis">
                 <div class="carousel__elemento">
                   <img src="imgs/medicina_blau.png" alt="Categoria de medicina">
                   <p>Medicina</p>
                 </div>
+              </a>
+              <a href="serveis">
                 <div class="carousel__elemento">
                   <img src="imgs/obrer_blau.png" alt="Categoria d'obrers">
                   <p>Obrers</p>
                 </div>
+              </a>
               </div>
 
               <button aria-label="Siguiente" class="carousel__siguiente">
@@ -380,23 +395,27 @@ if(isset( $_SESSION['iniciar'] ) ) {
 ?>
 </body>
 <footer>
-  <div class="footer-content col-4">
-    <img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob">
-    <p>Servei Tècnic</p>
-    <p>Tel. 99 999 999</p>
-  </div>
-  <div class="footer-content col-4">
-    <p>Informació Legal</p>
-    <p>Avís Legal</p>
-    <p>Política de Privacitat</p>
-    <p>Política de Cookies</p>
-  </div>
-  <!-- Categories que s'agafaran de typescript -->
-  <div class="footer-content col-3">
-    <p>Categories</p>
-    <p>Avís Legal</p>
-    <p>Política de Privacitat</p>
-    <p>Política de Cookies</p>
+  <div class="row">
+    <div class="footer-content col-4">
+    <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
+      <h3>Servei Tècnic</h3>
+      <p>Tel. 99 999 999</p>
+    </div>
+    <div class="footer-content col-4">
+      <br>
+      <h3>Informació Legal</h3>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
+    </div>
+    <!-- Categories que s'agafaran de typescript -->
+    <div class="footer-content col-4">
+      <br>
+      <h3>Categories</h3>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
+    </div>
   </div>
 </footer>
 </html>

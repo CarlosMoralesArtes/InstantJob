@@ -260,14 +260,14 @@
       <div class="card-body">
         <p class="card-title">Que vas a pujar?</p>
         <p class="card-title">Selecciona la categoria</p>
-        <img src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista">
-        <img src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster">
-        <img src="imgs/pintorTransparent.png" alt="Categoria de pintors">
-        <img src="imgs/informatic.png" alt="Categoria d'informatic">
-        <img src="imgs/administratiu.png" alt="Categoria d'administratiu">
-        <img src="imgs/jardiner.png" alt="Categoria de jardiners">
-        <img src="imgs/medicina.png" alt="Categoria de medicina">
-        <img src="imgs/obrer.png" alt="Categoria d'obrers">
+        <img src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada()">
+        <img src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada()">
+        <img src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada()">
+        <img src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada()">
+        <img src="imgs/administratiu.png" alt="Categoria d'administratiu" onclick="ImatgeSeleccionada()">
+        <img src="imgs/jardiner.png" alt="Categoria de jardiners" onclick="ImatgeSeleccionada()">
+        <img src="imgs/medicina.png" alt="Categoria de medicina" onclick="ImatgeSeleccionada()">
+        <img src="imgs/obrer.png" alt="Categoria d'obrers" onclick="ImatgeSeleccionada()">
 
         <p class="card-text"></p>
       </div>
@@ -277,6 +277,10 @@
       <div class="card-body">
         <p class="card-title">Informació Básica</p>
         <?php
+            $ruta = "iniciar";
+            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
             echo form_label('Nom', '#{label}');
             echo "<br>";
@@ -337,19 +341,6 @@
               }
             }
 
-            echo "<br>";
-            
-            // El form close es per tancar el formulari
-            echo form_close();
-          ?>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="pujarProducteCaixa col-9">
-      <div class="card-body">
-        <p class="card-title">Informació del Servei</p>
-        <?php
-            echo "<div class='input-container'>";
             echo form_label('Temps que es trigarà en realitzar el servei', '#{label}');
             echo "<br>";
             // En $data es coloquen els atributs de la pregunta
@@ -368,14 +359,11 @@
                 echo "<br>";
               }
             }
-
-            echo "<br>";
             
             // El form close es per tancar el formulari
             echo form_close();
           ?>
         <p class="card-text"></p>
-      </div>
     </div>
   </div>
   
