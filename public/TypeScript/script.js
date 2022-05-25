@@ -74,7 +74,7 @@ function closeNav(){
 	document.getElementById("mySidenav").style.width="0";
 }
 
-$('ul li').on('click', function() {
-	$('li').removeClass('active');
-	$(this).addClass('active');
-});
+// $('ul li').on('click', function() {
+// 	$('li').removeClass('active');
+// 	$(this).addClass('active');
+// });

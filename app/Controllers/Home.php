@@ -76,9 +76,12 @@ class Home extends BaseController
 
         // Validador del formulari on es comproven que estiguin tots els requisits
         if($this->validate($regles, $missatges)){
+            $session = session();
+            $session->start();
             $usuari = new \App\Models\UsuariModel();
 			$usuari->insert($dades);
-            return view('eric', $dades);
+            $session->set('iniciar','1');
+            return view('iniciar_sesion', $dades);
         } else {
             $dades["validation"]=$this->validator;
             return view('iniciar_sesion', $dades);
