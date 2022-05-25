@@ -29,7 +29,9 @@
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
       </div>
-      
+
+
+
       <?php
 
         if(!isset( $_SESSION['user'] ) ) {
@@ -44,7 +46,7 @@
       <?php
       }else {
           echo $_SESSION['user'];
-          echo("<form action='clear' method='POST'><input type='submit' value='Clear session' /></form>");
+          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
       }
       ?>
 
@@ -64,8 +66,8 @@
       <br>
       <div class="targetaIniciSessio">
         <?php
-        $ruta = "form";
-        $attributes = array ('action' => "$ruta", 'enctype' => "multipart/form-data", 'method' => "post");
+        $ruta = "iniciar";
+        $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
         // Form open que serveix per iniciar el formulari
         echo form_open($ruta, $attributes);
         echo "<div class='input-container'>";
@@ -132,8 +134,8 @@
       <br>
       <div class="targetaIniciSessio">
           <?php
-            $ruta = site_url()."home/formulari";
-            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
+            $ruta = site_url()."registrar";
+            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "GET");
             // Form open que serveix per iniciar el formulari
             echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
@@ -368,6 +370,12 @@ if(!empty($validation)){
     echo "<script src='..\Typescript/errorregister.js'></script>";
   }
 }
+
+if(isset( $_SESSION['iniciar'] ) ) {
+  echo "<script src='Typescript/bienregister.js'></script>";
+    echo "<script src='..\Typescript/bienregister.js'></script>";
+}
+
 
 ?>
 </body>
