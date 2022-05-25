@@ -44,7 +44,7 @@
       <?php
       }else {
           echo $_SESSION['user'];
-          echo("<form action='clear' method='POST'><input type='submit' value='Clear session' /></form>");
+          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
       }
       ?>
 
@@ -64,8 +64,8 @@
       <br>
       <div class="targetaIniciSessio">
         <?php
-        $ruta = "home/formulariIniciSessio";
-        $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
+        $ruta = "iniciar";
+        $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
         // Form open que serveix per iniciar el formulari
         echo form_open($ruta, $attributes);
         echo "<div class='input-container'>";
@@ -132,8 +132,8 @@
       <br>
       <div class="targetaIniciSessio">
           <?php
-            $ruta = site_url()."home/formulari";
-            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
+            $ruta = site_url()."registrar";
+            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "GET");
             // Form open que serveix per iniciar el formulari
             echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";

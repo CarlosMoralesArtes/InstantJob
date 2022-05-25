@@ -37,7 +37,10 @@ $routes->get('/pujaProductes', 'Home::pujaProductes');
 $routes->get('/index', 'Home::home');
 // $routes->get('/serveis', 'Home::serveis');
 // $routes->get('/tarifes', 'Home::tarifes');
-// $routes->get('/iniciar', 'Home::formulariIniciSessio');
+// $routes->post('/iniciar', 'Product::formulariIniciSessio');
+$routes->get('/iniciar', 'Home::formulariIniciSessio');
+$routes->get('/registrar', 'Home::formulari');
+$routes->get('/clear', 'Home::clear');
 
 /*
  * --------------------------------------------------------------------
