@@ -23,6 +23,12 @@
 </head>
 
 <body>
+
+  <!-- Apartat de la carrega de la pàgina -->
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+
   <header>
   <nav class="navInici">
       <div class="header col-1">
@@ -31,8 +37,6 @@
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
       </div>
-
-
 
       <?php
 
