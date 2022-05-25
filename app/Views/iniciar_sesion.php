@@ -2,12 +2,6 @@
 <html lang="en">
 
 <head>
-  <?php
-  session_start();
-
-  
-
-  ?>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -39,20 +33,12 @@
       </div>
 
       <?php
-
-        if(!isset( $_SESSION['user'] ) ) {
-
-      ?>
-
-      <div class="header col-2 separacio">
-        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
-      </div>
-      
-
-      <?php
-      }else {
-          echo $_SESSION['user'];
+      $session = session();
+      if ($session->get('user')){
+        echo $_SESSION['user'];
           echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
+      }else {
+          echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
       }
       ?>
 
