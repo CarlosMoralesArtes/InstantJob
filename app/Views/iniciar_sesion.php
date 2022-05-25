@@ -66,61 +66,61 @@
       <br>
       <div class="targetaIniciSessio">
         <?php
-        $ruta = "iniciar";
-        $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
-        // Form open que serveix per iniciar el formulari
-        echo form_open($ruta, $attributes);
-        echo "<div class='input-container'>";
+          $ruta = "iniciar";
+          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
+          // Form open que serveix per iniciar el formulari
+          echo form_open($ruta, $attributes);
+          echo "<div class='input-container'>";
 
 
-        // ESPECIFICAR ERROR MODIFICAR PARA DISEÑO
-        // if(empty($id_cliente)){
-        //   $id_cliente = "Coloca el id_cliente";
-        // }
+          // ESPECIFICAR ERROR MODIFICAR PARA DISEÑO
+          // if(empty($id_cliente)){
+          //   $id_cliente = "Coloca el id_cliente";
+          // }
 
 
 
-        // En $data es coloquen els atributs de la pregunta
-        $data = array('name' => 'correo',
-                    'required' => 'required',
-                    'type' => 'email',
-                    'value' => set_value('correo'));
-        // En el form input es l'apartat on pots colocar text en el formulari
-        echo form_input($data);
-        echo form_label('Correo', '#{label}');
-        echo "<div class='bar'></div>";
-        echo "<br>";
-        echo "</div>";
-        // if(!empty($validation)){
-        //   if($validation->getError('id_cliente')) {
-        //     echo $validation->getError('id_cliente');
-        //     echo "<br>";
-        //   }
-        // }
+          // En $data es coloquen els atributs de la pregunta
+          $data = array('name' => 'correo',
+                      'required' => 'required',
+                      'type' => 'email',
+                      'value' => set_value('correo'));
+          // En el form input es l'apartat on pots colocar text en el formulari
+          echo form_input($data);
+          echo form_label('Correo', '#{label}');
+          echo "<div class='bar'></div>";
+          echo "<br>";
+          echo "</div>";
+          // if(!empty($validation)){
+          //   if($validation->getError('id_cliente')) {
+          //     echo $validation->getError('id_cliente');
+          //     echo "<br>";
+          //   }
+          // }
 
-        echo "<div class='input-container'>";
-        // En $data es coloquen els atributs de la pregunta
-        $data = array('name' => 'contrasena',
-                    'required' => 'required');
-        // En el form input es l'apartat on pots colocar text en el formulari
-        echo form_input($data);
-        echo form_label('Contrasena', '#{label}');
-        echo "<div class='bar'></div>";
-        echo "<br>";
-        echo "</div>";
-        // if(!empty($validation)){
-        //   if($validation->getError('contrasena')) {
-        //     echo $validation->getError('contrasena');
-        //     echo "<br>";
-        //   }
-        // }
-        echo "<br>";
-        echo form_submit('mysubmit', 'Iniciar!');
+          echo "<div class='input-container'>";
+          // En $data es coloquen els atributs de la pregunta
+          $data = array('name' => 'contrasena',
+                      'required' => 'required');
+          // En el form input es l'apartat on pots colocar text en el formulari
+          echo form_input($data);
+          echo form_label('Contrasena', '#{label}');
+          echo "<div class='bar'></div>";
+          echo "<br>";
+          echo "</div>";
+          // if(!empty($validation)){
+          //   if($validation->getError('contrasena')) {
+          //     echo $validation->getError('contrasena');
+          //     echo "<br>";
+          //   }
+          // }
+          echo "<br>";
+          echo form_submit('mysubmit', 'Iniciar!');
 
-        // El form close es per tancar el formulari
-        echo form_close();
-    ?>
-        </div>
+          // El form close es per tancar el formulari
+          echo form_close();
+        ?>
+      </div>
         <p class="pasarRegistre2">Si no tens un compte <p id="btn-abrir-popup2" class="pasarRegistre"> Registra’t</p></p>
       </form>
     </div>
