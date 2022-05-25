@@ -43,10 +43,6 @@
           echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
       }
       ?>
-
-      <div class="header col-2">
-        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
-      </div>
       </div>
       <div class="header col-2">
       <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
@@ -265,13 +261,13 @@
         <p class="card-title">Que vas a pujar?</p>
         <p class="card-title">Selecciona la categoria</p>
         <img src="imgs/fontaneriaTransparent.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/pintorTransparent.png" alt="Rock and Roll Hall of Fame">
         <img src="imgs/carpinteriaTransparent.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/pintorTransparent.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/informatic.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/administratiu.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/jardiner.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/medicina.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/obrer.png" alt="Rock and Roll Hall of Fame">
 
         <p class="card-text"></p>
       </div>

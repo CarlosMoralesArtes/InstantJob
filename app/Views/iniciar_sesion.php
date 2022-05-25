@@ -247,24 +247,24 @@
                   <p>Pintor</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/5.png" alt="Harmony Tower">
+                  <img src="imgs/informatic_blau.png" alt="Harmony Tower">
                   <p>Informàtic</p>
                 </div>
         
                 <div class="carousel__elemento">
-                  <img src="imgs/6.png" alt="Empire State Building">
+                  <img src="imgs/administratiu_blau.png" alt="Empire State Building">
                   <p>Administratiu</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/7.png" alt="Harmony Tower">
+                  <img src="imgs/jardiner_blau.png" alt="Harmony Tower">
                   <p>Jardiner</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/8.png" alt="Empire State Building">
+                  <img src="imgs/medicina_blau.png" alt="Empire State Building">
                   <p>Medicina</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/9.png" alt="Harmony Tower">
+                  <img src="imgs/obrer_blau.png" alt="Harmony Tower">
                   <p>Obrers</p>
                 </div>
               </div>
