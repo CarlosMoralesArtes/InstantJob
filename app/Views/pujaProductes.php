@@ -16,6 +16,17 @@
 
 </head>
 
+<?php
+      $session = session();
+      if ($session->get('user')){
+        // $userName = $session->get('codiU');
+      } else {
+        // $localitzacio = site_url()."/c4morales/home/iniciarSessio";
+        header("Location: ./index");
+        die();
+      }
+  ?>
+
 <body>
 
   <!-- Apartat de la carrega de la pàgina -->
