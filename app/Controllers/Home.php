@@ -106,7 +106,7 @@ class Home extends BaseController
     }
 
     public function form(){
-        formulariIniciSessio();
+        // formulariIniciSessio();
     }
 
     public function formulariIniciSessio()
