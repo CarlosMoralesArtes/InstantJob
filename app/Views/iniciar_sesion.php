@@ -36,7 +36,7 @@
 
       ?>
 
-      <div class="header col-2">
+      <div class="header col-2 separacio">
         <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
       </div>
       
@@ -64,8 +64,8 @@
       <br>
       <div class="targetaIniciSessio">
         <?php
-        $ruta = "home/formulariIniciSessio";
-        $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "post");
+        $ruta = "form";
+        $attributes = array ('action' => "$ruta", 'enctype' => "multipart/form-data", 'method' => "post");
         // Form open que serveix per iniciar el formulari
         echo form_open($ruta, $attributes);
         echo "<div class='input-container'>";

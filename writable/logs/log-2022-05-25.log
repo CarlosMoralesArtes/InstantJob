@@ -1,0 +1,15 @@
+CRITICAL - 2022-05-25 01:09:35 --> Cannot redeclare App\Controllers\Home::home()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-25 01:22:43 --> Call to undefined function App\Controllers\formulariIniciSessio()
+#0 C:\wamp64\www\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->form()
+#1 C:\wamp64\www\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\wamp64\www\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-25 01:25:43 --> Call to undefined function App\Controllers\formulariIniciSessio()
+#0 C:\wamp64\www\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->form()
+#1 C:\wamp64\www\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\wamp64\www\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

@@ -198,25 +198,25 @@
 
   <nav class="sidebar-navigation">
 	<ul>
-    <a href="#">
+    <a href="pujaProductes">
       <li class="active">
         <img src="imgs/pujar.png"></img>
         <span class="tooltip">Pujar Productes</span>
       </li>
     </a>
-    <a href="#">
+    <a href="serveis">
       <li>
         <img src="imgs/hand-shake.png"></img>
         <span class="tooltip">Serveis</span>
       </li>
     </a>
-    <a href="#">
+    <a href="missatges">
       <li>
         <img src="imgs/missage.png"></img>
         <span class="tooltip">Missatges</span>
       </li>
     </a>
-    <a href="#">
+    <a href="tarifes">
       <li>
         <img src="imgs/tarifa.png"></img>
         <span class="tooltip">Tarifes</span>
@@ -249,9 +249,9 @@
       <div class="card-body">
         <p class="card-title">Que vas a pujar?</p>
         <p class="card-title">Selecciona la categoria</p>
-        <img src="imgs/fontaneriaBlanc.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/pintorBlanc.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/fontaneriaTransparent.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/pintorTransparent.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/carpinteriaTransparent.png" alt="Rock and Roll Hall of Fame">
         <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
         <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">
         <img src="imgs/carpinteriaBlanc.png" alt="Rock and Roll Hall of Fame">

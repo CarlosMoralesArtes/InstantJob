@@ -1,9 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 /* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) { 
+@media (max-width: 670px) { 
 	.sidenav{
 		display: none;
+	}
+	.form-outline{
+		display: none !important;
+	}
+
+	.col-2{
+		width: 35% !important;
+	}
+
+	.col-1{
+		width: 20% !important;
+	}
+
+	.sidebar-navigation{
+		height: 125vh !important;
 	}
 }
 
@@ -618,7 +633,7 @@ body{
 
 .sidebar-navigation {
 	display: inline-block;
-	min-height: 150vh;
+	height: 110vh;
 	width: 80px;
 	background-color: #0196C1;
 	float: left;

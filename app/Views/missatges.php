@@ -195,19 +195,52 @@
     </div>
   </div>
 
-  <div id="mySidenav" class="sidenav">
-  <div class="usuari">
-      <img src="./imgs/imatgePre.png" width="50px" height="50px">
-      <p>Nom Usuari</p><br>
-      <p>a</p>
-    </div>
-    <a href="serveis">Serveis</a>
-    <a href="missatges">Missatges</a>
-    <a href="#">Guardats</a>
-    <a href="#">Estadistiques</a>
-    <a href="#">Tarifes</a>
-    <a href="#">Ajuda</a>
-  </div>
+  <nav class="sidebar-navigation">
+	<ul>
+    <a href="pujaProductes">
+      <li>
+        <img src="imgs/pujar.png"></img>
+        <span class="tooltip">Pujar Productes</span>
+      </li>
+    </a>
+    <a href="serveis">
+      <li>
+        <img src="imgs/hand-shake.png"></img>
+        <span class="tooltip">Serveis</span>
+      </li>
+    </a>
+    <a href="missatges">
+      <li class="active">
+        <img src="imgs/missage.png"></img>
+        <span class="tooltip">Missatges</span>
+      </li>
+    </a>
+    <a href="tarifes">
+      <li>
+        <img src="imgs/tarifa.png"></img>
+        <span class="tooltip">Tarifes</span>
+      </li>
+    </a>
+    <a href="#">
+      <li>
+        <img src="imgs/guardar.png"></img>
+        <span class="tooltip">Guardats</span>
+      </li>
+    </a>
+    <a href="#">
+      <li>
+        <img src="imgs/estadistica.png"></img>
+        <span class="tooltip">Estadistiques</span>
+      </li>
+    </a>
+    <a href="#">
+      <li>
+        <img src="imgs/configuracio.png"></img>
+        <span class="tooltip">Configuració</span>
+      </li>
+    </a>
+	</ul>
+</nav>
 
   <br>
   <br>

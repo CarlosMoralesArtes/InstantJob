@@ -14,16 +14,28 @@ class Home extends BaseController
 		$db = \Config\Database::connect();
 	}
 
-    //La funcio de la paguina principal
+    //La funcio de la pagina principal
     public function index()
     {
         return view('iniciar_sesion');
     }
 
+    //Redireccionament de la pagina principal del boto del header
     public function home(){
         return view('iniciar_sesion');
     }
 
+    //Redireccionament de missatges
+    public function missatges(){
+        return view('missatges');
+    }
+
+    //Redireccionament de missatges
+    public function tarifes(){
+        return view('tarifes');
+    }
+
+    //Redireccionament de pujar productes
     public function pujaProductes()
     {
         return view('pujaProductes.php');
@@ -36,6 +48,11 @@ class Home extends BaseController
     //Redireccionament del registre
     public function registrarse(){
         return view('iniciar_sesion');
+    }
+
+    //Redireccionament de serveis
+    public function serveis(){
+        return view('serveis');
     }
 
     // Funcio de la comprovacio i insercio del formulari de registre
@@ -83,6 +100,10 @@ class Home extends BaseController
             $dades["validation"]=$this->validator;
             return view('iniciar_sesion', $dades);
         }
+    }
+
+    public function form(){
+        formulariIniciSessio();
     }
 
     public function formulariIniciSessio()
