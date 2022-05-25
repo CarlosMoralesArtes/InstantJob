@@ -20,7 +20,7 @@
   <header>
   <nav class="navInici">
       <div class="header col-1">
-        <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
+        <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob" width="50px"></a>
       </div>
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
@@ -260,14 +260,14 @@
       <div class="card-body">
         <p class="card-title">Que vas a pujar?</p>
         <p class="card-title">Selecciona la categoria</p>
-        <img src="imgs/fontaneriaTransparent.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/carpinteriaTransparent.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/pintorTransparent.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/informatic.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/administratiu.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/jardiner.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/medicina.png" alt="Rock and Roll Hall of Fame">
-        <img src="imgs/obrer.png" alt="Rock and Roll Hall of Fame">
+        <img src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista">
+        <img src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster">
+        <img src="imgs/pintorTransparent.png" alt="Categoria de pintors">
+        <img src="imgs/informatic.png" alt="Categoria d'informatic">
+        <img src="imgs/administratiu.png" alt="Categoria d'administratiu">
+        <img src="imgs/jardiner.png" alt="Categoria de jardiners">
+        <img src="imgs/medicina.png" alt="Categoria de medicina">
+        <img src="imgs/obrer.png" alt="Categoria d'obrers">
 
         <p class="card-text"></p>
       </div>

@@ -129,7 +129,7 @@
 
   <footer>
   <div class="footer-content col-4">
-    <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png"></a>
+    <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
     <p>Servei Tècnic</p>
     <p>Tel. 99 999 999</p>
   </div>

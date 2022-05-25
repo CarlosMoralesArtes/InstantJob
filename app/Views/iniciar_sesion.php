@@ -24,7 +24,7 @@
   <header>
   <nav class="navInici">
       <div class="header col-1">
-        <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" width="50px"></a>
+        <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
       </div>
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
@@ -235,36 +235,36 @@
               <br>
               <div class="carousel__lista">
                 <div class="carousel__elemento">
-                  <img src="imgs/fontaneriaBlau.png" alt="Rock and Roll Hall of Fame">
+                  <img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista">
                   <p>Lampista</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/carpinteria.png" alt="Constitution Square - Tower I">
+                  <img src="imgs/carpinteria.png" alt="Categoria de fuster">
                   <p>Fuster</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/pintor.png" alt="Empire State Building">
+                  <img src="imgs/pintor.png" alt="Categoria de pintors">
                   <p>Pintor</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/informatic_blau.png" alt="Harmony Tower">
+                  <img src="imgs/informatic_blau.png" alt="Categoria d'informatic">
                   <p>Informàtic</p>
                 </div>
         
                 <div class="carousel__elemento">
-                  <img src="imgs/administratiu_blau.png" alt="Empire State Building">
+                  <img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu">
                   <p>Administratiu</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/jardiner_blau.png" alt="Harmony Tower">
+                  <img src="imgs/jardiner_blau.png" alt="Categoria de jardiners">
                   <p>Jardiner</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/medicina_blau.png" alt="Empire State Building">
+                  <img src="imgs/medicina_blau.png" alt="Categoria de medicina">
                   <p>Medicina</p>
                 </div>
                 <div class="carousel__elemento">
-                  <img src="imgs/obrer_blau.png" alt="Harmony Tower">
+                  <img src="imgs/obrer_blau.png" alt="Categoria d'obrers">
                   <p>Obrers</p>
                 </div>
               </div>
@@ -381,7 +381,7 @@ if(isset( $_SESSION['iniciar'] ) ) {
 </body>
 <footer>
   <div class="footer-content col-4">
-    <img src="./imgs/Logo_InstantJob_Blanca.png">
+    <img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob">
     <p>Servei Tècnic</p>
     <p>Tel. 99 999 999</p>
   </div>

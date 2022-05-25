@@ -49,6 +49,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.header img{
+	width: 50px !important;
+}
+
 /* Estils per els botons */
 .btn-primary{
 	background-color: #0196C1 !important;
