@@ -5,6 +5,8 @@
   <?php
   session_start();
 
+  
+
   ?>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
