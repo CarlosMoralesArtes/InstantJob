@@ -29,6 +29,11 @@ window.addEventListener('load', function(){
 });
 
 window.onload = function(){
+    // Apartat de la animació de carrega de la pàgina
+    var contenedor = document.getElementById('contenedor_carga');
+    contenedor.style.visibility = 'hidden';
+    contenedor.style.opacity = '0';
+
     var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
         overlay = document.getElementById('overlay'),
         popup = document.getElementById('popup'),

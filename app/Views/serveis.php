@@ -16,6 +16,12 @@
 </head>
 
 <body>
+
+  <!-- Apartat de la carrega de la pàgina -->
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+
     <nav class="navIniciServeis">
       <header class="headerServeis">
         <h1>Nom categoria</h1>

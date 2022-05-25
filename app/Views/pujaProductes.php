@@ -2,14 +2,6 @@
 <html lang="en">
 
 
-<?php
-
-if(isset( $_SESSION['user'] ) ) {
-
-
-
-?>
-
 <head>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
@@ -26,7 +18,15 @@ if(isset( $_SESSION['user'] ) ) {
 </head>
 
 <body>
+
+  <!-- Apartat de la carrega de la pàgina -->
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+
   <header>
+
+
   <nav class="navInici">
       <div class="header col-1">
         <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob" width="50px"></a>
@@ -35,23 +35,7 @@ if(isset( $_SESSION['user'] ) ) {
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
       </div>
 
-      <?php
-
-        if(!isset( $_SESSION['user'] ) ) {
-
-      ?>
-
-      <div class="header col-2 separacio">
-        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
-      </div>
       
-
-      <?php
-      }else {
-          echo $_SESSION['user'];
-          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
-      }
-      ?>
       </div>
       <div class="header col-2">
       <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
@@ -388,13 +372,3 @@ if(isset( $_SESSION['user'] ) ) {
     crossorigin="anonymous"></script>
 </body>
 </html>
-
-<?php
-
-}else{
-
-  header('Location: ./index');
-
-}
-
-?>
