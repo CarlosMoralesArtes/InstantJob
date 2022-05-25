@@ -128,25 +128,25 @@
   </div>
 
   <footer>
-    <div class="footer-content col-4">
-      <img src="./imgs/Logo_InstantJob_Blanca.png">
-      <p>Servei Tècnic</p>
-      <p>Tel. 99 999 999</p>
-    </div>
-    <div class="footer-content col-4">
-      <p>Informació Legal</p>
-      <p>Avís Legal</p>
-      <p>Política de Privacitat</p>
-      <p>Política de Cookies</p>
-    </div>
-    <!-- Categories que s'agafaran de typescript -->
-    <div class="footer-content col-3">
-      <p>Categories</p>
-      <p>Avís Legal</p>
-      <p>Política de Privacitat</p>
-      <p>Política de Cookies</p>
-    </div>
-  </footer>
+  <div class="footer-content col-4">
+    <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
+    <p>Servei Tècnic</p>
+    <p>Tel. 99 999 999</p>
+  </div>
+  <div class="footer-content col-4">
+    <p>Informació Legal</p>
+    <p>Avís Legal</p>
+    <p>Política de Privacitat</p>
+    <p>Política de Cookies</p>
+  </div>
+  <!-- Categories que s'agafaran de typescript -->
+  <div class="footer-content col-3">
+    <p>Categories</p>
+    <p>Avís Legal</p>
+    <p>Política de Privacitat</p>
+    <p>Política de Cookies</p>
+  </div>
+</footer>
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
