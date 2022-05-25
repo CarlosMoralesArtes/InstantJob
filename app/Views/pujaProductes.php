@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 
+
+<?php
+
+if(isset( $_SESSION['user'] ) ) {
+
+
+
+?>
+
 <head>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
@@ -379,3 +388,13 @@
     crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php
+
+}else{
+
+  header('Location: ./index');
+
+}
+
+?>

@@ -5,6 +5,8 @@
   <?php
   session_start();
 
+  
+
   ?>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
@@ -67,7 +69,7 @@
       <div class="targetaIniciSessio">
         <?php
           $ruta = "iniciar";
-          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
+          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
           // Form open que serveix per iniciar el formulari
           echo form_open($ruta, $attributes);
           echo "<div class='input-container'>";
@@ -135,7 +137,7 @@
       <div class="targetaIniciSessio">
           <?php
             $ruta = site_url()."registrar";
-            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "GET");
+            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "POST");
             // Form open que serveix per iniciar el formulari
             echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
@@ -388,7 +390,9 @@ if(!empty($validation)){
 
 if(isset( $_SESSION['iniciar'] ) ) {
   echo "<script src='Typescript/bienregister.js'></script>";
-    echo "<script src='..\Typescript/bienregister.js'></script>";
+  echo "<script src='..\Typescript/bienregister.js'></script>";
+  $session = session();
+  $session ->destroy();
 }
 
 
