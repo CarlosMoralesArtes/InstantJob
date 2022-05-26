@@ -262,3 +262,13 @@ CRITICAL - 2022-05-26 03:20:25 --> ini_set(): Session ini settings cannot be cha
 #16 C:\wamp64\www\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #17 {main}
 >>>>>>> 1554e16691b9cef61f20a5a75221e80c4c4f2ee5
+CRITICAL - 2022-05-26 04:49:44 --> Call to a member function getError() on null
+#0 C:\wamp64\www\InstantJob\system\View\View.php(210): include()
+#1 C:\wamp64\www\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\wamp64\www\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('iniciar_sesion', Array, true)
+#3 C:\wamp64\www\InstantJob\app\Controllers\Home.php(154): view('iniciar_sesion', Array)
+#4 C:\wamp64\www\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->formulari()
+#5 C:\wamp64\www\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\wamp64\www\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

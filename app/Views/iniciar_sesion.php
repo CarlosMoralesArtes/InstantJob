@@ -123,6 +123,7 @@
       <br>
       <div class="targetaIniciSessio">
           <?php
+            echo "<div id='error'></div>";
             $ruta = site_url()."registrar";
             $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "POST");
             // Form open que serveix per iniciar el formulari
@@ -160,9 +161,6 @@
             echo form_input($data);
             echo form_label('Email', '#{label}');
             echo "<div class='bar'></div>";
-            echo "<br>";
-            
-            echo "<br>";
             echo "</div>";
 
             echo form_hidden('latitud', '2');
@@ -183,7 +181,6 @@
             echo "<br>";
 
             echo "<input type='submit' class='btn-submit' name='mysubmit' value='Registrar-se'>";
-
             // El form close es per tancar el formulari
             echo form_close();
 
@@ -372,11 +369,11 @@
     crossorigin="anonymous"></script>
     <?php
 
-if(!empty($validation)){
-  if($validation->getError('correo')) {
-    echo "<script src='Typescript/errorregister.js'></script>";
-    echo "<script src='..\Typescript/errorregister.js'></script>";
-  }
+if(isset( $_SESSION['eriniciar'] ) ) {
+  echo "<script src='Typescript/errorregister.js'></script>";
+  echo "<script src='..\Typescript/errorregister.js'></script>";
+  $session = session();
+  $session ->destroy();
 }
 
 if(isset( $_SESSION['iniciar'] ) ) {
