@@ -6,12 +6,15 @@ use CodeIgniter\Model;
 
 class CompartitsArxiu extends Model
 {
-    protected $table = 'compartir';
-    protected $primaryKey = 'codiUC';
+    protected $table = 'servicio';
+    protected $primaryKey = 'id_servicio';
     protected $returnType = 'array';
     protected $allowedFields = [
-        "codiF",
-        "codiUC",
+        "id_servicio",
+        "nombre",
+        "precio",
+        "numero_clicks",
+        "nomRandom",
     ];
 
 }

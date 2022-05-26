@@ -15,6 +15,15 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
+<?php
+    $session = session();
+    if ($session->get('user')){
+    } else {
+      header("Location: ./index");
+      die();
+    }
+?>
+
 <body>
 
   <!-- Apartat de la carrega de la pàgina -->
