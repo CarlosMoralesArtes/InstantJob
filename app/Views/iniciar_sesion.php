@@ -349,15 +349,13 @@
   <h1>Select Eric</h1>
   <div class="serveiSeparat col-4" style="width: 18rem;">
         <?php
-          if(!empty($consulta)){
-            foreach ($consulta as $fila => $value) {
-            ?>
-              <p> <?=$value['id_servicio'];?> </p>
-              <p> <?=$value['nombre'];?> </p>
-              <?php
-            }
-          } else {
-            echo "<p>No hi han aparegut resultats.</p>";
+
+          foreach ($consulta->getResultArray() as $row) {
+            echo $row['id_servicio'];
+            echo $row['nombre'];
+            echo $row['precio'];
+            echo $row['descripcio'];
+            echo "<br>";
           }
         ?>
         </div>
