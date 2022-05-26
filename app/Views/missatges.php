@@ -39,9 +39,19 @@
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
       </div>
-      <div class="header col-2">
-        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
-      </div>
+
+      <?php
+        $session = session();
+        if ($session->get('user')){
+            echo "<div class='header col-2 separacio'>";
+            // echo "<p>".$_SESSION['user']."</p>";
+            echo("<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>");
+            echo "</div>";
+        }else {
+            echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
+        }
+      ?>
+
       </div>
       <div class="header col-2">
       <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>

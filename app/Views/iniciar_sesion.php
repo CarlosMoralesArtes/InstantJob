@@ -33,16 +33,16 @@
       </div>
 
       <?php
-      $session = session();
-      if ($session->get('user')){
-        echo $_SESSION['user'];
-          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
-      }else {
-          echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
-      }
+        $session = session();
+        if ($session->get('user')){
+            echo "<div class='header col-2 separacio'>";
+            // echo "<p>".$_SESSION['user']."</p>";
+            echo("<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>");
+            echo "</div>";
+        }else {
+            echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
+        }
       ?>
-
-
 
       </div>
       <div class="header col-2">
@@ -207,8 +207,6 @@
           </div>
     </div>
   </div>
-
-
 
   <!-- Titul de la pàgina principal -->
     <div class="titol">

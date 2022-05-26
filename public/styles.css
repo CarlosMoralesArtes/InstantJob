@@ -18,17 +18,38 @@
 	}
 
 	.sidebar-navigation{
-		height: 180vh !important;
+		height: 210vh !important;
 	}
 
 	.col-3{
 		width: 70% !important;
 		margin-bottom: 0px !important;
 	}
+
+	.tarifaCentrada .col-3{
+		margin-left: 0px !important;
+		width: 70%;
+	}
+
+	.tarifes p{
+		font-size: 10px !important;
+	}
+
+	.tarifes{
+		height: 450px !important;
+	}
+
+	.tarifes img{
+		height: 70px !important;
+	}
+
+	.botoTarifa .btn-submit{
+		font-size: 10px !important;
+	}
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 	.sidenav{
 		display: block;
 	}
@@ -36,10 +57,46 @@
 	.col-2{
 		font-size: 10px !important;
 	}
+
+	.tarifaCentrada .col-3{
+		width: 50%;
+	}
+
+	.tarifes p{
+		font-size: 10px !important;
+	}
+
+	.tarifes{
+		height: 450px !important;
+	}
+
+	.tarifes img{
+		height: 70px !important;
+	}
+
+	.botoTarifa .btn-submit{
+		font-size: 10px !important;
+	}
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+@media (max-width: 992px) { 
+	.tarifaCentrada .col-3{
+		margin-left: 0px !important;
+		width: 70%;
+	}
+
+	.tarifes p{
+		font-size: 10px !important;
+	}
+
+	.tarifes{
+		height: 450px !important;
+	}
+
+	.tarifes img{
+		height: 70px !important;
+	}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -47,6 +104,14 @@
 
 *{
     font-family: 'Montserrat', sans-serif;
+}
+
+.header form{
+	padding: 20px;
+}
+
+.header input{
+	display: inline-block;
 }
 
 *,*:after, *:before{
@@ -101,7 +166,7 @@
 }
 
 .tarifaCentrada .col-3{
-	width: 30% !important;
+	width: 30%;
 	position: relative;
 	height: 700px;
 }
@@ -420,7 +485,6 @@ body{
 .tarifes{
 	background-color: #48B5D6;
 	display: inline-block;
-	padding: 2px;
 	margin: 10px;
 	color: white;
 	margin-top: 50px;
@@ -431,12 +495,12 @@ body{
 
 .tarifes p{
 	margin-top: 20px;
-	font-size: 20px !important;
+	font-size: 20px;
 }
 
 .botoTarifa .btn-submit{
 	margin-bottom: 50px;
-	font-size: 17px !important;
+	font-size: 17px;
 }
 
 .botoTarifa .btn-submit:hover{
