@@ -17,11 +17,29 @@ class Home extends BaseController
     //La funcio de la pagina principal
     public function index()
     {
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
+
+
+        
+
+        $data = array('consulta' => $query);
+
+        return view('iniciar_sesion',$data);
         return view('iniciar_sesion');
     }
 
     //Redireccionament de la pagina principal del boto del header
     public function home(){
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
+
+
+        
+
+        $data = array('consulta' => $query);
+
+        return view('iniciar_sesion',$data);
         return view('iniciar_sesion');
     }
 
@@ -118,6 +136,15 @@ class Home extends BaseController
             $dades["validation"]=$this->validator;
             return view('iniciar_sesion', $dades);
         }
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
+
+
+        
+
+        $data = array('consulta' => $query);
+
+        return view('iniciar_sesion',$data);
     }
 
     public function form(){
@@ -173,21 +200,28 @@ class Home extends BaseController
             $dades["validation"]=$this->validator;
             return view('iniciar_sesion', $dades);
         }
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
+
+
+        
+
+        $data = array('consulta' => $query);
+
+        return view('iniciar_sesion',$data);
     }
     // Funcio que serveix per mostrar els arxius que te el usuari en la seva taula
     public function mostrarArxius()
     {
         // Aquest apartat rep les dades del formulari
-        // $dades2=$this->request->getVar();
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
 
-        // $obj_arxiu = new \App\Models\ArxiuModel();
-		// $result = $obj_arxiu ->find($dades2['id_servicio']);
-        
 
         
 
-        // $data = array('consulta' => $query);
+        $data = array('consulta' => $query);
 
-        return view('iniciar_sesion');
+        return view('iniciar_sesion',$data);
     }
 }
