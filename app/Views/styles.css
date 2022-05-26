@@ -299,6 +299,10 @@ body{
 	margin-top: 20px;
 }
 
+.informacioLegal{
+	text-align: left !important;
+}
+
 .botoTarifes{
 	margin-bottom: 20px;
 }
@@ -602,6 +606,10 @@ body{
 
 .carousel__elemento img{
 	padding-bottom: 20px;
+}
+
+.carousel__elemento{
+	background-color: blue !important;
 }
 
 .carousel__indicadores .glider-dot {

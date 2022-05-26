@@ -2,7 +2,13 @@
 <html lang="en">
 
 <head>
-  <title>InstantJob | Home</title>
+  <?php
+  session_start();
+
+  
+
+  ?>
+  <title>InstantJob| Home</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,12 +39,20 @@
       </div>
 
       <?php
-      $session = session();
-      if ($session->get('user')){
-        echo $_SESSION['user'];
-          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
+
+        if(!isset( $_SESSION['user'] ) ) {
+
+      ?>
+
+      <div class="header col-2 separacio">
+        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
+      </div>
+      
+
+      <?php
       }else {
-          echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
+          echo $_SESSION['user'];
+          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
       }
       ?>
 
@@ -212,215 +226,36 @@
 
   <!-- Titul de la pàgina principal -->
     <div class="titol">
-      <p>InstantJob, es l’ajuda de creixement rápid per a la teva empresa</p>
-      <h1>Benvingut a InstantJob</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <h2 class="center-align">¿Que estas buscant avui?</h2>
-            <br>
-          <div class="carousel">
-            <div class="carousel__contenedor">
-              <button aria-label="Anterior" class="carousel__anterior">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <br>
-              <div class="carousel__lista">
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista">
-                  <p>Lampista</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/carpinteria.png" alt="Categoria de fuster">
-                  <p>Fuster</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/pintor.png" alt="Categoria de pintors">
-                  <p>Pintor</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/informatic_blau.png" alt="Categoria d'informatic">
-                  <p>Informàtic</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu">
-                  <p>Administratiu</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/jardiner_blau.png" alt="Categoria de jardiners">
-                  <p>Jardiner</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/medicina_blau.png" alt="Categoria de medicina">
-                  <p>Medicina</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/obrer_blau.png" alt="Categoria d'obrers">
-                  <p>Obrers</p>
-                </div>
-              </a>
-              </div>
-
-              <button aria-label="Siguiente" class="carousel__siguiente">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-
-            <div role="tablist" class="carousel__indicadores"></div>
-          </div>
-          </div>
-        </div>
-      </div>
+      <h1>Política de Cookies</h1>
+      <p class="informacioLegal">POLÍTICA DE COOKIES.<br>
+Eric i Carlos (InstantJob), a través del presente documento, recoge su Política de recogida y tratamiento de cookies, en cumplimiento de lo dispuesto en el artículo22.2 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE).Las cookies se almacenan en el equipo terminal del usuario (ordenador o dispositivo móvil) y recopilan información al visitar la página web www.instantjob.es, con la finalidad de mejorarla usabilidad de las mismas, conocer los hábitos o necesidades de navegación de los usuarios para poder adaptarse a los mismos, así como obtener información con fines estadísticos. En el caso de aquellos usuarios que ya sean clientes de Eric i Carlos (InstantJob),la información recabada con las cookies servirá también para su identificación al acceder a las distintas herramientas que Eric i Carlos (InstantJob) pone a su disposición para la gestión de los servicios. La presente Política de Cookies será de aplicación a aquellos usuarios que voluntariamente visitan las páginas web de Eric i Carlos (InstantJob), cumplimentan formularios de recogida de datos, acceden a las herramientas que Eric i Carlos(InstantJob) pone a disposición de sus clientes para gestionar sus servicios, o utilizan cualquier otro servicio presente en el sitio web que implique la comunicación de datos a Eric i Carlos (InstantJob), o el acceso a datos por Eric i Carlos(InstantJob), para la prestación de sus servicios. Eric i Carlos (InstantJob) informa a los usuarios de sus páginas web, de la existencia de cookies y pone a su disposición la presente Política con la finalidad de informarles acerca del uso y del objeto de las mismas. El hecho de continuar la navegación a través de sus páginas, supone el conocimiento y la aceptación de la presente Política por parte de dichos usuarios.<br>
+<br>
+Eric i Carlos (InstantJob) utiliza los siguientes tipos de cookies:<br>
+<br>
+Clasificadas por su titularidad:<br>
+* Cookies propias: enviadas y gestionadas directamente por Eric i Carlos.<br>
+* Cookies de terceros: enviadas y gestionadas por un tercero ajeno a Eric i Carlos, de forma anónima, con la finalidad de realizar estudios estadísticos de navegación por las páginas web de Eric i Carlos.<br>
+<br>
+Clasificadas por su finalidad:<br>
+* Cookies técnicas y/o de personalización: facilitan la navegación, al identificar la sesión, permitir el acceso a herramientas de acceso restringido, además de configurar a medida las opciones disponibles. Posibilitan la prestación del servicio solicitado previamente por el usuario.<br>
+* Cookies de análisis y/o publicidad: permiten conocer el número de visitas recibidas en las diferentes secciones de las páginas web, los hábitos y tendencias de sus usuarios y en consecuencia, poder mejorar la navegación y el servicio ofrecido por Eric i Carlos (fundamentalmente, Google Analytics), así como gestionar los espacios publicitarios incluidos en la página web visitada por el usuario. Recopila datos de forma anónima con la finalidad de obtener perfiles de navegación de los usuarios.<br>
+<br>
+Clasificadas por su duración:<br>
+* Cookies de sesión: recaban y almacenan los datos mientras el usuario accede a la página web.<br>
+* Cookies persistentes: recaban y almacenan los datos en el terminal del usuario durante un periodo de tiempo variable en función de cuál sea la finalidad para la que han sido utilizadas. El tiempo de conservación de las cookies dependerá del tipo de que se trate y siempre será el mínimo indispensable para cumplir su finalidad.<br>
+Documento de Seguridad Eric i Carlos<br>
+<br>
+Versión: 1 Fecha: 26/01/2022 Página web LSSICE – Pág. 12<br>
+En cualquier caso, los usuarios pueden configurar su navegador, de manera que se deshabilite o bloquee la recepción de todas o algunas de las cookies. El hecho de no desear recibir estas cookies, no constituye un impedimento para poder acceder a la información de los sitios web de Eric i Carlos aunque el uso de algunos servicios podrá ser limitado. Si una vez otorgado el consentimiento para la recepción de cookies, se desease retirar éste, se deberán eliminar aquellas almacenadas en el equipo del usuario, a través de las opciones de los diferentes navegadores.<br>
+La forma de configurar los diferentes navegadores para ejercitar las acciones señaladas en los párrafos anteriores, se puede consultar en:<br>
+<br>
+* Explorer: http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9
+<br>
+* Chrome: https://support.google.com/chrome/answer/95647?hl=es
+<br>
+* Firefox: http://support.mozilla.org/es/kb/cookies-informacion-que-los-sitios-web-guardan-en-?redirectlocale=en-US&redirectslug=Cookies</p>
     </div>
-  <div class="segonApartat">
-    <h2>La benvinguda al estiu</h2>
-    <p>Molts serveis a la teva disponibilitat!</p>
-    <br>
-    <div class="serveiSeparat2 col-6" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Carpinteria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-6" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <h2>Productes destacats del moment</h2><br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-  </div>
-  <h1>Select Eric</h1>
-  <div class="serveiSeparat col-4" style="width: 18rem;">
-        <?php
-          if(!empty($consulta)){
-            $download = site_url()."/c4morales/home/download";
-            $compartir = site_url()."/c4morales/home/redireccionarMostraUsuaris";
-            $esborrar = site_url()."/c4morales/home/esborrar";
-            $propietats = site_url()."/c4morales/home/propietats";
-            foreach ($consulta as $fila => $value) {
-            ?>
-            <tr>
-              <td> <?=$value['nomF'];?> </td>
-              <td> <?=$value['codiU'];?> </td>
-              <td>
-                <?php
-                    $path='../../../../uploads/'.$value['nomRandom'].'.'.$value['tipusF'];
-                    echo "<a href=$path><button>Descarregar</button></a>";
-                ?>
-                <?php 
-                      $attributes = array ('action' => "compartir", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($compartir, $attributes);
-
-                      echo form_hidden('codiF', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Compartir');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-                 <?php 
-                      $attributes = array ('action' => "esborrar", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($esborrar, $attributes);
-                
-                      echo form_hidden('codiF', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Esborrar');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-                 <?php 
-                      $attributes = array ('action' => "propietats", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($propietats, $attributes);
-                
-                      echo form_hidden('codiFitxer', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Propietats');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-              </td>
-            </tr>
-              <?php
-            }
-          } else {
-            echo "<p>No hi han aparegut resultats.</p>";
-          }
-        ?>
-        </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
@@ -461,9 +296,9 @@ if(isset( $_SESSION['iniciar'] ) ) {
     <div class="footer-content col-4">
       <br>
       <h3>Informació Legal</h3>
-      <a href="avislegal">Avís Legal</a><br>
-      <a href="politicaprivacitat">Política de Privacitat</a><br>
-      <a href="politicacookies">Política de Cookies</a>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
     </div>
     <!-- Categories que s'agafaran de typescript -->
     <div class="footer-content col-4">

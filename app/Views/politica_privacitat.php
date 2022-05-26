@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+  <?php
+  session_start();
+
+  
+
+  ?>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -33,12 +39,20 @@
       </div>
 
       <?php
-      $session = session();
-      if ($session->get('user')){
-        echo $_SESSION['user'];
-          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
+
+        if(!isset( $_SESSION['user'] ) ) {
+
+      ?>
+
+      <div class="header col-2 separacio">
+        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
+      </div>
+      
+
+      <?php
       }else {
-          echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
+          echo $_SESSION['user'];
+          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
       }
       ?>
 
@@ -212,215 +226,17 @@
 
   <!-- Titul de la pàgina principal -->
     <div class="titol">
-      <p>InstantJob, es l’ajuda de creixement rápid per a la teva empresa</p>
-      <h1>Benvingut a InstantJob</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <h2 class="center-align">¿Que estas buscant avui?</h2>
-            <br>
-          <div class="carousel">
-            <div class="carousel__contenedor">
-              <button aria-label="Anterior" class="carousel__anterior">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <br>
-              <div class="carousel__lista">
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista">
-                  <p>Lampista</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/carpinteria.png" alt="Categoria de fuster">
-                  <p>Fuster</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/pintor.png" alt="Categoria de pintors">
-                  <p>Pintor</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/informatic_blau.png" alt="Categoria d'informatic">
-                  <p>Informàtic</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu">
-                  <p>Administratiu</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/jardiner_blau.png" alt="Categoria de jardiners">
-                  <p>Jardiner</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/medicina_blau.png" alt="Categoria de medicina">
-                  <p>Medicina</p>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <img src="imgs/obrer_blau.png" alt="Categoria d'obrers">
-                  <p>Obrers</p>
-                </div>
-              </a>
-              </div>
-
-              <button aria-label="Siguiente" class="carousel__siguiente">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-
-            <div role="tablist" class="carousel__indicadores"></div>
-          </div>
-          </div>
-        </div>
-      </div>
+      <h1>Política de Privacitat</h1>
+      <p class="informacioLegal">De acuerdo con lo establecido en el Reglamento General de Protección de Datos, le informamos que trataremos sus datos personales con la finalidad de:<br>
+<br>
+Los datos personales proporcionados se conservarán, mientras se mantenga la relación mercantil, no se solicite su supresión por el interesado, o durante 1 año a partir de la última confirmación de interés, o durante el tiempo necesario para cumplir con las obligaciones legales. La empresa NO tomará decisiones automatizadas. Los datos no se cederán a terceros salvo en los casos en que exista una obligación legal y los trataremos en base a.<br>
+<br>
+Asimismo, le informamos de la posibilidad de ejercer los siguientes derechos sobre sus datos personales: derecho de acceso, rectificación, supresión u olvido, limitación, oposición, portabilidad y a retirar el consentimiento prestado, para ello podrá enviar un email a: info@instantjob.es<br>
+<br>
+Además, el interesado puede dirigirse a la Autoridad de Control en materia de Protección de Datos competente para obtener información adicional o presentar una reclamación.<br>
+</p>
     </div>
-  <div class="segonApartat">
-    <h2>La benvinguda al estiu</h2>
-    <p>Molts serveis a la teva disponibilitat!</p>
-    <br>
-    <div class="serveiSeparat2 col-6" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Carpinteria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-6" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <h2>Productes destacats del moment</h2><br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <div class="serveiSeparat col-4" style="width: 18rem;">
-      <img src="./imgs/imatgePre.png" width="100%" height="150px">
-      <div class="card-body">
-        <p class="card-title">Fontaneria</p>
-        <p class="card-title">Número</p>
-        <p class="card-text"></p>
-      </div>
-    </div>
-  </div>
-  <h1>Select Eric</h1>
-  <div class="serveiSeparat col-4" style="width: 18rem;">
-        <?php
-          if(!empty($consulta)){
-            $download = site_url()."/c4morales/home/download";
-            $compartir = site_url()."/c4morales/home/redireccionarMostraUsuaris";
-            $esborrar = site_url()."/c4morales/home/esborrar";
-            $propietats = site_url()."/c4morales/home/propietats";
-            foreach ($consulta as $fila => $value) {
-            ?>
-            <tr>
-              <td> <?=$value['nomF'];?> </td>
-              <td> <?=$value['codiU'];?> </td>
-              <td>
-                <?php
-                    $path='../../../../uploads/'.$value['nomRandom'].'.'.$value['tipusF'];
-                    echo "<a href=$path><button>Descarregar</button></a>";
-                ?>
-                <?php 
-                      $attributes = array ('action' => "compartir", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($compartir, $attributes);
-
-                      echo form_hidden('codiF', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Compartir');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-                 <?php 
-                      $attributes = array ('action' => "esborrar", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($esborrar, $attributes);
-                
-                      echo form_hidden('codiF', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Esborrar');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-                 <?php 
-                      $attributes = array ('action' => "propietats", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($propietats, $attributes);
-                
-                      echo form_hidden('codiFitxer', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Propietats');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-              </td>
-            </tr>
-              <?php
-            }
-          } else {
-            echo "<p>No hi han aparegut resultats.</p>";
-          }
-        ?>
-        </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
@@ -461,9 +277,9 @@ if(isset( $_SESSION['iniciar'] ) ) {
     <div class="footer-content col-4">
       <br>
       <h3>Informació Legal</h3>
-      <a href="avislegal">Avís Legal</a><br>
-      <a href="politicaprivacitat">Política de Privacitat</a><br>
-      <a href="politicacookies">Política de Cookies</a>
+      <p>Avís Legal</p>
+      <p>Política de Privacitat</p>
+      <p>Política de Cookies</p>
     </div>
     <!-- Categories que s'agafaran de typescript -->
     <div class="footer-content col-4">
