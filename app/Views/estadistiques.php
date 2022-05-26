@@ -62,60 +62,90 @@
     </nav>
   </header>
 
+  <!-- Menu de navegació lateral -->
   <nav class="sidebar-navigation">
-	<ul>
-    <a href="pujaProductes">
-      <li>
-        <img src="imgs/pujar.png"></img>
-        <span class="tooltip">Pujar Productes</span>
-      </li>
-    </a>
-    <a href="serveis">
-      <li>
-        <img src="imgs/hand-shake.png"></img>
-        <span class="tooltip">Serveis</span>
-      </li>
-    </a>
-    <a href="missatges">
-      <li>
-        <img src="imgs/missage.png"></img>
-        <span class="tooltip">Missatges</span>
-      </li>
-    </a>
-    <a href="tarifes">
-      <li>
-        <img src="imgs/tarifa.png"></img>
-        <span class="tooltip">Tarifes</span>
-      </li>
-    </a>
-    <a href="#">
-      <li>
-        <img src="imgs/guardar.png"></img>
-        <span class="tooltip">Guardats</span>
-      </li>
-    </a>
-    <a href="#">
-      <li class="active">
-        <img src="imgs/estadistica.png"></img>
-        <span class="tooltip">Estadistiques</span>
-      </li>
-    </a>
-    <a href="#">
-      <li>
-        <img src="imgs/configuracio.png"></img>
-        <span class="tooltip">Configuració</span>
-      </li>
-    </a>
-	</ul>
-</nav>
+    <ul>
+      <a href="pujaProductes">
+        <li>
+          <img src="imgs/pujar.png"></img>
+          <span class="tooltip">Pujar Productes</span>
+        </li>
+      </a>
+      <a href="serveis">
+        <li>
+          <img src="imgs/hand-shake.png"></img>
+          <span class="tooltip">Serveis</span>
+        </li>
+      </a>
+      <a href="missatges">
+        <li>
+          <img src="imgs/missage.png"></img>
+          <span class="tooltip">Missatges</span>
+        </li>
+      </a>
+      <a href="tarifes">
+        <li>
+          <img src="imgs/tarifa.png"></img>
+          <span class="tooltip">Tarifes</span>
+        </li>
+      </a>
+      <a href="guardats">
+        <li>
+          <img src="imgs/guardar.png"></img>
+          <span class="tooltip">Guardats</span>
+        </li>
+      </a>
+      <a href="estadistiques">
+        <li class="active">
+          <img src="imgs/estadistica.png"></img>
+          <span class="tooltip">Estadistiques</span>
+        </li>
+      </a>
+      <a href="configuracio">
+        <li>
+          <img src="imgs/configuracio.png"></img>
+          <span class="tooltip">Configuració</span>
+        </li>
+      </a>
+    </ul>
+  </nav>
 
   <br>
   <div class="container">
-    <div class="pujarProducteCaixa col-9">
+    <div class="estadistiques col-9">
       <div class="card-body">
         <p class="card-title">Productes actuals</p>
         <p class="card-text">
-          <img src="./imgs/imatgePre.png" width="100%" height="150px">
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Imatge</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Visites</th>
+            <th scope="col">Favorits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><img src="imgs/1.png" alt="Categoria de lampista"></th>
+            <td>Mark</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row"><img src="imgs/2.png" alt="Categoria de lampista"></th>
+            <td>Jacob</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row"><img src="imgs/3.png" alt="Categoria de lampista"></th>
+            <td>Larry</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
         </p>
       </div>
     </div>

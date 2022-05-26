@@ -63,7 +63,7 @@ class Home extends BaseController
         return view('missatges');
     }
 
-    //Redireccionament de missatges
+    //Redireccionament de tarifes
     public function tarifes(){
         return view('tarifes');
     }
@@ -88,14 +88,19 @@ class Home extends BaseController
         return view('serveis');
     }
 
-    //Redireccionament de serveis
+    //Redireccionament de configuracio
     public function configuracio(){
         return view('configuracio');
     }
 
-    //Redireccionament de serveis
+    //Redireccionament de estadistiques
     public function estadistiques(){
         return view('estadistiques');
+    }
+
+    //Redireccionament de estadistiques
+    public function guardats(){
+        return view('guardats');
     }
 
     // Funcio de la comprovacio i insercio del formulari de registre

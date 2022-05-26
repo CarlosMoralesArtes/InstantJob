@@ -63,52 +63,53 @@
     </nav>
   </header>
 
+  <!-- Menu de navegació lateral -->
   <nav class="sidebar-navigation">
-	<ul>
-    <a href="pujaProductes">
-      <li class="active">
-        <img src="imgs/pujar.png"></img>
-        <span class="tooltip">Pujar Productes</span>
-      </li>
-    </a>
-    <a href="serveis">
-      <li>
-        <img src="imgs/hand-shake.png"></img>
-        <span class="tooltip">Serveis</span>
-      </li>
-    </a>
-    <a href="missatges">
-      <li>
-        <img src="imgs/missage.png"></img>
-        <span class="tooltip">Missatges</span>
-      </li>
-    </a>
-    <a href="tarifes">
-      <li>
-        <img src="imgs/tarifa.png"></img>
-        <span class="tooltip">Tarifes</span>
-      </li>
-    </a>
-    <a href="#">
-      <li>
-        <img src="imgs/guardar.png"></img>
-        <span class="tooltip">Guardats</span>
-      </li>
-    </a>
-    <a href="estadistiques">
-      <li>
-        <img src="imgs/estadistica.png"></img>
-        <span class="tooltip">Estadistiques</span>
-      </li>
-    </a>
-    <a href="configuracio">
-      <li>
-        <img src="imgs/configuracio.png"></img>
-        <span class="tooltip">Configuració</span>
-      </li>
-    </a>
-	</ul>
-</nav>
+    <ul>
+      <a href="pujaProductes">
+        <li class="active">
+          <img src="imgs/pujar.png"></img>
+          <span class="tooltip">Pujar Productes</span>
+        </li>
+      </a>
+      <a href="serveis">
+        <li>
+          <img src="imgs/hand-shake.png"></img>
+          <span class="tooltip">Serveis</span>
+        </li>
+      </a>
+      <a href="missatges">
+        <li>
+          <img src="imgs/missage.png"></img>
+          <span class="tooltip">Missatges</span>
+        </li>
+      </a>
+      <a href="tarifes">
+        <li>
+          <img src="imgs/tarifa.png"></img>
+          <span class="tooltip">Tarifes</span>
+        </li>
+      </a>
+      <a href="guardats">
+        <li>
+          <img src="imgs/guardar.png"></img>
+          <span class="tooltip">Guardats</span>
+        </li>
+      </a>
+      <a href="estadistiques">
+        <li>
+          <img src="imgs/estadistica.png"></img>
+          <span class="tooltip">Estadistiques</span>
+        </li>
+      </a>
+      <a href="configuracio">
+        <li>
+          <img src="imgs/configuracio.png"></img>
+          <span class="tooltip">Configuració</span>
+        </li>
+      </a>
+    </ul>
+  </nav>
 
   <br>
   <div class="container">
@@ -206,7 +207,7 @@
               }
             }
 
-            echo form_submit('mysubmit', 'Iniciar!');
+            echo "<input type='submit' class='btn-primary' name='mysubmit' value='Pujar Producte'>";
             
             // El form close es per tancar el formulari
             echo form_close();

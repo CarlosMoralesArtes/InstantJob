@@ -66,7 +66,7 @@
   <nav class="sidebar-navigation">
     <ul>
       <a href="pujaProductes">
-        <li>
+        <li class="active">
           <img src="imgs/pujar.png"></img>
           <span class="tooltip">Pujar Productes</span>
         </li>
@@ -90,7 +90,7 @@
         </li>
       </a>
       <a href="guardats">
-        <li>
+        <li class="active">
           <img src="imgs/guardar.png"></img>
           <span class="tooltip">Guardats</span>
         </li>
@@ -102,7 +102,7 @@
         </li>
       </a>
       <a href="configuracio">
-        <li class="active">
+        <li>
           <img src="imgs/configuracio.png"></img>
           <span class="tooltip">Configuració</span>
         </li>
@@ -112,78 +112,44 @@
 
   <br>
   <div class="container">
-    <div class="pujarProducteCaixa col-9">
+    <div class="estadistiques col-9">
       <div class="card-body">
-        <p class="card-title">Dades Actuals</p>
-        
-
-        <p class="card-text"></p>
+        <p class="card-title">Productes guardats</p>
+        <p class="card-text">
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Imatge</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Descripcio</th>
+            <th scope="col">Vistes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><img src="imgs/1.png" alt="Categoria de lampista"></th>
+            <td>Mark</td>
+            <td>dsadsadsadsadsadas</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row"><img src="imgs/2.png" alt="Categoria de lampista"></th>
+            <td>Jacob</td>
+            <td>dsadsadsadsadsadas</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row"><img src="imgs/3.png" alt="Categoria de lampista"></th>
+            <td>Larry</td>
+            <td>dsadsadsadsadsadas</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+        </p>
       </div>
     </div>
-    <br>
-    <div class="pujarProducteCaixa col-9">
-      <div class="card-body">
-        <p class="card-title">Completa els camps per modificar el perfil</p>
-        <br>
-        <?php
-            $ruta = "iniciar";
-            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
-            // Form open que serveix per iniciar el formulari
-            echo form_open($ruta, $attributes);
-            
-            echo "<div class='input-container'>";
-            
-            echo form_label('Nom', '#{label}');
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nombre',
-                          'required' => 'required',
-                          'value' => set_value('nom'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo "</div>";
-
-            echo "<div class='input-container'>";
-            echo form_label('Cognoms', '#{label}');
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'apellidos',
-                          'required' => 'required',
-                          'value' => set_value('primerCognom'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo "<div class='bar'></div>";
-            echo "</div>";
-
-            echo form_hidden('latitud', '2');
-            echo form_hidden('logitud', '2');
-
-            echo "<div class='input-container'>";
-            echo form_label('Contrasenya', '#{label}');
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'contrasena',
-                          'required' => 'required',
-                          'value' => set_value('contrasenya'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo "<div class='bar'></div>";
-            echo "</div>";
-
-            // El form close es per tancar el formulari
-            echo form_close();
-
-            if(!empty($validation)){
-              if($validation->getError('correo')) {
-                echo $validation->getError('correo');
-                echo "<br>";
-              }
-            }
-
-            echo "<input type='submit' class='btn-primary' name='mysubmit' value='Modificar Usuari'>";
-            
-            // El form close es per tancar el formulari
-            echo form_close();
-          ?>
-        <p class="card-text"></p>
-    </div>
+      
   </div>
   
   <!-- Bootstrap JavaScript Libraries -->
