@@ -34,7 +34,7 @@
   <header>
   <nav class="navInici">
       <div class="header col-1">
-        <a href="home"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob" width="50px"></a>
+      <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob" width="50px"></a>
       </div>
       <div class="header col-6 form-outline">
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
@@ -45,9 +45,16 @@
         if ($session->get('user')){
             echo "<div class='header col-2 separacio'>";
             // echo "<p>".$_SESSION['user']."</p>";
-            echo("<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>");
+            echo "<div class='dropdown'>";
+            echo "<img class='imatgePerfil' src='imgs/fontaneriaTransparent.png' alt='Imatge de perfil del usuari'>";
+            echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Benvingut ".$_SESSION['user']." 🡓</a>";
+            echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
+            echo "<a class='dropdown-item' href='#'><img src='imgs/configuracio.png' alt='Categoria de lampista'> El Meu Perfil</a>";
+            echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
             echo "</div>";
-        }else {
+            echo "</div>";
+            echo "</div>";
+        } else {
             echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
         }
       ?>
