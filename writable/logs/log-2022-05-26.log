@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2022-05-26 02:32:33 --> Cannot use object of type mysqli as array
 #0 C:\wamp64\www\InstantJob\system\View\View.php(210): include()
 #1 C:\wamp64\www\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
@@ -54,6 +55,14 @@ CRITICAL - 2022-05-26 03:03:01 --> Call to a member function getResultArray() on
 #2 C:\wamp64\www\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('iniciar_sesion', Array, true)
 #3 C:\wamp64\www\InstantJob\app\Controllers\Home.php(191): view('iniciar_sesion')
 #4 C:\wamp64\www\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->mostrarArxius()
+=======
+CRITICAL - 2022-05-26 01:32:52 --> Unsupported operand types: string + string
+#0 C:\wamp64\www\InstantJob\system\View\View.php(210): include()
+#1 C:\wamp64\www\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\wamp64\www\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('iniciar_sesion', Array, true)
+#3 C:\wamp64\www\InstantJob\app\Controllers\Home.php(165): view('iniciar_sesion', Array)
+#4 C:\wamp64\www\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->formulariIniciSessio()
+>>>>>>> 3872ee49fe07d654f35593d8b4dac4a6ce287da9
 #5 C:\wamp64\www\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
 #6 C:\wamp64\www\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\wamp64\www\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()

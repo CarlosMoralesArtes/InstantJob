@@ -39,24 +39,16 @@
       </div>
 
       <?php
-
-        if(!isset( $_SESSION['user'] ) ) {
-
+        $session = session();
+        if ($session->get('user')){
+            echo "<div class='header col-2 separacio'>";
+            // echo "<p>".$_SESSION['user']."</p>";
+            echo("<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>");
+            echo "</div>";
+        }else {
+            echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
+        }
       ?>
-
-      <div class="header col-2 separacio">
-        <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
-      </div>
-      
-
-      <?php
-      }else {
-          echo $_SESSION['user'];
-          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
-      }
-      ?>
-
-
 
       </div>
       <div class="header col-2">
