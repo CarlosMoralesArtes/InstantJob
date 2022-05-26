@@ -64,13 +64,10 @@
           echo form_open($ruta, $attributes);
           echo "<div class='input-container'>";
 
-
           // ESPECIFICAR ERROR MODIFICAR PARA DISEÑO
           // if(empty($id_cliente)){
           //   $id_cliente = "Coloca el id_cliente";
           // }
-
-
 
           // En $data es coloquen els atributs de la pregunta
           $data = array('name' => 'correo',
@@ -107,7 +104,7 @@
           //   }
           // }
           echo "<br>";
-          echo form_submit('mysubmit', 'Iniciar!');
+          echo "<input type='submit' class='btn-submit' name='mysubmit' value='Iniciar Sessio'>";
 
           // El form close es per tancar el formulari
           echo form_close();
@@ -142,8 +139,6 @@
             echo "<br>";
             echo "</div>";
 
-
-
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'apellidos',
@@ -155,8 +150,6 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-
-
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -172,12 +165,8 @@
             echo "<br>";
             echo "</div>";
 
-
-
             echo form_hidden('latitud', '2');
             echo form_hidden('logitud', '2');
-
-
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -193,7 +182,8 @@
 
             echo "<br>";
 
-            echo form_submit('submit', 'Registrar-se');
+            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Registrar-se'>";
+
             // El form close es per tancar el formulari
             echo form_close();
 
@@ -400,7 +390,7 @@ if(isset( $_SESSION['iniciar'] ) ) {
 
 
 ?>
-</body>
+
 <footer>
   <div class="row">
     <div class="footer-content col-4">
@@ -423,4 +413,5 @@ if(isset( $_SESSION['iniciar'] ) ) {
     </div>
   </div>
 </footer>
+</body>
 </html>

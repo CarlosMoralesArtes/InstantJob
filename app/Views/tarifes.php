@@ -273,7 +273,7 @@
     <br>
     <div class="botoTarifa">
       <p>Gratis</p>
-      <button class="btn-submit">Colocar</button>
+      <button class="btn-submit">Comprar</button>
     </div>
   </div>
 
@@ -286,7 +286,7 @@
     <br>
     <div class="botoTarifa">
       <p>9,99€</p>
-      <button class="btn-submit">Colocar</button>
+      <button class="btn-submit">Comprar</button>
     </div>
   </div>
 
@@ -301,7 +301,7 @@
     <br>
     <div class="botoTarifa">
       <p>19,99€</p>
-      <button class="btn-submit">Colocar</button>
+      <button class="btn-submit">Comprar</button>
     </div>
   </div>
 </div>

@@ -70,6 +70,16 @@ class Home extends BaseController
         return view('serveis');
     }
 
+    //Redireccionament de serveis
+    public function configuracio(){
+        return view('configuracio');
+    }
+
+    //Redireccionament de serveis
+    public function estadistiques(){
+        return view('estadistiques');
+    }
+
     // Funcio de la comprovacio i insercio del formulari de registre
     public function formulari()
     {

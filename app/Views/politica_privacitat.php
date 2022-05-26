@@ -3,10 +3,7 @@
 
 <head>
   <?php
-  session_start();
-
-  
-
+      $session = session();
   ?>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
@@ -56,6 +53,7 @@
       </div>
     </nav>
   </header>
+  
   <div class="overlay" id="overlay">
     <div class="popup" id="popup">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
@@ -70,13 +68,10 @@
           echo form_open($ruta, $attributes);
           echo "<div class='input-container'>";
 
-
           // ESPECIFICAR ERROR MODIFICAR PARA DISEÑO
           // if(empty($id_cliente)){
           //   $id_cliente = "Coloca el id_cliente";
           // }
-
-
 
           // En $data es coloquen els atributs de la pregunta
           $data = array('name' => 'correo',
@@ -113,7 +108,7 @@
           //   }
           // }
           echo "<br>";
-          echo form_submit('mysubmit', 'Iniciar!');
+          echo "<input type='submit' class='btn-submit' name='mysubmit' value='Iniciar Sessio'>";
 
           // El form close es per tancar el formulari
           echo form_close();
@@ -148,8 +143,6 @@
             echo "<br>";
             echo "</div>";
 
-
-
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'apellidos',
@@ -161,8 +154,6 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-
-
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -178,12 +169,8 @@
             echo "<br>";
             echo "</div>";
 
-
-
             echo form_hidden('latitud', '2');
             echo form_hidden('logitud', '2');
-
-
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -199,7 +186,8 @@
 
             echo "<br>";
 
-            echo form_submit('submit', 'Registrar-se');
+            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Registrar-se'>";
+
             // El form close es per tancar el formulari
             echo form_close();
 
@@ -214,19 +202,16 @@
     </div>
   </div>
 
-
-
   <!-- Titul de la pàgina principal -->
     <div class="titol">
       <h1>Política de Privacitat</h1>
-      <p class="informacioLegal">De acuerdo con lo establecido en el Reglamento General de Protección de Datos, le informamos que trataremos sus datos personales con la finalidad de:<br>
-<br>
-Los datos personales proporcionados se conservarán, mientras se mantenga la relación mercantil, no se solicite su supresión por el interesado, o durante 1 año a partir de la última confirmación de interés, o durante el tiempo necesario para cumplir con las obligaciones legales. La empresa NO tomará decisiones automatizadas. Los datos no se cederán a terceros salvo en los casos en que exista una obligación legal y los trataremos en base a.<br>
-<br>
-Asimismo, le informamos de la posibilidad de ejercer los siguientes derechos sobre sus datos personales: derecho de acceso, rectificación, supresión u olvido, limitación, oposición, portabilidad y a retirar el consentimiento prestado, para ello podrá enviar un email a: info@instantjob.es<br>
-<br>
-Además, el interesado puede dirigirse a la Autoridad de Control en materia de Protección de Datos competente para obtener información adicional o presentar una reclamación.<br>
-</p>
+      <div class="politica">
+        <br>
+        <p>D'acord amb el que estableix el Reglament General de Protecció de Dades, us informem que tractarem les vostres dades personals amb la finalitat de:</p>
+        <p>Les dades personals proporcionades es conservaran, mentre es mantingui la relació mercantil, no se sol·licite la supressió per l'interessat, o durant 1 any a partir de la darrera confirmació d'interès, o durant el temps necessari per complir les obligacions legals. L'empresa NO prendrà decisions automatitzades. Les dades no se cediran a tercers llevat dels casos en què hi hagi una obligació legal i els tractarem en base a.</p>
+        <p>Així mateix, us informem de la possibilitat d'exercir els drets següents sobre les vostres dades personals: dret d'accés, rectificació, supressió o oblit, limitació, oposició, portabilitat i a retirar el consentiment prestat, per a això podreu enviar un email a: info@instantjob.es</p>
+        <p>A més, linteressat pot dirigir-se a lAutoritat de Control en matèria de Protecció de Dades competent per obtenir informació addicional o presentar una reclamació.</p>
+      </div>
     </div>
   
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
@@ -258,7 +243,7 @@ if(isset( $_SESSION['iniciar'] ) ) {
 
 
 ?>
-</body>
+
 <footer>
   <div class="row">
     <div class="footer-content col-4">
@@ -269,9 +254,9 @@ if(isset( $_SESSION['iniciar'] ) ) {
     <div class="footer-content col-4">
       <br>
       <h3>Informació Legal</h3>
-      <p>Avís Legal</p>
-      <p>Política de Privacitat</p>
-      <p>Política de Cookies</p>
+      <a href="avislegal">Avís Legal</a><br>
+      <a href="politicaprivacitat">Política de Privacitat</a><br>
+      <a href="politicacookies">Política de Cookies</a>
     </div>
     <!-- Categories que s'agafaran de typescript -->
     <div class="footer-content col-4">
@@ -281,4 +266,5 @@ if(isset( $_SESSION['iniciar'] ) ) {
     </div>
   </div>
 </footer>
+</body>
 </html>

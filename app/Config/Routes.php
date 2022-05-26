@@ -43,6 +43,8 @@ $routes->post('/registrar', 'Home::formulari');
 $routes->get('/avislegal', 'Home::avislegal');
 $routes->get('/politicaprivacitat', 'Home::politicaprivacitat');
 $routes->get('/politicacookies', 'Home::politicacookies');
+$routes->get('/configuracio', 'Home::configuracio');
+$routes->get('/estadistiques', 'Home::estadistiques');
 $routes->get('/clear', 'Home::clear');
 $routes->get('/mostrar', 'Home::mostrarArxius');
 

@@ -65,7 +65,7 @@
   <nav class="sidebar-navigation">
 	<ul>
     <a href="pujaProductes">
-      <li class="active">
+      <li>
         <img src="imgs/pujar.png"></img>
         <span class="tooltip">Pujar Productes</span>
       </li>
@@ -94,14 +94,14 @@
         <span class="tooltip">Guardats</span>
       </li>
     </a>
-    <a href="estadistiques">
+    <a href="#">
       <li>
         <img src="imgs/estadistica.png"></img>
         <span class="tooltip">Estadistiques</span>
       </li>
     </a>
-    <a href="configuracio">
-      <li>
+    <a href="#">
+      <li class="active">
         <img src="imgs/configuracio.png"></img>
         <span class="tooltip">Configuració</span>
       </li>
@@ -113,16 +113,8 @@
   <div class="container">
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
-        <p class="card-title">Que vas a pujar?</p>
-        <p class="card-title">Selecciona la categoria</p>
-        <img id="imatgeCategoria1" src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria2" src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria3" src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria4" src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria5" src="imgs/administratiu.png" alt="Categoria d'administratiu" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria6" src="imgs/jardiner.png" alt="Categoria de jardiners" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria7" src="imgs/medicina.png" alt="Categoria de medicina" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria8" src="imgs/obrer.png" alt="Categoria d'obrers" onclick="ImatgeSeleccionada(this.id)">
+        <p class="card-title">Dades Actuals</p>
+        
 
         <p class="card-text"></p>
       </div>
@@ -130,82 +122,73 @@
     <br>
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
-        <p class="card-title">Informació Básica</p>
-        <p class="card-title">Completa els camps</p>
+        <p class="card-title">Completa els camps per modificar el perfil</p>
         <br>
         <?php
             $ruta = "iniciar";
-            echo form_label('Coloca una imatge del servei', '#{label}');
             $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
             // Form open que serveix per iniciar el formulari
             echo form_open($ruta, $attributes);
+            
             echo "<div class='input-container'>";
+            
+            echo form_label('Nom', '#{label}');
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'fitxer',
-                          'value' => set_value('userfile'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_upload($data);
-    
-            echo "<div class='input-container'>";
-            echo form_label('Nom del Servei', '#{label}');
-            echo "<br>";
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nomTreball',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'nombre',
                           'required' => 'required',
-                          'value' => set_value('nomTreball'));
+                          'value' => set_value('nom'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo "<br>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('nomTreball')) {
-                echo $validation->getError('nomTreball');
-                echo "<br>";
-              }
-            }
 
             echo "<div class='input-container'>";
-            echo form_label('Preu del Servei', '#{label}');
-            echo "<br>";
+            echo form_label('Cognoms', '#{label}');
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'preuTreball',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'apellidos',
                           'required' => 'required',
-                          'value' => set_value('preuTreball'));
+                          'value' => set_value('primerCognom'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo "<br>";
+            echo "<div class='bar'></div>";
             echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('preuTreball')) {
-                echo $validation->getError('preuTreball');
-                echo "<br>";
-              }
-            }
 
-            echo form_label('Temps', '#{label}');
-            echo "<br>";
+            echo "<div class='input-container'>";
+            echo form_label('Email', '#{label}');
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'Temps',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+            $data = array('name' => 'correo',
                           'required' => 'required',
-                          'value' => set_value('Temps'));
+                          'value' => set_value('email'));
             // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data); 
-            echo "<br>";
+            echo form_input($data);
+            echo "<div class='bar'></div>";
+            
             echo "</div>";
+
+            echo form_hidden('latitud', '2');
+            echo form_hidden('logitud', '2');
+
+            echo "<div class='input-container'>";
+            echo form_label('Contrasenya', '#{label}');
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'contrasena',
+                          'required' => 'required',
+                          'value' => set_value('contrasenya'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo "<div class='bar'></div>";
+            echo "</div>";
+
+            // El form close es per tancar el formulari
+            echo form_close();
+
             if(!empty($validation)){
-              if($validation->getError('Temps')) {
-                echo $validation->getError('Temps');
+              if($validation->getError('correo')) {
+                echo $validation->getError('correo');
                 echo "<br>";
               }
             }
 
-            echo form_submit('mysubmit', 'Iniciar!');
+            echo "<input type='submit' class='btn-primary' name='mysubmit' value='Registrar-se'>";
             
             // El form close es per tancar el formulari
             echo form_close();

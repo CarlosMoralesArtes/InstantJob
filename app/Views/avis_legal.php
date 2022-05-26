@@ -3,10 +3,7 @@
 
 <head>
   <?php
-  session_start();
-
-  
-
+      $session = session();
   ?>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
@@ -61,7 +58,7 @@
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
       <h2 class="title">Iniciar Sessio</h2>
       <p>Completa els camps</p>
-      <br>
+      
       <div class="targetaIniciSessio">
         <?php
           $ruta = "iniciar";
@@ -77,6 +74,71 @@
           // }
 
 
+
+          // En $data es coloquen els atributs de la pregunta
+          $data = array('name' => 'correo',
+                      'required' => 'required',
+                      'type' => 'email',
+                      'value' => set_value('correo'));
+          // En el form input es l'apartat on pots colocar text en el formulari
+          echo form_input($data);
+          echo form_label('Correo', '#{label}');
+          echo "<div class='bar'></div>";
+          echo "";
+          echo "</div>";
+          // if(!empty($validation)){
+          //   if($validation->getError('id_cliente')) {
+          //     echo $validation->getError('id_cliente');
+          //     echo "";
+          //   }
+          // }
+
+          echo "<div class='input-container'>";
+          // En $data es coloquen els atributs de la pregunta
+          $data = array('name' => 'contrasena',
+                      'required' => 'required');
+          // En el form input es l'apartat on pots colocar text en el formulari
+          echo form_input($data);
+          echo form_label('Contrasena', '#{label}');
+          echo "<div class='bar'></div>";
+          echo "";
+          echo "</div>";
+          // if(!empty($validation)){
+          //   if($validation->getError('contrasena')) {
+          //     echo $validation->getError('contrasena');
+          //     echo "";
+          //   }
+          // }
+          echo "";
+          echo form_submit('mysubmit', 'Iniciar!');
+
+          // El form close es per tancar el formulari
+          echo form_close();
+        ?>
+      </div>
+        <p class="pasarRegistre2">Si no tens un compte <p id="btn-abrir-popup2" class="pasarRegistre"> Registra’t</p></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h2 class="title">Iniciar Sessio</h2>
+      <p>Completa els camps</p>
+      <br>
+      <div class="targetaIniciSessio">
+        <?php
+          $ruta = "iniciar";
+          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+          // Form open que serveix per iniciar el formulari
+          echo form_open($ruta, $attributes);
+          echo "<div class='input-container'>";
+
+          // ESPECIFICAR ERROR MODIFICAR PARA DISEÑO
+          // if(empty($id_cliente)){
+          //   $id_cliente = "Coloca el id_cliente";
+          // }
 
           // En $data es coloquen els atributs de la pregunta
           $data = array('name' => 'correo',
@@ -113,7 +175,7 @@
           //   }
           // }
           echo "<br>";
-          echo form_submit('mysubmit', 'Iniciar!');
+          echo "<input type='submit' class='btn-submit' name='mysubmit' value='Iniciar Sessio'>";
 
           // El form close es per tancar el formulari
           echo form_close();
@@ -148,8 +210,6 @@
             echo "<br>";
             echo "</div>";
 
-
-
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'apellidos',
@@ -161,8 +221,6 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
-
-
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -178,12 +236,8 @@
             echo "<br>";
             echo "</div>";
 
-
-
             echo form_hidden('latitud', '2');
             echo form_hidden('logitud', '2');
-
-
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -199,7 +253,8 @@
 
             echo "<br>";
 
-            echo form_submit('submit', 'Registrar-se');
+            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Registrar-se'>";
+
             // El form close es per tancar el formulari
             echo form_close();
 
@@ -214,39 +269,27 @@
     </div>
   </div>
 
-
-
   <!-- Titul de la pàgina principal -->
     <div class="titol">
       <h1>Avís Legal</h1>
-      <p class="informacioLegal">En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSICE) a continuación se detallan los datos identificativos de la empresa:<br>
-Nombre empresa: InstantJob<br>
-Razón social: Eric i Carlos<br>
-Email: info@instantjob.es<br>
-
-FINALIDAD DE LA PÁGINA WEB.<br>
-
-Venta de artículos de moda, ropa, complementos, que se encuentran en nuestra tienda online, en nuestra pagina web<br>
-
-El presente aviso legal (en adelante, el «Aviso Legal») regula el uso del sitio web: www.instantjob.es<br>
-
-LEGISLACIÓN.<br>
-
-Con carácter general las relaciones entre 38097223T (InstantJob) con los Usuarios de sus servicios telemáticos, presentes en este sitio web, se encuentran sometidas a la legislación y jurisdicción españolas.<br>
-
-USO Y ACCESO DE USUARIOS.<br>
-
-El Usuario queda informado, y acepta, que el acceso a la presente web no supone, en modo alguno, el inicio de una relación comercial con Eric i Carlos (InstantJob) o cualquiera de sus delegaciones.<br>
-
-PROPIEDAD INTELECTUAL E INDUSTRIAL.<br>
-
-Los derechos de propiedad intelectual del contenido de las páginas web, su diseño gráfico y códigos son titularidad de Eric i Carlos (InstantJob) y, por tanto, queda prohibida su reproducción, distribución, comunicación pública, transformación o cualquier otra actividad que se pueda realizar con los contenidos de sus páginas web ni aun citando las fuentes, salvo consentimiento por escrito de Eric i Carlos (ANUSSKA MODA).<br>
-
-CONTENIDO DE LA WEB Y ENLACES (LINKS).<br>
-
-Eric i Carlos (InstantJob) se reserva el derecho a actualizar, modificar o eliminar la información contenida en sus páginas web pudiendo incluso limitar o no permitir el acceso a dicha información a ciertos usuarios.<br>
-
-Eric i Carlos (InstantJob) no asume responsabilidad alguna por la información contenida en páginas web de terceros a las que se pueda acceder por «links» o enlaces desde cualquier página web propiedad de Eric i Carlos (InstantJob). La presencia de «links» o enlaces en las páginas web de Eric i Carlos (InstantJob) tiene finalidad meramente informativa y en ningún caso supone sugerencia, invitación o recomendación sobre los mismos.</p>
+      <div class="politica">
+        <p>En compliment de l'article 10 de la Llei 34/2002, de 11 de juliol, de Serveis de la Societat de la Informació i Comerç Electrònic (LSSICE) a continuació es detallen les dades identificatives de l'empresa:</p>
+        <p>Nom empresa: InstantJob</p>
+        <p>Raó social: Eric i Carlos</p>
+        <p>Email: info@instantjob.es</p>
+        <h2>FINALITAT DE LA PÀGINA WEB.</h2>
+        <p>Venda d'articles de moda, roba, complements, que es troben a la nostra botiga online, a la nostra pàgina web</p>
+        <p>Aquest avís legal (d'ara endavant, l'Avís Legal) regula l'ús del lloc web: www.instantjob.es</p>
+        <h2>LEGISLACIÓ.</h2>
+        <p>Amb caràcter general les relacions entre 38097223T (InstantJob) amb els usuaris dels seus serveis telemàtics, presents en aquest lloc web, es troben sotmeses a la legislació i jurisdicció espanyoles.</p>
+        <h2>ÚS I ACCÉS D'USUARIS.</h2>
+        <p>L'Usuari queda informat, i accepta, que l'accés a la present web no suposa, de cap manera, l'inici d'una relació comercial amb Eric i Carlos (InstantJob) o qualsevol de les delegacions.</p>
+        <h2>PROPIETAT INTEL·LECTUAL I INDUSTRIAL.</h2>
+        <p>Els drets de propietat intel·lectual del contingut de les pàgines web, el seu disseny gràfic i codis són titularitat d'Eric i Carlos (InstantJob) i, per tant, en queda prohibida la reproducció, distribució, comunicació pública, transformació o qualsevol altra activitat que es pugui realitzar amb els continguts de les seves pàgines web ni fins i tot citant les fonts, llevat del consentiment per escrit d'Eric i Carlos (InstantJob).</p>
+        <h2>CONTINGUT DE LA WEB I ENLLAÇOS (LINKS).</h2>
+        <p>Eric i Carlos (InstantJob) es reserva el dret d'actualitzar, modificar o eliminar la informació continguda a les seves pàgines web i fins i tot pot limitar o no permetre l'accés a aquesta informació a certs usuaris.</p>
+        <p>Eric i Carlos (InstantJob) no assumeix cap responsabilitat per la informació continguda en pàgines web de tercers a les quals es pugui accedir per links o enllaços des de qualsevol pàgina web propietat d'Eric i Carlos (InstantJob). La presència de links o enllaços a les pàgines web d'Eric i Carlos (InstantJob) té finalitat merament informativa i en cap cas suposa suggeriment, invitació o recomanació sobre aquests.</p>
+      </div>
     </div>
   
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
@@ -278,7 +321,6 @@ if(isset( $_SESSION['iniciar'] ) ) {
 
 
 ?>
-</body>
 <footer>
   <div class="row">
     <div class="footer-content col-4">
@@ -289,9 +331,9 @@ if(isset( $_SESSION['iniciar'] ) ) {
     <div class="footer-content col-4">
       <br>
       <h3>Informació Legal</h3>
-      <p>Avís Legal</p>
-      <p>Política de Privacitat</p>
-      <p>Política de Cookies</p>
+      <a href="avislegal">Avís Legal</a><br>
+      <a href="politicaprivacitat">Política de Privacitat</a><br>
+      <a href="politicacookies">Política de Cookies</a>
     </div>
     <!-- Categories que s'agafaran de typescript -->
     <div class="footer-content col-4">
@@ -301,4 +343,5 @@ if(isset( $_SESSION['iniciar'] ) ) {
     </div>
   </div>
 </footer>
+</body>
 </html>
