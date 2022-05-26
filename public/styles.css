@@ -290,13 +290,32 @@ body{
 	padding: 5px;
 }
 
+.pujarProducteCaixa input:checked{
+	border-radius: 10px;
+	background-color: #0196C1;
+	border: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	color: white;
+	padding: 5px;
+}
+
+.imatge{
+	background-color: blue;
+}
+
 .pujarProducteCaixa label{
 	font-size: 15px;
+}
+
+.row{
+	margin: 20px;
 }
 
 .card-body img{
 	width: 100px !important;
 	margin: 2px;
+	border-radius: 100%;
 }
 
 .card-body img:hover{

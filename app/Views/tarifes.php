@@ -240,6 +240,7 @@
 	</ul>
 </nav>
 
+<div class="row">
   <div class="tarifes col-3">
     <img src="./imgs/imatgePre.png" width="100%" height="150px">
     <p>Vendre productes</p>
@@ -272,6 +273,7 @@
     <p>19,99</p>
     <button class="btn-submit">Colocar</button>
   </div>
+</div>
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
