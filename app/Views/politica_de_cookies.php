@@ -3,11 +3,9 @@
 
 <head>
   <?php
-  session_start();
-
-  
-
+      $session = session();
   ?>
+
   <title>InstantJob| Home</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -61,7 +59,7 @@
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
       <h2 class="title">Iniciar Sessio</h2>
       <p>Completa els camps</p>
-      <br>
+      
       <div class="targetaIniciSessio">
         <?php
           $ruta = "iniciar";
@@ -87,12 +85,12 @@
           echo form_input($data);
           echo form_label('Correo', '#{label}');
           echo "<div class='bar'></div>";
-          echo "<br>";
+          echo "";
           echo "</div>";
           // if(!empty($validation)){
           //   if($validation->getError('id_cliente')) {
           //     echo $validation->getError('id_cliente');
-          //     echo "<br>";
+          //     echo "";
           //   }
           // }
 
@@ -104,15 +102,15 @@
           echo form_input($data);
           echo form_label('Contrasena', '#{label}');
           echo "<div class='bar'></div>";
-          echo "<br>";
+          echo "";
           echo "</div>";
           // if(!empty($validation)){
           //   if($validation->getError('contrasena')) {
           //     echo $validation->getError('contrasena');
-          //     echo "<br>";
+          //     echo "";
           //   }
           // }
-          echo "<br>";
+          echo "";
           echo form_submit('mysubmit', 'Iniciar!');
 
           // El form close es per tancar el formulari
@@ -129,7 +127,7 @@
       <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
       <h2 class="title">Registra't</h2>
       <p>Completa els camps</p>
-      <br>
+      
       <div class="targetaIniciSessio">
           <?php
             $ruta = site_url()."registrar";
@@ -145,7 +143,7 @@
             echo form_input($data);
             echo form_label('Nom', '#{label}');
             echo "<div class='bar'></div>";
-            echo "<br>";
+            echo "";
             echo "</div>";
 
 
@@ -159,7 +157,7 @@
             echo form_input($data);
             echo form_label('Cognoms', '#{label}');
             echo "<div class='bar'></div>";
-            echo "<br>";
+            echo "";
             echo "</div>";
 
 
@@ -173,9 +171,9 @@
             echo form_input($data);
             echo form_label('Email', '#{label}');
             echo "<div class='bar'></div>";
-            echo "<br>";
+            echo "";
             
-            echo "<br>";
+            echo "";
             echo "</div>";
 
 
@@ -194,10 +192,10 @@
             echo form_input($data);
             echo form_label('Contrasenya', '#{label}');
             echo "<div class='bar'></div>";
-            echo "<br>";
+            echo "";
             echo "</div>";
 
-            echo "<br>";
+            echo "";
 
             echo form_submit('submit', 'Registrar-se');
             // El form close es per tancar el formulari
@@ -206,7 +204,7 @@
             if(!empty($validation)){
               if($validation->getError('correo')) {
                 echo $validation->getError('correo');
-                echo "<br>";
+                echo "";
               }
             }
           ?>
@@ -219,33 +217,27 @@
   <!-- Titul de la pàgina principal -->
     <div class="titol">
       <h1>Política de Cookies</h1>
-      <p class="informacioLegal">POLÍTICA DE COOKIES.<br>
-Eric i Carlos (InstantJob), a través del presente documento, recoge su Política de recogida y tratamiento de cookies, en cumplimiento de lo dispuesto en el artículo22.2 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE).Las cookies se almacenan en el equipo terminal del usuario (ordenador o dispositivo móvil) y recopilan información al visitar la página web www.instantjob.es, con la finalidad de mejorarla usabilidad de las mismas, conocer los hábitos o necesidades de navegación de los usuarios para poder adaptarse a los mismos, así como obtener información con fines estadísticos. En el caso de aquellos usuarios que ya sean clientes de Eric i Carlos (InstantJob),la información recabada con las cookies servirá también para su identificación al acceder a las distintas herramientas que Eric i Carlos (InstantJob) pone a su disposición para la gestión de los servicios. La presente Política de Cookies será de aplicación a aquellos usuarios que voluntariamente visitan las páginas web de Eric i Carlos (InstantJob), cumplimentan formularios de recogida de datos, acceden a las herramientas que Eric i Carlos(InstantJob) pone a disposición de sus clientes para gestionar sus servicios, o utilizan cualquier otro servicio presente en el sitio web que implique la comunicación de datos a Eric i Carlos (InstantJob), o el acceso a datos por Eric i Carlos(InstantJob), para la prestación de sus servicios. Eric i Carlos (InstantJob) informa a los usuarios de sus páginas web, de la existencia de cookies y pone a su disposición la presente Política con la finalidad de informarles acerca del uso y del objeto de las mismas. El hecho de continuar la navegación a través de sus páginas, supone el conocimiento y la aceptación de la presente Política por parte de dichos usuarios.<br>
-<br>
-Eric i Carlos (InstantJob) utiliza los siguientes tipos de cookies:<br>
-<br>
-Clasificadas por su titularidad:<br>
-* Cookies propias: enviadas y gestionadas directamente por Eric i Carlos.<br>
-* Cookies de terceros: enviadas y gestionadas por un tercero ajeno a Eric i Carlos, de forma anónima, con la finalidad de realizar estudios estadísticos de navegación por las páginas web de Eric i Carlos.<br>
-<br>
-Clasificadas por su finalidad:<br>
-* Cookies técnicas y/o de personalización: facilitan la navegación, al identificar la sesión, permitir el acceso a herramientas de acceso restringido, además de configurar a medida las opciones disponibles. Posibilitan la prestación del servicio solicitado previamente por el usuario.<br>
-* Cookies de análisis y/o publicidad: permiten conocer el número de visitas recibidas en las diferentes secciones de las páginas web, los hábitos y tendencias de sus usuarios y en consecuencia, poder mejorar la navegación y el servicio ofrecido por Eric i Carlos (fundamentalmente, Google Analytics), así como gestionar los espacios publicitarios incluidos en la página web visitada por el usuario. Recopila datos de forma anónima con la finalidad de obtener perfiles de navegación de los usuarios.<br>
-<br>
-Clasificadas por su duración:<br>
-* Cookies de sesión: recaban y almacenan los datos mientras el usuario accede a la página web.<br>
-* Cookies persistentes: recaban y almacenan los datos en el terminal del usuario durante un periodo de tiempo variable en función de cuál sea la finalidad para la que han sido utilizadas. El tiempo de conservación de las cookies dependerá del tipo de que se trate y siempre será el mínimo indispensable para cumplir su finalidad.<br>
-Documento de Seguridad Eric i Carlos<br>
-<br>
-Versión: 1 Fecha: 26/01/2022 Página web LSSICE – Pág. 12<br>
-En cualquier caso, los usuarios pueden configurar su navegador, de manera que se deshabilite o bloquee la recepción de todas o algunas de las cookies. El hecho de no desear recibir estas cookies, no constituye un impedimento para poder acceder a la información de los sitios web de Eric i Carlos aunque el uso de algunos servicios podrá ser limitado. Si una vez otorgado el consentimiento para la recepción de cookies, se desease retirar éste, se deberán eliminar aquellas almacenadas en el equipo del usuario, a través de las opciones de los diferentes navegadores.<br>
-La forma de configurar los diferentes navegadores para ejercitar las acciones señaladas en los párrafos anteriores, se puede consultar en:<br>
-<br>
-* Explorer: http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9
-<br>
-* Chrome: https://support.google.com/chrome/answer/95647?hl=es
-<br>
-* Firefox: http://support.mozilla.org/es/kb/cookies-informacion-que-los-sitios-web-guardan-en-?redirectlocale=en-US&redirectslug=Cookies</p>
+      <div class="politica">
+        <p class="informacioLegal">POLÍTICA DE COOKIES.
+        <p>Eric i Carlos (InstantJob), a través del presente documento, recoge su Política de recogida y tratamiento de cookies, en cumplimiento de lo dispuesto en el artículo22.2 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE).Las cookies se almacenan en el equipo terminal del usuario (ordenador o dispositivo móvil) y recopilan información al visitar la página web www.instantjob.es, con la finalidad de mejorarla usabilidad de las mismas, conocer los hábitos o necesidades de navegación de los usuarios para poder adaptarse a los mismos, así como obtener información con fines estadísticos. En el caso de aquellos usuarios que ya sean clientes de Eric i Carlos (InstantJob),la información recabada con las cookies servirá también para su identificación al acceder a las distintas herramientas que Eric i Carlos (InstantJob) pone a su disposición para la gestión de los servicios. La presente Política de Cookies será de aplicación a aquellos usuarios que voluntariamente visitan las páginas web de Eric i Carlos (InstantJob), cumplimentan formularios de recogida de datos, acceden a las herramientas que Eric i Carlos(InstantJob) pone a disposición de sus clientes para gestionar sus servicios, o utilizan cualquier otro servicio presente en el sitio web que implique la comunicación de datos a Eric i Carlos (InstantJob), o el acceso a datos por Eric i Carlos(InstantJob), para la prestación de sus servicios. Eric i Carlos (InstantJob) informa a los usuarios de sus páginas web, de la existencia de cookies y pone a su disposición la presente Política con la finalidad de informarles acerca del uso y del objeto de las mismas. El hecho de continuar la navegación a través de sus páginas, supone el conocimiento y la aceptación de la presente Política por parte de dichos usuarios.</p>
+        <p>Eric i Carlos (InstantJob) utiliza los siguientes tipos de cookies:<p>
+        <h2>Clasificadas por su titularidad:</h2>
+        <p>* Cookies propias: enviadas y gestionadas directamente por Eric i Carlos.</p>
+        <p>* Cookies de terceros: enviadas y gestionadas por un tercero ajeno a Eric i Carlos, de forma anónima, con la finalidad de realizar estudios estadísticos de navegación por las páginas web de Eric i Carlos.</p>
+        <h2>Clasificadas por su finalidad:</h2>
+        <p>* Cookies técnicas y/o de personalización: facilitan la navegación, al identificar la sesión, permitir el acceso a herramientas de acceso restringido, además de configurar a medida las opciones disponibles. Posibilitan la prestación del servicio solicitado previamente por el usuario.</p>
+        <p>* Cookies de análisis y/o publicidad: permiten conocer el número de visitas recibidas en las diferentes secciones de las páginas web, los hábitos y tendencias de sus usuarios y en consecuencia, poder mejorar la navegación y el servicio ofrecido por Eric i Carlos (fundamentalmente, Google Analytics), así como gestionar los espacios publicitarios incluidos en la página web visitada por el usuario. Recopila datos de forma anónima con la finalidad de obtener perfiles de navegación de los usuarios.</p>
+        <h2>Clasificadas por su duración:</h2>
+        <p>* Cookies de sesión: recaban y almacenan los datos mientras el usuario accede a la página web.</p>
+        <p>* Cookies persistentes: recaban y almacenan los datos en el terminal del usuario durante un periodo de tiempo variable en función de cuál sea la finalidad para la que han sido utilizadas. El tiempo de conservación de las cookies dependerá del tipo de que se trate y siempre será el mínimo indispensable para cumplir su finalidad.</p>
+        <p>Documento de Seguridad Eric i Carlos</p>
+        <p>Versión: 1 Fecha: 26/01/2022 Página web LSSICE – Pág. 12</p>
+        <p>En cualquier caso, los usuarios pueden configurar su navegador, de manera que se deshabilite o bloquee la recepción de todas o algunas de las cookies. El hecho de no desear recibir estas cookies, no constituye un impedimento para poder acceder a la información de los sitios web de Eric i Carlos aunque el uso de algunos servicios podrá ser limitado. Si una vez otorgado el consentimiento para la recepción de cookies, se desease retirar éste, se deberán eliminar aquellas almacenadas en el equipo del usuario, a través de las opciones de los diferentes navegadores.</p>
+        <p>La forma de configurar los diferentes navegadores para ejercitar las acciones señaladas en los párrafos anteriores, se puede consultar en:</p>
+        <p>* Explorer: <a href="http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9">http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9</a></p>
+        <p>* Chrome: <a href="https://support.google.com/chrome/answer/95647?hl=es">https://support.google.com/chrome/answer/95647?hl=es</a></p>
+        <p>* Firefox: <a href="http://support.mozilla.org/es/kb/cookies-informacion-que-los-sitios-web-guardan-en-?redirectlocale=en-US&redirectslug=Cookies">http://support.mozilla.org/es/kb/cookies-informacion-que-los-sitios-web-guardan-en-?redirectlocale=en-US&redirectslug=Cookies</a></p>
+      </div>
     </div>
   
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
@@ -277,7 +269,7 @@ if(isset( $_SESSION['iniciar'] ) ) {
 
 
 ?>
-</body>
+
 <footer>
   <div class="row">
     <div class="footer-content col-4">
@@ -288,9 +280,9 @@ if(isset( $_SESSION['iniciar'] ) ) {
     <div class="footer-content col-4">
       <br>
       <h3>Informació Legal</h3>
-      <p>Avís Legal</p>
-      <p>Política de Privacitat</p>
-      <p>Política de Cookies</p>
+      <a href="avislegal">Avís Legal</a><br>
+      <a href="politicaprivacitat">Política de Privacitat</a><br>
+      <a href="politicacookies">Política de Cookies</a>
     </div>
     <!-- Categories que s'agafaran de typescript -->
     <div class="footer-content col-4">
@@ -300,4 +292,5 @@ if(isset( $_SESSION['iniciar'] ) ) {
     </div>
   </div>
 </footer>
+</body>
 </html>

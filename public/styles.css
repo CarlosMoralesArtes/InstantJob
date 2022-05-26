@@ -120,6 +120,12 @@
 	box-sizing: border-box;
 }
 
+.politica{
+	margin-left: 150px !important;
+	margin-right: 150px !important;
+	text-align: left;
+}
+
 #contenedor_carga{
 	background-color: #48B5D6;
 	height: 100%;
