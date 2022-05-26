@@ -146,19 +146,13 @@ class Home extends BaseController
             $dades2 = array('consulta' => $query, 'dades' => $dades);
             return view('iniciar_sesion', $dades2);
         } else {
+            $session = session();
+            $session->start();
+            $session->set('eriniciar','1');
             $dades["validation"]=$this->validator;
-            $dades2 = array('consulta' => $query, 'dades' => $dades);
+            $dades2 = array('consulta' => $query, 'dades["validation"]' => $dades["validation"]);
             return view('iniciar_sesion', $dades2);
         }
-        $db = db_connect();
-        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
-
-
-        
-
-        $data = array('consulta' => $query);
-
-        return view('iniciar_sesion',$data);
     }
 
     public function form(){

@@ -7,3 +7,5 @@ var btnAbrirPopup2 = document.getElementById('btn-abrir-popup2'),
         popup2.classList.add('active');
         overlay.classList.remove('active');
         popup.classList.remove('active');
+
+document.getElementById("error").innerHTML = "El correo ya esta usado!";
