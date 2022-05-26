@@ -6,16 +6,15 @@ use CodeIgniter\Model;
 
 class ArxiuModel extends Model
 {
-    protected $table = 'fitxers';
-    protected $primaryKey = 'codiU';
+    protected $table = 'servicio';
+    protected $primaryKey = 'id_servicio';
     protected $returnType = 'array';
     protected $allowedFields = [
-        "codiF",
-        "nomF",
-        "tipusF",
-        "data",
+        "id_servicio",
+        "nombre",
+        "precio",
+        "numero_clicks",
         "nomRandom",
-        "codiU",
     ];
 
 }

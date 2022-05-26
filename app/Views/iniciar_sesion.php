@@ -362,58 +362,10 @@
   <div class="serveiSeparat col-4" style="width: 18rem;">
         <?php
           if(!empty($consulta)){
-            $download = site_url()."/c4morales/home/download";
-            $compartir = site_url()."/c4morales/home/redireccionarMostraUsuaris";
-            $esborrar = site_url()."/c4morales/home/esborrar";
-            $propietats = site_url()."/c4morales/home/propietats";
             foreach ($consulta as $fila => $value) {
             ?>
-            <tr>
-              <td> <?=$value['nomF'];?> </td>
-              <td> <?=$value['codiU'];?> </td>
-              <td>
-                <?php
-                    $path='../../../../uploads/'.$value['nomRandom'].'.'.$value['tipusF'];
-                    echo "<a href=$path><button>Descarregar</button></a>";
-                ?>
-                <?php 
-                      $attributes = array ('action' => "compartir", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($compartir, $attributes);
-
-                      echo form_hidden('codiF', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Compartir');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-                 <?php 
-                      $attributes = array ('action' => "esborrar", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($esborrar, $attributes);
-                
-                      echo form_hidden('codiF', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Esborrar');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-                 <?php 
-                      $attributes = array ('action' => "propietats", 'enctype' => "multipart/form-data", 'method' => "post");
-                      // Form open que serveix per iniciar el formulari
-                      echo form_open($propietats, $attributes);
-                
-                      echo form_hidden('codiFitxer', $value['codiF']);
-                      
-                      // El form submit es per mostrar el boto de enviar
-                      echo form_submit('mysubmit', 'Propietats');
-                      // El form close es per tancar el formulari
-                      echo form_close();
-                ?>
-              </td>
-            </tr>
+              <p> <?=$value['id_servicio'];?> </p>
+              <p> <?=$value['nombre'];?> </p>
               <?php
             }
           } else {
