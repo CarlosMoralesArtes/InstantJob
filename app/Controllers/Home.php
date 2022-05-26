@@ -178,13 +178,16 @@ class Home extends BaseController
     public function mostrarArxius()
     {
         // Aquest apartat rep les dades del formulari
-        $dades2=$this->request->getVar();
+        // $dades2=$this->request->getVar();
 
-        $obj_arxiu = new \App\Models\ArxiuModel();
-		$result = $obj_arxiu ->find($dades2['id_servicio']);
+        // $obj_arxiu = new \App\Models\ArxiuModel();
+		// $result = $obj_arxiu ->find($dades2['id_servicio']);
+        
 
-        $data = array('consulta' => $result);
+        
 
-        return view('iniciar_sesion', $data);
+        // $data = array('consulta' => $query);
+
+        return view('iniciar_sesion');
     }
 }

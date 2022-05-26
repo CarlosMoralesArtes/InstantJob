@@ -361,16 +361,27 @@
   <h1>Select Eric</h1>
   <div class="serveiSeparat col-4" style="width: 18rem;">
         <?php
-          if(!empty($consulta)){
-            foreach ($consulta as $fila => $value) {
-            ?>
-              <p> <?=$value['id_servicio'];?> </p>
-              <p> <?=$value['nombre'];?> </p>
-              <?php
-            }
-          } else {
-            echo "<p>No hi han aparegut resultats.</p>";
+
+          $db = db_connect();
+          $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
+
+          foreach ($query->getResultArray() as $row) {
+            echo $row['id_servicio'];
+            echo $row['nombre'];
+            echo $row['precio'];
+            echo $row['descripcio'];
+            echo "<br>";
           }
+          // if(!empty($consulta)){
+          //   foreach ($consulta as $fila => $value) {
+            ?>
+              <!-- <p> <?=$value['id_servicio'];?> </p>
+              <p> <?=$value['nombre'];?> </p> -->
+              <?php
+          //   }
+          // } else {
+          //   echo "<p>No hi han aparegut resultats.</p>";
+          // }
         ?>
         </div>
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
