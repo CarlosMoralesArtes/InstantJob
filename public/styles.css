@@ -423,6 +423,32 @@ body{
 	margin-right: 12px;	
 }
 
+.estadistiques{
+	background-color: #48B5D6;
+	color: white;
+	text-align: left;
+    padding: 2px;
+    display: block;
+	width: 100%;
+    border-radius: 5px;
+	float: right;
+	margin-top: 20px;
+	margin-right: 12px;
+}
+
+.estadistiques .card-body img{
+	border-radius: 5px;
+	height: 70px;
+}
+
+th, td, tr{
+	color: white !important;
+}
+
+.estadistiques .card-text img:hover{
+	border-radius: 10px;
+}
+
 .pujarProducteCaixa input{
 	border-radius: 10px;
 	background-color: #0196C1;
