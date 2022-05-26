@@ -18,12 +18,7 @@
 	}
 
 	.sidebar-navigation{
-		height: 180vh !important;
-	}
-
-	.col-3{
-		width: 70% !important;
-		margin-bottom: 0px !important;
+		height: 125vh !important;
 	}
 }
 
@@ -31,10 +26,6 @@
 @media (min-width: 768px) {
 	.sidenav{
 		display: block;
-	}
-
-	.col-2{
-		font-size: 10px !important;
 	}
 }
 
@@ -49,79 +40,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-*,*:after, *:before{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-#contenedor_carga{
-	background-color: #48B5D6;
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	transition: 1s ease;
-	z-index: 10000;
-	margin: 0;
-	padding: 0;
-}
-
-#carga{
-	border: 15px solid white;
-	border-top-color: #0196C1;
-	border-top-style: groove;
-	height: 100px;
-	width: 100px;
-	border-radius: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	animation: girar 1.5s linear infinite;
-}
-
-.tarifaCentrada{
-	margin-left: 150px !important;
-	margin-top: 50px !important;
-}
-
-.tarifaCentrada img{
-	border-radius: 5px;
-}
-
-@keyframes girar{
-	from{
-		transform: rotate(0deg);
-	}
-	to{
-		transform: rotate(360deg);
-	}
-}
-
-.tarifaCentrada .col-3{
-	width: 30% !important;
-	position: relative;
-	height: 700px;
-}
-
-.row > *{
-	padding-left: 0px !important;
-	padding-right: 0px !important;
-}
-
-.botoTarifa{
-	bottom: 0;
-	position: absolute;
-	text-align: center;
-	width: 100%;
-}
-
-.header img{
-	width: 50px !important;
-}
-
 /* Estils per els botons */
 .btn-primary{
 	background-color: #0196C1 !important;
@@ -131,10 +49,6 @@
 .btn-primary:hover{
 	background-color: white !important;
 	color: black !important;
-}
-
-.btn-light{
-	border: 0px !important;
 }
 
 .btn-light:hover{
@@ -164,10 +78,6 @@ h1{
 
 h2{
     font-size: 20px !important;
-}
-
-h3{
-	font-size: 17px !important;
 }
 
 p{
@@ -204,6 +114,7 @@ body{
     display: inline-block;
     border-radius: 5px;
     margin-bottom: 50px;
+    margin-left: 20px;
 }
 
 .serveiSeparat2{
@@ -352,53 +263,8 @@ body{
 	margin-right: 12px;	
 }
 
-.pujarProducteCaixa input{
-	border-radius: 10px;
-	background-color: #0196C1;
-	border: 0px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	color: white;
-	padding: 5px;
-}
-
-.pujarProducteCaixa input:checked{
-	border-radius: 10px;
-	background-color: #0196C1;
-	border: 0px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	color: white;
-	padding: 5px;
-}
-
-.input-container input{
-	width: 100%;
-}
-
-.imatge{
-	background-color: blue;
-}
-
-.pujarProducteCaixa label{
-	font-size: 15px;
-}
-
-.row{
-	margin: 20px;
-}
-
 .card-body img{
 	width: 100px !important;
-	margin: 2px;
-	border-radius: 100%;
-}
-
-.card-body img:hover{
-	border-radius: 100%;
-	background-color: #0196C1;
-	transition: 0.2s;
-	cursor: pointer;
 }
 
 .missatges{
@@ -424,23 +290,21 @@ body{
 	margin: 10px;
 	color: white;
 	margin-top: 50px;
-	margin-bottom: 10px !important;
-	border-radius: 5px;
+	margin-bottom: 50px;
+	border-radius: 10px;
   	align-items: top;
 }
 
 .tarifes p{
 	margin-top: 20px;
-	font-size: 20px !important;
 }
 
-.botoTarifa .btn-submit{
-	margin-bottom: 50px;
-	font-size: 17px !important;
+.informacioLegal{
+	text-align: left !important;
 }
 
-.botoTarifa .btn-submit:hover{
-	background-color: #0196C1 !important;
+.botoTarifes{
+	margin-bottom: 20px;
 }
 
 .headerServeis{
@@ -617,7 +481,7 @@ body{
 	height: 60px;
 	border: 0;
 	color: black;
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: 400;
 }
 .targetaIniciSessio .input-container input:focus ~ label {
@@ -738,38 +602,14 @@ body{
 
 .carousel__elemento {
 	text-align: center;
-	padding: 20px;
-	text-decoration: none !important;
-}
-
-.carousel__elemento p{
-	color: black !important;
-}
-
-.glider-slide{
-	text-decoration: none !important;
-}
-
-.seleccionat{
-	background-color: #0196C1;
-}
-
-.carousel__elemento:hover {
-	animation: augmentarTamany 1s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes augmentarTamany{
-	from {
-		transform: scale(1);
-	}
-	to {
-		transform: scale(1.1);
-	}
 }
 
 .carousel__elemento img{
 	padding-bottom: 20px;
+}
+
+.carousel__elemento{
+	background-color: blue !important;
 }
 
 .carousel__indicadores .glider-dot {

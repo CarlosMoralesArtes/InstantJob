@@ -15,11 +15,27 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
+<?php
+    $session = session();
+    if ($session->get('user')){
+    } else {
+      header("Location: ./index");
+      die();
+    }
+?>
+
 <body>
+
+  <!-- Apartat de la carrega de la pàgina -->
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+
     <nav class="navIniciServeis">
       <header class="headerServeis">
         <h1>Nom categoria</h1>
         <h2>Numero de serveis</h2>
+        <a href="pujaProductes">Tornar</a>
       </header>
     </nav>
     <br>

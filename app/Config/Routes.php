@@ -38,9 +38,11 @@ $routes->get('/index', 'Home::home');
 $routes->get('/serveis', 'Home::serveis');
 $routes->get('/tarifes', 'Home::tarifes');
 $routes->get('/form', 'Home::form');
-// $routes->post('/iniciar', 'Product::formulariIniciSessio');
-$routes->get('/iniciar', 'Home::formulariIniciSessio');
-$routes->get('/registrar', 'Home::formulari');
+$routes->post('/iniciar', 'Home::formulariIniciSessio');
+$routes->post('/registrar', 'Home::formulari');
+$routes->get('/avislegal', 'Home::avislegal');
+$routes->get('/politicaprivacitat', 'Home::politicaprivacitat');
+$routes->get('/politicacookies', 'Home::politicacookies');
 $routes->get('/clear', 'Home::clear');
 
 /*

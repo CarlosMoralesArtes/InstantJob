@@ -25,6 +25,21 @@ class Home extends BaseController
         return view('iniciar_sesion');
     }
 
+    //Redireccionament de la footer a avis legal
+    public function avislegal(){
+        return view('avis_legal');
+    }
+
+    //Redireccionament de la footer a la politica de privacitat
+    public function politicaprivacitat(){
+        return view('politica_privacitat');
+    }
+
+    //Redireccionament de la footer a politica de cookies
+    public function politicacookies(){
+        return view('politica_de_cookies');
+    }
+
     //Redireccionament de missatges
     public function missatges(){
         return view('missatges');
@@ -106,7 +121,7 @@ class Home extends BaseController
     }
 
     public function form(){
-        formulariIniciSessio();
+        // formulariIniciSessio();
     }
 
     public function formulariIniciSessio()
@@ -158,5 +173,31 @@ class Home extends BaseController
             $dades["validation"]=$this->validator;
             return view('iniciar_sesion', $dades);
         }
+    }
+    // Funcio que serveix per mostrar els arxius que te el usuari en la seva taula
+    public function mostrarArxius()
+    {
+        // Aquest apartat rep les dades del formulari
+        $dades2=$this->request->getVar();
+
+    	$obj_arxiu = new \App\Models\ArxiuModel();
+		$result = $obj_arxiu ->find($dades2['codiUsuariMostrar']);
+        
+        $obj_arxiu2 = new \App\Models\CompartitsArxiu();
+        $result2 = $obj_arxiu2 ->find($dades2['codiUsuariMostrar']);
+
+        $obj_arxiu3 = new \App\Models\EliminarArxiu();
+
+        $result4 = array();
+
+        foreach ($result2 as $fila) {
+            $codiArxiu = $fila['codiF'];
+            $result3 = $obj_arxiu3 ->find($codiArxiu);
+            array_push($result4, $result3);
+        }
+
+        $data = array('consulta' => $result, 'consulta2' => $result4);
+        
+        return view('v4morales\planaPrincipal.php', $data);
     }
 }

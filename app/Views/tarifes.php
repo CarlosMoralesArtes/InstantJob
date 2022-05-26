@@ -16,6 +16,12 @@
 </head>
 
 <body>
+
+  <!-- Apartat de la carrega de la pàgina -->
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+
   <nav class="navInici">
     <div class="header col-1">
     <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob" width="50px"></a>
@@ -239,30 +245,34 @@
     </a>
 	</ul>
 </nav>
-
-<div class="row">
+<br>
+<div class="row tarifaCentrada">
   <div class="tarifes col-3">
-    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <img src="./imgs/Tarifa_Basica.png" width="100%" height="150px">
     <p>Vendre productes</p>
     <p>Parlar amb el client</p>
     <br>
-    <p>Gratis</p>
-    <button class="btn-submit">Colocar</button>
+    <div class="botoTarifa">
+      <p>Gratis</p>
+      <button class="btn-submit">Colocar</button>
+    </div>
   </div>
 
   <div class="tarifes col-3">
-    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <img src="./imgs/Tarifa_Advanced.png" width="100%" height="150px">
     <p>Vendre productes</p>
     <p>Parlar amb el client</p>
     <p>Posicionar l’anunci</p>
     <p>Anunci distintiu</p>
     <br>
-    <p>9,99€</p>
-    <button class="btn-submit">Colocar</button>
+    <div class="botoTarifa">
+      <p>9,99€</p>
+      <button class="btn-submit">Colocar</button>
+    </div>
   </div>
 
   <div class="tarifes col-3">
-    <img src="./imgs/imatgePre.png" width="100%" height="150px">
+    <img src="./imgs/Tarifa_Enterprise.png" width="100%" height="150px">
     <p>Vendre productes</p>
     <p>Parlar amb el client</p>
     <p>Posicionar l’anunci</p>
@@ -270,8 +280,10 @@
     <p>Contador de visites</p>
     <p>Anunci destacat</p>
     <br>
-    <p>19,99</p>
-    <button class="btn-submit">Colocar</button>
+    <div class="botoTarifa">
+      <p>19,99€</p>
+      <button class="btn-submit">Colocar</button>
+    </div>
   </div>
 </div>
 

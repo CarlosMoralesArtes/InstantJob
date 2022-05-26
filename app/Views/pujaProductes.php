@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
   <title>InstantJob | Home</title>
   <!-- Required meta tags -->
@@ -10,13 +11,29 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
   <!-- Bootstrap CSS v5.0.2 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
 </head>
 
+<?php
+      $session = session();
+      if ($session->get('user')){
+        // $userName = $session->get('codiU');
+      } else {
+        // $localitzacio = site_url()."/c4morales/home/iniciarSessio";
+        header("Location: ./index");
+        die();
+      }
+  ?>
+
 <body>
+
+  <!-- Apartat de la carrega de la pàgina -->
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+
   <header>
   <nav class="navInici">
       <div class="header col-1">
@@ -26,23 +43,10 @@
         <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
       </div>
 
-      <?php
-
-        if(!isset( $_SESSION['user'] ) ) {
-
-      ?>
-
       <div class="header col-2 separacio">
         <a class="btn btn-light" id="btn-abrir-popup">Iniciar Sessio / Registrar-se</a>
       </div>
       
-
-      <?php
-      }else {
-          echo $_SESSION['user'];
-          echo("<form action='clear' method='GET'><input type='submit' value='Clear session' /></form>");
-      }
-      ?>
       </div>
       <div class="header col-2">
       <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
@@ -58,7 +62,7 @@
       <div class="targetaIniciSessio">
         <?php
           $ruta = "iniciar";
-          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
+          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
           // Form open que serveix per iniciar el formulari
           echo form_open($ruta, $attributes);
           echo "<div class='input-container'>";
@@ -260,14 +264,14 @@
       <div class="card-body">
         <p class="card-title">Que vas a pujar?</p>
         <p class="card-title">Selecciona la categoria</p>
-        <img src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada()">
-        <img src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada()">
-        <img src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada()">
-        <img src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada()">
-        <img src="imgs/administratiu.png" alt="Categoria d'administratiu" onclick="ImatgeSeleccionada()">
-        <img src="imgs/jardiner.png" alt="Categoria de jardiners" onclick="ImatgeSeleccionada()">
-        <img src="imgs/medicina.png" alt="Categoria de medicina" onclick="ImatgeSeleccionada()">
-        <img src="imgs/obrer.png" alt="Categoria d'obrers" onclick="ImatgeSeleccionada()">
+        <img id="imatgeCategoria1" src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada(this.id)">
+        <img id="imatgeCategoria2" src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada(this.id)">
+        <img id="imatgeCategoria3" src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada(this.id)">
+        <img id="imatgeCategoria4" src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada(this.id)">
+        <img id="imatgeCategoria5" src="imgs/administratiu.png" alt="Categoria d'administratiu" onclick="ImatgeSeleccionada(this.id)">
+        <img id="imatgeCategoria6" src="imgs/jardiner.png" alt="Categoria de jardiners" onclick="ImatgeSeleccionada(this.id)">
+        <img id="imatgeCategoria7" src="imgs/medicina.png" alt="Categoria de medicina" onclick="ImatgeSeleccionada(this.id)">
+        <img id="imatgeCategoria8" src="imgs/obrer.png" alt="Categoria d'obrers" onclick="ImatgeSeleccionada(this.id)">
 
         <p class="card-text"></p>
       </div>
@@ -276,33 +280,23 @@
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
         <p class="card-title">Informació Básica</p>
+        <p class="card-title">Completa els camps</p>
+        <br>
         <?php
             $ruta = "iniciar";
+            echo form_label('Coloca una imatge del servei', '#{label}');
             $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
             // Form open que serveix per iniciar el formulari
             echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
-            echo form_label('Nom', '#{label}');
-            echo "<br>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nom',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
-                          'required' => 'required',
-                          'value' => set_value('nom'));
+            $data = array('name' => 'fitxer',
+                          'value' => set_value('userfile'));
             // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data); 
-            echo "<br>";
-            echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('nom')) {
-                echo $validation->getError('nom');
-                echo "<br>";
-              }
-            }
+            echo form_upload($data);
     
             echo "<div class='input-container'>";
-            echo form_label('Nom del Treball', '#{label}');
+            echo form_label('Nom del Servei', '#{label}');
             echo "<br>";
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'nomTreball',
@@ -322,7 +316,7 @@
             }
 
             echo "<div class='input-container'>";
-            echo form_label('Preu del Treball', '#{label}');
+            echo form_label('Preu del Servei', '#{label}');
             echo "<br>";
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'preuTreball',
@@ -341,7 +335,7 @@
               }
             }
 
-            echo form_label('Temps que es trigarà en realitzar el servei', '#{label}');
+            echo form_label('Temps', '#{label}');
             echo "<br>";
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'Temps',
@@ -359,6 +353,8 @@
                 echo "<br>";
               }
             }
+
+            echo form_submit('mysubmit', 'Iniciar!');
             
             // El form close es per tancar el formulari
             echo form_close();
