@@ -36,7 +36,7 @@
         $session = session();
         if ($session->get('user')){
             echo "<div class='header col-2 separacio'>";
-            // echo "<p>".$_SESSION['user']."</p>";
+            echo "<p>".$_SESSION['user']."</p>";
             echo("<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>");
             echo "</div>";
         }else {

@@ -91,6 +91,8 @@ class Home extends BaseController
     // Funcio de la comprovacio i insercio del formulari de registre
     public function formulari()
     {
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
         // Aquest apartat rep les dades del formulari
         $dades=$this->request->getVar();
         
@@ -131,10 +133,12 @@ class Home extends BaseController
             $usuari = new \App\Models\UsuariModel();
 			$usuari->insert($dades);
             $session->set('iniciar','1');
-            return view('iniciar_sesion', $dades);
+            $dades2 = array('consulta' => $query, 'dades' => $dades);
+            return view('iniciar_sesion', $dades2);
         } else {
             $dades["validation"]=$this->validator;
-            return view('iniciar_sesion', $dades);
+            $dades2 = array('consulta' => $query, 'dades' => $dades);
+            return view('iniciar_sesion', $dades2);
         }
         $db = db_connect();
         $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
@@ -153,6 +157,8 @@ class Home extends BaseController
 
     public function formulariIniciSessio()
     {
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
         // Aquest apartat rep les dades del formulari
         $dades=$this->request->getVar();
         
@@ -182,33 +188,28 @@ class Home extends BaseController
             }
             if(count($data) == 1){
                 echo "El usuari o la contrasenya es incorrecte.";
-                return view('iniciar_sesion');
+                $data2 = array('consulta' => $query);
+                return view('iniciar_sesion', $data2);
             } else {
                 $session = session();
                 $session->start();
                 if($data["correo"] == $dades["correo"]){
                     if($data["contrasena"] == $dades["contrasena"]){
                         $session->set('user',$data["nombre"]);
-                        return view('iniciar_sesion', $data);
+                        $data2 = array('consulta' => $query, 'data' => $data);
+                        return view('iniciar_sesion', $data2);
                     } else {
                         echo "Usuari o contrasenya incorrecte. ";
-                        return view('iniciar_sesion', $dades);
+                        $dades2 = array('consulta' => $query, 'dades' => $dades);
+                        return view('iniciar_sesion', $dades2);
                     }
                 }
             }
         } else {
             $dades["validation"]=$this->validator;
-            return view('iniciar_sesion', $dades);
+            $dades2 = array('consulta' => $query, 'dades' => $dades);
+            return view('iniciar_sesion', $dades2);
         }
-        $db = db_connect();
-        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
-
-
-        
-
-        $data = array('consulta' => $query);
-
-        return view('iniciar_sesion',$data);
     }
     // Funcio que serveix per mostrar els arxius que te el usuari en la seva taula
     public function mostrarArxius()
@@ -216,9 +217,6 @@ class Home extends BaseController
         // Aquest apartat rep les dades del formulari
         $db = db_connect();
         $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
-
-
-        
 
         $data = array('consulta' => $query);
 
