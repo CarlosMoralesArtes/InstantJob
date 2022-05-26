@@ -5,7 +5,20 @@
 	.sidenav{
 		display: none;
 	}
+
 	.form-outline{
+		display: none !important;
+	}
+
+	.dropdown a{
+		display: inline-block !important;
+	}
+
+	.dropdown-menu{
+		visibility: visible !important;
+	}
+
+	.imatgePerfil{
 		display: none !important;
 	}
 
@@ -100,7 +113,15 @@
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+@media (max-width: 1450px) { 
+	.dropdown a{
+		display: none;
+	}
+
+	.dropdown-menu{
+		visibility: hidden;
+	}
+}
 
 *{
     font-family: 'Montserrat', sans-serif;
@@ -118,6 +139,51 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+.dropdown-menu{
+	background-color: #0196C1 !important;
+}
+
+.dropdown-item{
+	color: white !important;
+	padding: 10px !important;
+	border-radius: 2px;
+	display: inline-block;
+}
+
+.dropdown-item:hover{
+	background-color: #48B5D6 !important;
+}
+
+.dropdown-menu img{
+	width: 20px !important;
+	margin-left: 10px;
+}
+
+.btn-secondary{
+	width: 100% !important;
+	height: 100% !important;
+	font-size: 15px;
+}
+
+.imatgePerfil{
+	border-radius: 100%;
+	background-color: white;
+	margin-right: 10px;
+}
+
+.dropdown-menu .btn-light:hover{
+	background-color: #48B5D6 !important;
+}
+
+.fletchaDropdown{
+	width: 15px !important;
+	margin-left: 10px;
+}
+
+.dropdown-toggle{
+	width: 100%;
 }
 
 .politica{
@@ -190,7 +256,7 @@
 }
 
 .header img{
-	width: 50px !important;
+	width: 50px;
 }
 
 /* Estils per els botons */
@@ -971,6 +1037,15 @@ footer{
 
 .footer-content{
     display: inline-block;
+}
+
+.footer-content a{
+	color: white !important;
+	text-decoration: none !important;
+}
+
+.footer-content a:hover{
+	color:#0075FF !important;
 }
 
 .footer-content img{
