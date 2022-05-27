@@ -361,19 +361,34 @@
             $array = array(
               'id_servicio' => $row['id_servicio'],
               'nombre' => $row['nombre'],
-              'nom'  => $row['nom'],
+              'nom'  => $row['nombre'],
               'precio' => $row['precio']
             );
             array_push($arraytotal,$array);
             echo $array['nom'];
           }
 
+          echo var_dump($consulta);
+
+          $contador = 0;
+
           //Aqui modificamos el array para mostrarlo despues.
-          foreach ($arraytotal as $row) {
-            echo var_dump($row['id_servicio']);
+          foreach ($arraytotal as $row1) {
+            foreach ($arraytotal as $row2) {
+              if ($row1['id_servicio'] = $row2['id_servicio']) {
+                $contador++;
+              }
+            }
+            if ($contador > 1) {
+                echo "hay un iagual <br>";
+                $contador = 0;
+            }else{
+                $contador = 0;
+            }
           }
-          unset($arraytotal[4]);
-          echo "jeje";
+
+          unset($arraytotal[5]);
+          echo "<br>";
           echo var_dump($arraytotal);
 
           //Aqui hacemos los echo de los arrays modificados.
@@ -383,7 +398,7 @@
               <img src="./imgs/imatgePre.png" width="100%" height="150px">
               <div class="card-body">
         <?php
-            echo $array['nom'];
+            echo $row['nom'];
             echo "</div>";
             echo "</div>";
           }
