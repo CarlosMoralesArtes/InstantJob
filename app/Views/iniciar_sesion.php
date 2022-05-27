@@ -354,19 +354,36 @@
   <h1>Select Eric</h1>
   <div class="segonApartat">
         <?php
+          $arraytotal = array();
 
+          //Aqui transformamos la consulta en un array modificable.
           foreach ($consulta->getResultArray() as $row) {
+            $array = array(
+              'id_servicio' => $row['id_servicio'],
+              'nombre' => $row['nombre'],
+              'nom'  => $row['nom'],
+              'precio' => $row['precio']
+            );
+            array_push($arraytotal,$array);
+            echo $array['nom'];
+          }
+
+          //Aqui modificamos el array para mostrarlo despues.
+          foreach ($arraytotal as $row) {
+            echo var_dump($row['id_servicio']);
+          }
+          unset($arraytotal[4]);
+          echo "jeje";
+          echo var_dump($arraytotal);
+
+          //Aqui hacemos los echo de los arrays modificados.
+          foreach ($arraytotal as $row) {
         ?>
             <div class="serveiSeparat col-4" style="width: 18rem;">
               <img src="./imgs/imatgePre.png" width="100%" height="150px">
               <div class="card-body">
         <?php
-            echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
-
-            echo "<p id='2'>".$row['nom']."</p>";
-
-            echo "<p id='2'>".$row['precio']."</p>";
-
+            echo $array['nom'];
             echo "</div>";
             echo "</div>";
           }
