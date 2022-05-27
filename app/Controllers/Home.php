@@ -18,7 +18,8 @@ class Home extends BaseController
     public function index()
     {
         $db = db_connect();
-        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
+        $query = $db->query("SELECT * FROM `servicio` ser RIGHT JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio LEFT JOIN categorias cate ON cate.id_categoria = cat.id_categoria;
+        ");
 
 
         

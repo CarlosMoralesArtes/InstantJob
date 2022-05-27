@@ -361,35 +361,66 @@
             $array = array(
               'id_servicio' => $row['id_servicio'],
               'nombre' => $row['nombre'],
-              'nom'  => $row['nombre'],
-              'precio' => $row['precio']
+              'nom'  => $row['nom'],
+              'precio' => $row['precio'],
+              'id_ser_cat' => $row['id_ser_cat']
             );
             array_push($arraytotal,$array);
-            echo $array['nom'];
+            // echo $array['nom'];
           }
 
-          echo var_dump($consulta);
+          // echo var_dump($consulta);
 
           $contador = 0;
+          $bucle = 0;
+          $entrar = 0;
 
           //Aqui modificamos el array para mostrarlo despues.
           foreach ($arraytotal as $row1) {
             foreach ($arraytotal as $row2) {
-              if ($row1['id_servicio'] = $row2['id_servicio']) {
+              if ($row1['id_servicio'] == $row2['id_servicio']) {
                 $contador++;
+                if ($contador == 2) {
+                  $bucle = $row1['id_ser_cat'];
+                  unset($arraytotal[$bucle]);
+                }
               }
+              // echo "1: " . $row1['id_ser_cat'];
+              // echo "<br>";
+              // echo "2: " . $row2['id_ser_cat'];
+              // echo "<br>";
+              // echo "<br>";
             }
-            if ($contador > 1) {
-                echo "hay un iagual <br>";
+
+            // echo "la bucle es: ". $bucle;
+
+            // foreach ($arraytotal as $row3) {
+            //   while ($bucle == $row3['id_ser_cat']) {
+            //     unset($arraytotal[$bucle]);
+            //   }
+
+            // }
+            // if ($entrar == 1) {
+
+              // echo "bucle" . $bucle;
+
+              // $bucle = $bucle - 2;
+              // unset($arraytotal[$bucle]);
+              // $bucle = 0;
+            // }
+            if ($contador == 2) {
+                // echo "<br>hay dos iagual ";
                 $contador = 0;
+                // $entrar = 1;
             }else{
                 $contador = 0;
             }
+            // echo "<br>oto<br>";
           }
 
-          unset($arraytotal[5]);
-          echo "<br>";
-          echo var_dump($arraytotal);
+          // unset($arraytotal[5]);
+          // echo "<br>";
+          // echo var_dump($arraytotal);
 
           //Aqui hacemos los echo de los arrays modificados.
           foreach ($arraytotal as $row) {
@@ -398,6 +429,8 @@
               <img src="./imgs/imatgePre.png" width="100%" height="150px">
               <div class="card-body">
         <?php
+            echo $row['nombre'];
+            echo "<br>";
             echo $row['nom'];
             echo "</div>";
             echo "</div>";
