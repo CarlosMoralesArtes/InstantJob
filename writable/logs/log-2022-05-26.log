@@ -272,3 +272,14 @@ CRITICAL - 2022-05-26 04:49:44 --> Call to a member function getError() on null
 #6 C:\wamp64\www\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\wamp64\www\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 {main}
+CRITICAL - 2022-05-26 16:18:44 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\InstantJob\app\Views\iniciar_sesion.php(356): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 356, Array)
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('iniciar_sesion', Array, true)
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(42): view('iniciar_sesion', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->home()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -284,7 +284,7 @@
     <h2>La benvinguda al estiu</h2>
     <p>Molts serveis a la teva disponibilitat!</p>
     <br>
-    <div class="serveiSeparat2 col-6" style="width: 18rem;">
+    <div class="serveiSeparat col-6" style="width: 18rem;">
       <img src="./imgs/imatgePre.png" width="100%" height="150px">
       <div class="card-body">
         <p class="card-title">Carpinteria</p>
@@ -301,7 +301,7 @@
       </div>
     </div>
     <h2>Productes destacats del moment</h2><br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
+    <div class="serveiSeparat col-4" style="width: 18rem;">
       <img src="./imgs/imatgePre.png" width="100%" height="150px">
       <div class="card-body">
         <p class="card-title">Fontaneria</p>
@@ -326,7 +326,7 @@
       </div>
     </div>
     <br>
-    <div class="serveiSeparat2 col-4" style="width: 18rem;">
+    <div class="serveiSeparat col-4" style="width: 18rem;">
       <img src="./imgs/imatgePre.png" width="100%" height="150px">
       <div class="card-body">
         <p class="card-title">Fontaneria</p>
@@ -352,18 +352,26 @@
     </div>
   </div>
   <h1>Select Eric</h1>
-  <div class="serveiSeparat col-4" style="width: 18rem;">
+  <div class="segonApartat">
         <?php
 
           foreach ($consulta->getResultArray() as $row) {
-            echo $row['id_servicio'];
-            echo $row['nombre'];
-            echo $row['precio'];
-            echo $row['descripcio'];
-            echo "<br>";
+        ?>
+            <div class="serveiSeparat col-4" style="width: 18rem;">
+              <img src="./imgs/imatgePre.png" width="100%" height="150px">
+              <div class="card-body">
+        <?php
+            echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
+
+            echo "<p id='2'>".$row['nom']."</p>";
+
+            echo "<p id='2'>".$row['precio']."</p>";
+
+            echo "</div>";
+            echo "</div>";
           }
         ?>
-        </div>
+    </div>
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
