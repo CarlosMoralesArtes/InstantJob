@@ -367,7 +367,7 @@ body{
 }
 
 .titol{
-	background: url('./imgs/fondo5.svg') no-repeat !important;
+	background: url('./imgs/fondo5.jpg') no-repeat !important;
 	background-size: cover !important;
 	background-position: center !important;
 	height: 1050px;
@@ -375,7 +375,8 @@ body{
 }
 
 .segonApartat{
-	background: url('./imgs/backgroundSegonApartat.svg') no-repeat;
+	margin-top: -150px !important;
+	background: url('./imgs/backgroundSegonApartat.jpg') no-repeat;
 	background-size: cover !important;
 	background-position: center !important;
 }
