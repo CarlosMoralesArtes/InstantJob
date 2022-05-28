@@ -247,6 +247,7 @@ class Home extends BaseController
                 if($data["correo"] == $dades["correo"]){
                     if($data["contrasena"] == $dades["contrasena"]){
                         $session->set('user',$data["nombre"]);
+                        $session->set('id_user',$data["id_cliente"]);
                         $data = array('consulta' => $query, 'consulta2' => $query2);
                         return view('iniciar_sesion',$data);;
                     } else {
@@ -276,6 +277,7 @@ class Home extends BaseController
         return view('iniciar_sesion',$data);
     }
 
+    // Funcio que serveix per modificar el usuari
     public function configuracioFormulari()
     {
         // Aquest apartat rep les dades del formulari
@@ -308,15 +310,6 @@ class Home extends BaseController
             $sql = "UPDATE `cliente` SET `nombre`= ?,`apellidos`= ?,`contrasena`= ? WHERE `id_cliente` = ?;";
             $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasenya'], $dades['id_usuari']]);
 
-            // $dadesUpdate = [
-            //     'nombre' => $dades["nombre"];
-            //     'apellidos' => $dades["apellidos"];
-            //     'contrasenya' => $dades["contrasenya"];
-            // ];
-
-            // $codi = $dades["id_usuari"];
-            // $usuari = new \App\Models\UsuariModelModificar();
-			// $usuari->update($codi, $dadesUpdate);
             $session = session();
             $session->start();
             $session->set('user',$dades['nombre']);
