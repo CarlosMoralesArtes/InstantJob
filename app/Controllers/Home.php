@@ -222,6 +222,7 @@ class Home extends BaseController
                 if($data["correo"] == $dades["correo"]){
                     if($data["contrasena"] == $dades["contrasena"]){
                         $session->set('user',$data["nombre"]);
+                        $session->set('id_user',$data["id_cliente"]);
                         $data = array('consulta' => $query, 'consulta2' => $query2);
                         return view('iniciar_sesion',$data);;
                     } else {
