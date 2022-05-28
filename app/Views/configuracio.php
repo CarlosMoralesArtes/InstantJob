@@ -137,7 +137,7 @@
         <p class="card-title">Completa els camps per modificar el perfil</p>
         <div class="configuracio">
         <div class="popupConfiguracio active">
-          <div class="targetaIniciSessio">
+          <div class="targetaConfiguracio">
             <?php
               $ruta = "configuracio";
               $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");

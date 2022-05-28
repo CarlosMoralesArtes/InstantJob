@@ -131,7 +131,7 @@
       <h2 class="title">Registra't</h2>
       <p>Completa els camps</p>
       <br>
-      <div class="targetaIniciSessio">
+      <div class="targetaIniciSessio inici">
           <?php
             echo "<div id='error'></div>";
             $ruta = site_url()."registrar";
