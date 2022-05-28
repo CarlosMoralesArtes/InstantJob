@@ -367,7 +367,7 @@ body{
 }
 
 .titol{
-	background: url('./imgs/fondo5.jpg') no-repeat !important;
+	background: url('./imgs/fondo5.svg') no-repeat !important;
 	background-size: cover !important;
 	background-position: center !important;
 	height: 1050px;
