@@ -86,23 +86,43 @@ function closeNav(){
 	document.getElementById("mySidenav").style.width="0";
 }
 
+botonsSeleccionats = ['imatgeCategoria1','imatgeCategoria2', 'imatgeCategoria3', 'imatgeCategoria4', 'imatgeCategoria5', 'imatgeCategoria6', 'imatgeCategoria7', 'imatgeCategoria8']
+
 function ImatgeSeleccionada(clicked){
   var imatge = document.getElementById(clicked);
   for (let i = 0; i < botonsSeleccionats.length; i++) {
-    if(botonsSeleccionats[i] == clicked){
-      contador++;
-    }
-  }
-  if(contador != 0){
-    imatge.classList.remove('seleccionat');
     var myIndex = botonsSeleccionats.indexOf(clicked);
     if (myIndex !== -1) {
       botonsSeleccionats.splice(myIndex, 1);
     }
+    var imatgeEditar = document.getElementById(botonsSeleccionats[i]);
+    imatgeEditar.classList.add('deseleccionat');
+    imatgeEditar.setAttribute('disabled', 'disabled')
+  }
+  if(contador != 0){
+    imatge.classList.remove('seleccionat');
+    botonsSeleccionats.push(clicked);
+    if (myIndex !== -1) {
+      botonsSeleccionats.splice(myIndex, 1);
+    }
+
+    botonsSeleccionats = ['imatgeCategoria1','imatgeCategoria2', 'imatgeCategoria3', 'imatgeCategoria4', 'imatgeCategoria5', 'imatgeCategoria6', 'imatgeCategoria7', 'imatgeCategoria8']
+
+    for (let i = 0; i < botonsSeleccionats.length; i++) {
+      var myIndex = botonsSeleccionats.indexOf(clicked);
+      if (myIndex !== -1) {
+        botonsSeleccionats.splice(myIndex, 1);
+      }
+      var imatgeEditar = document.getElementById(botonsSeleccionats[i]);
+
+      var imatgeSeleccionada = document.getElementById(clicked);
+      imatgeSeleccionada.classList.remove('seleccionat');
+      imatgeEditar.classList.remove('deseleccionat');
+      console.log("hola");
+    }
     contador = 0;
   } else {
     imatge.classList.add('seleccionat');
-    botonsSeleccionats.push(clicked);
   }
 }
 

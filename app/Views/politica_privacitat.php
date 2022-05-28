@@ -210,16 +210,15 @@
   </div>
 
   <!-- Titul de la pàgina principal -->
-    <div class="titol">
       <h1>Política de Privacitat</h1>
       <div class="politica">
         <br>
+        <h1>Política de Privacitat</h1>
         <p>D'acord amb el que estableix el Reglament General de Protecció de Dades, us informem que tractarem les vostres dades personals amb la finalitat de:</p>
         <p>Les dades personals proporcionades es conservaran, mentre es mantingui la relació mercantil, no se sol·licite la supressió per l'interessat, o durant 1 any a partir de la darrera confirmació d'interès, o durant el temps necessari per complir les obligacions legals. L'empresa NO prendrà decisions automatitzades. Les dades no se cediran a tercers llevat dels casos en què hi hagi una obligació legal i els tractarem en base a.</p>
         <p>Així mateix, us informem de la possibilitat d'exercir els drets següents sobre les vostres dades personals: dret d'accés, rectificació, supressió o oblit, limitació, oposició, portabilitat i a retirar el consentiment prestat, per a això podreu enviar un email a: info@instantjob.es</p>
         <p>A més, linteressat pot dirigir-se a lAutoritat de Control en matèria de Protecció de Dades competent per obtenir informació addicional o presentar una reclamació.</p>
       </div>
-    </div>
   
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->

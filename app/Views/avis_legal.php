@@ -277,9 +277,9 @@
   </div>
 
   <!-- Titul de la pàgina principal -->
-    <div class="titol">
-      <h1>Avís Legal</h1>
       <div class="politica">
+        <br>
+        <h1>Avís Legal</h1>
         <p>En compliment de l'article 10 de la Llei 34/2002, de 11 de juliol, de Serveis de la Societat de la Informació i Comerç Electrònic (LSSICE) a continuació es detallen les dades identificatives de l'empresa:</p>
         <p>Nom empresa: InstantJob</p>
         <p>Raó social: Eric i Carlos</p>
@@ -297,7 +297,6 @@
         <p>Eric i Carlos (InstantJob) es reserva el dret d'actualitzar, modificar o eliminar la informació continguda a les seves pàgines web i fins i tot pot limitar o no permetre l'accés a aquesta informació a certs usuaris.</p>
         <p>Eric i Carlos (InstantJob) no assumeix cap responsabilitat per la informació continguda en pàgines web de tercers a les quals es pugui accedir per links o enllaços des de qualsevol pàgina web propietat d'Eric i Carlos (InstantJob). La presència de links o enllaços a les pàgines web d'Eric i Carlos (InstantJob) té finalitat merament informativa i en cap cas suposa suggeriment, invitació o recomanació sobre aquests.</p>
       </div>
-    </div>
   
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->

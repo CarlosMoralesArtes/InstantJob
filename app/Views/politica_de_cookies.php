@@ -222,9 +222,8 @@
 
 
   <!-- Titul de la pàgina principal -->
-    <div class="titol">
+      <br><div class="politica">
       <h1>Política de Cookies</h1>
-      <div class="politica">
         <p class="informacioLegal">POLÍTICA DE COOKIES.
         <p>Eric i Carlos (InstantJob), a través del presente documento, recoge su Política de recogida y tratamiento de cookies, en cumplimiento de lo dispuesto en el artículo22.2 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE).Las cookies se almacenan en el equipo terminal del usuario (ordenador o dispositivo móvil) y recopilan información al visitar la página web www.instantjob.es, con la finalidad de mejorarla usabilidad de las mismas, conocer los hábitos o necesidades de navegación de los usuarios para poder adaptarse a los mismos, así como obtener información con fines estadísticos. En el caso de aquellos usuarios que ya sean clientes de Eric i Carlos (InstantJob),la información recabada con las cookies servirá también para su identificación al acceder a las distintas herramientas que Eric i Carlos (InstantJob) pone a su disposición para la gestión de los servicios. La presente Política de Cookies será de aplicación a aquellos usuarios que voluntariamente visitan las páginas web de Eric i Carlos (InstantJob), cumplimentan formularios de recogida de datos, acceden a las herramientas que Eric i Carlos(InstantJob) pone a disposición de sus clientes para gestionar sus servicios, o utilizan cualquier otro servicio presente en el sitio web que implique la comunicación de datos a Eric i Carlos (InstantJob), o el acceso a datos por Eric i Carlos(InstantJob), para la prestación de sus servicios. Eric i Carlos (InstantJob) informa a los usuarios de sus páginas web, de la existencia de cookies y pone a su disposición la presente Política con la finalidad de informarles acerca del uso y del objeto de las mismas. El hecho de continuar la navegación a través de sus páginas, supone el conocimiento y la aceptación de la presente Política por parte de dichos usuarios.</p>
         <p>Eric i Carlos (InstantJob) utiliza los siguientes tipos de cookies:<p>
@@ -245,7 +244,6 @@
         <p>* Chrome: <a href="https://support.google.com/chrome/answer/95647?hl=es">https://support.google.com/chrome/answer/95647?hl=es</a></p>
         <p>* Firefox: <a href="http://support.mozilla.org/es/kb/cookies-informacion-que-los-sitios-web-guardan-en-?redirectlocale=en-US&redirectslug=Cookies">http://support.mozilla.org/es/kb/cookies-informacion-que-los-sitios-web-guardan-en-?redirectlocale=en-US&redirectslug=Cookies</a></p>
       </div>
-    </div>
   
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->

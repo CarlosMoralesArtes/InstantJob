@@ -15,6 +15,7 @@
   <!-- Bootstrap CSS v5.0.2 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/0859fc3634.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
             // echo "<p>".$_SESSION['user']."</p>";
             echo "<div class='dropdown'>";
             echo "<img class='imatgePerfil' src='imgs/fontaneriaTransparent.png' alt='Imatge de perfil del usuari'>";
-            echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Benvingut ".$_SESSION['user']." 🡓</a>";
+            echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
             echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
             echo "<a class='dropdown-item' href='#'><img src='imgs/configuracio.png' alt='Categoria de lampista'> El Meu Perfil</a>";
             echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
@@ -48,13 +49,13 @@
             echo "</div>";
             echo "</div>";
         } else {
-            echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
+            echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio / Registrar-se</a></div>";
         }
       ?>
 
       </div>
       <div class="header col-2">
-      <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
+      <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar Producte</a>
       </div>
     </nav>
   </header>
@@ -98,7 +99,8 @@
           echo "<div class='input-container'>";
           // En $data es coloquen els atributs de la pregunta
           $data = array('name' => 'contrasena',
-                      'required' => 'required');
+                        'required' => 'required',
+                        'type' => 'password');
           // En el form input es l'apartat on pots colocar text en el formulari
           echo form_input($data);
           echo form_label('Contrasena', '#{label}');

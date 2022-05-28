@@ -125,7 +125,7 @@
       <div class="card-body">
         <p class="card-title">Que vas a pujar?</p>
         <p class="card-title">Selecciona la categoria</p>
-        <img id="imatgeCategoria1" src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada(this.id)">
+        <button id="imatgeCategoria1" onclick="ImatgeSeleccionada(this.id)"><img src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista"></button>
         <img id="imatgeCategoria2" src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada(this.id)">
         <img id="imatgeCategoria3" src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada(this.id)">
         <img id="imatgeCategoria4" src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada(this.id)">
@@ -215,7 +215,7 @@
               }
             }
 
-            echo "<input type='submit' class='btn-primary' name='mysubmit' value='Pujar Producte'>";
+            echo "<input type='submit' class='btn-primary' name='mysubmit' value='Publicar'>";
             
             // El form close es per tancar el formulari
             echo form_close();
