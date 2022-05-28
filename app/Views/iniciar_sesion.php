@@ -221,54 +221,74 @@
               <div class="carousel__lista">
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista">
-                  <p>Lampista</p>
+                <form action= 'categoria' method="post">
+                    <input type="hidden" name="1" value="1">
+                    <button><img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista"></button>
+                    <p>Lampista</p>
+                  </form>
                 </div>
               </a>
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <img src="imgs/carpinteria.png" alt="Categoria de fuster">
-                  <p>Fuster</p>
+                  <form action= 'categoria' method="post">
+                    <input type="hidden" name="1" value="2">
+                    <button><img src="imgs/carpinteria.png" alt="Categoria de fuster"></button>
+                    <p>Fuster</p>
+                  </form>
                 </div>
               </a>
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <img src="imgs/pintor.png" alt="Categoria de pintors">
-                  <p>Pintor</p>
+                <form action= 'categoria' method="post">
+                    <input type="hidden" name="1" value="3">
+                    <button><img src="imgs/pintor.png" alt="Categoria de pintors"></button>
+                    <p>Pintor</p>
+                  </form>
                 </div>
               </a>
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <img src="imgs/informatic_blau.png" alt="Categoria d'informatic">
-                  <p>Informàtic</p>
+                  <form action= 'categoria' method="post">
+                    <input type="hidden" name="1" value="4">
+                    <button><img src="imgs/informatic_blau.png" alt="Categoria d'informatic"></button>
+                    <p>Informàtic</p>
+                  </form>
                 </div>
               </a>
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <form action= 'serveis' method="post">
+                  <form action= 'categoria' method="post">
+                    <input type="hidden" name="1" value="5">
                     <button><img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu"></button>
-                    
                     <p>Administratiu</p>
                   </form>
-                  
                 </div>
               </a>
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <img src="imgs/jardiner_blau.png" alt="Categoria de jardiners">
-                  <p>Jardiner</p>
+                <form action= 'categoria' method="post">
+                    <input type="hidden" name="1" value="5">
+                    <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
+                    <p>Jardiner</p>
+                  </form>
                 </div>
               </a>
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <img src="imgs/medicina_blau.png" alt="Categoria de medicina">
-                  <p>Medicina</p>
+                <form action= 'categoria' method="post">
+                    <input type="hidden" name="1" value="5">
+                    <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
+                    <p>Medicina</p>
+                  </form>
                 </div>
               </a>
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <img src="imgs/obrer_blau.png" alt="Categoria d'obrers">
-                  <p>Obrers</p>
+                <form action= 'categoria' method="post">
+                    <input type="hidden" name="1" value="5">
+                    <button><img src="imgs/obrer_blau.png" alt="Categoria d'obrers"></button>
+                    <p>Obrers</p>
+                  </form>
                 </div>
               </a>
               </div>

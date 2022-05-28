@@ -46,6 +46,23 @@ class Home extends BaseController
         return view('avis_legal');
     }
 
+    //Redireccionament de la footer a avis legal
+    public function categoriasel(){
+        $dades=$this->request->getVar();
+        $final = $dades[1];
+        $db = db_connect();
+        $query = "SELECT * FROM `servicio` WHERE categoria = ?;";
+        $query = $db->query($query, [$final]);
+        $query2 = "SELECT * FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2 AND categoria = ?;";
+        $query2 = $db->query($query2, [$final]);
+
+
+        $data = array('consulta' => $query, 'consulta2' => $query2);
+
+        return view('serveis',$data);
+        // return view('serveis');
+    }
+
     //Redireccionament de la footer a la politica de privacitat
     public function politicaprivacitat(){
         return view('politica_privacitat');
@@ -83,8 +100,16 @@ class Home extends BaseController
 
     //Redireccionament de serveis
     public function serveis(){
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM `servicio`");
+        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
 
-        return view('serveis');
+
+        
+
+        $data = array('consulta' => $query, 'consulta2' => $query2);
+
+        return view('serveis',$data);
     }
 
     //Redireccionament de configuracio
