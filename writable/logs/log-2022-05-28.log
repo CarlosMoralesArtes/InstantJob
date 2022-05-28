@@ -110,3 +110,180 @@ CRITICAL - 2022-05-28 09:54:50 --> Call to a member function getResultArray() on
 #6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 {main}
+ERROR - 2022-05-28 14:05:51 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:05:51 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(55): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:07:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:07:06 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(56): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:07:38 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:07:38 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(56): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:08:27 --> Unknown column 'cli.tarifa' in 'where clause'
+ERROR - 2022-05-28 14:08:32 --> Unknown column 'cli.tarifa' in 'where clause'
+ERROR - 2022-05-28 14:09:03 --> Unknown column 'cli.tarifa' in 'where clause'
+CRITICAL - 2022-05-28 14:09:03 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('iniciar_sesion', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(64): view('iniciar_sesion', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-28 14:10:57 --> Call to a member function getResultArray() on null
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(106): view('serveis')
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->serveis()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-05-28 14:30:53 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:30:53 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(56): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:31:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:31:17 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(56): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:32:56 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:32:56 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(56): CodeIgniter\Database\BaseConnection->query('', 3)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:34:31 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:34:31 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(56): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:34:55 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:34:55 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(58): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:35:36 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:35:36 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(58): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:36:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:36:00 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(58): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-28 14:36:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+CRITICAL - 2022-05-28 14:36:24 --> mysqli::query(): Empty query
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::query()...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Database\MySQLi\Connection.php(292): mysqli->query('', 0)
+#2 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('')
+#3 C:\xampp\htdocs\InstantJob\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('')
+#4 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(59): CodeIgniter\Database\BaseConnection->query('', Array)
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-28 14:36:46 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#1 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-28 14:37:11 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#1 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-28 14:38:04 --> Call to a member function getResultArray() on string
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(63): view('serveis', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->categoriasel()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

@@ -49,6 +49,8 @@ $routes->get('/estadistiques', 'Home::estadistiques');
 $routes->get('/guardats', 'Home::guardats');
 $routes->get('/clear', 'Home::clear');
 $routes->get('/mostrar', 'Home::mostrarArxius');
+$routes->post('/categoria', 'Home::categoriasel');
+// $routes->get('/categoria', 'Home::categoriasel');
 
 /*
  * --------------------------------------------------------------------
