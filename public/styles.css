@@ -80,7 +80,7 @@
 	}
 
 	.segonApartat{
-		background: url('./imgs/backgroundSegonApartat.png') no-repeat;
+		background: url('./imgs/backgroundSegonApartat.svg') no-repeat;
 		background-size: cover !important;
 		background-position: center !important;
 	}
@@ -117,7 +117,7 @@
 	}
 
 	.segonApartat{
-		background: url('./imgs/backgroundSegonApartat.png') no-repeat;
+		background: url('./imgs/backgroundSegonApartat.svg') no-repeat;
 		background-size: cover !important;
 		background-position: center !important;
 	}
@@ -143,19 +143,15 @@
 	}
 
 	.segonApartat{
-		background: url('./imgs/backgroundSegonApartat.png') no-repeat !important;
+		background: url('./imgs/backgroundSegonApartat.svg') no-repeat !important;
 		background-size: cover !important;
 		background-position: center !important;
-	}
-
-	.col-4{
-		width: 70% !important;
 	}
 }
 
 @media (max-width: 920px){
 	.segonApartat{
-		background: url('./imgs/backgroundSegonApartat.png') no-repeat !important;
+		background: url('./imgs/backgroundSegonApartat.svg') no-repeat !important;
 		background-size: cover !important;
 		background-position: center !important;
 	}
@@ -174,10 +170,6 @@
 
 *{
     font-family: 'Montserrat', sans-serif;
-}
-
-.col-4{
-	width: 20% !important;
 }
 
 .header form{
@@ -383,7 +375,7 @@ body{
 }
 
 .segonApartat{
-	background: url('./imgs/backgroundSegonApartat2.png') no-repeat;
+	background: url('./imgs/backgroundSegonApartat.svg') no-repeat;
 	background-size: cover !important;
 	background-position: center !important;
 }
@@ -667,7 +659,6 @@ header .btn-light{
 }
 
 .card-body img:hover{
-	border-radius: 100%;
 	background-color: #0196C1;
 	transition: 0.2s;
 	cursor: pointer;

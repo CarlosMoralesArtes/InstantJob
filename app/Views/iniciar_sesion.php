@@ -314,7 +314,7 @@
     <?php
           $contador = 1;
           foreach ($consulta->getResultArray() as $row) {
-            echo "<div class='serveiSeparat col-4''>";
+            echo "<div class='serveiSeparat col-4' style='width: 18rem;'>";
             echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
             echo "<div class='card-body'>";
 
