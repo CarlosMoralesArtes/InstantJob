@@ -382,9 +382,8 @@
               if ($row1['id_servicio'] == $row2['id_servicio']) {
                 $contador++;
                 if ($contador == 2) {
-                  $bucle = $row2['id_ser_cat'];
+                  $bucle = $row1['id_ser_cat'];
                   unset($arraytotal[$bucle]);
-                  $bucle = 0;
                 }
               }
               // echo "1: " . $row1['id_ser_cat'];

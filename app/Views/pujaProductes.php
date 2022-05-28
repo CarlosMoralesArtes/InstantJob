@@ -140,87 +140,107 @@
     <br>
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
-        <p class="card-title">Informació Básica</p>
-        <p class="card-title">Completa els camps</p>
-        <br>
-        <?php
-            $ruta = "iniciar";
-            echo form_label('Coloca una imatge del servei', '#{label}');
-            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
-            // Form open que serveix per iniciar el formulari
-            echo form_open($ruta, $attributes);
-            echo "<div class='input-container'>";
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'fitxer',
-                          'value' => set_value('userfile'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_upload($data);
-    
-            echo "<div class='input-container'>";
-            echo form_label('Nom del Servei', '#{label}');
-            echo "<br>";
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nomTreball',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
-                          'required' => 'required',
-                          'value' => set_value('nomTreball'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo "<br>";
-            echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('nomTreball')) {
-                echo $validation->getError('nomTreball');
-                echo "<br>";
-              }
-            }
+        <p class="card-title">Completa els camps per modificar el perfil</p>
+        <div class="configuracio">
+        <div class="popupConfiguracio active">
+          <div class="targetaIniciSessio">
+            <?php
+              $ruta = "iniciar";
+              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+              // Form open que serveix per iniciar el formulari
+              echo form_open($ruta, $attributes);
+              echo "<div class='input-container'>";
 
-            echo "<div class='input-container'>";
-            echo form_label('Preu del Servei', '#{label}');
-            echo "<br>";
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'preuTreball',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'nombre',
                           'required' => 'required',
-                          'value' => set_value('preuTreball'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo "<br>";
-            echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('preuTreball')) {
-                echo $validation->getError('preuTreball');
-                echo "<br>";
-              }
-            }
+                          'type' => 'text',
+                          'value' => set_value('nombre'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Nom', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
 
-            echo form_label('Temps', '#{label}');
-            echo "<br>";
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'Temps',
-                          'type' => '#{type}',
-                          'id'  => '#{label}',
-                          'required' => 'required',
-                          'value' => set_value('Temps'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data); 
-            echo "<br>";
-            echo "</div>";
-            if(!empty($validation)){
-              if($validation->getError('Temps')) {
-                echo $validation->getError('Temps');
-                echo "<br>";
-              }
-            }
 
-            echo "<input type='submit' class='btn-primary' name='mysubmit' value='Publicar'>";
-            
-            // El form close es per tancar el formulari
-            echo form_close();
-          ?>
-        <p class="card-text"></p>
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'descripcion',
+                          'required' => 'descripcion',
+                          'type' => 'text',
+                          'value' => set_value('descripcion'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Descripció', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
+
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'horario',
+                          'required' => 'horario',
+                          'type' => 'text',
+                          'value' => set_value('horario'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Horari (Ex: Dilluns, Dimarts...)', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
+
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'dias',
+                          'required' => 'dias',
+                          'type' => 'text',
+                          'value' => set_value('dias'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Dies (Ex: De 8h a 12h)', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
+
+              $data = array(
+                'name'          => 'findes',
+                'id'            => 'findes',
+                'value'         => 'accept',
+                'checked'       => FALSE,
+                'style'         => 'margin:10px'
+              );
+              echo form_label('Treballes els caps de setmana?', '#{label}');
+              echo form_checkbox($data);
+
+              $data = array(
+                'name'          => '24h',
+                'id'            => '24h',
+                'value'         => 'accept',
+                'checked'       => FALSE,
+                'style'         => 'margin:10px'
+              );
+              echo form_label('Treballes 24h?', '#{label}');
+              echo form_checkbox($data);
+
+              echo "<br>";
+
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'fitxer',
+                            'value' => set_value('userfile'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_upload($data);
+
+              echo "<br>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Pujar Producte'>";
+
+              // El form close es per tancar el formulari
+              echo form_close();
+            ?>
+          </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   
