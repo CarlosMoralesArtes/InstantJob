@@ -17,6 +17,7 @@ class UsuariModel extends model
         "latitud",
         "logitud",
         "correo",
+        "tarifa",
     ];
 
 }
