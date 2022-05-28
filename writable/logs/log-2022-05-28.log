@@ -323,3 +323,51 @@ CRITICAL - 2022-05-28 14:49:58 --> Argument 2 passed to form_input() must be of 
 #8 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #10 {main}
+CRITICAL - 2022-05-28 17:06:32 --> Argument 2 passed to form_input() must be of the type string, null given, called in C:\xampp\htdocs\InstantJob\system\Helpers\form_helper.php on line 125
+#0 C:\xampp\htdocs\InstantJob\system\Helpers\form_helper.php(125): form_input('id_usuari', NULL, '', 'hidden')
+#1 C:\xampp\htdocs\InstantJob\app\Views\configuracio.php(160): form_hidden('id_usuari', NULL)
+#2 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('configuracio', Array, true)
+#5 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(117): view('configuracio')
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->configuracio()
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-28 17:06:35 --> Argument 2 passed to form_input() must be of the type string, null given, called in C:\xampp\htdocs\InstantJob\system\Helpers\form_helper.php on line 125
+#0 C:\xampp\htdocs\InstantJob\system\Helpers\form_helper.php(125): form_input('id_usuari', NULL, '', 'hidden')
+#1 C:\xampp\htdocs\InstantJob\app\Views\configuracio.php(160): form_hidden('id_usuari', NULL)
+#2 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('configuracio', Array, true)
+#5 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(117): view('configuracio')
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->configuracio()
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-28 17:09:06 --> Argument 2 passed to form_input() must be of the type string, null given, called in C:\xampp\htdocs\InstantJob\system\Helpers\form_helper.php on line 125
+#0 C:\xampp\htdocs\InstantJob\system\Helpers\form_helper.php(125): form_input('id_usuari', NULL, '', 'hidden')
+#1 C:\xampp\htdocs\InstantJob\app\Views\configuracio.php(160): form_hidden('id_usuari', NULL)
+#2 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('configuracio', Array, true)
+#5 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(117): view('configuracio')
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->configuracio()
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-28 17:09:12 --> Argument 2 passed to form_input() must be of the type string, null given, called in C:\xampp\htdocs\InstantJob\system\Helpers\form_helper.php on line 125
+#0 C:\xampp\htdocs\InstantJob\system\Helpers\form_helper.php(125): form_input('id_usuari', NULL, '', 'hidden')
+#1 C:\xampp\htdocs\InstantJob\app\Views\configuracio.php(160): form_hidden('id_usuari', NULL)
+#2 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('configuracio', Array, true)
+#5 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(117): view('configuracio')
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->configuracio()
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
