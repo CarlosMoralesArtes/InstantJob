@@ -249,9 +249,9 @@ class Home extends BaseController
                         $session->set('user',$data["nombre"]);
                         $session->set('id_user',$data["id_cliente"]);
                         $data = array('consulta' => $query, 'consulta2' => $query2);
-                        return view('iniciar_sesion',$data);;
+                        return view('pujaProductes',$data);;
                     } else {
-                        echo "Usuari o contrasenya incorrecte. ";
+                        echo "<p class='ErrorUsuariIncorrecte'>Usuari o contrasenya incorrecte.</p>";
                         $data = array('consulta' => $query, 'consulta2' => $query2);
                         return view('iniciar_sesion',$data);
                     }

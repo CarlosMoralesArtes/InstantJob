@@ -118,9 +118,21 @@ function ImatgeSeleccionada(clicked){
     botonsSeleccionats.push(clicked);
   }
   console.log(botonsSeleccionats);
+  // window.location.href = window.location.href + "?w1=" + botonsSeleccionats;
+// $.ajax(
+//   {
+//       url: 'get_var.php?var=<?php echo $var; ?>',
+//       success: function( data ) {
+//           alert( 'El servidor devolvio "' + botonsSeleccionats + '"' );
+//       }
+//   }
+// )
 }
 
 // $('ul li').on('click', function() {
 // 	$('li').removeClass('active');
 // 	$(this).addClass('active');
 // });
+
+
+
