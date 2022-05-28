@@ -141,6 +141,7 @@
           </div>
         </div>
       </div>
+    <div class="segonApartat">
     <h2>Serveis Destacats</h2><br>
     <?php
           $contador = 1;
@@ -153,25 +154,23 @@
 
             echo "<p id='2'>".$row['precio']."</p>";
 
-            echo "</div>";
-            echo "</div>";
             if ($contador == 3) {
               echo "<br>";
               $contador = 0;
             }
             $contador++;
+            echo "</div>";
           }
           
         ?>
     </div>
     <br>
   </div>
-  <div>
     <h2>Mes Serveis</h2><a href="#" class="btn btn-primary">Preu</a><a href="#" class="btn btn-primary">Nom</a><br>
     <?php
           $contador = 1;
           foreach ($consulta->getResultArray() as $row) {
-            echo "<div class='serveiSeparat col-4''>";
+            echo "<div class='serveiSeparat col-3'>";
             echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
             echo "<div class='card-body'>";
 

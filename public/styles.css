@@ -1076,7 +1076,7 @@ header .btn-light{
 .configuracio .targetaIniciSessio .input-container .bar:before, .targetaIniciSessio .input-container .bar:after {
 	content: "";
 	position: absolute;
-	background: black;
+	background: #0196C1;
 	width: 0;
 	height: 2px;
 	transition: 0.2s ease;
