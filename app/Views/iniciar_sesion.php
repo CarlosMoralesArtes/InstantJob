@@ -40,10 +40,9 @@
             echo "<div class='header col-2 separacio'>";
             // echo "<p>".$_SESSION['user']."</p>";
             echo "<div class='dropdown'>";
-            echo "<img class='imatgePerfil' src='imgs/fontaneriaTransparent.png' alt='Imatge de perfil del usuari'>";
             echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
             echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
-            echo "<a class='dropdown-item' href='#'><img src='imgs/configuracio.png' alt='Categoria de lampista'> El Meu Perfil</a>";
+            echo "<a class='dropdown-item' href='#'><i class='fa-solid fa-wrench'></i> El Meu Perfil</a>";
             echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
             echo "</div>";
             echo "</div>";
