@@ -246,8 +246,12 @@
               </a>
               <a href="serveis">
                 <div class="carousel__elemento">
-                  <img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu">
-                  <p>Administratiu</p>
+                  <form action= 'serveis' method="post">
+                    <button><img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu"></button>
+                    
+                    <p>Administratiu</p>
+                  </form>
+                  
                 </div>
               </a>
               <a href="serveis">
@@ -281,7 +285,29 @@
         </div>
       </div>
     </div>
-  <div class="segonApartat">
+    <div class="segonApartat">
+    <h2>Productes destacats del moment</h2>
+    <?php
+          $contador = 1;
+          foreach ($consulta2->getResultArray() as $row) {
+            echo "<div class='serveiSeparat col-4' style='width: 18rem;'>";
+            echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
+            echo "<div class='card-body'>";
+
+            echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
+
+            echo "<p id='2'>".$row['precio']."</p>";
+
+            echo "</div>";
+            echo "</div>";
+            if ($contador == 3) {
+              echo "<br>";
+              $contador = 0;
+            }
+            $contador++;
+          }
+          
+        ?>
     <h2>La benvinguda al estiu</h2>
     <p>Molts serveis a la teva disponibilitat!</p>
     <?php
