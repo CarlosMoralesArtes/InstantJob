@@ -13,6 +13,7 @@
   <!-- Bootstrap CSS v5.0.2 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/0859fc3634.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -49,22 +50,21 @@
             echo "<div class='header col-2 separacio'>";
             // echo "<p>".$_SESSION['user']."</p>";
             echo "<div class='dropdown'>";
-            echo "<img class='imatgePerfil' src='imgs/fontaneriaTransparent.png' alt='Imatge de perfil del usuari'>";
-            echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Benvingut ".$_SESSION['user']." 🡓</a>";
+            echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
             echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
-            echo "<a class='dropdown-item' href='#'><img src='imgs/configuracio.png' alt='Categoria de lampista'> El Meu Perfil</a>";
+            echo "<a class='dropdown-item' href='#'><i class='fa-solid fa-wrench'></i> El Meu Perfil</a>";
             echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
             echo "</div>";
             echo "</div>";
             echo "</div>";
         } else {
-            echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'>Iniciar Sessio / Registrar-se</a></div>";
+            echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio / Registrar-se</a></div>";
         }
       ?>
       
       </div>
       <div class="header col-2">
-      <a class="btn btn-primary" href="pujaProductes">Pujar Producte</a>
+        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar Producte</a>
       </div>
     </nav>
   </header>
@@ -131,65 +131,66 @@
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
         <p class="card-title">Completa els camps per modificar el perfil</p>
-        <br>
-        <?php
-            $ruta = "iniciar";
-            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
-            // Form open que serveix per iniciar el formulari
-            echo form_open($ruta, $attributes);
-            
-            echo "<div class='input-container'>";
-            
-            echo form_label('Nom', '#{label}');
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nombre',
+        <div class="configuracio">
+        <div class="popupConfiguracio active">
+          <div class="targetaIniciSessio">
+            <?php
+              $ruta = "iniciar";
+              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+              // Form open que serveix per iniciar el formulari
+              echo form_open($ruta, $attributes);
+              echo "<div class='input-container'>";
+
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'nombre',
                           'required' => 'required',
-                          'value' => set_value('nom'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo "</div>";
+                          'type' => 'text',
+                          'value' => set_value('nombre'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Nom', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
 
-            echo "<div class='input-container'>";
-            echo form_label('Cognoms', '#{label}');
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'apellidos',
-                          'required' => 'required',
-                          'value' => set_value('primerCognom'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo "<div class='bar'></div>";
-            echo "</div>";
 
-            echo form_hidden('latitud', '2');
-            echo form_hidden('logitud', '2');
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'apellidos',
+                          'required' => 'apellidos',
+                          'type' => 'text',
+                          'value' => set_value('apellidos'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Cognoms', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
 
-            echo "<div class='input-container'>";
-            echo form_label('Contrasenya', '#{label}');
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'contrasena',
-                          'required' => 'required',
-                          'value' => set_value('contrasenya'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo "<div class='bar'></div>";
-            echo "</div>";
 
-            // El form close es per tancar el formulari
-            echo form_close();
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'contrasenya',
+                          'required' => 'contrasenya',
+                          'type' => 'password',
+                          'value' => set_value('contraseya'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Contrasenya', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
 
-            if(!empty($validation)){
-              if($validation->getError('correo')) {
-                echo $validation->getError('correo');
-                echo "<br>";
-              }
-            }
+              echo "<br>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Modificar Usuari'>";
 
-            echo "<input type='submit' class='btn-primary' name='mysubmit' value='Modificar Usuari'>";
-            
-            // El form close es per tancar el formulari
-            echo form_close();
-          ?>
-        <p class="card-text"></p>
+              // El form close es per tancar el formulari
+              echo form_close();
+            ?>
+          </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   
