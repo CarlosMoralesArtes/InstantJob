@@ -40,6 +40,7 @@ $routes->get('/tarifes', 'Home::tarifes');
 $routes->get('/form', 'Home::form');
 $routes->post('/iniciar', 'Home::formulariIniciSessio');
 $routes->post('/registrar', 'Home::formulari');
+$routes->post('/configuracio', 'Home::configuracioFormulari');
 $routes->get('/avislegal', 'Home::avislegal');
 $routes->get('/politicaprivacitat', 'Home::politicaprivacitat');
 $routes->get('/politicacookies', 'Home::politicacookies');

@@ -38,7 +38,6 @@
         $session = session();
         if ($session->get('user')){
             echo "<div class='header col-2 separacio'>";
-            // echo "<p>".$_SESSION['user']."</p>";
             echo "<div class='dropdown'>";
             echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
             echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
@@ -287,7 +286,7 @@
     <?php
           $contador = 1;
           foreach ($consulta->getResultArray() as $row) {
-            echo "<div class='serveiSeparat col-4' style='width: 18rem;'>";
+            echo "<div class='serveiSeparat col-4''>";
             echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
             echo "<div class='card-body'>";
 

@@ -20,7 +20,7 @@
 <?php
       $session = session();
       if ($session->get('user')){
-        // $userName = $session->get('codiU');
+          $session->get('id_user');
       } else {
         // $localitzacio = site_url()."/c4morales/home/iniciarSessio";
         header("Location: ./index");
@@ -135,7 +135,7 @@
         <div class="popupConfiguracio active">
           <div class="targetaIniciSessio">
             <?php
-              $ruta = "iniciar";
+              $ruta = "configuracio";
               $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
               // Form open que serveix per iniciar el formulari
               echo form_open($ruta, $attributes);
@@ -153,6 +153,7 @@
               echo "<br>";
               echo "</div>";
 
+              echo form_hidden('id_usuari', $session->get('id_user'));
 
               echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
@@ -182,6 +183,7 @@
               echo "</div>";
 
               echo "<br>";
+              echo "<small>Les dades s'actualitzen al instant</small>";
               echo "<input type='submit' class='btn-submit' name='mysubmit' value='Modificar Usuari'>";
 
               // El form close es per tancar el formulari

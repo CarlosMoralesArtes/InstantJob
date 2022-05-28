@@ -147,6 +147,10 @@
 		background-size: cover !important;
 		background-position: center !important;
 	}
+
+	.col-4{
+		width: 70% !important;
+	}
 }
 
 @media (max-width: 920px){
@@ -170,6 +174,10 @@
 
 *{
     font-family: 'Montserrat', sans-serif;
+}
+
+.col-4{
+	width: 20% !important;
 }
 
 .header form{
@@ -395,8 +403,8 @@ body{
 .segonApartat{
     background-color: #0196C1;
     width: 100%;
-    padding: 70px;
     padding-top: 40px;
+	padding-bottom: 50px;
 }
 
 .serveiSeparat{

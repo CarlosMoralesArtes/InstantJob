@@ -4,8 +4,6 @@ namespace App\Controllers;
 
 use App\Models\UsuariModel;
 
-// session_start();
-
 class Home extends BaseController
 {
     //El constructor per l'ajut dels helpers
@@ -20,9 +18,6 @@ class Home extends BaseController
         $db = db_connect();
         $query = $db->query("SELECT * FROM `servicio`");
 
-
-        
-
         $data = array('consulta' => $query);
 
         return view('iniciar_sesion',$data);
@@ -32,9 +27,6 @@ class Home extends BaseController
     public function home(){
         $db = db_connect();
         $query = $db->query("SELECT * FROM `servicio`");
-
-
-        
 
         $data = array('consulta' => $query);
 
@@ -203,6 +195,7 @@ class Home extends BaseController
                 if($data["correo"] == $dades["correo"]){
                     if($data["contrasena"] == $dades["contrasena"]){
                         $session->set('user',$data["nombre"]);
+                        $session->set('id_user',$data["id_cliente"]);
                         $data2 = array('consulta' => $query, 'data' => $data);
                         return view('iniciar_sesion', $data2);
                     } else {
@@ -228,5 +221,53 @@ class Home extends BaseController
         $data = array('consulta' => $query);
 
         return view('iniciar_sesion',$data);
+    }
+
+    public function configuracioFormulari()
+    {
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+
+        // Apartat de les normes que es comproven del formulari
+        $regles = [
+            "nombre"    => "required",
+            "apellidos"    => "required",
+            "contrasenya"    => "required"
+        ];
+
+        // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
+        $missatges = [
+            "nombre" => [
+                "required" => "Nom obligatori"
+            ],
+            "apellidos" => [
+                "required" => "Cognoms obligatoris"
+            ],
+            "contrasena" => [
+                "required" => "Telefon obligatori"
+            ]
+        ];
+
+        // Validador del formulari on es comproven que estiguin tots els requisits
+        if($this->validate($regles, $missatges)){
+
+            $db = db_connect();
+            $sql = "UPDATE `cliente` SET `nombre`= ?,`apellidos`= ?,`contrasena`= ? WHERE `id_cliente` = ?;";
+            $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasenya'], $dades['id_usuari']]);
+
+            // $dadesUpdate = [
+            //     'nombre' => $dades["nombre"];
+            //     'apellidos' => $dades["apellidos"];
+            //     'contrasenya' => $dades["contrasenya"];
+            // ];
+
+            // $codi = $dades["id_usuari"];
+            // $usuari = new \App\Models\UsuariModelModificar();
+			// $usuari->update($codi, $dadesUpdate);
+            $session = session();
+            $session->start();
+            $session->set('user',$dades['nombre']);
+            return view('configuracio');
+        }
     }
 }
