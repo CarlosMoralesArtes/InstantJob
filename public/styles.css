@@ -381,6 +381,19 @@ body{
 	background-position: center !important;
 }
 
+.frase{
+	text-align: center;
+	background-color: #71f5f9;
+	filter: drop-shadow(1px);
+}
+
+.frase p{
+	padding: 50px;
+	color: #00094e;
+	font-size: 30px !important;
+	margin-bottom: 0px !important;
+}
+
 .navbar{
     background-color: #48B5D6 !important;
 }
@@ -554,10 +567,21 @@ body{
     padding: 2px;
     display: block;
 	width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
 	float: right;
 	margin-top: 20px;
 	margin-right: 12px;	
+}
+
+.pujarProductes{
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px !important;
+	border-radius: 5px !important;
+}
+
+.preguntes{
+	margin-top: 30px;
 }
 
 .pujarProducteCaixa .input-container{
@@ -576,6 +600,10 @@ body{
 	float: right;
 	margin-top: 20px;
 	margin-right: 12px;
+}
+
+.card-body{
+	padding: 25px !important;
 }
 
 .estadistiques .card-body img{
@@ -739,7 +767,6 @@ header .btn-light{
 }
 
 .configuracio .input-container{
-	margin: 10px !important;
 	color: white !important;
 }
 
@@ -892,8 +919,8 @@ header .btn-light{
 
 .targetaIniciSessio .input-container {
 	position: relative;
-	margin: 0 60px 50px;
-  }
+}
+
 .targetaIniciSessio .input-container input {
 	outline: none;
 	z-index: 1;
@@ -976,9 +1003,16 @@ header .btn-light{
 .targetaIniciSessio .input-container .bar:after {
 	right: 50%;
 }
-.targetaIniciSessio .button-container {
-	margin: 0 60px;
+.targetaIniciSessio .btn-submit {
+	width: 100%;
+	color: white;
 	text-align: center;
+	padding: 12px;
+	margin-top: 20px;
+}
+
+.targetaIniciSessio .btn-submit:hover {
+	background-color: #5E7DE3 !important;
 }
 
 /* --- --- CONTENEDOR PRINCIPAL --- --- */
@@ -1062,6 +1096,11 @@ header .btn-light{
 
 .carousel__elemento p{
 	color: black;
+}
+
+.carousel__elemento button{
+	background-color: transparent !important;
+	border: 0px !important;
 }
 
 .glider-slide{

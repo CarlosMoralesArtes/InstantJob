@@ -307,7 +307,7 @@
       </div>
     </div>
     <div class="segonApartat">
-    <h2>Productes destacats del moment</h2>
+    <h2>Serveis destacats del moment</h2>
     <?php
           $contador = 1;
           foreach ($consulta2->getResultArray() as $row) {
@@ -356,21 +356,24 @@
         ?>
   </div>
     <?php
+      if(isset( $_SESSION['eriniciar'] ) ) {
+        echo "<script src='Typescript/errorregister.js'></script>";
+        echo "<script src='..\Typescript/errorregister.js'></script>";
+        $session = session();
+        $session ->destroy();
+      }
 
-    if(isset( $_SESSION['eriniciar'] ) ) {
-      echo "<script src='Typescript/errorregister.js'></script>";
-      echo "<script src='..\Typescript/errorregister.js'></script>";
-      $session = session();
-      $session ->destroy();
-    }
+      if(isset( $_SESSION['iniciar'] ) ) {
+        echo "<script src='Typescript/bienregister.js'></script>";
+        echo "<script src='..\Typescript/bienregister.js'></script>";
+        $session = session();
+        $session ->destroy();
+      }
+    ?>
 
-    if(isset( $_SESSION['iniciar'] ) ) {
-      echo "<script src='Typescript/bienregister.js'></script>";
-      echo "<script src='..\Typescript/bienregister.js'></script>";
-      $session = session();
-      $session ->destroy();
-    }
-?>
+  <div class="frase">
+    <p><<.Nosaltres farem que la teva empresa arribi a lo més alt.>></p>
+  </div>
 
 <footer>
   <div class="row">

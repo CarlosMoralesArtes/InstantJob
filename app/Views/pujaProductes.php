@@ -153,8 +153,18 @@
               $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
               // Form open que serveix per iniciar el formulari
               echo form_open($ruta, $attributes);
-              echo "<div class='input-container'>";
 
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'fitxer',
+                            'value' => set_value('userfile'),
+                            'class' => 'pujarProductes');
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_label('Imatge de protada del servei', '#{label}');
+              echo form_upload($data);
+
+              echo "<br>";
+
+              echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
               $data = array('name' => 'nombre',
                           'required' => 'required',
@@ -207,6 +217,8 @@
               echo "<br>";
               echo "</div>";
 
+              echo "<div class='preguntes'>";
+
               $data = array(
                 'name'          => 'findes',
                 'id'            => 'findes',
@@ -227,15 +239,10 @@
               echo form_label('Treballes 24h?', '#{label}');
               echo form_checkbox($data);
 
-              echo "<br>";
-
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'fitxer',
-                            'value' => set_value('userfile'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_upload($data);
+              echo "</div>";
 
               echo "<br>";
+
               echo "<input type='submit' class='btn-submit' name='mysubmit' value='Pujar Producte'>";
 
               // El form close es per tancar el formulari
