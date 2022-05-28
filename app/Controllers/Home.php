@@ -18,8 +18,7 @@ class Home extends BaseController
     public function index()
     {
         $db = db_connect();
-        $query = $db->query("SELECT * FROM `servicio` ser RIGHT JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio LEFT JOIN categorias cate ON cate.id_categoria = cat.id_categoria;
-        ");
+        $query = $db->query("SELECT * FROM `servicio`");
 
 
         
@@ -27,13 +26,12 @@ class Home extends BaseController
         $data = array('consulta' => $query);
 
         return view('iniciar_sesion',$data);
-        return view('iniciar_sesion');
     }
 
     //Redireccionament de la pagina principal del boto del header
     public function home(){
         $db = db_connect();
-        $query = $db->query("SELECT * FROM `servicio` ser JOIN servicio_categoria cat ON cat.id_servicio = ser.id_servicio JOIN categorias cate ON cate.id_categoria = cat.id_categoria;");
+        $query = $db->query("SELECT * FROM `servicio`");
 
 
         
@@ -41,7 +39,6 @@ class Home extends BaseController
         $data = array('consulta' => $query);
 
         return view('iniciar_sesion',$data);
-        return view('iniciar_sesion');
     }
 
     //Redireccionament de la footer a avis legal
