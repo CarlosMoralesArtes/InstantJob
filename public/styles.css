@@ -362,14 +362,15 @@ p{
 }
 
 body{
-    background-color: #EBEBEB !important;
+    background: url(./imgs/icons-gray-bg.svg) !important;
     text-align: center;
 }
 
 .titol{
-	background: url('./imgs/fondo5.png') no-repeat !important;
+	background: url('./imgs/fondo5.jpg') no-repeat !important;
 	background-size: cover !important;
 	background-position: center !important;
+	height: 1050px;
 	/* background-attachment: fixed; */
 }
 
@@ -385,6 +386,10 @@ body{
 
 .titol{
     padding: 50px;
+}
+
+.titol p{
+	margin-top: 20px;
 }
 
 .segonApartat{
@@ -718,6 +723,24 @@ header .btn-light{
 	justify-content: center;
 	display: flex;
 	visibility: hidden;
+	z-index: 4;
+}
+
+.configuracio {
+	margin-top: 20px !important;
+	align-items: center;
+	justify-content: center;
+}
+
+.configuracio .popupConfiguracio {
+	border-radius: 20px;
+	color: white !important;
+	padding: 0px;
+}
+
+.configuracio .input-container{
+	margin: 10px !important;
+	color: white !important;
 }
 
 .overlay.active {
@@ -741,6 +764,7 @@ header .btn-light{
 	transition: .3s ease all;
 	transform: scale(0.7);
 	opacity: 0;
+	z-index: 2;
 }
 
 .popup .btn-cerrar-popup {
@@ -771,6 +795,10 @@ header .btn-light{
 }
 
 .popup form .contenedor-inputs {
+	opacity: 0;
+}
+
+.configuracio .popup form .contenedor-inputs {
 	opacity: 0;
 }
 
@@ -878,10 +906,27 @@ header .btn-light{
 	font-size: 20px;
 	font-weight: 400;
 }
+
+.configuracio .targetaIniciSessio .input-container input{
+	color: white !important;
+}
+
+.configuracio .targetaIniciSessio .input-container label{
+	color: white !important;
+	margin-top: 10px;
+}
+
+.configuracio .targetaIniciSessio .input-container .bar{
+	background: white !important;
+	margin-top: 10px;
+	height: 2px;
+}
+
 .targetaIniciSessio .input-container input:focus ~ label {
 	color: black;
 	transform: translate(-12%, -50%) scale(0.75);
 }
+
 .targetaIniciSessio .input-container input:focus ~ .bar:before, .targetaIniciSessio .input-container input:focus ~ .bar:after {
 	width: 50%;
 }
@@ -915,6 +960,16 @@ header .btn-light{
 	height: 2px;
 	transition: 0.2s ease;
 }
+
+.configuracio .targetaIniciSessio .input-container .bar:before, .targetaIniciSessio .input-container .bar:after {
+	content: "";
+	position: absolute;
+	background: black;
+	width: 0;
+	height: 2px;
+	transition: 0.2s ease;
+}
+
 .targetaIniciSessio .input-container .bar:before {
 	left: 50%;
 }
@@ -958,12 +1013,13 @@ header .btn-light{
 
 /* --- --- CAROUSEL --- --- */
 .carousel__contenedor {
+	margin-top: 40px !important;
 	position: relative;
 	z-index: 2;
 }
 
 .carousel__contenedor p{
-	color: white !important;
+	color: black !important;
 }
 
 .carousel__anterior,
@@ -1112,7 +1168,22 @@ header .btn-light{
 	visibility: hidden;
 	font-size: 13px;
 	letter-spacing: 0.5px;
+	animation: mostrarTooltip 2s ease-in-out;
   }
+
+  @keyframes mostrarTooltip{
+	  0%{
+		opacity: 0;
+	  }
+	  50%{
+		margin-left: 10px;
+		opacity: 1;
+	  }
+	  100%{
+		margin-left: 0px;
+	  }
+  }
+
   .sidebar-navigation ul li .tooltip:before {
 	content: "";
 	display: block;

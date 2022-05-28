@@ -46,6 +46,14 @@ window.onload = function(){
         popup = document.getElementById('popup'),
         btnCerrarPopup = document.getElementById('btn-cerrar-popup');
 
+    // Aquest apartat serveix per quan es dona un clic fora que es tregui el iniciar sessio
+    // var overlay2 = document.getElementById('overlay');
+
+    // overlay2.addEventListener('click', function(){
+    //   overlay.classList.remove('active');
+    //     popup.classList.remove('active');
+    // });
+
     btnAbrirPopup.addEventListener('click', function(){
         overlay.classList.add('active');
         popup.classList.add('active');
@@ -63,6 +71,14 @@ window.onload = function(){
         overlay2 = document.getElementById('overlay2'),
         popup2 = document.getElementById('popup2'),
         btnCerrarPopup2 = document.getElementById('btn-cerrar-popup2');
+
+    // Aquest apartat serveix per quan es dona un clic fora que es tregui el registrar-se
+    // var overlay3 = document.getElementById('overlay2');
+
+    // overlay3.addEventListener('click', function(){
+    //   overlay.classList.remove('active');
+    //     popup.classList.remove('active');
+    // });
 
     btnAbrirPopup2.addEventListener('click', function(){
         overlay2.classList.add('active');

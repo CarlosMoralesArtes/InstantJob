@@ -200,7 +200,7 @@ class Home extends BaseController
                 "required" => "Usuario obligatori"
             ],
             "contrasena" => [
-                "required" => "contrasena obligatori"
+                "required" => "Contraseña obligatori"
             ]
         ];
 
