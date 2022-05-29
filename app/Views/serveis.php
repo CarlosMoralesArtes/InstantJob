@@ -20,16 +20,7 @@
   <script src="https://kit.fontawesome.com/0859fc3634.js" crossorigin="anonymous"></script>
 </head>
 
-<?php
-    $session = session();
-    if ($session->get('user')){
-    } else {
-      header("Location: ./index");
-      die();
-    }
-?>
-
-<body>
+<body class="serveisBackground">
 
   <!-- Apartat de la carrega de la pàgina -->
   <div id="contenedor_carga">
@@ -141,12 +132,12 @@
           </div>
         </div>
       </div>
-    <div class="segonApartat">
+    <div class="serveisApartat">
     <h2>Serveis Destacats</h2><br>
     <?php
           $contador = 1;
           foreach ($consulta2->getResultArray() as $row) {
-            echo "<div class='serveiSeparat col-4' style='width: 18rem;'>";
+            echo "<div class='serveiSeparat col-4' style='width: 21rem;'>";
             echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
             echo "<div class='card-body'>";
 
@@ -154,23 +145,22 @@
 
             echo "<p id='2'>".$row['precio']."</p>";
 
+            echo "</div>";
+            echo "</div>";
             if ($contador == 3) {
               echo "<br>";
               $contador = 0;
             }
             $contador++;
-            echo "</div>";
           }
           
         ?>
-    </div>
     <br>
-  </div>
-    <h2>Mes Serveis</h2><a href="#" class="btn btn-primary">Preu</a><a href="#" class="btn btn-primary">Nom</a><br>
+    <h2>Mes Serveis</h2><a href="#" class="btn btn-primary organitzarPreu">Preu</a><a href="#" class="btn btn-primary organitzar">Nom</a><br>
     <?php
           $contador = 1;
           foreach ($consulta->getResultArray() as $row) {
-            echo "<div class='serveiSeparat col-3'>";
+            echo "<div class='serveiSeparat col-4 style='width: 21rem;'>";
             echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
             echo "<div class='card-body'>";
 
@@ -212,7 +202,7 @@
     <p>Política de Cookies</p>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
   <script src="..\Typescript/script.js"></script>

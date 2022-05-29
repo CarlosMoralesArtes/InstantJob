@@ -187,7 +187,7 @@
               echo "</div>";
 
               echo "<br>";
-              echo "<small>Les dades s'actualitzen al instant</small>";
+              echo "<p class='petit'>Les dades s'actualitzen al instant</p>";
               echo "<input type='submit' class='btn-submit' name='mysubmit' value='Modificar Usuari'>";
 
               // El form close es per tancar el formulari
