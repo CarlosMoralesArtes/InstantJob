@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Estils de la pàgina -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="..\styles.css">
   <!-- Estils de font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <!-- Estils de glider -->
@@ -307,7 +306,8 @@
           $contador = 1;
           foreach ($consulta2->getResultArray() as $row) {
             echo "<div class='serveiSeparat col-4' style='width: 21rem;'>";
-            echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
+            $path='imgs/'.$row['imagen'].'.png';
+            echo "<img src=" . $path . " border='0' width='300'>";
             echo "<div class='card-body'>";
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
@@ -345,7 +345,9 @@
           foreach ($consulta->getResultArray() as $row) {
             echo "<div class='serveiSeparat col-4' style='width: 21rem;'>";
             // echo "<img src='./imgs/imatgePre.png' ";
-            echo "<img src='data:image/jpeg; base64," . base64_encode($row['imagen']) . "'width='100%' height='150px'>";
+            // echo "<img src='data:image/jpeg; base64," . base64_encode($row['imagen']) . "'width='100%' height='150px'>";
+            $path='imgs/'.$row['imagen'].'.png';
+            echo "<img src=" . $path . " border='0' width='300'>";
             echo "<div class='card-body'>";
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
@@ -423,7 +425,6 @@
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
-  <script src="..\Typescript/script.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
