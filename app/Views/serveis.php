@@ -97,7 +97,7 @@
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
                     <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
+                    <button><img src="imgs/jardiner_blau.png" alt="Categoria de jardineria"></button>
                     <p>Jardiner</p>
                   </form>
                 </div>
