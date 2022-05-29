@@ -68,160 +68,317 @@
       </div>
     </nav>
   </header>
-<div class="overlay" id="overlay">
-    <div class="popup" id="popup">
-      <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-      <h2 class="title">Iniciar Sessio</h2>
-      <p>Completa els camps</p>
-      <br>
-      <div class="targetaIniciSessio">
-        <?php
-        $ruta = site_url()."/c4morales/home/formulariIniciSessio";
-        $attributes = array ('enctype' => "multipart/form-data", 'method' => "post");
-        // Form open que serveix per iniciar el formulari
-        echo form_open($ruta, $attributes);
-        echo "<div class='input-container'>";
-        // En $data es coloquen els atributs de la pregunta
-        $data = array('name' => 'usuari',
-                      'type' => '#{type}',
-                      'id'  => '#{label}',
-                      'required' => 'required',
-                      'value' => set_value('usuari'));
-        // En el form input es l'apartat on pots colocar text en el formulari
-        echo form_input($data);
-        echo form_label('Usuari', '#{label}');
-        echo "<div class='bar'></div>";
-        echo "<br>";
-        echo "</div>";
-        if(!empty($validation)){
-          if($validation->getError('usuari')) {
-            echo $validation->getError('usuari');
-            echo "<br>";
-          }
-        }
 
-        echo "<div class='input-container'>";
-        // En $data es coloquen els atributs de la pregunta
-        $data = array('name' => 'contrasenya',
-                      'type' => '#{type}',
-                      'id'  => '#{label}',
-                      'required' => 'required',
-                      'value' => set_value('contrasenya'));
-        // En el form input es l'apartat on pots colocar text en el formulari
-        echo form_input($data);
-        echo form_label('Contrasenya', '#{label}');
-        echo "<div class='bar'></div>";
-        echo "<br>";
-        echo "</div>";
-        if(!empty($validation)){
-          if($validation->getError('contrasenya')) {
-            echo $validation->getError('contrasenya');
-            echo "<br>";
-          }
-        }
-        echo "<br>";
-        echo "<input type='submit' class='btn-submit' value='Iniciar Sessio'>";
-
-        // El form close es per tancar el formulari
-        echo form_close();
-    ?>
-        </div>
-        <p class="pasarRegistre2">Si no tens un compte <p id="btn-abrir-popup2" class="pasarRegistre"> Registra’t</p></p>
-      </form>
-    </div>
-  </div>
-
-  <div class="overlay" id="overlay2">
-    <div class="popup" id="popup2">
-      <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-      <h2 class="title">Registra't</h2>
+  <div class="overlay" id="overlay3">
+    <div class="popup" id="popup3">
+      <a href="#" id="btn-cerrar-popup3" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h2 class="title">Formulari compra</h2>
       <p>Completa els camps</p>
       <br>
       <div class="targetaIniciSessio">
           <?php
+            $ruta = "tarifaNormal";
+            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nom',
+            $data = array('name' => 'nomTitular',
                           'type' => '#{type}',
                           'id'  => '#{label}',
                           'required' => 'required',
-                          'value' => set_value('nom'));
+                          'value' => set_value('nomTitular'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo form_label('Nom', '#{label}');
+            echo form_label('Nom del titular', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
             if(!empty($validation)){
-              if($validation->getError('nom')) {
-                echo $validation->getError('nom');
+              if($validation->getError('nomTitular')) {
+                echo $validation->getError('nomTitular');
                 echo "<br>";
               }
             }
     
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'primerCognom',
-                          'type' => '#{type}',
+            $data = array('name' => 'numeroTargeta',
+                          'type' => 'number',
                           'id'  => '#{label}',
                           'required' => 'required',
-                          'value' => set_value('primerCognom'));
+                          'value' => set_value('numeroTargeta'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo form_label('Primer Cognom', '#{label}');
+            echo form_label('Numero Targeta', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
             if(!empty($validation)){
-              if($validation->getError('primerCognom')) {
-                echo $validation->getError('primerCognom');
+              if($validation->getError('numeroTargeta')) {
+                echo $validation->getError('numeroTargeta');
                 echo "<br>";
               }
             }
 
+            echo form_hidden('id_usuari', $session->get('id_user'));
+
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'email',
-                          'type' => '#{type}',
+            $data = array('name' => 'dataCaducitat',
+                          'type' => 'month',
                           'id'  => '#{label}',
                           'required' => 'required',
-                          'value' => set_value('email'));
+                          'value' => set_value('dataCaducitat'));
             // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
             echo form_input($data);
-            echo form_label('Email', '#{label}');
+            echo form_label('Data Caducitat', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
             if(!empty($validation)){
-              if($validation->getError('email')) {
-                echo $validation->getError('email');
+              if($validation->getError('dataCaducitat')) {
+                echo $validation->getError('dataCaducitat');
                 echo "<br>";
               }
             }
     
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'contrasenya',
-                          'type' => '#{type}',
+            $data = array('name' => 'cvv',
+                          'type' => 'number',
                           'id'  => '#{label}',
                           'required' => 'required',
-                          'value' => set_value('contrasenya'));
+                          'value' => set_value('cvv'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo form_label('Contrasenya', '#{label}');
+            echo form_label('CVV', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
             if(!empty($validation)){
-              if($validation->getError('contrasenya')) {
-                echo $validation->getError('contrasenya');
+              if($validation->getError('cvv')) {
+                echo $validation->getError('cvv');
                 echo "<br>";
               }
             }
 
             echo "<br>";
 
-            echo "<input type='submit' class='btn-submit' value='Registrar-se'>";
+            echo "<input type='submit' class='btn-submit' value='Pagar'>";
+            
+            // El form close es per tancar el formulari
+            echo form_close();
+          ?>
+          </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay4">
+    <div class="popup" id="popup4">
+      <a href="#" id="btn-cerrar-popup4" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h2 class="title">Formulari compra</h2>
+      <p>Completa els camps</p>
+      <br>
+      <div class="targetaIniciSessio">
+          <?php
+            $ruta = "tarifaAdvanced";
+            $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'nomTitular',
+                          'type' => '#{type}',
+                          'id'  => '#{label}',
+                          'required' => 'required',
+                          'value' => set_value('nomTitular'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Nom del titular', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+            if(!empty($validation)){
+              if($validation->getError('nomTitular')) {
+                echo $validation->getError('nomTitular');
+                echo "<br>";
+              }
+            }
+    
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'numeroTargeta',
+                          'type' => 'number',
+                          'id'  => '#{label}',
+                          'required' => 'required',
+                          'value' => set_value('numeroTargeta'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Numero Targeta', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+            if(!empty($validation)){
+              if($validation->getError('numeroTargeta')) {
+                echo $validation->getError('numeroTargeta');
+                echo "<br>";
+              }
+            }
+
+            echo form_hidden('id_usuari', $session->get('id_user'));
+
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'dataCaducitat',
+                          'type' => 'month',
+                          'id'  => '#{label}',
+                          'required' => 'required',
+                          'value' => set_value('dataCaducitat'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
+            echo form_input($data);
+            echo form_label('Data Caducitat', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+            if(!empty($validation)){
+              if($validation->getError('dataCaducitat')) {
+                echo $validation->getError('dataCaducitat');
+                echo "<br>";
+              }
+            }
+    
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'cvv',
+                          'type' => 'number',
+                          'id'  => '#{label}',
+                          'required' => 'required',
+                          'value' => set_value('cvv'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('CVV', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+            if(!empty($validation)){
+              if($validation->getError('cvv')) {
+                echo $validation->getError('cvv');
+                echo "<br>";
+              }
+            }
+
+            echo "<br>";
+
+            echo "<input type='submit' class='btn-submit' value='Pagar'>";
+            
+            // El form close es per tancar el formulari
+            echo form_close();
+          ?>
+          </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay5">
+    <div class="popup" id="popup5">
+      <a href="#" id="btn-cerrar-popup5" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h2 class="title">Formulari compra</h2>
+      <p>Completa els camps</p>
+      <br>
+      <div class="targetaIniciSessio">
+          <?php
+          $ruta = "tarifaEnterprise";
+          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+          // Form open que serveix per iniciar el formulari
+          echo form_open($ruta, $attributes);
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'nomTitular',
+                          'type' => '#{type}',
+                          'id'  => '#{label}',
+                          'required' => 'required',
+                          'value' => set_value('nomTitular'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Nom del titular', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+            if(!empty($validation)){
+              if($validation->getError('nomTitular')) {
+                echo $validation->getError('nomTitular');
+                echo "<br>";
+              }
+            }
+    
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'numeroTargeta',
+                          'type' => 'number',
+                          'id'  => '#{label}',
+                          'required' => 'required',
+                          'value' => set_value('numeroTargeta'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Numero Targeta', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+            if(!empty($validation)){
+              if($validation->getError('numeroTargeta')) {
+                echo $validation->getError('numeroTargeta');
+                echo "<br>";
+              }
+            }
+
+            echo form_hidden('id_usuari', $session->get('id_user'));
+
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'dataCaducitat',
+                          'type' => 'month',
+                          'id'  => '#{label}',
+                          'required' => 'required',
+                          'value' => set_value('dataCaducitat'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
+            echo form_input($data);
+            echo form_label('Data Caducitat', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+            if(!empty($validation)){
+              if($validation->getError('dataCaducitat')) {
+                echo $validation->getError('dataCaducitat');
+                echo "<br>";
+              }
+            }
+    
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'cvv',
+                          'type' => 'number',
+                          'id'  => '#{label}',
+                          'required' => 'required',
+                          'value' => set_value('cvv'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('CVV', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+            if(!empty($validation)){
+              if($validation->getError('cvv')) {
+                echo $validation->getError('cvv');
+                echo "<br>";
+              }
+            }
+
+            echo "<br>";
+
+            echo "<input type='submit' class='btn-submit' value='Pagar'>";
             
             // El form close es per tancar el formulari
             echo form_close();
@@ -286,7 +443,16 @@
     <br>
     <div class="botoTarifa">
       <p>Gratis</p>
-      <button class="btn-submit">Comprar</button>
+      <?php
+        // $ruta = site_url()."/c4morales/home/formulariIniciSessio";
+        // $attributes = array ('enctype' => "multipart/form-data", 'method' => "post");
+        // // Form open que serveix per iniciar el formulari
+        // echo form_open($ruta, $attributes);
+        // echo "<input type='submit' class='btn-submit' value='Comprar'>";
+        // // El form close es per tancar el formulari
+        // echo form_close();
+      ?>
+      <button class='btn-submit' id='btn-abrir-popup3'> Comprar</button>
     </div>
   </div>
 
@@ -299,7 +465,7 @@
     <br>
     <div class="botoTarifa">
       <p>9,99€</p>
-      <button class="btn-submit">Comprar</button>
+      <button class='btn-submit' id='btn-abrir-popup4'> Comprar</button>
     </div>
   </div>
 
@@ -314,18 +480,18 @@
     <br>
     <div class="botoTarifa">
       <p>19,99€</p>
-      <button class="btn-submit">Comprar</button>
+      <button class='btn-submit' id='btn-abrir-popup5'> Comprar</button>
     </div>
   </div>
 </div>
 
   <!-- Scripts necesaris -->
   <!-- Bootstrap JavaScript Libraries -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+  <!-- Script Global -->
   <script src="Typescript/script.js"></script>
-  <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
-  <!-- <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+  <script src="..\Typescript/script.js"></script>
+  <!-- Bootstrap JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

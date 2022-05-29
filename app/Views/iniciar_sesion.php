@@ -84,6 +84,7 @@
                       'type' => 'email',
                       'value' => set_value('correo'));
           // En el form input es l'apartat on pots colocar text en el formulari
+          echo "<br>";
           echo form_input($data);
           echo form_label('Correo', '#{label}');
           echo "<div class='bar'></div>";
@@ -102,6 +103,7 @@
                         'required' => 'required',
                         'type' => 'password');
           // En el form input es l'apartat on pots colocar text en el formulari
+          echo "<br>";
           echo form_input($data);
           echo form_label('Contrasena', '#{label}');
           echo "<div class='bar'></div>";
@@ -270,7 +272,7 @@
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
                     <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
+                    <button><img src="imgs/jardiner_blau.png" alt="Categoria de jardineria"></button>
                     <p>Jardiner</p>
                   </form>
                 </div>

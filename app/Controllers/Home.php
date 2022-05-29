@@ -316,4 +316,124 @@ class Home extends BaseController
             return view('configuracio');
         }
     }
+
+    // Funcio que serveix per modificar la tarifa al usuari
+    public function tarifaNormal()
+    {
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+
+        // Apartat de les normes que es comproven del formulari
+        $regles = [
+            "nomTitular"    => "required",
+            "numeroTargeta"    => "required",
+            "dataCaducitat"    => "required",
+            "cvv"    => "required"
+        ];
+
+        // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
+        $missatges = [
+            "nomTitular" => [
+                "required" => "Nom obligatori"
+            ],
+            "numeroTargeta" => [
+                "required" => "Cognoms obligatoris"
+            ],
+            "dataCaducitat" => [
+                "required" => "Telefon obligatori"
+            ],
+            "cvv" => [
+                "required" => "Telefon obligatori"
+            ]
+        ];
+
+        // Validador del formulari on es comproven que estiguin tots els requisits
+        if($this->validate($regles, $missatges)){
+            $db = db_connect();
+            $sql = "UPDATE `cliente` SET `tarifa`= 0 WHERE `id_cliente` = ?";
+            $db->query($sql, [$dades['id_usuari']]);
+
+            return view('tarifes');
+        }
+    }
+
+    // Funcio que serveix per modificar la tarifa al usuari
+    public function tarifaAdvanced()
+    {
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+
+        // Apartat de les normes que es comproven del formulari
+        $regles = [
+            "nomTitular"    => "required",
+            "numeroTargeta"    => "required",
+            "dataCaducitat"    => "required",
+            "cvv"    => "required"
+        ];
+
+        // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
+        $missatges = [
+            "nomTitular" => [
+                "required" => "Nom obligatori"
+            ],
+            "numeroTargeta" => [
+                "required" => "Cognoms obligatoris"
+            ],
+            "dataCaducitat" => [
+                "required" => "Telefon obligatori"
+            ],
+            "cvv" => [
+                "required" => "Telefon obligatori"
+            ]
+        ];
+
+        // Validador del formulari on es comproven que estiguin tots els requisits
+        if($this->validate($regles, $missatges)){
+            $db = db_connect();
+            $sql = "UPDATE `cliente` SET `tarifa`= 1 WHERE `id_cliente` = ?";
+            $db->query($sql, [$dades['id_usuari']]);
+
+            return view('tarifes');
+        }
+    }
+
+    // Funcio que serveix per modificar la tarifa al usuari
+    public function tarifaEnterprise()
+    {
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+
+        // Apartat de les normes que es comproven del formulari
+        $regles = [
+            "nomTitular"    => "required",
+            "numeroTargeta"    => "required",
+            "dataCaducitat"    => "required",
+            "cvv"    => "required"
+        ];
+
+        // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
+        $missatges = [
+            "nomTitular" => [
+                "required" => "Nom obligatori"
+            ],
+            "numeroTargeta" => [
+                "required" => "Cognoms obligatoris"
+            ],
+            "dataCaducitat" => [
+                "required" => "Telefon obligatori"
+            ],
+            "cvv" => [
+                "required" => "Telefon obligatori"
+            ]
+        ];
+
+        // Validador del formulari on es comproven que estiguin tots els requisits
+        if($this->validate($regles, $missatges)){
+            $db = db_connect();
+            $sql = "UPDATE `cliente` SET `tarifa`= 2 WHERE `id_cliente` = ?";
+            $db->query($sql, [$dades['id_usuari']]);
+
+            return view('tarifes');
+        }
+    }
 }
