@@ -134,7 +134,7 @@ class Home extends BaseController
             $contingut = base64_encode($_FILES["fitxer"]["tmp_name"]);
             $codiU = $dades["codiUsuari"];
             $numeroRandom = rand(1, 10000000);
-            move_uploaded_file($_FILES["fitxer"]["tmp_name"], "C:/xampp/img/$numeroRandom.$tipusF" );
+            move_uploaded_file($_FILES["fitxer"]["tmp_name"], "./imgs/$numeroRandom.$tipusF" );
             // $dadesFitxer = ["nomF" => $nomF, "tipusF" => $tipusF, "data" => $data, "nomRandom" => $numeroRandom, "codiU" => $codiU];
             // $arxiu->insert($dadesFitxer);
             // echo "Arxiu $nomF guardat correctament. ";
