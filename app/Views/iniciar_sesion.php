@@ -138,6 +138,7 @@
                           'required' => 'required',
                           'value' => set_value('nom'));
             // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
             echo form_input($data);
             echo form_label('Nom', '#{label}');
             echo "<div class='bar'></div>";
@@ -150,6 +151,7 @@
                           'required' => 'required',
                           'value' => set_value('primerCognom'));
             // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
             echo form_input($data);
             echo form_label('Cognoms', '#{label}');
             echo "<div class='bar'></div>";
@@ -162,6 +164,7 @@
                           'required' => 'required',
                           'value' => set_value('email'));
             // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
             echo form_input($data);
             echo form_label('Email', '#{label}');
             echo "<div class='bar'></div>";
@@ -177,6 +180,7 @@
                           'value' => set_value('contrasenya'),
                           'type' => 'password');
             // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
             echo form_input($data);
             echo form_label('Contrasenya', '#{label}');
             echo "<div class='bar'></div>";

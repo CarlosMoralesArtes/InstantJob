@@ -243,7 +243,7 @@
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
 
-            echo "<p id='2'>".$row['precio']."</p>";
+            echo "<p id='2'>Preu: ".$row['precio']." Euros</p>";
 
             echo "<br>";
 
@@ -280,7 +280,7 @@
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
 
-            echo "<p id='2'>".$row['precio']."</p>";
+            echo "<p id='2'>Preu: ".$row['precio']." Euros</p>";
 
             echo "<br>";
 

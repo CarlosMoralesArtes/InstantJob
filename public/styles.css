@@ -8,24 +8,8 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 670px) { 
-	.sidenav{
-		display: none;
-	}
-
-	.form-outline{
-		display: none !important;
-	}
-
 	.dropdown a{
 		display: inline-block !important;
-	}
-
-	.col-2{
-		width: 35% !important;
-	}
-
-	.col-1{
-		width: 20% !important;
 	}
 
 	.sidebar-navigation{
@@ -62,6 +46,10 @@
 		color: white !important;
 	}
 
+	.carousel__contenedor{
+		margin-top: 10px !important;
+	}
+
 	.politica{
 		margin-left: 20px !important;
 		margin-right: 20px !important;
@@ -78,6 +66,33 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
+	.sidenav{
+		display: none;
+	}
+
+	.form-outline{
+		display: none !important;
+	}
+
+	.col-1{
+		width: 30% !important;
+	}
+
+	.col-2{
+		width: 100% !important;
+	}
+
+	.header .btn-light{
+		font-size: 15px !important;
+		margin-top: 10px;
+	}
+
+	.header .btn-primary{
+		width: 100%;
+		margin-top: 10px;
+		font-size: 15px !important;
+	}
+	
 	.sidenav{
 		display: block;
 	}
@@ -128,14 +143,6 @@
 
 	.dropdown-item{
 		font-size: 15px !important;
-	}
-
-	.header .btn-light{
-		font-size: 12px !important;
-	}
-
-	.header .btn-primary{
-		font-size: 12px !important;
 	}
 
 	.frase p{
@@ -307,7 +314,7 @@
 }
 
 .dropdown-item:hover{
-	background-color: #48B5D6 !important;
+	background-color: #0073b4 !important;
 }
 
 .dropdown-menu img{
@@ -328,7 +335,7 @@
 }
 
 .dropdown-menu .btn-light:hover{
-	background-color: #48B5D6 !important;
+	background-color: #0073b4 !important;
 }
 
 .fletchaDropdown{
@@ -410,7 +417,7 @@
 }
 
 .header img{
-	width: 50px;
+	width: 70%;
 }
 
 /* Estils per els botons */

@@ -178,19 +178,6 @@ function ImatgeSeleccionada(clicked){
   }
     window.location.href = window.location.pathname + "?w1=" + botonsSeleccionats;
 }
-// $.ajax(
-//   {
-//       url: 'get_var.php?var=<?php echo $var; ?>',
-//       success: function( data ) {
-//           alert( 'El servidor devolvio "' + botonsSeleccionats + '"' );
-//       }
-//   }
-// )
-
-// $('ul li').on('click', function() {
-// 	$('li').removeClass('active');
-// 	$(this).addClass('active');
-// });
 
 // Funcio que serveix per que funcioni el apartat del buscador
 function buscador(){
@@ -259,5 +246,41 @@ function buscador(){
   }
 }
 
+// Aquesta funcio recull la ubicacio de cada usuari cada minut i la guarda dins de la base de dades
+function recollirUbicacio(){
+  console.log("hola");
+  // Aquest es l'apartat de opcions que s'executaran per obtenir l'ubicacio de l'usuari
+  var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    
+  // Aquesta funcio s'executa si s'aconsegueix l'obtencio de la posicio
+    function success(pos) {
+      // Variable que conte les coordenades de les posicions
+      var crd = pos.coords;
+      console.log(usuariActual[0].id);
+      console.log(crd.longitude);
+      console.log(crd.latitude);
+      // Insercio en la base de dades de la longitud i la latitud amb el dia i l'hora 
+      // var variableAjax = new XMLHttpRequest();
+      // variableAjax.open("POST", "./php/ActualitzarUsuari.php", true);
+      // variableAjax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      // variableAjax.send("id=" + usuariActual[0].id + "&longitud=" + crd.longitude + "&latitud=" + crd.latitude);
+      // variableAjax.onreadystatechange = function () {
+      //     if (variableAjax.readyState == 4 && variableAjax.status == 200) {
+      //         console.log("Proces realitzat correctament.");
+      //     }
+      // }
+    };
+    
+  // Funcio que s'executa quan el usuari bloqueja l aobtencio de la ubicacio del navegador
+    function error(err) {
+      
+    };
+    
+    navigator.geolocation.getCurrentPosition(success, error, options);
 
+}
 

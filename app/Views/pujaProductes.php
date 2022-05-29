@@ -35,7 +35,6 @@
   ?>
 
 <body>
-
   <!-- Apartat de la carrega de la pàgina -->
   <div id="contenedor_carga">
     <div id="carga"></div>
