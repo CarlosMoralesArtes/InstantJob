@@ -334,7 +334,8 @@
           $contador = 1;
           foreach ($consulta->getResultArray() as $row) {
             echo "<div class='serveiSeparat col-4' style='width: 21rem;'>";
-            echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
+            // echo "<img src='./imgs/imatgePre.png' ";
+            echo "<img src='data:image/jpeg; base64," . base64_encode($row['imagen']) . "'width='100%' height='150px'>";
             echo "<div class='card-body'>";
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";

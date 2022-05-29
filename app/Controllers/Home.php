@@ -109,9 +109,18 @@ class Home extends BaseController
             $h24 = 0;
         }
         $db = db_connect();
-        $query3 = "INSERT INTO `servicio` (`id_servicio`, `nombre`, `descripcion`, `numero_clicks`, `imagen`, `categoria`, `precio`, `horario`, `dias`, `findes`, `24h`) VALUES (NULL, ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?);";
-        $query3 = $db->query($query3, [$dades['nombre'], $dades['descripcion'], 1, $dades['categoria'], $dades['precio'], $dades['horario'], $dades['dias'], $findes, $h24]);
-        // echo var_dump($query3);
+        // echo var_dump($dades);
+        // echo $_FILES['fitxer']['tmp_name'];
+        $data = $_FILES['fitxer']['tmp_name'];
+        // $data = str_replace('data:image/png;base64,', '', $data);
+        // $data = str_replace(' ','+',$data);
+        $imagen = 'data:image//jpeg; base64,' . base64_encode($data);
+
+        // $imagen = base64_decode($data);
+        // $imagen = base64_encode($_FILES['fitxer']['tmp_name']);
+        // echo $imagen;
+        $query3 = "INSERT INTO `servicio` (`id_servicio`, `nombre`, `descripcion`, `numero_clicks`, `imagen`, `categoria`, `precio`, `horario`, `dias`, `findes`, `24h`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $query3 = $db->query($query3, [$dades['nombre'], $dades['descripcion'], 1, $imagen , $dades['categoria'], $dades['precio'], $dades['horario'], $dades['dias'], $findes, $h24]);
         return view('pujaProductes.php');
     }
 
@@ -320,6 +329,7 @@ class Home extends BaseController
 
         return view('iniciar_sesion',$data);
         }
+
     }
 
     // Funcio que serveix per mostrar els arxius que te el usuari en la seva taula
