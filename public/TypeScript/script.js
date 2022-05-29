@@ -2,6 +2,7 @@
 var botonsSeleccionats = new Array;
 
 var contador = 0;
+var contador2 = 0;
 
 window.addEventListener('load', function(){
 	new Glider(document.querySelector('.carousel__lista'), {
@@ -34,7 +35,6 @@ window.addEventListener('load', function(){
 });
 
 window.onload = function(){
-  console.log("hola");
     // Apartat de la animació de carrega de la pàgina
     setTimeout(function(){
       var contenedor = document.getElementById('contenedor_carga');
@@ -46,7 +46,6 @@ window.onload = function(){
         overlay = document.getElementById('overlay'),
         popup = document.getElementById('popup'),
         btnCerrarPopup = document.getElementById('btn-cerrar-popup');
-    console.log(btnAbrirPopup);
 
     if(btnAbrirPopup != null){
       // Aquest apartat serveix per quan es dona un clic fora que es tregui el iniciar sessio
@@ -193,7 +192,6 @@ function closeNav(){
 }
 
 function ImatgeSeleccionada(clicked){
-
   if(botonsSeleccionats.length != 0){
     var imatgeSeleccionada = document.getElementById(botonsSeleccionats[0]);
     imatgeSeleccionada.classList.remove('seleccionat');
@@ -206,8 +204,8 @@ function ImatgeSeleccionada(clicked){
     imatge.classList.add('seleccionat');
     botonsSeleccionats.push(clicked);
   }
-  console.log(botonsSeleccionats);
-  window.location.href = window.location.pathname + "?w1=" + botonsSeleccionats;
+    window.location.href = window.location.pathname + "?w1=" + botonsSeleccionats;
+}
 // $.ajax(
 //   {
 //       url: 'get_var.php?var=<?php echo $var; ?>',
@@ -216,12 +214,73 @@ function ImatgeSeleccionada(clicked){
 //       }
 //   }
 // )
-}
 
 // $('ul li').on('click', function() {
 // 	$('li').removeClass('active');
 // 	$(this).addClass('active');
 // });
+
+// Funcio que serveix per que funcioni el apartat del buscador
+function buscador(){
+  contador2++;
+      if(contador2 >= 1){
+          // Aqui s'agafa el div de la llista prevista
+          var element = document.getElementById("possiblesParaules");
+          // Aqui s'eliminen tots els elements
+          while(element.firstChild){
+              element.removeChild(element.firstChild);
+          }
+      }
+      // Aquest apartat agafa el valor que es coloca dins del buscador
+      var buscador = document.getElementById("paraulaBuscada").value;
+      // Aquest apartat es conecta al php que esta conectat al a la base de dades
+      var variableAjax3=new XMLHttpRequest();
+      variableAjax3.open("POST","consultaBaseDades.php",true);
+      variableAjax3.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      variableAjax3.send("paraulaPasada=" + buscador);
+      console.log(buscador);
+      // Aquest apartat funciona quan canvia el estat de la variable variableAjax3
+      variableAjax3.onreadystatechange = function(){
+      // Apartat on es comprova si es correcte la connexio amb el php
+      if(variableAjax3.readyState == 4 && variableAjax3.status == 200){
+          // Aquest apartat agafa el response de la variableAjax3
+          var xmlDoc=variableAjax3.responseXML;
+          // Aquest apartat agafa els tags nom i descripcio
+          var x5= xmlDoc.getElementsByTagName("nombre");
+          var x6= xmlDoc.getElementsByTagName("descripcion");
+          // Inicialitzacio de les variables
+          var contingut5 = "";
+          var contingut6 = "";
+          // Aquest apartat crea el formulari
+          var formulari = document.createElement("form");
+          // For que coloca el contingut dins de les variables
+          for (let i = 0; i < x5.length; i++) {
+              // Aquest apartat coloca dins de les variables el contingut
+              contingut5 = x5[i];
+              contingut6 = x6[i];
+              console.log(contingut6);
+              // Aquest apartat crea el boto que servira per veure la opcio que vol el usuari de totes les que es mostren
+              var boto = document.createElement("input");
+              var lletra = document.createElement("p");
+              var contingutBoto = document.createTextNode(contingut5.innerHTML);
+              lletra.appendChild(contingutBoto);
+              // Valors del boto amb el contingut
+              boto.type = "radio";
+              boto.id = "boton"+i;
+              boto.classList.add("botoE");
+              boto.appendChild(lletra);
+              boto.name = "boton";
+              boto.value = contingut6.innerHTML;
+              // Aquest apartat coloca al formulari el boto
+              formulari.appendChild(boto);
+              formulari.appendChild(contingutBoto);
+          }
+          // Apartat on es coloca el resultat en el HTML
+          var final = document.getElementById("possiblesParaules");
+          final.appendChild(formulari);
+      }
+  }
+}
 
 
 

@@ -33,7 +33,10 @@
         <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
       </div>
       <div class="header col-6 form-outline">
-        <input id="search-input-sidenav" placeholder="Coloca el servei o categoria que vols trobar" type="search" id="form1" class="form-control buscadorTop" />
+        <form class="estilFormulari">
+          <input placeholder="Coloca el servei o categoria que vols trobar" type="search" id="paraulaBuscada" onkeypress="buscador()" class="form-control buscadorTop" />
+          <ul id="possiblesParaules"></ul>
+        </form>
       </div>
 
       <?php

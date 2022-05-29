@@ -173,6 +173,29 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.estilFormulari{
+	position: relative;
+	width: 95%;
+}
+
+.buscadorTop{
+	width: 95%;
+	color: black !important;
+}
+
+#possiblesParaules{
+	text-align: left;
+	padding: 20px;
+	background-color: white;
+	position: absolute;
+	border-radius: 0px 0px 10px 10px;
+	width: 100%;
+}
+
+.header form{
+	padding: 0px !important;
+}
+
 .ErrorUsuariIncorrecte{
 	padding: 20px;
 	background-color: red !important;
@@ -543,11 +566,6 @@ body{
 	text-decoration: none;
     border: 0px;
 	font-size: 15px !important;
-}
-
-.buscadorTop{
-	width: 95% !important;
-	color: black !important;
 }
 
 .imatgeIniciSessio{
@@ -1348,6 +1366,7 @@ header .btn-light{
 	background-color: #0196C1;
 	float: left;
   }
+
   .sidebar-navigation img{
 	  width: 30px;
   }
