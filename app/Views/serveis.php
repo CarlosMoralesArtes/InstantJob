@@ -39,8 +39,49 @@
     <div id="carga"></div>
   </div>
 
-    <nav class="navIniciServeis">
-      <header class="headerServeis">
+      <!-- Apartat del header de la pàgina -->
+  <header>
+    <!-- Menu de la pàgina -->
+    <nav class="navInici">
+        <!-- Logo de la pàgina -->
+        <div class="header col-1">
+          <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pàgina InstantJob"></a>
+        </div>
+        <!-- Buscador de la pàgina -->
+        <div class="header col-6 form-outline">
+          <form class="estilFormulari">
+            <input placeholder="Coloca el servei que vols buscar" type="search" id="paraulaBuscada" onkeypress="buscador()" class="form-control buscadorTop" />
+            <ul id="possiblesParaules"></ul>
+          </form>
+        </div>
+
+        <!-- Boto per iniciar sessio i desplegable si esta la sessio iniciada -->
+        <?php
+          $session = session();
+          if ($session->get('user')){
+              echo "<div class='header col-2 separacio'>";
+              echo "<div class='dropdown'>";
+              echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
+              echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
+              echo "<a class='dropdown-item' href='configuracio'><i class='fa-solid fa-wrench'></i> El Meu Perfil</a>";
+              echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+          } else {
+              echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio / Registrar-se</a></div>";
+          }
+        ?>
+        </div>
+        <!-- Boto per anar al apartat de pujar productes -->
+        <div class="header col-2">
+        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar Producte</a>
+      </div>
+    </nav>
+  </header>
+
+    <div class="iniciServeis">
+      <div class="capçaleraServeis">
       <?php
 
         if ($titulo != 0) {
@@ -48,53 +89,51 @@
 
             switch ($titulo) {
               case '1':
-                echo "<h1>Lampista!</h1>";
+                echo "<h1>Lampista</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               case '2':
-                echo "<h1>Fuster!</h1>";
+                echo "<h1>Fuster</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               case '3':
-                echo "<h1>Pintor!</h1>";
+                echo "<h1>Pintor</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               case '4':
-                echo "<h1>Informatic!</h1>";
+                echo "<h1>Informatic</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               case '5':
-                echo "<h1>Administratiu!</h1>";
+                echo "<h1>Administratiu</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               case '6':
-                echo "<h1>Jardiner!</h1>";
+                echo "<h1>Jardiner</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               case '7':
-                echo "<h1>Medicina!</h1>";
+                echo "<h1>Medicina</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               case '8':
-                echo "<h1>Obrers!</h1>";
+                echo "<h1>Obrers</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               default:
-                echo "<h1>Serveis!</h1>";
+                echo "<h1>Serveis</h1>";
                 echo "El numero de serveis son: " . $row['COUNT(*)'];
                 break;
               }
           }
-        }else{
-          echo "<h1>Serveis!</h1>";
+        } else{
+            echo "<h1>Serveis</h1>";
         }
-
-          
         ?>
         <br>
         <a href="pujaProductes">Tornar</a>
-      </header>
-    </nav>
+      </div>
+      </div>
     <br>
 
     <div class="container">
@@ -206,6 +245,20 @@
 
             echo "<p id='2'>".$row['precio']."</p>";
 
+            echo "<br>";
+
+            $ruta = site_url()."compraProductes";
+            $attributes = array ('action' => "compraProductes", 'enctype' => "multipart/form-data", 'method' => "POST");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
+            
+            echo form_hidden('id_servei', $row['id_servicio']);
+
+            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Veure'>";
+
+            // El form close es per tancar el formulari
+            echo form_close();
+
             echo "</div>";
             echo "</div>";
             if ($contador == 3) {
@@ -227,9 +280,21 @@
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
 
-            // echo "<p id='2'>".$row['descripcion']."</p>";
-
             echo "<p id='2'>".$row['precio']."</p>";
+
+            echo "<br>";
+
+            $ruta = site_url()."compraProductes";
+            $attributes = array ('action' => "compraProductes", 'enctype' => "multipart/form-data", 'method' => "POST");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
+            
+            echo form_hidden('id_servei', $row['id_servicio']);
+
+            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Veure'>";
+
+            // El form close es per tancar el formulari
+            echo form_close();
 
             echo "</div>";
             echo "</div>";
