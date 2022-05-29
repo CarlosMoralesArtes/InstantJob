@@ -99,7 +99,8 @@ class Home extends BaseController
     }
 
     //Redireccionament de serveis
-    public function serveis(){
+    public function serveis()
+    {
         $db = db_connect();
         $query = $db->query("SELECT * FROM `servicio`");
         $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
@@ -122,9 +123,14 @@ class Home extends BaseController
         return view('estadistiques');
     }
 
-    //Redireccionament de estadistiques
+    //Redireccionament de guardats
     public function guardats(){
         return view('guardats');
+    }
+
+    //Redireccionament de compra
+    public function compra(){
+        return view('compra');
     }
 
     // Funcio de la comprovacio i insercio del formulari de registre
@@ -265,6 +271,7 @@ class Home extends BaseController
         return view('iniciar_sesion',$data);
         }
     }
+
     // Funcio que serveix per mostrar els arxius que te el usuari en la seva taula
     public function mostrarArxius()
     {
@@ -305,7 +312,6 @@ class Home extends BaseController
 
         // Validador del formulari on es comproven que estiguin tots els requisits
         if($this->validate($regles, $missatges)){
-
             $db = db_connect();
             $sql = "UPDATE `cliente` SET `nombre`= ?,`apellidos`= ?,`contrasena`= ? WHERE `id_cliente` = ?;";
             $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasenya'], $dades['id_usuari']]);
@@ -317,7 +323,7 @@ class Home extends BaseController
         }
     }
 
-    // Funcio que serveix per modificar la tarifa al usuari
+    // Funcio que serveix per modificar la tarifa al usuari (Normal)
     public function tarifaNormal()
     {
         // Aquest apartat rep les dades del formulari
@@ -357,7 +363,7 @@ class Home extends BaseController
         }
     }
 
-    // Funcio que serveix per modificar la tarifa al usuari
+    // Funcio que serveix per modificar la tarifa al usuari (Advanced)
     public function tarifaAdvanced()
     {
         // Aquest apartat rep les dades del formulari
@@ -397,7 +403,7 @@ class Home extends BaseController
         }
     }
 
-    // Funcio que serveix per modificar la tarifa al usuari
+    // Funcio que serveix per modificar la tarifa al usuari (Enterprise)
     public function tarifaEnterprise()
     {
         // Aquest apartat rep les dades del formulari
@@ -435,5 +441,20 @@ class Home extends BaseController
 
             return view('tarifes');
         }
+    }
+
+    // Funcio que serveix per comprar els productes
+    public function compraProductes()
+    {
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+
+        $db = db_connect();
+        $sql = "SELECT * FROM `servicio` WHERE `id_servicio` = ?";
+        $query = $db->query($sql, [$dades['id_servei']]);
+
+        $dada = array('consulta' => $query);
+
+        return view('compra', $dada);
     }
 }
