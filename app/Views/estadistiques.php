@@ -133,28 +133,30 @@
             <th scope="col">Imatge</th>
             <th scope="col">Nom</th>
             <th scope="col">Visites</th>
-            <th scope="col">Favorits</th>
+            <th scope="col">Data</th>
+            <th scope="col">Preu</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row"><img src="imgs/1.png" alt="Categoria de lampista"></th>
-            <td>Mark</td>
-            <td>1</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <th scope="row"><img src="imgs/2.png" alt="Categoria de lampista"></th>
-            <td>Jacob</td>
-            <td>1</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <th scope="row"><img src="imgs/3.png" alt="Categoria de lampista"></th>
-            <td>Larry</td>
-            <td>1</td>
-            <td>2</td>
-          </tr>
+        <?php
+          
+          foreach ($consulta->getResultArray() as $row) {
+              // echo var_dump($row);
+              echo $row['dias'];
+            echo "<tr>";
+            echo "<th scope='row'><img src='imgs/1.png' alt='Categoria de lampista'></th>";
+
+            echo "<td>".$row['nombre']."</td>";
+
+            echo "<td>".$row['numero_clicks']."</td>";
+
+            echo "<td>".$row['fecha']."</td>";
+
+            echo "<td>".$row['precio']."</td>";
+
+            echo "</tr>";
+          }
+        ?>
         </tbody>
       </table>
         </p>

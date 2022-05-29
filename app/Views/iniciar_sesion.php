@@ -254,7 +254,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
+                    <input type="hidden" name="1" value="6">
                     <button><img src="imgs/jardiner_blau.png" alt="Categoria de jardineria"></button>
                     <p>Jardiner</p>
                   </form>
@@ -263,7 +263,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
+                    <input type="hidden" name="1" value="7">
                     <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
                     <p>Medicina</p>
                   </form>
@@ -272,7 +272,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
+                    <input type="hidden" name="1" value="8">
                     <button><img src="imgs/obrer_blau.png" alt="Categoria d'obrers"></button>
                     <p>Obrers</p>
                   </form>

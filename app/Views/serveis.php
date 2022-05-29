@@ -29,8 +29,51 @@
 
     <nav class="navIniciServeis">
       <header class="headerServeis">
-        <h1>Nom categoria</h1>
-        <h2>Numero de serveis</h2>
+      <?php
+
+          foreach ($qtitul->getResultArray() as $row) {
+
+            switch ($titulo) {
+              case '1':
+                echo "<h1>Lampista!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              case '2':
+                echo "<h1>Fuster!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              case '3':
+                echo "<h1>Pintor!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              case '4':
+                echo "<h1>Informatic!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              case '5':
+                echo "<h1>Administratiu!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              case '6':
+                echo "<h1>Jardiner!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              case '7':
+                echo "<h1>Medicina!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              case '8':
+                echo "<h1>Obrers!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              default:
+                echo "<h1>Serveis!</h1>";
+                echo "El numero de serveis son: " . $row['COUNT(*)'];
+                break;
+              }
+          }
+        ?>
+        <br>
         <a href="pujaProductes">Tornar</a>
       </header>
     </nav>
@@ -96,7 +139,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
+                    <input type="hidden" name="1" value="6">
                     <button><img src="imgs/jardiner_blau.png" alt="Categoria de jardineria"></button>
                     <p>Jardiner</p>
                   </form>
@@ -105,7 +148,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
+                    <input type="hidden" name="1" value="7">
                     <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
                     <p>Medicina</p>
                   </form>
@@ -114,7 +157,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
+                    <input type="hidden" name="1" value="8">
                     <button><img src="imgs/obrer_blau.png" alt="Categoria d'obrers"></button>
                     <p>Obrers</p>
                   </form>
