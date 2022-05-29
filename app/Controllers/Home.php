@@ -136,7 +136,18 @@ class Home extends BaseController
 
     //Redireccionament de configuracio
     public function configuracio(){
-        return view('configuracio');
+        $session = session();
+        $id = $session->get('id_user');
+        $db = db_connect();
+        // $query = $db->query("SELECT * FROM `cliente` WHERE id_cliente = 1");
+        $query = "SELECT * FROM `cliente` WHERE id_cliente = ?;";
+        $query = $db->query($query, [$id]);
+
+        
+
+        $data = array('consulta' => $query);
+
+        return view('configuracio',$data);
     }
 
     //Redireccionament de estadistiques

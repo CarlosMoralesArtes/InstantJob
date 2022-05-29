@@ -126,7 +126,30 @@
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
         <p class="card-title">Dades Actuals</p>
-        
+
+        <?php
+          foreach ($consulta->getResultArray() as $row) {
+
+            echo "<p> Nom: ".$row['correo']."</p>";
+
+            echo "<p> Nom: ".$row['nombre']."</p>";
+
+            echo "<p> Cognom: ".$row['apellidos']."</p>";
+
+            if ($row['tarifa'] == 0) {
+              echo "<p>Tarifa normal</p>";
+            }
+            if ($row['tarifa'] == 1) {
+              echo "<p>Tarifa Plus</p>";
+            }
+            if ($row['tarifa'] == 2) {
+              echo "<p>Tarifa Enterprise</p>";
+            }
+            
+
+          }
+
+        ?>
 
         <p class="card-text"></p>
       </div>
