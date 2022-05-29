@@ -90,3 +90,73 @@ CRITICAL - 2022-05-29 11:17:46 --> Call to a member function getResultArray() on
 #6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 {main}
+CRITICAL - 2022-05-29 11:39:25 --> Call to a member function getResultArray() on null
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(139): view('serveis', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->serveis()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-29 11:40:12 --> Call to a member function getResultArray() on null
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(139): view('serveis', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->serveis()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-29 11:40:17 --> Call to a member function getResultArray() on null
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(139): view('serveis', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->serveis()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-29 11:41:20 --> Call to a member function getResultArray() on null
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(139): view('serveis', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->serveis()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-29 11:42:39 --> Call to a member function getResultArray() on null
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(139): view('serveis', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->serveis()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-29 11:43:49 --> Call to a member function getResultArray() on null
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(139): view('serveis', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->serveis()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-29 11:45:24 --> Call to a member function getResultArray() on null
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('serveis', Array, true)
+#3 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(139): view('serveis', Array)
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->serveis()
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
