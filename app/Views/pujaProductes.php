@@ -129,14 +129,14 @@
       <div class="card-body">
         <p class="card-title">Que vas a pujar?</p>
         <p class="card-title">Selecciona la categoria</p>
-        <img id="imatgeCategoria1" src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria2" src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria3" src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria4" src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria5" src="imgs/administratiu.png" alt="Categoria d'administratiu" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria6" src="imgs/jardiner.png" alt="Categoria de jardiners" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria7" src="imgs/medicina.png" alt="Categoria de medicina" onclick="ImatgeSeleccionada(this.id)">
-        <img id="imatgeCategoria8" src="imgs/obrer.png" alt="Categoria d'obrers" onclick="ImatgeSeleccionada(this.id)">
+        <img id="1" src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada(this.id)">
+        <img id="2" src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada(this.id)">
+        <img id="3" src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada(this.id)">
+        <img id="4" src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada(this.id)">
+        <img id="5" src="imgs/administratiu.png" alt="Categoria d'administratiu" onclick="ImatgeSeleccionada(this.id)">
+        <img id="6" src="imgs/jardiner.png" alt="Categoria de jardiners" onclick="ImatgeSeleccionada(this.id)">
+        <img id="7" src="imgs/medicina.png" alt="Categoria de medicina" onclick="ImatgeSeleccionada(this.id)">
+        <img id="8" src="imgs/obrer.png" alt="Categoria d'obrers" onclick="ImatgeSeleccionada(this.id)">
 
         <p class="card-text"></p>
       </div>
@@ -149,8 +149,8 @@
         <div class="popupConfiguracio active">
           <div class="targetaConfiguracio">
             <?php
-              $ruta = "iniciar";
-              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+              $ruta = "pujar";
+              $attributes = array ('action' => "pujar", 'enctype' => "multipart/form-data", 'method' => "POST");
               // Form open que serveix per iniciar el formulari
               echo form_open($ruta, $attributes);
 
@@ -162,6 +162,13 @@
               echo form_label('Imatge de protada del servei', '#{label}');
               echo form_upload($data);
 
+              echo "<br>";
+              if ($_GET['w1']) {
+                echo $_GET['w1'];
+                echo form_hidden('categoria', $_GET['w1']);
+              }else{
+                echo form_hidden('categoria', 0);
+              }
               echo "<br>";
 
               echo "<div class='input-container'>";
@@ -177,6 +184,19 @@
               echo "<br>";
               echo "</div>";
 
+
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'precio',
+                          'required' => 'precio',
+                          'type' => 'text',
+                          'value' => set_value('precio'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Precio', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
 
               echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
@@ -243,7 +263,8 @@
 
               echo "<br>";
 
-              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Pujar Producte'>";
+              echo form_submit('mysubmit', 'Pujar Producte');
+              // echo "<input type='submit' class='btn-submit' name='mysubmit' value='Pujar Producte'>";
 
               // El form close es per tancar el formulari
               echo form_close();

@@ -207,7 +207,7 @@ function ImatgeSeleccionada(clicked){
     botonsSeleccionats.push(clicked);
   }
   console.log(botonsSeleccionats);
-  // window.location.href = window.location.href + "?w1=" + botonsSeleccionats;
+  window.location.href = window.location.pathname + "?w1=" + botonsSeleccionats;
 // $.ajax(
 //   {
 //       url: 'get_var.php?var=<?php echo $var; ?>',
