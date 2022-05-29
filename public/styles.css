@@ -173,6 +173,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.ErrorUsuariIncorrecte{
+	padding: 20px;
+	background-color: red !important;
+	color: white;
+	margin-bottom:0px;
+}
+
 .serveisApartat{
 	padding-top: 50px;
 	padding-bottom: 50px;

@@ -291,7 +291,7 @@ class Home extends BaseController
                 $data = ["no"];
             }
             if(count($data) == 1){
-                echo "El usuari o la contrasenya es incorrecte.";
+                echo "<p class='ErrorUsuariIncorrecte'>El usuari o la contrasenya es incorrecte.</p>";
 
                 $data = array('consulta' => $query, 'consulta2' => $query2);
 

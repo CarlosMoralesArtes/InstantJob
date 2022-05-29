@@ -162,14 +162,12 @@
               echo form_label('Imatge de protada del servei', '#{label}');
               echo form_upload($data);
 
-              echo "<br>";
               if ($_GET['w1']) {
                 echo $_GET['w1'];
                 echo form_hidden('categoria', $_GET['w1']);
               }else{
                 echo form_hidden('categoria', 0);
               }
-              echo "<br>";
 
               echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
