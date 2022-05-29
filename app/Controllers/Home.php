@@ -89,6 +89,28 @@ class Home extends BaseController
         return view('pujaProductes.php');
     }
 
+    public function sqlpujar()
+    {
+        $dades=$this->request->getVar();
+        // echo var_dump($dades);
+        // echo $dades['categoria'];
+        if ($dades['findes']) {
+            $findes = 1;
+        }else{
+            $findes = 0;
+        }
+        if ($dades['24h']) {
+            $h24 = 1;
+        }else{
+            $h24 = 0;
+        }
+        $db = db_connect();
+        $query3 = "INSERT INTO `servicio` (`id_servicio`, `nombre`, `descripcion`, `numero_clicks`, `imagen`, `categoria`, `precio`, `horario`, `dias`, `findes`, `24h`) VALUES (NULL, ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?);";
+        $query3 = $db->query($query3, [$dades['nombre'], $dades['descripcion'], 1, $dades['categoria'], $dades['precio'], $dades['horario'], $dades['dias'], $findes, $h24]);
+        // echo var_dump($query3);
+        return view('pujaProductes.php');
+    }
+
     public function clear(){
         return view('clear');
     }
