@@ -225,6 +225,7 @@ class Home extends BaseController
             $session = session();
             $session->start();
             $usuari = new \App\Models\UsuariModel();
+            $dades['contrasena'] = md5($dades['contrasena']);
 			$usuari->insert($dades);
             $session->set('iniciar','1');
             $query = $db->query("SELECT * FROM `servicio`");
@@ -300,7 +301,7 @@ class Home extends BaseController
                 $session = session();
                 $session->start();
                 if($data["correo"] == $dades["correo"]){
-                    if($data["contrasena"] == $dades["contrasena"]){
+                    if($data["contrasena"] == md5($dades["contrasena"])){
                         $session->set('user',$data["nombre"]);
                         $session->set('id_user',$data["id_cliente"]);
                         $data = array('consulta' => $query, 'consulta2' => $query2);
