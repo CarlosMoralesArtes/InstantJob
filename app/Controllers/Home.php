@@ -51,13 +51,17 @@ class Home extends BaseController
         $dades=$this->request->getVar();
         $final = $dades[1];
         $db = db_connect();
+        // echo $final;
+        $titulo = $final;
+        $qtitul = "SELECT COUNT(*) FROM `servicio` WHERE categoria = ?;";
+        $qtitul = $db->query($qtitul, [$final]);
         $query = "SELECT * FROM `servicio` WHERE categoria = ?;";
         $query = $db->query($query, [$final]);
-        $query2 = "SELECT * FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2 AND categoria = ?;";
+        $query2 = "SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2 AND categoria = ?;";
         $query2 = $db->query($query2, [$final]);
 
 
-        $data = array('consulta' => $query, 'consulta2' => $query2);
+        $data = array('consulta' => $query, 'consulta2' => $query2, 'titulo' => $titulo, 'qtitul' => $qtitul);
 
         return view('serveis',$data);
         // return view('serveis');
@@ -152,7 +156,19 @@ class Home extends BaseController
 
     //Redireccionament de estadistiques
     public function estadistiques(){
-        return view('estadistiques');
+
+        // $session = session();
+        // $id = $session->get('id_user');
+        $db = db_connect();
+        // $query = $db->query("SELECT * FROM `cliente` WHERE id_cliente = 1");
+        $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
+        // $query = $db->query($query, [$id]);
+
+        
+
+        $data = array('consulta' => $query);
+
+        return view('estadistiques',$data);
     }
 
     //Redireccionament de estadistiques
