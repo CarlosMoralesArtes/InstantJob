@@ -330,14 +330,20 @@
   <div class="col-12 adaptacio">
     <div class="card-body productes col-6">
       <br>
-      <h1>Nom del producte</h1>
+      <?php
+      foreach ($consulta->getResultArray() as $row){
+      echo "<h1>".$row['nombre']."</h1>";
+      echo "<div class='partDretaCompra'><a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></a> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
+      echo "<img src='./imgs/imatgePre.png' alt='Logo de la pagina InstantJob'>";
+      echo "<p class='preuProducte'>".$row['nombre']." Euros</p>";
+      echo "<p class='categoriaProducte'>".$row['categoria']."</p>";
+      echo "<p class='descripcioProducte'>Descripció Producte</p>";
+      ?>
       <div class="partDretaCompra"><a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-heart-circle-plus"></i></a> <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-message"></i> Chat per Comprar</a></div>
-      <img src="./imgs/imatgePre.png" alt="Logo de la pagina InstantJob">
-      <p class="preuProducte">Preu del producte</p>
-      <p class="categoriaProducte">Categoria Producte</p>
-      <p class="descripcioProducte">Descripció Producte</p>
-      <div class="partDretaCompra"><a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-heart-circle-plus"></i></a> <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-message"></i> Chat per Comprar</a></div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sequi dicta perferendis accusamus modi, quae veritatis quisquam maiores, eaque quas ipsa obcaecati, omnis beatae. Recusandae nihil sequi quam rerum officia?</p>
+      <?php
+      echo "<p>".$row['descripcion']."</p>";
+      }
+      ?>
       <div class="carousel">
             <div class="carousel__contenedor">
               <button aria-label="Anterior" class="carousel__anterior">
