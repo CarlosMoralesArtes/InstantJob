@@ -17,7 +17,7 @@ class Home extends BaseController
     {
         $db = db_connect();
         $query = $db->query("SELECT * FROM `servicio`");
-        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
+        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio, ser.imagen FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
 
 
         
@@ -31,7 +31,7 @@ class Home extends BaseController
     public function home(){
         $db = db_connect();
         $query = $db->query("SELECT * FROM `servicio`");
-        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
+        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio, ser.imagen FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
 
 
         
@@ -57,7 +57,7 @@ class Home extends BaseController
         $qtitul = $db->query($qtitul, [$final]);
         $query = "SELECT * FROM `servicio` WHERE categoria = ?;";
         $query = $db->query($query, [$final]);
-        $query2 = "SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2 AND categoria = ?;";
+        $query2 = "SELECT ser.id_servicio, ser.nombre, ser.precio, ser.imagen FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2 AND categoria = ?;";
         $query2 = $db->query($query2, [$final]);
 
 
@@ -109,9 +109,45 @@ class Home extends BaseController
             $h24 = 0;
         }
         $db = db_connect();
-        $query3 = "INSERT INTO `servicio` (`id_servicio`, `nombre`, `descripcion`, `numero_clicks`, `imagen`, `categoria`, `precio`, `horario`, `dias`, `findes`, `24h`) VALUES (NULL, ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?);";
-        $query3 = $db->query($query3, [$dades['nombre'], $dades['descripcion'], 1, $dades['categoria'], $dades['precio'], $dades['horario'], $dades['dias'], $findes, $h24]);
-        // echo var_dump($query3);
+        // echo var_dump($dades);
+        // echo $_FILES['fitxer']['tmp_name'];
+        // $data = $_FILES['fitxer']['tmp_name'];
+        // $data = str_replace('data:image/png;base64,', '', $data);
+        // $data = str_replace(' ','+',$data);
+        // $imagen = 'data:image//jpeg; base64,' . base64_encode($data);
+
+        $tipusF = $_FILES["fitxer"]["type"];
+
+        if($tipusF == "image/png"){
+            $tipusF = "png";
+        }
+
+        if($tipusF == "image/jpeg"){
+            $tipusF = "jpeg";
+        }
+
+        if(is_uploaded_file($_FILES["fitxer"]["tmp_name"]) == true){
+            // Agafar el nom del arxiu
+            $nomF = $_FILES["fitxer"]["name"];
+            // $arxiu = new \App\Models\ArxiuModel();
+            $data = date('y-m-d');
+            $contingut = base64_encode($_FILES["fitxer"]["tmp_name"]);
+            $codiU = $dades["codiUsuari"];
+            $numeroRandom = rand(1, 10000000);
+            move_uploaded_file($_FILES["fitxer"]["tmp_name"], "C:/xampp/img/$numeroRandom.$tipusF" );
+            // $dadesFitxer = ["nomF" => $nomF, "tipusF" => $tipusF, "data" => $data, "nomRandom" => $numeroRandom, "codiU" => $codiU];
+            // $arxiu->insert($dadesFitxer);
+            // echo "Arxiu $nomF guardat correctament. ";
+            $query3 = "INSERT INTO `servicio` (`id_servicio`, `nombre`, `descripcion`, `numero_clicks`, `imagen`, `categoria`, `precio`, `horario`, `dias`, `findes`, `24h`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            $query3 = $db->query($query3, [$dades['nombre'], $dades['descripcion'], 1, $numeroRandom , $dades['categoria'], $dades['precio'], $dades['horario'], $dades['dias'], $findes, $h24]);
+        } else {
+            // Si no hi ha ningun tipus de arxiu
+            echo "No hi ha ningun tipus de arxiu.";
+        }
+
+        // $imagen = base64_decode($data);
+        // $imagen = base64_encode($_FILES['fitxer']['tmp_name']);
+        // echo $imagen;
         return view('pujaProductes.php');
     }
 
@@ -320,6 +356,7 @@ class Home extends BaseController
 
         return view('iniciar_sesion',$data);
         }
+
     }
 
     // Funcio que serveix per mostrar els arxius que te el usuari en la seva taula
