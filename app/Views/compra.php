@@ -20,15 +20,6 @@
   <script src="https://kit.fontawesome.com/0859fc3634.js" crossorigin="anonymous"></script>
 </head>
 
-<?php
-    $session = session();
-    if ($session->get('user')){
-    } else {
-      header("Location: ./index");
-      die();
-    }
-?>
-
 <body>
   <!-- Apartat de la carrega de la pàgina -->
   <div id="contenedor_carga">
@@ -336,7 +327,35 @@
       echo "<div class='partDretaCompra'><a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></a> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
       echo "<img src='./imgs/imatgePre.png' alt='Logo de la pagina InstantJob'>";
       echo "<p class='preuProducte'>".$row['nombre']." Euros</p>";
-      echo "<p class='categoriaProducte'>".$row['categoria']."</p>";
+      switch ($row['categoria']) {
+        case '1':
+          echo "<p class='categoriaProducte'>Lampista</p>";
+          break;
+        case '2':
+          echo "<p class='categoriaProducte'>Fuster</p>";
+          break;
+        case '3':
+          echo "<p class='categoriaProducte'>Pintor</p>";
+          break;
+        case '4':
+          echo "<p class='categoriaProducte'>Informatic</p>";
+          break;
+        case '5':
+          echo "<p class='categoriaProducte'>Administratiu</p>";
+          break;
+        case '6':
+          echo "<p class='categoriaProducte'>Jardiner</p>";
+          break;
+        case '7':
+          echo "<p class='categoriaProducte'>Medicina</p>";
+          break;
+        case '8':
+          echo "<p class='categoriaProducte'>Obrers</p>";
+          break;
+        default:
+          echo "<p class='categoriaProducte'>Serveis</p>";
+          break;
+        }
       echo "<p class='descripcioProducte'>Descripció Producte</p>";
       ?>
       <div class="partDretaCompra"><a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-heart-circle-plus"></i></a> <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-message"></i> Chat per Comprar</a></div>
