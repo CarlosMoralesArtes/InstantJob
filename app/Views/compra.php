@@ -20,8 +20,16 @@
   <script src="https://kit.fontawesome.com/0859fc3634.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<?php
+    $session = session();
+    if ($session->get('user')){
+    } else {
+      header("Location: ./index");
+      die();
+    }
+?>
 
+<body>
   <!-- Apartat de la carrega de la pàgina -->
   <div id="contenedor_carga">
     <div id="carga"></div>
@@ -68,7 +76,7 @@
       <div class="targetaIniciSessio">
         <?php
           $ruta = "iniciar";
-          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
           // Form open que serveix per iniciar el formulari
           echo form_open($ruta, $attributes);
           echo "<div class='input-container'>";
@@ -79,7 +87,6 @@
                       'type' => 'email',
                       'value' => set_value('correo'));
           // En el form input es l'apartat on pots colocar text en el formulari
-          echo "<br>";
           echo form_input($data);
           echo form_label('Correo', '#{label}');
           echo "<div class='bar'></div>";
@@ -89,17 +96,15 @@
           echo "<div class='input-container'>";
           // En $data es coloquen els atributs de la pregunta
           $data = array('name' => 'contrasena',
-                        'required' => 'required',
-                        'type' => 'password');
+                      'required' => 'required');
           // En el form input es l'apartat on pots colocar text en el formulari
-          echo "<br>";
           echo form_input($data);
           echo form_label('Contrasena', '#{label}');
           echo "<div class='bar'></div>";
           echo "<br>";
           echo "</div>";
           echo "<br>";
-          echo "<input type='submit' class='btn-submit' name='mysubmit' value='Iniciar Sessio'>";
+          echo form_submit('mysubmit', 'Iniciar!');
 
           // El form close es per tancar el formulari
           echo form_close();
@@ -116,11 +121,10 @@
       <h2 class="title">Registra't</h2>
       <p>Completa els camps</p>
       <br>
-      <div class="targetaIniciSessio inici">
+      <div class="targetaIniciSessio">
           <?php
-            echo "<div id='error'></div>";
             $ruta = site_url()."registrar";
-            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "POST");
+            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "GET");
             // Form open que serveix per iniciar el formulari
             echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
@@ -156,6 +160,9 @@
             echo form_input($data);
             echo form_label('Email', '#{label}');
             echo "<div class='bar'></div>";
+            echo "<br>";
+            
+            echo "<br>";
             echo "</div>";
 
             echo form_hidden('latitud', '2');
@@ -175,7 +182,7 @@
 
             echo "<br>";
 
-            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Registrar-se'>";
+            echo form_submit('submit', 'Registrar-se');
             // El form close es per tancar el formulari
             echo form_close();
 
@@ -190,16 +197,148 @@
     </div>
   </div>
 
-  <!-- Titul de la pàgina principal -->
-    <div class="titol">
-      <p>InstantJob, es l’ajuda de creixement rápid per a la teva empresa</p>
-      <h1>Benvingut a InstantJob</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <h2 class="center-align">¿Que estas buscant avui?</h2>
-            <br>
-          <div class="carousel">
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h2 class="title">Iniciar Sessio</h2>
+      <p>Completa els camps</p>
+      <br>
+      <div class="targetaIniciSessio">
+        <?php
+          $ruta = "iniciar";
+          $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "GET");
+          // Form open que serveix per iniciar el formulari
+          echo form_open($ruta, $attributes);
+          echo "<div class='input-container'>";
+
+          // En $data es coloquen els atributs de la pregunta
+          $data = array('name' => 'correo',
+                      'required' => 'required',
+                      'type' => 'email',
+                      'value' => set_value('correo'));
+          // En el form input es l'apartat on pots colocar text en el formulari
+          echo form_input($data);
+          echo form_label('Correo', '#{label}');
+          echo "<div class='bar'></div>";
+          echo "<br>";
+          echo "</div>";
+
+          echo "<div class='input-container'>";
+          // En $data es coloquen els atributs de la pregunta
+          $data = array('name' => 'contrasena',
+                      'required' => 'required');
+          // En el form input es l'apartat on pots colocar text en el formulari
+          echo form_input($data);
+          echo form_label('Contrasena', '#{label}');
+          echo "<div class='bar'></div>";
+          echo "<br>";
+          echo "</div>";
+          echo "<br>";
+          echo form_submit('mysubmit', 'Iniciar!');
+
+          // El form close es per tancar el formulari
+          echo form_close();
+        ?>
+      </div>
+        <p class="pasarRegistre2">Si no tens un compte <p id="btn-abrir-popup2" class="pasarRegistre"> Registra’t</p></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay2">
+    <div class="popup" id="popup2">
+      <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h2 class="title">Registra't</h2>
+      <p>Completa els camps</p>
+      <br>
+      <div class="targetaIniciSessio">
+          <?php
+            $ruta = site_url()."registrar";
+            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "GET");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'nombre',
+                          'required' => 'required',
+                          'value' => set_value('nom'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Nom', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'apellidos',
+                          'required' => 'required',
+                          'value' => set_value('primerCognom'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Cognoms', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'correo',
+                          'required' => 'required',
+                          'value' => set_value('email'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Email', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            
+            echo "<br>";
+            echo "</div>";
+
+            echo form_hidden('latitud', '2');
+            echo form_hidden('logitud', '2');
+
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'contrasena',
+                          'required' => 'required',
+                          'value' => set_value('contrasenya'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Contrasenya', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+
+            echo "<br>";
+
+            echo form_submit('submit', 'Registrar-se');
+            // El form close es per tancar el formulari
+            echo form_close();
+
+            if(!empty($validation)){
+              if($validation->getError('correo')) {
+                echo $validation->getError('correo');
+                echo "<br>";
+              }
+            }
+          ?>
+          </div>
+    </div>
+  </div>
+
+  <div class="col-12 adaptacio">
+    <div class="card-body productes col-6">
+      <br>
+      <h1>Nom del producte</h1>
+      <div class="partDretaCompra"><a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-heart-circle-plus"></i></a> <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-message"></i> Chat per Comprar</a></div>
+      <img src="./imgs/imatgePre.png" alt="Logo de la pagina InstantJob">
+      <p class="preuProducte">Preu del producte</p>
+      <p class="categoriaProducte">Categoria Producte</p>
+      <p class="descripcioProducte">Descripció Producte</p>
+      <div class="partDretaCompra"><a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-heart-circle-plus"></i></a> <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-message"></i> Chat per Comprar</a></div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sequi dicta perferendis accusamus modi, quae veritatis quisquam maiores, eaque quas ipsa obcaecati, omnis beatae. Recusandae nihil sequi quam rerum officia?</p>
+      <div class="carousel">
             <div class="carousel__contenedor">
               <button aria-label="Anterior" class="carousel__anterior">
                 <i class="fas fa-chevron-left"></i>
@@ -254,7 +393,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="6">
+                    <input type="hidden" name="1" value="5">
                     <button><img src="imgs/jardiner_blau.png" alt="Categoria de jardineria"></button>
                     <p>Jardiner</p>
                   </form>
@@ -263,7 +402,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="7">
+                    <input type="hidden" name="1" value="5">
                     <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
                     <p>Medicina</p>
                   </form>
@@ -272,7 +411,7 @@
               <a href="serveis">
                 <div class="carousel__elemento">
                 <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="8">
+                    <input type="hidden" name="1" value="5">
                     <button><img src="imgs/obrer_blau.png" alt="Categoria d'obrers"></button>
                     <p>Obrers</p>
                   </form>
@@ -287,126 +426,9 @@
 
             <div role="tablist" class="carousel__indicadores"></div>
           </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="segonApartat">
-    <h2>Serveis destacats del moment</h2>
-    <?php
-          $contador = 1;
-          foreach ($consulta2->getResultArray() as $row) {
-            echo "<div class='serveiSeparat col-4' style='width: 21rem;'>";
-            echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
-            echo "<div class='card-body'>";
-
-            echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
-
-            echo "<p id='2'>".$row['precio']."</p>";
-
-            echo "<br>";
-
-            $ruta = site_url()."compraProductes";
-            $attributes = array ('action' => "compraProductes", 'enctype' => "multipart/form-data", 'method' => "POST");
-            // Form open que serveix per iniciar el formulari
-            echo form_open($ruta, $attributes);
-            
-            echo form_hidden('id_servei', $row['id_servicio']);
-
-            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Veure'>";
-
-            // El form close es per tancar el formulari
-            echo form_close();
-
-            echo "</div>";
-            echo "</div>";
-            if ($contador == 3) {
-              echo "<br>";
-              $contador = 0;
-            }
-            $contador++;
-          }
-          
-        ?>
-    <h2>La benvinguda al estiu</h2>
-    <p>Molts serveis a la teva disponibilitat!</p>
-    <?php
-          $contador = 1;
-          foreach ($consulta->getResultArray() as $row) {
-            echo "<div class='serveiSeparat col-4' style='width: 21rem;'>";
-            echo "<img src='./imgs/imatgePre.png' width='100%' height='150px'>";
-            echo "<div class='card-body'>";
-
-            echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
-
-            echo "<p id='2'>".$row['precio']."</p>";
-
-            $ruta = site_url()."compraProductes";
-            $attributes = array ('action' => "compraProductes", 'enctype' => "multipart/form-data", 'method' => "POST");
-            // Form open que serveix per iniciar el formulari
-            echo form_open($ruta, $attributes);
-            
-            echo form_hidden('id_servei', $row['id_servicio']);
-
-            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Veure'>";
-
-            // El form close es per tancar el formulari
-            echo form_close();
-
-            echo "</div>";
-            echo "</div>";
-            if ($contador == 3) {
-              echo "<br>";
-              $contador = 0;
-            }
-            $contador++;
-          }
-          
-        ?>
-  </div>
-    <?php
-      if(isset( $_SESSION['eriniciar'] ) ) {
-        echo "<script src='Typescript/errorregister.js'></script>";
-        echo "<script src='..\Typescript/errorregister.js'></script>";
-        $session = session();
-        $session ->destroy();
-      }
-
-      if(isset( $_SESSION['iniciar'] ) ) {
-        echo "<script src='Typescript/bienregister.js'></script>";
-        echo "<script src='..\Typescript/bienregister.js'></script>";
-        $session = session();
-        $session ->destroy();
-      }
-    ?>
-
-  <div class="frase">
-    <p><<.Nosaltres farem que la teva empresa arribi a lo més alt.>></p>
-  </div>
-
-<footer>
-  <div class="row">
-    <div class="footer-content col-4">
-    <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
-      <h3>Servei Tècnic</h3>
-      <a href="tel:99999999">Tel. 99 999 999</p>
-      <a href="mailto:info@instatjob.es">info@instantjob.es</a>
-    </div>
-    <div class="footer-content col-4">
-      <br>
-      <h3>Informació Legal</h3>
-      <a href="avislegal">Avís Legal</a><br>
-      <a href="politicaprivacitat">Política de Privacitat</a><br>
-      <a href="politicacookies">Política de Cookies</a>
-    </div>
-    <!-- Categories que s'agafaran de typescript -->
-    <div class="footer-content col-4">
-      <br>
-      <h3>Contacta amb Nosaltres</h3>
-      <a href="index"><img src="./imgs/QR.png" alt="Codi QR per contactar"></a>
     </div>
   </div>
-</footer>
+
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
