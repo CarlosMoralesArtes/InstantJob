@@ -6,7 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Estils de la pagina -->
+  <!-- Estils de la pàgina -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="..\styles.css">
   <!-- Estils de font awesome -->
@@ -27,41 +27,47 @@
     <div id="carga"></div>
   </div>
 
+  <!-- Apartat del header de la pàgina -->
   <header>
-  <nav class="navInici">
-      <div class="header col-1">
-        <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
-      </div>
-      <div class="header col-6 form-outline">
-        <form class="estilFormulari">
-          <input placeholder="Coloca el servei o categoria que vols trobar" type="search" id="paraulaBuscada" onkeypress="buscador()" class="form-control buscadorTop" />
-          <ul id="possiblesParaules"></ul>
-        </form>
-      </div>
+    <!-- Menu de la pàgina -->
+    <nav class="navInici">
+        <!-- Logo de la pàgina -->
+        <div class="header col-1">
+          <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pàgina InstantJob"></a>
+        </div>
+        <!-- Buscador de la pàgina -->
+        <div class="header col-6 form-outline">
+          <form class="estilFormulari">
+            <input placeholder="Coloca el servei que vols buscar" type="search" id="paraulaBuscada" onkeypress="buscador()" class="form-control buscadorTop" />
+            <ul id="possiblesParaules"></ul>
+          </form>
+        </div>
 
-      <?php
-        $session = session();
-        if ($session->get('user')){
-            echo "<div class='header col-2 separacio'>";
-            echo "<div class='dropdown'>";
-            echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
-            echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
-            echo "<a class='dropdown-item' href='configuracio'><i class='fa-solid fa-wrench'></i> El Meu Perfil</a>";
-            echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-        } else {
-            echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio / Registrar-se</a></div>";
-        }
-      ?>
-
-      </div>
-      <div class="header col-2">
-      <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar Producte</a>
+        <!-- Boto per iniciar sessio i desplegable si esta la sessio iniciada -->
+        <?php
+          $session = session();
+          if ($session->get('user')){
+              echo "<div class='header col-2 separacio'>";
+              echo "<div class='dropdown'>";
+              echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
+              echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
+              echo "<a class='dropdown-item' href='configuracio'><i class='fa-solid fa-wrench'></i> El Meu Perfil</a>";
+              echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+          } else {
+              echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio / Registrar-se</a></div>";
+          }
+        ?>
+        </div>
+        <!-- Boto per anar al apartat de pujar productes -->
+        <div class="header col-2">
+        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar Producte</a>
       </div>
     </nav>
   </header>
+
   <div class="overlay" id="overlay">
     <div class="popup" id="popup">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
@@ -168,7 +174,8 @@
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'contrasena',
                           'required' => 'required',
-                          'value' => set_value('contrasenya'));
+                          'value' => set_value('contrasenya'),
+                          'type' => 'password');
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
             echo form_label('Contrasenya', '#{label}');
@@ -305,7 +312,7 @@
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
 
-            echo "<p id='2'>".$row['precio']."</p>";
+            echo "<p id='2'>Preu: ".$row['precio']." Euros</p>";
 
             echo "<br>";
 
@@ -342,7 +349,9 @@
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
 
-            echo "<p id='2'>".$row['precio']."</p>";
+            echo "<p id='2'>Preu: ".$row['precio']." Euros</p>";
+
+            echo "<br>";
 
             $ruta = site_url()."compraProductes";
             $attributes = array ('action' => "compraProductes", 'enctype' => "multipart/form-data", 'method' => "POST");
@@ -390,7 +399,7 @@
 <footer>
   <div class="row">
     <div class="footer-content col-4">
-    <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
+    <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pàgina InstantJob"></a>
       <h3>Servei Tècnic</h3>
       <a href="tel:99999999">Tel. 99 999 999</p>
       <a href="mailto:info@instatjob.es">info@instantjob.es</a>

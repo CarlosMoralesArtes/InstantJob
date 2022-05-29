@@ -183,13 +183,29 @@
 	color: black !important;
 }
 
+.botoBuscador{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	border: 0px;
+	text-align: left;
+	padding: 20px !important;
+	border-radius: 10px;
+}
+
 #possiblesParaules{
 	text-align: left;
-	padding: 20px;
 	background-color: white;
 	position: absolute;
 	border-radius: 0px 0px 10px 10px;
 	width: 100%;
+	z-index: 3 !important;
+	padding: 10px;
+}
+
+.botoBuscador:hover{
+	background-color: #0073b4 !important;
+	color: white;
 }
 
 .header form{
@@ -265,6 +281,25 @@
 }
 
 .dropdown-item{
+	text-align: center !important;
+}
+
+.dropdown .btn-light{
+	width: 100%;
+}
+
+.dropdown .show{
+	width: 100%;
+	border: 10px;
+}
+
+.dropdown-menu .btn-light{
+	background-color: transparent;
+	color: white;
+	border-radius: 0px !important;
+}
+
+.dropdown-item{
 	color: white !important;
 	padding: 10px !important;
 	border-radius: 2px;
@@ -317,7 +352,7 @@
 	width: 100%;
 	position: fixed;
 	transition: 1s ease;
-	z-index: 10000;
+	z-index: 6;
 	margin: 0;
 	padding: 0;
 }
@@ -508,6 +543,10 @@ body{
 	margin-top: 20px;
 }
 
+.serveiSeparat .card-body form{
+	margin-top: 10px;
+}
+
 .segonApartat h2{
 	margin-top: 20px;
 }
@@ -520,14 +559,13 @@ body{
     margin-bottom: 50px;
 }
 
-
 .serveiSeparat img{
     border-radius: 5px;
 }
 
 .serveiSeparat p{
     color: black !important;
-    text-align: left;
+    text-align: center;
     font-size: 15px !important;
 }
 
@@ -550,8 +588,8 @@ body{
     padding: 20px;
 }
 
-.navIniciServeis{
-	background-color: #48B5D6;
+.iniciServeis{
+	background-color: #01bad8;
     /* background: url() */
     padding: 20px;
 }
@@ -814,13 +852,13 @@ header .btn-light{
 	background-color: #0196C1 !important;
 }
 
-.headerServeis{
+.capçaleraServeis{
 	padding: 10vh;
 	text-align: left;
 	color: white;
 }
 
-.headerServeis a{
+.capçaleraServeis a{
 	color: white;
 	text-decoration: none;
 }
@@ -876,7 +914,7 @@ header .btn-light{
 	transition: .3s ease all;
 	transform: scale(0.7);
 	opacity: 0;
-	z-index: 2;
+	z-index: 5;
 }
 
 .popup .btn-cerrar-popup {

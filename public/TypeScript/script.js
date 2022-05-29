@@ -35,6 +35,10 @@ window.addEventListener('load', function(){
 });
 
 window.onload = function(){
+    var final = document.getElementById("possiblesParaules");
+    if(final != null){
+      final.style.visibility = "hidden";
+    }
     // Apartat de la animació de carrega de la pàgina
     setTimeout(function(){
       var contenedor = document.getElementById('contenedor_carga');
@@ -76,14 +80,6 @@ window.onload = function(){
         btnCerrarPopup2 = document.getElementById('btn-cerrar-popup2');
 
     if(btnAbrirPopup2 != null){
-      // Aquest apartat serveix per quan es dona un clic fora que es tregui el registrar-se
-      // var overlay2 = document.getElementById('overlay2');
-
-      // overlay2.addEventListener('click', function(){
-      //   overlay.classList.remove('active');
-      //     popup.classList.remove('active');
-      // });
-
       btnAbrirPopup2.addEventListener('click', function(){
           overlay2.classList.add('active');
           popup2.classList.add('active');
@@ -104,14 +100,6 @@ window.onload = function(){
     btnCerrarPopup3 = document.getElementById('btn-cerrar-popup3');
 
     if(btnAbrirPopup3 != null){
-      // Aquest apartat serveix per quan es dona un clic fora que es tregui el registrar-se
-      // var overlay3 = document.getElementById('overlay3');
-
-      // overlay3.addEventListener('click', function(){
-      //   overlay.classList.remove('active');
-      //     popup.classList.remove('active');
-      // });
-
       btnAbrirPopup3.addEventListener('click', function(){
         overlay3.classList.add('active');
         popup3.classList.add('active');
@@ -132,14 +120,6 @@ window.onload = function(){
     btnCerrarPopup4 = document.getElementById('btn-cerrar-popup4');
 
     if(btnAbrirPopup4 != null){
-      // Aquest apartat serveix per quan es dona un clic fora que es tregui el registrar-se
-      // var overlay4 = document.getElementById('overlay4');
-
-      // overlay4.addEventListener('click', function(){
-      //   overlay.classList.remove('active');
-      //     popup.classList.remove('active');
-      // });
-
       btnAbrirPopup4.addEventListener('click', function(){
         overlay4.classList.add('active');
         popup4.classList.add('active');
@@ -160,14 +140,6 @@ window.onload = function(){
     btnCerrarPopup5 = document.getElementById('btn-cerrar-popup5');
 
     if(btnAbrirPopup5 != null){
-      // Aquest apartat serveix per quan es dona un clic fora que es tregui el registrar-se
-      // var overlay5 = document.getElementById('overlay5');
-
-      // overlay5.addEventListener('click', function(){
-      //   overlay.classList.remove('active');
-      //     popup.classList.remove('active');
-      // });
-
       btnAbrirPopup5.addEventListener('click', function(){
         overlay5.classList.add('active');
         popup5.classList.add('active');
@@ -238,7 +210,8 @@ function buscador(){
       variableAjax3.open("POST","consultaBaseDades.php",true);
       variableAjax3.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       variableAjax3.send("paraulaPasada=" + buscador);
-      console.log(buscador);
+      var final = document.getElementById("possiblesParaules");
+      final.style.visibility = "visible";
       // Aquest apartat funciona quan canvia el estat de la variable variableAjax3
       variableAjax3.onreadystatechange = function(){
       // Apartat on es comprova si es correcte la connexio amb el php
@@ -247,37 +220,41 @@ function buscador(){
           var xmlDoc=variableAjax3.responseXML;
           // Aquest apartat agafa els tags nom i descripcio
           var x5= xmlDoc.getElementsByTagName("nombre");
-          var x6= xmlDoc.getElementsByTagName("descripcion");
+          var x6= xmlDoc.getElementsByTagName("id_servicio");
           // Inicialitzacio de les variables
           var contingut5 = "";
           var contingut6 = "";
-          // Aquest apartat crea el formulari
-          var formulari = document.createElement("form");
           // For que coloca el contingut dins de les variables
           for (let i = 0; i < x5.length; i++) {
+              // Aquest apartat crea el formulari
+              var formulari = document.createElement("form");
+              formulari.action = "http://localhost/InstantJob/public/compraProductes";
+              formulari.method = "POST";
               // Aquest apartat coloca dins de les variables el contingut
               contingut5 = x5[i];
               contingut6 = x6[i];
-              console.log(contingut6);
               // Aquest apartat crea el boto que servira per veure la opcio que vol el usuari de totes les que es mostren
               var boto = document.createElement("input");
               var lletra = document.createElement("p");
-              var contingutBoto = document.createTextNode(contingut5.innerHTML);
-              lletra.appendChild(contingutBoto);
               // Valors del boto amb el contingut
-              boto.type = "radio";
-              boto.id = "boton"+i;
-              boto.classList.add("botoE");
+              boto.type = "submit";
+              boto.id = contingut6.innerHTML;
+              boto.classList.add("botoBuscador");
               boto.appendChild(lletra);
               boto.name = "boton";
-              boto.value = contingut6.innerHTML;
+              boto.value = contingut5.innerHTML;
+              // Aquest apartat coloca el input hidden amb el id per aconseguir mostrar el producte en la vista de compra
+              var inputHidden = document.createElement("input");
+              inputHidden.type = "hidden";
+              inputHidden.name = "id_servei";
+              inputHidden.value = contingut6.innerHTML;
+              formulari.appendChild(inputHidden);
               // Aquest apartat coloca al formulari el boto
               formulari.appendChild(boto);
-              formulari.appendChild(contingutBoto);
+              // Apartat on es coloca el resultat en el HTML
+              var final = document.getElementById("possiblesParaules");
+              final.appendChild(formulari);
           }
-          // Apartat on es coloca el resultat en el HTML
-          var final = document.getElementById("possiblesParaules");
-          final.appendChild(formulari);
       }
   }
 }
