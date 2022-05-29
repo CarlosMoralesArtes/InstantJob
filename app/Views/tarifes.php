@@ -21,13 +21,16 @@
 </head>
 
 <?php
-    $session = session();
-    if ($session->get('user')){
-    } else {
-      header("Location: ./index");
-      die();
-    }
-?>
+      $session = session();
+      if ($session->get('user')){
+        // $userName = $session->get('codiU');
+      } else {
+        $session->set('iniciar','1');
+        // $localitzacio = site_url()."/c4morales/home/iniciarSessio";
+        header("Location: ./index");
+        die();
+      }
+  ?>
 
 <body>
 
