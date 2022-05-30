@@ -93,6 +93,18 @@ class Home extends BaseController
         return view('pujaProductes.php');
     }
 
+    //Redireccionament d'admin
+    public function admin()
+    {
+        return view('admin.php');
+    }
+    
+    //Redireccionament d'admin
+    public function rrhh()
+    {
+        return view('rrhh.php');
+    }
+
     public function sqlpujar()
     {
         $dades=$this->request->getVar();

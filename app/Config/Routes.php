@@ -38,6 +38,8 @@ $routes->get('/index', 'Home::home');
 $routes->get('/serveis', 'Home::serveis');
 $routes->get('/tarifes', 'Home::tarifes');
 $routes->get('/compra', 'Home::compra');
+$routes->get('/instantadmin', 'Home::admin');
+$routes->get('/instantrrhh', 'Home::rrhh');
 $routes->get('/form', 'Home::form');
 $routes->post('/iniciar', 'Home::formulariIniciSessio');
 $routes->post('/registrar', 'Home::formulari');
