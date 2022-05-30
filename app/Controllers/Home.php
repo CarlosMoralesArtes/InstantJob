@@ -108,7 +108,18 @@ class Home extends BaseController
     //Redireccionament modificar productes
     public function modificarProductes()
     {
-        return view('modificarProductes.php');
+        $db = db_connect();
+        $session = session();
+        $id = $session->get('id_user');
+        // echo $id;
+        $query = "SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
+        $query = $db->query($query, [$id]);
+        // echo var_dump($query);
+        // $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
+
+        $data = array('consulta' => $query);
+
+        return view('modificarProductes.php',$data);
     }
 
     public function sqlpujar()
@@ -141,10 +152,17 @@ class Home extends BaseController
         }
 
         if($tipusF == "image/jpeg"){
-            $tipusF = "jpeg";
+            $tipusF = "png";
+        }
+
+        if($tipusF == "image/jpg"){
+            $tipusF = "png";
         }
 
         if(is_uploaded_file($_FILES["fitxer"]["tmp_name"]) == true){
+
+            $session = session();
+            $id = $session->get('id_user');
             // Agafar el nom del arxiu
             $nomF = $_FILES["fitxer"]["name"];
             // $arxiu = new \App\Models\ArxiuModel();
@@ -158,14 +176,31 @@ class Home extends BaseController
             // echo "Arxiu $nomF guardat correctament. ";
             $query3 = "INSERT INTO `servicio` (`id_servicio`, `nombre`, `descripcion`, `numero_clicks`, `imagen`, `categoria`, `precio`, `horario`, `dias`, `findes`, `24h`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             $query3 = $db->query($query3, [$dades['nombre'], $dades['descripcion'], 1, $numeroRandom , $dades['categoria'], $dades['precio'], $dades['horario'], $dades['dias'], $findes, $h24]);
+            $selc = $db->query("SELECT MAX(`id_servicio`) FROM `servicio`;");
+            foreach ($selc->getResultArray() as $row) {
+                $query4 = "INSERT INTO `subir` (`id_subir`, `id_clientes`, `id_servicios`, `fecha`) VALUES (NULL, ?, ?, '2022-05-30');";
+                $query4 = $db->query($query4, [$id,$row['MAX(`id_servicio`)']]);
+                // echo var_dump($row);
+            //     echo $row['dias'];
+            //   echo "<tr>";
+            //   $path='imgs/'.$row['imagen'].'.png';
+            //   echo "<th><img src=" . $path . " border='0' width='300'></th>";
+  
+            //   echo "<td>".$row['nombre']."</td>";
+  
+            //   echo "<td>".$row['numero_clicks']."</td>";
+  
+            //   echo "<td>".$row['fecha']."</td>";
+  
+            //   echo "<td>".$row['precio']."</td>";
+  
+            //   echo "</tr>";
+            }
+            
         } else {
             // Si no hi ha ningun tipus de arxiu
             echo "No hi ha ningun tipus de arxiu.";
         }
-
-        // $imagen = base64_decode($data);
-        // $imagen = base64_encode($_FILES['fitxer']['tmp_name']);
-        // echo $imagen;
         return view('pujaProductes.php');
     }
 
@@ -212,15 +247,11 @@ class Home extends BaseController
     //Redireccionament de estadistiques
     public function estadistiques(){
 
-        // $session = session();
-        // $id = $session->get('id_user');
         $db = db_connect();
-        // $query = $db->query("SELECT * FROM `cliente` WHERE id_cliente = 1");
-        $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
-        // $query = $db->query($query, [$id]);
-
-        
-
+        $session = session();
+        $id = $session->get('id_user');
+        $query = "SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
+        $query = $db->query($query, [$id]);
         $data = array('consulta' => $query);
 
         return view('estadistiques',$data);
