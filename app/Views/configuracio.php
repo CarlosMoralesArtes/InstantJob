@@ -144,7 +144,7 @@
         <?php
           foreach ($consulta->getResultArray() as $row) {
 
-            echo "<p> Nom: ".$row['correo']."</p>";
+            echo "<p> Correu: ".$row['correo']."</p>";
 
             echo "<p> Nom: ".$row['nombre']."</p>";
 

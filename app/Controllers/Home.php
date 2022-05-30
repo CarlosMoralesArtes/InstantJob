@@ -260,7 +260,11 @@ class Home extends BaseController
     //Redireccionament de guardats
     public function guardats(){
         $db = db_connect();
-        $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
+        $session = session();
+        $id = $session->get('id_user');
+        $query = "SELECT * FROM `guardados` gua JOIN servicio ser ON ser.id_servicio = gua.id_servicio WHERE gua.id_cliente = ?;";
+        $query = $db->query($query, [$id]);
+        // $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
 
         $data = array('consulta' => $query);
 
