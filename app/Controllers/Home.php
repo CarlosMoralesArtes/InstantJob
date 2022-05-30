@@ -105,6 +105,12 @@ class Home extends BaseController
         return view('rrhh.php');
     }
 
+    //Redireccionament modificar productes
+    public function modificarProductes()
+    {
+        return view('modificarProductes.php');
+    }
+
     public function sqlpujar()
     {
         $dades=$this->request->getVar();

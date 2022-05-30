@@ -96,6 +96,12 @@
           <span class="tooltip">Serveis</span>
         </li>
       </a>
+      <a href="modificarProductes">
+        <li>
+          <img src="imgs/lista.png"></img>
+          <span class="tooltip">Els meus Serveis</span>
+        </li>
+      </a>
       <a href="missatges">
         <li>
           <img src="imgs/missage.png"></img>
