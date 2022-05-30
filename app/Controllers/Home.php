@@ -79,7 +79,7 @@ class Home extends BaseController
 
     //Redireccionament de missatges
     public function missatges(){
-        return view('missatges');
+        return view('mensajes');
     }
 
     //Redireccionament de tarifes
