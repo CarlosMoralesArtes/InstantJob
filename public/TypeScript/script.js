@@ -247,8 +247,7 @@ function buscador(){
 }
 
 // Aquesta funcio recull la ubicacio de cada usuari cada minut i la guarda dins de la base de dades
-function recollirUbicacio(){
-  console.log("hola");
+function recollirUbicacio(id){
   // Aquest es l'apartat de opcions que s'executaran per obtenir l'ubicacio de l'usuari
   var options = {
       enableHighAccuracy: true,
@@ -260,27 +259,27 @@ function recollirUbicacio(){
     function success(pos) {
       // Variable que conte les coordenades de les posicions
       var crd = pos.coords;
-      console.log(usuariActual[0].id);
       console.log(crd.longitude);
       console.log(crd.latitude);
+      console.log(id);
       // Insercio en la base de dades de la longitud i la latitud amb el dia i l'hora 
-      // var variableAjax = new XMLHttpRequest();
-      // variableAjax.open("POST", "./php/ActualitzarUsuari.php", true);
-      // variableAjax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      // variableAjax.send("id=" + usuariActual[0].id + "&longitud=" + crd.longitude + "&latitud=" + crd.latitude);
-      // variableAjax.onreadystatechange = function () {
-      //     if (variableAjax.readyState == 4 && variableAjax.status == 200) {
-      //         console.log("Proces realitzat correctament.");
-      //     }
-      // }
+      var variableAjax = new XMLHttpRequest();
+      variableAjax.open("POST", "actualitzarUsuari.php", true);
+      variableAjax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      variableAjax.send("id=" + id + "&longitud=" + crd.longitude + "&latitud=" + crd.latitude);
+      variableAjax.onreadystatechange = function () {
+          if (variableAjax.readyState == 4 && variableAjax.status == 200) {
+              console.log("Proces realitzat correctament.");
+          }
+      }
     };
     
   // Funcio que s'executa quan el usuari bloqueja l aobtencio de la ubicacio del navegador
     function error(err) {
-      
+      console.log("error");
+
     };
     
     navigator.geolocation.getCurrentPosition(success, error, options);
 
 }
-

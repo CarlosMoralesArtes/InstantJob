@@ -25,16 +25,16 @@
 <?php
       $session = session();
       if ($session->get('user')){
-        // $userName = $session->get('codiU');
+          $session->get('id_user');
       } else {
-        $session->set('iniciar','1');
         // $localitzacio = site_url()."/c4morales/home/iniciarSessio";
         header("Location: ./index");
         die();
       }
   ?>
 
-<body id="<?php echo $session->get('id_user')?>" onclick="recollirUbicacio(this.id)">
+<body>
+
   <!-- Apartat de la carrega de la pàgina -->
   <div id="contenedor_carga">
     <div id="carga"></div>
@@ -85,7 +85,7 @@
   <nav class="sidebar-navigation">
     <ul>
       <a href="pujaProductes">
-        <li class="active">
+        <li>
           <img src="imgs/pujar.png"></img>
           <span class="tooltip">Pujar Productes</span>
         </li>
@@ -121,7 +121,7 @@
         </li>
       </a>
       <a href="configuracio">
-        <li>
+        <li class="active">
           <img src="imgs/configuracio.png"></img>
           <span class="tooltip">Configuració</span>
         </li>
@@ -130,20 +130,10 @@
   </nav>
 
   <br>
-
   <div class="container">
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
-        <p class="card-title">Que vas a pujar?</p>
-        <p class="card-title">Selecciona la categoria</p>
-        <img id="1" src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada(this.id)">
-        <img id="2" src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada(this.id)">
-        <img id="3" src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada(this.id)">
-        <img id="4" src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada(this.id)">
-        <img id="5" src="imgs/administratiu.png" alt="Categoria d'administratiu" onclick="ImatgeSeleccionada(this.id)">
-        <img id="6" src="imgs/jardiner.png" alt="Categoria de jardiners" onclick="ImatgeSeleccionada(this.id)">
-        <img id="7" src="imgs/medicina.png" alt="Categoria de medicina" onclick="ImatgeSeleccionada(this.id)">
-        <img id="8" src="imgs/obrer.png" alt="Categoria d'obrers" onclick="ImatgeSeleccionada(this.id)">
+        <p class="card-title">Treballadors Actuals</p>
 
         <p class="card-text"></p>
       </div>
@@ -151,30 +141,28 @@
     <br>
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
-        <p class="card-title">Completa els camps per modificar el perfil</p>
+        <p class="card-title">Completa els camps per donar d'alta a un treballador</p>
         <div class="configuracio">
         <div class="popupConfiguracio active">
           <div class="targetaConfiguracio">
             <?php
-              $ruta = "pujar";
-              $attributes = array ('action' => "pujar", 'enctype' => "multipart/form-data", 'method' => "POST");
+              $ruta = "configuracio";
+              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
               // Form open que serveix per iniciar el formulari
               echo form_open($ruta, $attributes);
+              echo "<div class='input-container'>";
 
               // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'fitxer',
-                            'value' => set_value('userfile'),
-                            'class' => 'pujarProductes');
+              $data = array('name' => 'correu',
+                          'required' => 'required',
+                          'type' => 'text',
+                          'value' => set_value('correu'));
               // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_label('Imatge de protada del servei', '#{label}');
-              echo form_upload($data);
-
-              if ($_GET['w1']) {
-                echo $_GET['w1'];
-                echo form_hidden('categoria', $_GET['w1']);
-              }else{
-                echo form_hidden('categoria', 0);
-              }
+              echo form_input($data);
+              echo form_label('Correu', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
 
               echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
@@ -189,87 +177,106 @@
               echo "<br>";
               echo "</div>";
 
+              echo form_hidden('id_usuari', $session->get('id_user'));
 
               echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'precio',
-                          'required' => 'precio',
+              $data = array('name' => 'apellidos',
+                          'required' => 'apellidos',
                           'type' => 'text',
-                          'value' => set_value('precio'));
+                          'value' => set_value('apellidos'));
               // En el form input es l'apartat on pots colocar text en el formulari
               echo form_input($data);
-              echo form_label('Precio', '#{label}');
+              echo form_label('Cognoms', '#{label}');
               echo "<div class='bar'></div>";
               echo "<br>";
               echo "</div>";
 
+
               echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'descripcion',
-                          'required' => 'descripcion',
-                          'type' => 'text',
-                          'value' => set_value('descripcion'));
+              $data = array('name' => 'contrasenya',
+                          'required' => 'contrasenya',
+                          'type' => 'password',
+                          'value' => set_value('contraseya'));
               // En el form input es l'apartat on pots colocar text en el formulari
               echo form_input($data);
-              echo form_label('Descripció', '#{label}');
+              echo form_label('Contrasenya', '#{label}');
               echo "<div class='bar'></div>";
               echo "<br>";
               echo "</div>";
 
+              echo "<br>";
+              echo "<p class='petit'>Les dades es colocaran al instant</p>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Donar alta Treballador'>";
+
+              // El form close es per tancar el formulari
+              echo form_close();
+            ?>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pujarProducteCaixa col-9">
+      <div class="card-body">
+        <p class="card-title">Completa els camps per modificar el treballador</p>
+        <div class="configuracio">
+        <div class="popupConfiguracio active">
+          <div class="targetaConfiguracio">
+            <?php
+              $ruta = "configuracio";
+              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+              // Form open que serveix per iniciar el formulari
+              echo form_open($ruta, $attributes);
               echo "<div class='input-container'>";
+
               // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'horario',
-                          'required' => 'horario',
+              $data = array('name' => 'nombre',
+                          'required' => 'required',
                           'type' => 'text',
-                          'value' => set_value('horario'));
+                          'value' => set_value('nombre'));
               // En el form input es l'apartat on pots colocar text en el formulari
               echo form_input($data);
-              echo form_label('Horari (Ex: Dilluns, Dimarts...)', '#{label}');
+              echo form_label('Nom', '#{label}');
               echo "<div class='bar'></div>";
               echo "<br>";
               echo "</div>";
 
+              echo form_hidden('id_usuari', $session->get('id_user'));
+
               echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'dias',
-                          'required' => 'dias',
+              $data = array('name' => 'apellidos',
+                          'required' => 'apellidos',
                           'type' => 'text',
-                          'value' => set_value('dias'));
+                          'value' => set_value('apellidos'));
               // En el form input es l'apartat on pots colocar text en el formulari
               echo form_input($data);
-              echo form_label('Dies (Ex: De 8h a 12h)', '#{label}');
+              echo form_label('Cognoms', '#{label}');
               echo "<div class='bar'></div>";
               echo "<br>";
               echo "</div>";
 
-              echo "<div class='preguntes'>";
 
-              $data = array(
-                'name'          => 'findes',
-                'id'            => 'findes',
-                'value'         => 'accept',
-                'checked'       => FALSE,
-                'style'         => 'margin:10px'
-              );
-              echo form_label('Treballes els caps de setmana?', '#{label}');
-              echo form_checkbox($data);
-
-              $data = array(
-                'name'          => '24h',
-                'id'            => '24h',
-                'value'         => 'accept',
-                'checked'       => FALSE,
-                'style'         => 'margin:10px'
-              );
-              echo form_label('Treballes 24h?', '#{label}');
-              echo form_checkbox($data);
-
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'contrasenya',
+                          'required' => 'contrasenya',
+                          'type' => 'password',
+                          'value' => set_value('contraseya'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Contrasenya', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
               echo "</div>";
 
               echo "<br>";
-
-              echo form_submit('mysubmit', 'Pujar Producte');
-              // echo "<input type='submit' class='btn-submit' name='mysubmit' value='Pujar Producte'>";
+              echo "<p class='petit'>Les dades s'actualitzen al instant</p>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Modificar Treballador'>";
 
               // El form close es per tancar el formulari
               echo form_close();
@@ -283,7 +290,6 @@
   
   <!-- Scripts necesaris -->
   <!-- Bootstrap JavaScript Libraries -->
-  
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src="Typescript/script.js"></script>
   <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>

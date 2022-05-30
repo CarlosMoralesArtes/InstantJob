@@ -1,12 +1,8 @@
 <?php   
     // Header del xml
     header("Content-Type: application/xml");
-    // Valors per conectarse a la base de dades mysql
-    $servername = "localhost";
-    $database = "final";
-    $username = "root";
-    $password = "";
-    $con = mysqli_connect($servername, $username, $password, $database);
+    // Connexio a la base de dadaes
+    include 'connexio.php';
     
     // Recollida del valor pasat per javascript
     $paraulaPasada = $_POST["paraulaPasada"];
