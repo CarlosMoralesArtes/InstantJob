@@ -332,10 +332,11 @@
       <br>
       <?php
       foreach ($consulta->getResultArray() as $row){
-      echo "<h1>".$row['nombre']."</h1>";
       echo "<div class='partDretaCompra'><a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></a> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
-      echo "<img src='./imgs/imatgePre.png' alt='Logo de la pagina InstantJob'>";
-      echo "<p class='preuProducte'>".$row['nombre']." Euros</p>";
+      $path='imgs/'.$row['imagen'].'.png';
+      echo "<img src=" . $path . " border='0' width='300'>";
+      echo "<h1>".$row['nombre']."</h1>";
+      echo "<p class='preuProducte'>".$row['precio']." Euros/h</p>";
       switch ($row['categoria']) {
         case '1':
           echo "<p class='categoriaProducte'>Lampista</p>";
