@@ -146,7 +146,7 @@ class Home extends BaseController
             $contingut = base64_encode($_FILES["fitxer"]["tmp_name"]);
             $codiU = $dades["codiUsuari"];
             $numeroRandom = rand(1, 10000000);
-            move_uploaded_file($_FILES["fitxer"]["tmp_name"], "C:/xampp/img/$numeroRandom.$tipusF" );
+            move_uploaded_file($_FILES["fitxer"]["tmp_name"], "./imgs/$numeroRandom.$tipusF" );
             // $dadesFitxer = ["nomF" => $nomF, "tipusF" => $tipusF, "data" => $data, "nomRandom" => $numeroRandom, "codiU" => $codiU];
             // $arxiu->insert($dadesFitxer);
             // echo "Arxiu $nomF guardat correctament. ";
@@ -177,7 +177,7 @@ class Home extends BaseController
     {
         $db = db_connect();
         $query = $db->query("SELECT * FROM `servicio`");
-        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
+        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio, ser.imagen FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
 
 
         $titulo = 0;
