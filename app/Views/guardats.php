@@ -145,24 +145,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row"><img src="imgs/1.png" alt="Categoria de lampista"></th>
-            <td>Mark</td>
-            <td>dsadsadsadsadsadas</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <th scope="row"><img src="imgs/2.png" alt="Categoria de lampista"></th>
-            <td>Jacob</td>
-            <td>dsadsadsadsadsadas</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <th scope="row"><img src="imgs/3.png" alt="Categoria de lampista"></th>
-            <td>Larry</td>
-            <td>dsadsadsadsadsadas</td>
-            <td>2</td>
-          </tr>
+        <?php
+          
+          foreach ($consulta->getResultArray() as $row) {
+              // echo var_dump($row);
+              echo $row['dias'];
+            echo "<tr>";
+            $path='imgs/'.$row['imagen'].'.png';
+            echo "<th><img src=" . $path . " border='0' width='300'></th>";
+
+            echo "<td>".$row['nombre']."</td>";
+
+            echo "<td>".$row['numero_clicks']."</td>";
+
+            echo "<td>".$row['fecha']."</td>";
+
+            echo "<td>".$row['precio']."</td>";
+
+            echo "</tr>";
+          }
+        ?>
         </tbody>
       </table>
         </p>

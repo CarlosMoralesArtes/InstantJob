@@ -198,7 +198,7 @@ class Home extends BaseController
         // $id = $session->get('id_user');
         $db = db_connect();
         // $query = $db->query("SELECT * FROM `cliente` WHERE id_cliente = 1");
-        $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
+        $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
         // $query = $db->query($query, [$id]);
 
         
@@ -210,7 +210,12 @@ class Home extends BaseController
 
     //Redireccionament de guardats
     public function guardats(){
-        return view('guardats');
+        $db = db_connect();
+        $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
+
+        $data = array('consulta' => $query);
+
+        return view('guardats',$data);
     }
 
     //Redireccionament de compra

@@ -152,7 +152,8 @@
               // echo var_dump($row);
               echo $row['dias'];
             echo "<tr>";
-            echo "<th scope='row'><img src='imgs/1.png' alt='Categoria de lampista'></th>";
+            $path='imgs/'.$row['imagen'].'.png';
+            echo "<th><img src=" . $path . " border='0' width='300'></th>";
 
             echo "<td>".$row['nombre']."</td>";
 
