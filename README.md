@@ -7,8 +7,11 @@ Requisitos para iniciar la aplicacion web, cambiar las base de datos de "app/con
 Seguidamente con el node instalado tenemos que ubicarnos en el termina el la carpeta "public/chat:" una vez aqui hay que inserar los siguientes comandos:
 
 -npm init
+
 -npm i socket.io
+
 -npm i --save-dev nodemon
+
 -nodemon server.js
 
 Una vez esto ya tendria que funcionar la aplicacion perfectamente.
