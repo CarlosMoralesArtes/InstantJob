@@ -189,6 +189,31 @@ class Home extends BaseController
         return view('modificarProductes',$data);
     }
 
+    public function eliminarservicio(){
+        $db = db_connect();
+        $dades=$this->request->getVar();
+        // echo $dades['id'];
+        $query2 = "DELETE FROM `subir` WHERE `subir`.`id_servicios` = ?";
+        $query2 = $db->query($query2, [$dades['id']]);
+
+        $query2 = "DELETE FROM `servicio` WHERE `servicio`.`id_servicio` = ?;";
+        $query2 = $db->query($query2, [$dades['id']]);
+
+        $session = session();
+        $id = $session->get('id_user');
+        // echo $id;
+        $query = "SELECT ser.id_servicio, ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
+        $query = $db->query($query, [$id]);
+        // echo var_dump($query);
+        // $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
+
+        $data = array('consulta' => $query);
+        if ($dades['id']) {
+            echo "<p class='PujatCorrectament'>Producte eliminat correctament</p>";
+        }
+        return view('modificarProductes.php',$data);
+    }
+
     public function sqlpujar()
     {
         $dades=$this->request->getVar();

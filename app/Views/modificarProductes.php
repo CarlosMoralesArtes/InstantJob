@@ -149,6 +149,7 @@
             <th scope="col">Nom</th>
             <th scope="col">Data</th>
             <th scope="col">Preu</th>
+            <th scope="col">Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -166,6 +167,21 @@
             echo "<td>".$row['fecha']."</td>";
 
             echo "<td>".$row['precio']."</td>";
+
+            echo "<td>";
+
+            $ruta = "eliminarservicio";
+            $attributes = array ('action' => "eliminarservicio", 'enctype' => "multipart/form-data", 'method' => "POST");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
+
+            echo form_hidden('id',$row['id_servicio']);
+
+            echo "<button>Eliminar</button>";
+
+            echo form_close();
+
+            echo "</td>";
 
             echo "</tr>";
           }
