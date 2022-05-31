@@ -72,6 +72,14 @@ class Home extends BaseController
         return view('politica_privacitat');
     }
 
+    //Redireccionament per a instantadminpro
+    public function instantadminpro(){
+        $db = db_connect();
+        $query3 = $db->query("SELECT * FROM `servicio`;");
+        $data = array('consulta' => $query3);
+        return view('instantadminpro', $data);
+    }
+
     //Redireccionament de la footer a politica de cookies
     public function politicacookies(){
         return view('politica_de_cookies');
@@ -100,12 +108,6 @@ class Home extends BaseController
         $query3 = $db->query("SELECT * FROM `cliente`;");
         $data = array('consulta' => $query3);
         return view('admin.php', $data);
-    }
-    
-    //Redireccionament d'admin
-    public function rrhh()
-    {
-        return view('rrhh.php');
     }
 
     //Redireccionament modificar productes
@@ -515,13 +517,52 @@ class Home extends BaseController
         // Validador del formulari on es comproven que estiguin tots els requisits
         if($this->validate($regles, $missatges)){
             $db = db_connect();
+            $dades['contrasena'] = md5($dades['contrasenya']);
             $sql = "UPDATE `cliente` SET `nombre`= ?,`apellidos`= ?,`contrasena`= ? WHERE `id_cliente` = ?;";
-            $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasenya'], $dades['id_usuari']]);
+            $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasena'], $dades['id_usuari']]);
 
             $session = session();
             $session->start();
             $session->set('user',$dades['nombre']);
             return view('configuracio');
+        }
+    }
+
+    // Funcio que serveix per modificar el usuari
+    public function configuracioFormulariAdministrador()
+    {
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+
+        // Apartat de les normes que es comproven del formulari
+        $regles = [
+            "nombre"    => "required",
+            "apellidos"    => "required",
+            "contrasenya"    => "required"
+        ];
+
+        // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
+        $missatges = [
+            "nombre" => [
+                "required" => "Nom obligatori"
+            ],
+            "apellidos" => [
+                "required" => "Cognoms obligatoris"
+            ],
+            "contrasena" => [
+                "required" => "Telefon obligatori"
+            ]
+        ];
+
+        // Validador del formulari on es comproven que estiguin tots els requisits
+        if($this->validate($regles, $missatges)){
+            $db = db_connect();
+            $dades['contrasena'] = md5($dades['contrasenya']);
+            $sql = "UPDATE `cliente` SET `nombre`= ?,`apellidos`= ?,`contrasena`= ? WHERE `id_cliente` = ?;";
+            $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasena'], $dades['id_usuari']]);
+            $query3 = $db->query("SELECT * FROM `cliente`;");
+            $data = array('consulta' => $query3);
+            return view('admin', $data);
         }
     }
 
@@ -683,4 +724,27 @@ class Home extends BaseController
 
         return view('guardats');
     }
+
+    public function eliminarAdmin(){
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+        $db = db_connect();
+        $sql = "DELETE FROM `cliente` WHERE `id_cliente` = ?;";
+        $db->query($sql, [$dades['id_usuari']]);
+        $query3 = $db->query("SELECT * FROM `cliente`;");
+        $data = array('consulta' => $query3);
+        return view('admin', $data);
+    }
+
+    public function eliminarAdminPro(){
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+        $db = db_connect();
+        $sql = "DELETE FROM `servicio` WHERE `id_servicio` = ?;";
+        $db->query($sql, [$dades['id_servicio']]);
+        $query3 = $db->query("SELECT * FROM `servicio`;");
+        $data = array('consulta' => $query3);
+        return view('instantadminpro', $data);
+    }
+
 }

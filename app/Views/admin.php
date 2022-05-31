@@ -244,7 +244,7 @@
         <div class="popupConfiguracio active">
           <div class="targetaConfiguracio">
           <?php
-              $ruta = "configuracio";
+              $ruta = "configuracioAdmin";
               $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
               // Form open que serveix per iniciar el formulari
               echo form_open($ruta, $attributes);
@@ -268,8 +268,6 @@
               echo "<div class='bar'></div>";
               echo "<br>";
               echo "</div>";
-
-              echo form_hidden('id_usuari', $session->get('id_user'));
 
               echo "<div class='input-container'>";
               // En $data es coloquen els atributs de la pregunta
@@ -301,6 +299,36 @@
               echo "<br>";
               echo "<p class='petit'>Les dades s'actualitzen al instant</p>";
               echo "<input type='submit' class='btn-submit' name='mysubmit' value='Modificar Usuari'>";
+
+              // El form close es per tancar el formulari
+              echo form_close();
+            ?>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pujarProducteCaixa col-9">
+      <div class="card-body">
+        <p class="card-title">Selecciona el usuari que vols eliminar</p>
+        <div class="configuracio">
+        <div class="popupConfiguracio active">
+          <div class="targetaConfiguracio">
+          <?php
+              $ruta = "eliminarAdmin";
+              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+              // Form open que serveix per iniciar el formulari
+              echo form_open($ruta, $attributes);
+
+              echo "<select name='id_usuari'>";
+              foreach ($consulta->getResultArray() as $row) {
+                echo "<option value=".$row['id_cliente'].">".$row['nombre']."</option>";
+              }
+              echo "</select>";
+              echo "<p class='petit'>Un cop eliminat no es podra tornar a recuperar el usuari!</p>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Eliminar usuari'>";
 
               // El form close es per tancar el formulari
               echo form_close();

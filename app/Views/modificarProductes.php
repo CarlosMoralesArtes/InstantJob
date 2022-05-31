@@ -98,7 +98,7 @@
         </li>
       </a>
       <a href="modificarProductes">
-        <li>
+        <li class="active">
           <img src="imgs/lista.png"></img>
           <span class="tooltip">Els meus Serveis</span>
         </li>
@@ -122,7 +122,7 @@
         </li>
       </a>
       <a href="estadistiques">
-        <li class="active">
+        <li>
           <img src="imgs/estadistica.png"></img>
           <span class="tooltip">Estadistiques</span>
         </li>
