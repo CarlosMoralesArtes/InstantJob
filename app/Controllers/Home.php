@@ -96,7 +96,10 @@ class Home extends BaseController
     //Redireccionament d'admin
     public function admin()
     {
-        return view('admin.php');
+        $db = db_connect();
+        $query3 = $db->query("SELECT * FROM `cliente`;");
+        $data = array('consulta' => $query3);
+        return view('admin.php', $data);
     }
     
     //Redireccionament d'admin
@@ -348,6 +351,60 @@ class Home extends BaseController
         }
     }
 
+    // Funcio de la comprovacio i insercio del formulari de registre admin
+    public function formulariAdmin()
+    {
+        $db = db_connect();
+        $dades=$this->request->getVar();
+        
+        // Apartat de les normes que es comproven del formulari
+        $regles = [
+            "nombre"    => "required",
+            "apellidos"    => "required",
+            "correo"    => "is_unique[cliente.correo,correo]",
+            "contrasena" => "required"
+        ];
+
+        // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
+        $missatges = [
+            "nombre" => [
+                "required" => "nom obligatori"
+            ],
+            "apellidos" => [
+                "required" => "Cognoms obligatoris"
+                // "matches" => "Les contrasenyes tenen que coincidir."
+            ],
+            "correo" => [
+                "is_unique" => "El correu ja te una compte creada"
+            ],
+            "contrasena" => [
+                "required" => "Telefon obligatori"
+            ]
+        ];
+
+        // Validador del formulari on es comproven que estiguin tots els requisits
+        if($this->validate($regles, $missatges)){
+            $session = session();
+            $session->start();
+            $usuari = new \App\Models\UsuariModel();
+            $dades['contrasena'] = md5($dades['contrasena']);
+			$usuari->insert($dades);
+            $session->set('iniciar','1');
+            $query = $db->query("SELECT * FROM `cliente`;");
+            $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
+            $data = array('consulta' => $query, 'consulta2' => $query2);
+            return view('admin',$data);
+        } else {
+            $session = session();
+            $session->start();
+            $session->set('eriniciar','1');
+            $dades["validation"]=$this->validator;
+            $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
+            $data = array('consulta' => $query, 'consulta2' => $query2);
+            return view('admin',$data);
+        }
+    }
+
     public function form(){
         // formulariIniciSessio();
     }
@@ -503,7 +560,7 @@ class Home extends BaseController
             $db = db_connect();
             $sql = "UPDATE `cliente` SET `tarifa`= 0 WHERE `id_cliente` = ?";
             $db->query($sql, [$dades['id_usuari']]);
-
+            echo "<p class='PujatCorrectament'>Tarifa comprada correctament</p>";
             return view('tarifes');
         }
     }

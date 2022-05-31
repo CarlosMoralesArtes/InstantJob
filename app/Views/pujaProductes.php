@@ -3,17 +3,18 @@
 
 
 <head>
-<title>InstantJob | Home</title>
+  <title>InstantJob | Pujar Productes</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Estils de la pagina -->
+  <!-- Estils de la pàgina -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="..\styles.css">
   <!-- Estils de font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <!-- Estils de glider -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+  <!-- Icone de la pagina -->
+  <link rel="icon" type="image/png" href="./imgs/Logo_InstantJob_Blanca.png" alt="Icone de la pàgina InstantJob" />
 
   <!-- Estils de Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -189,7 +190,7 @@
                           'value' => set_value('nombre'));
               // En el form input es l'apartat on pots colocar text en el formulari
               echo form_input($data);
-              echo form_label('Nom', '#{label}');
+              echo form_label('Titol Servei', '#{label}');
               echo "<div class='bar'></div>";
               echo "<br>";
               echo "</div>";
@@ -229,7 +230,7 @@
                           'value' => set_value('horario'));
               // En el form input es l'apartat on pots colocar text en el formulari
               echo form_input($data);
-              echo form_label('Horari (Ex: Dilluns, Dimarts...)', '#{label}');
+              echo form_label('Horari (Ex: Dilluns-Divendres, Dilluns-Dimecres...)', '#{label}');
               echo "<div class='bar'></div>";
               echo "<br>";
               echo "</div>";
@@ -273,8 +274,7 @@
 
               echo "<br>";
 
-              echo form_submit('mysubmit', 'Pujar Producte');
-              // echo "<input type='submit' class='btn-submit' name='mysubmit' value='Pujar Producte'>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Pujar Producte'>";
 
               // El form close es per tancar el formulari
               echo form_close();
