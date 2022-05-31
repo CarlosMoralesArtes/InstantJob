@@ -3,7 +3,7 @@
 
 
 <head>
-  <title>InstantJob | Pujar Productes</title>
+  <title>InstantJob | Modificar un producte</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,7 +35,7 @@
       }
   ?>
 
-<body id="<?php echo $session->get('id_user')?>" onclick="recollirUbicacio(this.id)">
+<body id="<?php echo $session->get('id_user')?>" onload="recollirUbicacio(this.id)">
   <!-- Apartat de la carrega de la pàgina -->
   <div id="contenedor_carga">
     <div id="carga"></div>
@@ -86,7 +86,7 @@
   <nav class="sidebar-navigation">
     <ul>
       <a href="pujaProductes">
-        <li class="active">
+        <li>
           <img src="imgs/pujar.png"></img>
           <span class="tooltip">Pujar Productes</span>
         </li>
@@ -158,7 +158,7 @@
     <br>
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
-        <p class="card-title">Completa els seguents camps per pujar un servei</p>
+        <p class="card-title">Completa els seguents camps per crear un producte</p>
         <div class="configuracio">
         <div class="popupConfiguracio active">
           <div class="targetaConfiguracio">
@@ -275,6 +275,36 @@
               echo "<br>";
 
               echo "<input type='submit' class='btn-submit' name='mysubmit' value='Pujar Producte'>";
+
+              // El form close es per tancar el formulari
+              echo form_close();
+            ?>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="pujarProducteCaixa col-9">
+      <div class="card-body">
+        <p class="card-title">Selecciona el usuari que vols eliminar</p>
+        <div class="configuracio">
+        <div class="popupConfiguracio active">
+          <div class="targetaConfiguracio">
+          <?php
+              $ruta = "eliminarAdminPro";
+              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+              // Form open que serveix per iniciar el formulari
+              echo form_open($ruta, $attributes);
+
+              echo "<select name='id_servicio'>";
+              foreach ($consulta->getResultArray() as $row) {
+                echo "<option value=".$row['id_servicio'].">".$row['nombre']."</option>";
+              }
+              echo "</select>";
+              echo "<p class='petit'>Un cop eliminat no es podra tornar a recuperar el usuari!</p>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Eliminar usuari'>";
 
               // El form close es per tancar el formulari
               echo form_close();

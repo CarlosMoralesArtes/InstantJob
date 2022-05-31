@@ -177,8 +177,8 @@
         <div class="popupConfiguracio active">
           <div class="targetaConfiguracio">
             <?php
-              $ruta = "configuracio";
-              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
+              $ruta = "configuracio2";
+              $attributes = array ('action' => "configuracio2", 'enctype' => "multipart/form-data", 'method' => "POST");
               // Form open que serveix per iniciar el formulari
               echo form_open($ruta, $attributes);
               echo "<div class='input-container'>";
