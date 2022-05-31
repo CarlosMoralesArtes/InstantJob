@@ -399,6 +399,7 @@ class Home extends BaseController
             $session->start();
             $session->set('eriniciar','1');
             $dades["validation"]=$this->validator;
+            $query = $db->query("SELECT * FROM `cliente`;");
             $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
             $data = array('consulta' => $query, 'consulta2' => $query2);
             return view('admin',$data);
