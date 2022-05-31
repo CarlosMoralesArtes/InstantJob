@@ -117,7 +117,7 @@ class Home extends BaseController
         $session = session();
         $id = $session->get('id_user');
         // echo $id;
-        $query = "SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
+        $query = "SELECT ser.id_servicio, ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
         $query = $db->query($query, [$id]);
         // echo var_dump($query);
         // $query = $db->query("SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = 3;");
@@ -125,6 +125,68 @@ class Home extends BaseController
         $data = array('consulta' => $query);
 
         return view('modificarProductes.php',$data);
+    }
+
+    public function productosmodificaos(){
+        $dades=$this->request->getVar();
+        $db = db_connect();
+        $session = session();
+        $session->start();
+        $id = $session->get('id_user');
+        // $dades['contrasena'] = md5($dades['contrasenya']);
+        // $sql = "UPDATE `cliente` SET `nombre`= ?,`apellidos`= ?,`contrasena`= ? WHERE `id_cliente` = ?;";
+        // $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasena'], $dades['id_usuari']]);
+
+        // $session->set('user',$dades['nombre']);
+        // $session = session();
+        // $query = "SELECT * FROM `cliente` WHERE id_cliente = ?;";
+        // $query = $db->query($query, [$id]);
+
+
+        // $data = array('consulta' => $query);
+        // echo "<p class='PujatCorrectament'>Usuari modificat correctament</p>";
+
+        $tipusF = $_FILES["fitxer"]["type"];
+
+        if($tipusF == "image/png"){
+            $tipusF = "png";
+        }
+
+        if($tipusF == "image/jpeg"){
+            $tipusF = "png";
+        }
+
+        if($tipusF == "image/jpg"){
+            $tipusF = "png";
+        }
+
+        if(is_uploaded_file($_FILES["fitxer"]["tmp_name"]) == true){
+
+            // Agafar el nom del arxiu
+            $nomF = $_FILES["fitxer"]["name"];
+            // $arxiu = new \App\Models\ArxiuModel();
+            $data = date('y-m-d');
+            $contingut = base64_encode($_FILES["fitxer"]["tmp_name"]);
+            $codiU = $dades["codiUsuari"];
+            $numeroRandom = rand(1, 10000000);
+            move_uploaded_file($_FILES["fitxer"]["tmp_name"], "./imgs/$numeroRandom.$tipusF" );
+            // $dadesFitxer = ["nomF" => $nomF, "tipusF" => $tipusF, "data" => $data, "nomRandom" => $numeroRandom, "codiU" => $codiU];
+            // $arxiu->insert($dadesFitxer);
+            // echo "Arxiu $nomF guardat correctament. ";
+            $query3 = "UPDATE `servicio` SET `nombre` = ?, `imagen` = ?, `precio` = ? WHERE `servicio`.`id_servicio` = ?;";
+            $query3 = $db->query($query3, [$dades['nombre'],$numeroRandom,$dades['preu'], $dades['id_usuari']]);
+            // echo var_dump($dades);
+            echo "<p class='PujatCorrectament'>Producte pujat correctament</p>";
+        } else {
+            // Si no hi ha ningun tipus de arxiu
+            // echo "No hi ha ningun de arxiu.";
+        }
+
+        $query = "SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
+        $query = $db->query($query, [$id]);
+        $data = array('consulta' => $query);
+
+        return view('modificarProductes',$data);
     }
 
     public function sqlpujar()

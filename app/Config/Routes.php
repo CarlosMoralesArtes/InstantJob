@@ -67,6 +67,7 @@ $routes->add('/marcar', 'Home::marcar');
 // $routes->add('/marcar', 'Home::marcar');
 $routes->add('/pujar', 'Home::sqlpujar');
 $routes->add('/registraradmin', 'Home::registraradmin');
+$routes->add('/productosmodificaos', 'Home::productosmodificaos');
 
 /*
  * --------------------------------------------------------------------
