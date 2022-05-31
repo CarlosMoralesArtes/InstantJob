@@ -610,20 +610,28 @@ class Home extends BaseController
         return view('compra', $dada);
     }
     public function marcar(){
-        // echo "hola";
         $db = db_connect();
         $session = session();
         $id = $session->get('id_user');
         $dades=$this->request->getVar();
-        echo $dades['anuncio'];
         if ($dades['entra']) {
-            $sql = "DELETE FROM `guardados` WHERE `guardados`.`id_servicio` = ?";
-            $db->query($sql, [$dades['anuncio']]);
-        }else{
-            $sql = "INSERT INTO `guardados` (`id_guardados`, `id_servicio`, `id_cliente`, `fecha`) VALUES (NULL, ?, ?, '2022-05-31');";
-            $db->query($sql, [$dades['anuncio'],$id]);
-        }
+                $sql = "DELETE FROM `guardados` WHERE `guardados`.`id_servicio` = ?";
+                $db->query($sql, [$dades['id_servei']]);
+            }else{
+                $sql = "INSERT INTO `guardados` (`id_guardados`, `id_servicio`, `id_cliente`, `fecha`) VALUES (NULL, ?, ?, '2022-05-31');";
+                $db->query($sql, [$dades['id_servei'],$id]);
+            }
+        $db = db_connect();
+        $session = session();
+        $id = $session->get('id_user');
+        $sql8 = "SELECT * FROM `servicio` WHERE `id_servicio` = ?";
+        $query8 = $db->query($sql8, [$dades['id_servei']]);
 
-        return view('guardats');
+        $sql9 = "SELECT * FROM `guardados` WHERE id_servicio = ? AND id_cliente = ?;";
+        $query9 = $db->query($sql9, [$dades['id_servei'], $id]);
+
+        $dada = array('consulta' => $query8, 'existe' => $query9);
+
+        return view('compra', $dada);
     }
 }
