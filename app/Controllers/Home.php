@@ -183,28 +183,14 @@ class Home extends BaseController
             $query3 = $db->query($query3, [$dades['nombre'], $dades['descripcion'], 1, $numeroRandom , $dades['categoria'], $dades['precio'], $dades['horario'], $dades['dias'], $findes, $h24]);
             $selc = $db->query("SELECT MAX(`id_servicio`) FROM `servicio`;");
             foreach ($selc->getResultArray() as $row) {
-                $query4 = "INSERT INTO `subir` (`id_subir`, `id_clientes`, `id_servicios`, `fecha`) VALUES (NULL, ?, ?, '2022-05-30');";
-                $query4 = $db->query($query4, [$id,$row['MAX(`id_servicio`)']]);
-                // echo var_dump($row);
-            //     echo $row['dias'];
-            //   echo "<tr>";
-            //   $path='imgs/'.$row['imagen'].'.png';
-            //   echo "<th><img src=" . $path . " border='0' width='300'></th>";
-  
-            //   echo "<td>".$row['nombre']."</td>";
-  
-            //   echo "<td>".$row['numero_clicks']."</td>";
-  
-            //   echo "<td>".$row['fecha']."</td>";
-  
-            //   echo "<td>".$row['precio']."</td>";
-  
-            //   echo "</tr>";
+            $query4 = "INSERT INTO `subir` (`id_subir`, `id_clientes`, `id_servicios`, `fecha`) VALUES (NULL, ?, ?, '2022-05-30');";
+            $query4 = $db->query($query4, [$id,$row['MAX(`id_servicio`)']]);
+            echo "<p class='PujatCorrectament'>Producte pujat correctament</p>";
             }
             
         } else {
             // Si no hi ha ningun tipus de arxiu
-            echo "No hi ha ningun tipus de arxiu.";
+            echo "No hi ha ningun de arxiu.";
         }
         return view('pujaProductes.php');
     }
@@ -245,6 +231,7 @@ class Home extends BaseController
         
 
         $data = array('consulta' => $query);
+
 
         return view('configuracio',$data);
     }
@@ -533,6 +520,7 @@ class Home extends BaseController
         
 
             $data = array('consulta' => $query);
+            echo "<p class='PujatCorrectament'>Usuari modificat correctament</p>";
 
         return view('configuracio',$data);
         }
@@ -572,6 +560,7 @@ class Home extends BaseController
             $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasena'], $dades['id_usuari']]);
             $query3 = $db->query("SELECT * FROM `cliente`;");
             $data = array('consulta' => $query3);
+            echo "<p class='PujatCorrectament'>Modificat correctament</p>";
             return view('admin', $data);
         }
     }
@@ -751,7 +740,63 @@ class Home extends BaseController
         $db->query($sql, [$dades['id_usuari']]);
         $query3 = $db->query("SELECT * FROM `cliente`;");
         $data = array('consulta' => $query3);
+        echo "<p class='PujatCorrectament'>Eliminado correctament</p>";
         return view('admin', $data);
+    }
+
+    public function registraradmin(){
+        $db = db_connect();
+        // $query = $db->query("SELECT * FROM `servicio`;");
+        // Aquest apartat rep les dades del formulari
+        $dades=$this->request->getVar();
+        
+        // Apartat de les normes que es comproven del formulari
+        $regles = [
+            "nombre"    => "required",
+            "apellidos"    => "required",
+            "correo"    => "is_unique[cliente.correo,correo]",
+            "contrasena" => "required"
+            // "repcontrasenya"    => "required|matches[password]",
+        ];
+
+        // Apartat dels missatges que surten quan no es coloca algun valor correcte en el formulari
+        $missatges = [
+            "nombre" => [
+                "required" => "nom obligatori"
+            ],
+            "apellidos" => [
+                "required" => "Cognoms obligatoris"
+                // "matches" => "Les contrasenyes tenen que coincidir."
+            ],
+            "correo" => [
+                "is_unique" => "El correu ja te una compte creada"
+            ],
+            "contrasena" => [
+                "required" => "Telefon obligatori"
+            ]
+            // "repcontrasenya" => [
+            //     "required" => "Repeticio de contraseña obligatori",
+            //     "matches" => "Les contrasenyes tenen que coincidir."
+            // ]
+        ];
+
+        // Validador del formulari on es comproven que estiguin tots els requisits
+        if($this->validate($regles, $missatges)){
+            $usuari = new \App\Models\UsuariModel();
+            $dades['contrasena'] = md5($dades['contrasena']);
+			$usuari->insert($dades);
+            $query = $db->query("SELECT * FROM `cliente`");
+
+        
+
+        $data = array('consulta' => $query);
+
+        return view('admin',$data);
+        } else {
+            echo "<p class='PujatCorrectament'>Registrado mal</p>";
+
+        return view('admin');
+        }
     }
 
     public function eliminarAdminPro(){
@@ -762,6 +807,7 @@ class Home extends BaseController
         $db->query($sql, [$dades['id_servicio']]);
         $query3 = $db->query("SELECT * FROM `servicio`;");
         $data = array('consulta' => $query3);
+        echo "<p class='ErrorUsuariIncorrecte'>Eliminado correctament</p>";
         return view('instantadminpro', $data);
     }
 
