@@ -63,7 +63,7 @@
           if ($session->get('user')){
               echo "<div class='header col-2 separacio'>";
               echo "<div class='dropdown'>";
-              echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
+              echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut<br> ".$_SESSION['user']." 🡓</a>";
               echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
               echo "<a class='dropdown-item' href='configuracio'><i class='fa-solid fa-wrench'></i> El Meu Perfil</a>";
               echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
@@ -71,7 +71,7 @@
               echo "</div>";
               echo "</div>";
           } else {
-              echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio / Registrar-se</a></div>";
+              echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio /<br>Registrar-se</a></div>";
           }
         ?>
         </div>
@@ -138,7 +138,7 @@
 
   <br>
   <div class="container">
-    <div class="estadistiques col-9">
+    <div class="estadistiques col-12">
       <div class="card-body">
         <p class="card-title">Productes actuals</p>
         <p class="card-text">

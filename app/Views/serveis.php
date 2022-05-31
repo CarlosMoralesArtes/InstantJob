@@ -62,7 +62,7 @@
           if ($session->get('user')){
               echo "<div class='header col-2 separacio'>";
               echo "<div class='dropdown'>";
-              echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut ".$_SESSION['user']." 🡓</a>";
+              echo "<a class='btn btn-light' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa-solid fa-user'></i> Benvingut<br> ".$_SESSION['user']." 🡓</a>";
               echo "<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>";
               echo "<a class='dropdown-item' href='configuracio'><i class='fa-solid fa-wrench'></i> El Meu Perfil</a>";
               echo "<form action='clear' method='GET'><input class='btn btn-light' type='submit' value='Finalitzar Sessio' /></form>";
@@ -70,7 +70,7 @@
               echo "</div>";
               echo "</div>";
           } else {
-              echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio / Registrar-se</a></div>";
+              echo "<div class='header col-2 separacio'><a class='btn btn-light' id='btn-abrir-popup'><i class='fa-solid fa-right-to-bracket'></i> Iniciar Sessio /<br>Registrar-se</a></div>";
           }
         ?>
         </div>
@@ -131,7 +131,6 @@
             echo "<h1>Serveis</h1>";
         }
         ?>
-        <br>
         <a href="pujaProductes">Tornar</a>
       </div>
       </div>
@@ -312,25 +311,28 @@
   </div>
 
   <footer>
-  <div class="footer-content col-4">
-    <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
-    <p>Servei Tècnic</p>
-    <p>Tel. 99 999 999</p>
-  </div>
-  <div class="footer-content col-4">
-    <p>Informació Legal</p>
-    <p>Avís Legal</p>
-    <p>Política de Privacitat</p>
-    <p>Política de Cookies</p>
-  </div>
-  <!-- Categories que s'agafaran de typescript -->
-  <div class="footer-content col-3">
-    <p>Categories</p>
-    <p>Avís Legal</p>
-    <p>Política de Privacitat</p>
-    <p>Política de Cookies</p>
-  </div>
-</footer>
+    <div class="row">
+      <div class="footer-content col-4">
+      <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pàgina InstantJob"></a>
+        <h3>Servei Tècnic</h3>
+        <a href="tel:99999999">Tel. 99 999 999</p>
+        <a href="mailto:info@instatjob.es">info@instantjob.es</a>
+      </div>
+      <div class="footer-content col-4">
+        <br>
+        <h3>Informació Legal</h3>
+        <a href="avislegal">Avís Legal</a><br>
+        <a href="politicaprivacitat">Política de Privacitat</a><br>
+        <a href="politicacookies">Política de Cookies</a>
+      </div>
+      <!-- Categories que s'agafaran de typescript -->
+      <div class="footer-content col-4">
+        <br>
+        <h3>Contacta amb Nosaltres</h3>
+        <a href="index"><img src="./imgs/QR.png" alt="Codi QR per contactar"></a>
+      </div>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
   <script src="Typescript/script.js"></script>
