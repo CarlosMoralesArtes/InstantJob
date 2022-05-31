@@ -179,6 +179,21 @@ function ImatgeSeleccionada(clicked){
     window.location.href = window.location.pathname + "?w1=" + botonsSeleccionats;
 }
 
+function ImatgeSeleccionada2(clicked){
+  if(botonsSeleccionats.length != 0){
+    var imatgeSeleccionada = document.getElementById(botonsSeleccionats[0]);
+    imatgeSeleccionada.classList.remove('seleccionat');
+    botonsSeleccionats = [];
+    var imatge = document.getElementById(clicked);
+    imatge.classList.add('seleccionat');
+    botonsSeleccionats.push(clicked);
+  } else {
+    var imatge = document.getElementById(clicked);
+    imatge.classList.add('seleccionat');
+    botonsSeleccionats.push(clicked);
+  }
+}
+
 // Funcio que serveix per que funcioni el apartat del buscador
 function buscador(){
   contador2++;

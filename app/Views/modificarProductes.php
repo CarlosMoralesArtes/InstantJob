@@ -98,7 +98,7 @@
         </li>
       </a>
       <a href="modificarProductes">
-        <li class="active">
+        <li>
           <img src="imgs/lista.png"></img>
           <span class="tooltip">Els meus Serveis</span>
         </li>
@@ -122,7 +122,7 @@
         </li>
       </a>
       <a href="estadistiques">
-        <li>
+        <li class="active">
           <img src="imgs/estadistica.png"></img>
           <span class="tooltip">Estadistiques</span>
         </li>
@@ -138,161 +138,44 @@
 
   <br>
   <div class="container">
-    <div class="pujarProducteCaixa col-9">
+    <div class="estadistiques col-9">
       <div class="card-body">
-        <p class="card-title">Serveis Actuals</p>
+        <p class="card-title">Productes actuals</p>
+        <p class="card-text">
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Imatge</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Data</th>
+            <th scope="col">Preu</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+          // echo var_dump($consulta);
+          foreach ($consulta->getResultArray() as $row) {
+              // echo var_dump($row);
+              echo $row['dias'];
+            echo "<tr>";
+            $path='imgs/'.$row['imagen'].'.png';
+            echo "<th><img src=" . $path . " border='0' width='300'></th>";
 
-        <p class="card-text"></p>
+            echo "<td>".$row['nombre']."</td>";
+
+            echo "<td>".$row['fecha']."</td>";
+
+            echo "<td>".$row['precio']."</td>";
+
+            echo "</tr>";
+          }
+        ?>
+        </tbody>
+      </table>
+        </p>
       </div>
     </div>
-    <br>
-    <div class="container">
-    <div class="pujarProducteCaixa col-9">
-      <div class="card-body">
-        <p class="card-title">Modificar el producte seleccionat</p>
-        <p class="card-title">Selecciona la categoria</p>
-        <img id="1" src="imgs/fontaneriaTransparent.png" alt="Categoria de lampista" onclick="ImatgeSeleccionada(this.id)">
-        <img id="2" src="imgs/carpinteriaTransparent.png" alt="Categoria de fuster" onclick="ImatgeSeleccionada(this.id)">
-        <img id="3" src="imgs/pintorTransparent.png" alt="Categoria de pintors" onclick="ImatgeSeleccionada(this.id)">
-        <img id="4" src="imgs/informatic.png" alt="Categoria d'informatic" onclick="ImatgeSeleccionada(this.id)">
-        <img id="5" src="imgs/administratiu.png" alt="Categoria d'administratiu" onclick="ImatgeSeleccionada(this.id)">
-        <img id="6" src="imgs/jardiner.png" alt="Categoria de jardiners" onclick="ImatgeSeleccionada(this.id)">
-        <img id="7" src="imgs/medicina.png" alt="Categoria de medicina" onclick="ImatgeSeleccionada(this.id)">
-        <img id="8" src="imgs/obrer.png" alt="Categoria d'obrers" onclick="ImatgeSeleccionada(this.id)">
-
-        <p class="card-text"></p>
-      </div>
-    </div>
-    <br>
-    <div class="pujarProducteCaixa col-9">
-      <div class="card-body">
-        <p class="card-title">Completa els camps per modificar el servei</p>
-        <div class="configuracio">
-        <div class="popupConfiguracio active">
-          <div class="targetaConfiguracio">
-            <?php
-              $ruta = "pujar";
-              $attributes = array ('action' => "pujar", 'enctype' => "multipart/form-data", 'method' => "POST");
-              // Form open que serveix per iniciar el formulari
-              echo form_open($ruta, $attributes);
-
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'fitxer',
-                            'value' => set_value('userfile'),
-                            'class' => 'pujarProductes');
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_label('Imatge de protada del servei', '#{label}');
-              echo form_upload($data);
-
-              if ($_GET['w1']) {
-                echo $_GET['w1'];
-                echo form_hidden('categoria', $_GET['w1']);
-              }else{
-                echo form_hidden('categoria', 0);
-              }
-
-              echo "<div class='input-container'>";
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'nombre',
-                          'required' => 'required',
-                          'type' => 'text',
-                          'value' => set_value('nombre'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Nom', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
-
-
-              echo "<div class='input-container'>";
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'precio',
-                          'required' => 'precio',
-                          'type' => 'text',
-                          'value' => set_value('precio'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Precio', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
-
-              echo "<div class='input-container'>";
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'descripcion',
-                          'required' => 'descripcion',
-                          'type' => 'text',
-                          'value' => set_value('descripcion'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Descripció', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
-
-              echo "<div class='input-container'>";
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'horario',
-                          'required' => 'horario',
-                          'type' => 'text',
-                          'value' => set_value('horario'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Horari (Ex: Dilluns, Dimarts...)', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
-
-              echo "<div class='input-container'>";
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'dias',
-                          'required' => 'dias',
-                          'type' => 'text',
-                          'value' => set_value('dias'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Dies (Ex: De 8h a 12h)', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
-
-              echo "<div class='preguntes'>";
-
-              $data = array(
-                'name'          => 'findes',
-                'id'            => 'findes',
-                'value'         => 'accept',
-                'checked'       => FALSE,
-                'style'         => 'margin:10px'
-              );
-              echo form_label('Treballes els caps de setmana?', '#{label}');
-              echo form_checkbox($data);
-
-              $data = array(
-                'name'          => '24h',
-                'id'            => '24h',
-                'value'         => 'accept',
-                'checked'       => FALSE,
-                'style'         => 'margin:10px'
-              );
-              echo form_label('Treballes 24h?', '#{label}');
-              echo form_checkbox($data);
-
-              echo "</div>";
-
-              echo "<br>";
-
-              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Modificar Producte'>";
-
-              // El form close es per tancar el formulari
-              echo form_close();
-            ?>
-          </div>
-          </form>
-        </div>
-      </div>
-    </div>
+      
   </div>
   
   <!-- Scripts necesaris -->

@@ -147,8 +147,8 @@
           <tr>
             <th scope="col">Imatge</th>
             <th scope="col">Nom</th>
-            <th scope="col">Descripcio</th>
-            <th scope="col">Vistes</th>
+            <th scope="col">Data de guardat</th>
+            <th scope="col">Preu actual</th>
           </tr>
         </thead>
         <tbody>
@@ -156,14 +156,12 @@
           
           foreach ($consulta->getResultArray() as $row) {
               // echo var_dump($row);
-              echo $row['dias'];
+              // echo $row['dias'];
             echo "<tr>";
             $path='imgs/'.$row['imagen'].'.png';
             echo "<th><img src=" . $path . " border='0' width='300'></th>";
 
             echo "<td>".$row['nombre']."</td>";
-
-            echo "<td>".$row['numero_clicks']."</td>";
 
             echo "<td>".$row['fecha']."</td>";
 

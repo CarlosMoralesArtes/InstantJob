@@ -2,18 +2,23 @@
 <html lang="en">
 
 <head>
-  <title>InstantJob | Compra</title>
+  <title>InstantJob | Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="chat/script.js"></script>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Estils de la pàgina -->
+  <!-- Estils de la pagina -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="..\styles.css">
   <!-- Estils de font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <!-- Estils de glider -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
-  <!-- Icone de la pagina -->
-  <link rel="icon" type="image/png" href="./imgs/Logo_InstantJob_Blanca.png" alt="Icone de la pàgina InstantJob" />
 
   <!-- Estils de Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -21,7 +26,17 @@
   <script src="https://kit.fontawesome.com/0859fc3634.js" crossorigin="anonymous"></script>
 </head>
 
+<?php
+    $session = session();
+    if ($session->get('user')){
+    } else {
+      header("Location: ./index");
+      die();
+    }
+?>
+
 <body>
+
   <!-- Apartat de la carrega de la pàgina -->
   <div id="contenedor_carga">
     <div id="carga"></div>
@@ -63,7 +78,7 @@
         </div>
         <!-- Boto per anar al apartat de pujar productes -->
         <div class="header col-2">
-        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar Producte</a>
+        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujars Producte</a>
       </div>
     </nav>
   </header>
@@ -82,6 +97,14 @@
           echo form_open($ruta, $attributes);
           echo "<div class='input-container'>";
 
+
+          // ESPECIFICAR ERROR MODIFICAR PARA DISEÑO
+          // if(empty($id_cliente)){
+          //   $id_cliente = "Coloca el id_cliente";
+          // }
+
+
+
           // En $data es coloquen els atributs de la pregunta
           $data = array('name' => 'correo',
                       'required' => 'required',
@@ -93,6 +116,12 @@
           echo "<div class='bar'></div>";
           echo "<br>";
           echo "</div>";
+          // if(!empty($validation)){
+          //   if($validation->getError('id_cliente')) {
+          //     echo $validation->getError('id_cliente');
+          //     echo "<br>";
+          //   }
+          // }
 
           echo "<div class='input-container'>";
           // En $data es coloquen els atributs de la pregunta
@@ -104,6 +133,12 @@
           echo "<div class='bar'></div>";
           echo "<br>";
           echo "</div>";
+          // if(!empty($validation)){
+          //   if($validation->getError('contrasena')) {
+          //     echo $validation->getError('contrasena');
+          //     echo "<br>";
+          //   }
+          // }
           echo "<br>";
           echo form_submit('mysubmit', 'Iniciar!');
 
@@ -140,6 +175,8 @@
             echo "<br>";
             echo "</div>";
 
+
+
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'apellidos',
@@ -151,6 +188,8 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
+
+
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -166,8 +205,12 @@
             echo "<br>";
             echo "</div>";
 
+
+
             echo form_hidden('latitud', '2');
             echo form_hidden('logitud', '2');
+
+
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -212,6 +255,14 @@
           echo form_open($ruta, $attributes);
           echo "<div class='input-container'>";
 
+
+          // ESPECIFICAR ERROR MODIFICAR PARA DISEÑO
+          // if(empty($id_cliente)){
+          //   $id_cliente = "Coloca el id_cliente";
+          // }
+
+
+
           // En $data es coloquen els atributs de la pregunta
           $data = array('name' => 'correo',
                       'required' => 'required',
@@ -223,6 +274,12 @@
           echo "<div class='bar'></div>";
           echo "<br>";
           echo "</div>";
+          // if(!empty($validation)){
+          //   if($validation->getError('id_cliente')) {
+          //     echo $validation->getError('id_cliente');
+          //     echo "<br>";
+          //   }
+          // }
 
           echo "<div class='input-container'>";
           // En $data es coloquen els atributs de la pregunta
@@ -234,6 +291,12 @@
           echo "<div class='bar'></div>";
           echo "<br>";
           echo "</div>";
+          // if(!empty($validation)){
+          //   if($validation->getError('contrasena')) {
+          //     echo $validation->getError('contrasena');
+          //     echo "<br>";
+          //   }
+          // }
           echo "<br>";
           echo form_submit('mysubmit', 'Iniciar!');
 
@@ -270,6 +333,8 @@
             echo "<br>";
             echo "</div>";
 
+
+
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'apellidos',
@@ -281,6 +346,8 @@
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
+
+
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -296,8 +363,12 @@
             echo "<br>";
             echo "</div>";
 
+
+
             echo form_hidden('latitud', '2');
             echo form_hidden('logitud', '2');
+
+
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
@@ -328,169 +399,75 @@
     </div>
   </div>
 
-  <div class="col-12 adaptacio">
-    <div class="card-body productes col-6">
-      <br>
-      <?php
-      foreach ($consulta->getResultArray() as $row){
+  <!-- Menu de navegació lateral -->
+  <nav class="sidebar-navigation">
+    <ul>
+      <a href="pujaProductes">
+        <li>
+          <img src="imgs/pujar.png"></img>
+          <span class="tooltip">Pujar Productes</span>
+        </li>
+      </a>
+      <a href="serveis">
+        <li>
+          <img src="imgs/hand-shake.png"></img>
+          <span class="tooltip">Serveis</span>
+        </li>
+      </a>
+      <a href="modificarProductes">
+        <li>
+          <img src="imgs/lista.png"></img>
+          <span class="tooltip">Els meus Serveis</span>
+        </li>
+      </a>
+      <a href="missatges">
+        <li class="active">
+          <img src="imgs/missage.png"></img>
+          <span class="tooltip">Missatges</span>
+        </li>
+      </a>
+      <a href="tarifes">
+        <li>
+          <img src="imgs/tarifa.png"></img>
+          <span class="tooltip">Tarifes</span>
+        </li>
+      </a>
+      <a href="guardats">
+        <li>
+          <img src="imgs/guardar.png"></img>
+          <span class="tooltip">Guardats</span>
+        </li>
+      </a>
+      <a href="estadistiques">
+        <li>
+          <img src="imgs/estadistica.png"></img>
+          <span class="tooltip">Estadistiques</span>
+        </li>
+      </a>
+      <a href="configuracio">
+        <li>
+          <img src="imgs/configuracio.png"></img>
+          <span class="tooltip">Configuració</span>
+        </li>
+      </a>
+    </ul>
+  </nav>
 
-      $ruta = site_url()."marcar";
-      $attributes = array ('action' => "marcar", 'enctype' => "multipart/form-data", 'method' => "GET");
-      // Form open que serveix per iniciar el formulari
-      echo form_open($ruta, $attributes);
-
-      $entrar = 0;
-
-      foreach ($existe->getResultArray() as $row2){
-        echo "<div class='partDretaCompra'><a  class='btn btn-primary eric' href='pujaProductes' style='background-color: red !important;'><i class='fa-solid fa-heart-circle-plus'></i></a> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
-        $entrar = 1;
-        echo form_hidden('entra', 'si');
-      }
-
-      echo form_hidden('anuncio', $row['id_servicio']);
-
-      if ($entrar == 0) {
-        echo "<button class='partDretaCompra'><a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></a> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></button>";
-      }
-
-      echo form_close();
-
-      $path='imgs/'.$row['imagen'].'.png';
-      echo "<img src=" . $path . " border='0' width='300'>";
-      echo "<h1>".$row['nombre']."</h1>";
-      echo "<p class='preuProducte'>".$row['precio']." Euros/h</p>";
-      switch ($row['categoria']) {
-        case '1':
-          echo "<p class='categoriaProducte'>Lampista</p>";
-          break;
-        case '2':
-          echo "<p class='categoriaProducte'>Fuster</p>";
-          break;
-        case '3':
-          echo "<p class='categoriaProducte'>Pintor</p>";
-          break;
-        case '4':
-          echo "<p class='categoriaProducte'>Informatic</p>";
-          break;
-        case '5':
-          echo "<p class='categoriaProducte'>Administratiu</p>";
-          break;
-        case '6':
-          echo "<p class='categoriaProducte'>Jardiner</p>";
-          break;
-        case '7':
-          echo "<p class='categoriaProducte'>Medicina</p>";
-          break;
-        case '8':
-          echo "<p class='categoriaProducte'>Obrers</p>";
-          break;
-        default:
-          echo "<p class='categoriaProducte'>Serveis</p>";
-          break;
-        }
-      echo "<p class='descripcioProducte'>Descripció Producte</p>";
-      ?>
-      <!-- <div class="partDretaCompra"><a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-heart-circle-plus"></i></a> <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-message"></i> Chat per Comprar</a></div> -->
-      <?php
-      echo "<p>".$row['descripcion']."</p>";
-      }
-      ?>
-      <div class="carousel">
-            <div class="carousel__contenedor">
-              <button aria-label="Anterior" class="carousel__anterior">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <br>
-              <div class="carousel__lista">
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="1">
-                    <button><img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista"></button>
-                    <p>Lampista</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="2">
-                    <button><img src="imgs/carpinteria.png" alt="Categoria de fuster"></button>
-                    <p>Fuster</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="3">
-                    <button><img src="imgs/pintor.png" alt="Categoria de pintors"></button>
-                    <p>Pintor</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="4">
-                    <button><img src="imgs/informatic_blau.png" alt="Categoria d'informatic"></button>
-                    <p>Informàtic</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu"></button>
-                    <p>Administratiu</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/jardiner_blau.png" alt="Categoria de jardineria"></button>
-                    <p>Jardiner</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
-                    <p>Medicina</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/obrer_blau.png" alt="Categoria d'obrers"></button>
-                    <p>Obrers</p>
-                  </form>
-                </div>
-              </a>
-              </div>
-
-              <button aria-label="Siguiente" class="carousel__siguiente">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-
-            <div role="tablist" class="carousel__indicadores"></div>
-          </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-  <!-- Script Global -->
-  <script src="Typescript/script.js"></script>
-  <script src="..\Typescript/script.js"></script>
+  <br>
+  <br>
+  <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input">
+    <button type="submit" id="send-button">Send</button>
+  </form>
+  
+  <!-- Scripts necesaris -->
   <!-- Bootstrap JavaScript Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="Typescript/script.js"></script>
+  <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+  <!-- <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
