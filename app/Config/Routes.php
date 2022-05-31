@@ -29,43 +29,43 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
+// We add a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('/missatges', 'Home::missatges');
-$routes->get('/pujaProductes', 'Home::pujaProductes');
-$routes->get('/index', 'Home::home');
-$routes->get('/serveis', 'Home::serveis');
-$routes->get('/tarifes', 'Home::tarifes');
-$routes->get('/compra', 'Home::compra');
-$routes->get('/modificarProductes', 'Home::modificarProductes');
-$routes->get('/instantadmin', 'Home::admin');
-$routes->get('/instantrrhh', 'Home::admin');
-$routes->get('/instantadminpro', 'Home::instantadminpro');
-$routes->get('/form', 'Home::form');
-$routes->post('/iniciar', 'Home::formulariIniciSessio');
-$routes->post('/registrar', 'Home::formulari');
-$routes->post('/registraradmin', 'Home::formulariAdmin');
-$routes->post('/configuracio', 'Home::configuracioFormulari');
-$routes->post('/configuracioAdmin', 'Home::configuracioFormulariAdministrador');
-$routes->post('/eliminarAdmin', 'Home::eliminarAdmin');
-$routes->post('/eliminarAdminPro', 'Home::eliminarAdminPro');
-$routes->post('/tarifaNormal', 'Home::tarifaNormal');
-$routes->post('/tarifaAdvanced', 'Home::tarifaAdvanced');
-$routes->post('/tarifaEnterprise', 'Home::tarifaEnterprise');
-$routes->post('/compraProductes', 'Home::compraProductes');
-$routes->get('/avislegal', 'Home::avislegal');
-$routes->get('/politicaprivacitat', 'Home::politicaprivacitat');
-$routes->get('/politicacookies', 'Home::politicacookies');
-$routes->get('/configuracio', 'Home::configuracio');
-$routes->get('/estadistiques', 'Home::estadistiques');
-$routes->get('/guardats', 'Home::guardats');
-$routes->get('/clear', 'Home::clear');
-$routes->get('/mostrar', 'Home::mostrarArxius');
-$routes->post('/categoria', 'Home::categoriasel');
+$routes->add('/', 'Home::index');
+$routes->add('/missatges', 'Home::missatges');
+$routes->add('/pujaProductes', 'Home::pujaProductes');
+$routes->add('/index', 'Home::home');
+$routes->add('/serveis', 'Home::serveis');
+$routes->add('/tarifes', 'Home::tarifes');
+$routes->add('/compra', 'Home::compra');
+$routes->add('/modificarProductes', 'Home::modificarProductes');
+$routes->add('/instantadmin', 'Home::admin');
+$routes->add('/instantrrhh', 'Home::rrhh');
+$routes->add('/form', 'Home::form');
+$routes->add('/iniciar', 'Home::formulariIniciSessio');
+$routes->add('/registrar', 'Home::formulari');
+$routes->add('/configuracio', 'Home::configuracioFormulari');
+$routes->add('/tarifaNormal', 'Home::tarifaNormal');
+$routes->add('/tarifaAdvanced', 'Home::tarifaAdvanced');
+$routes->add('/tarifaEnterprise', 'Home::tarifaEnterprise');
+$routes->add('/compraProductes', 'Home::compraProductes');
+$routes->add('/avislegal', 'Home::avislegal');
+$routes->add('/politicaprivacitat', 'Home::politicaprivacitat');
+$routes->add('/politicacookies', 'Home::politicacookies');
+$routes->add('/configuracioAdmin', 'Home::configuracioFormulariAdministrador');
+$routes->add('/eliminarAdmin', 'Home::eliminarAdmin');
+$routes->add('/eliminarAdminPro', 'Home::eliminarAdminPro');
+$routes->add('/instantadminpro', 'Home::instantadminpro');
+$routes->add('/configuracio', 'Home::configuracio');
+$routes->add('/estadistiques', 'Home::estadistiques');
+$routes->add('/guardats', 'Home::guardats');
+$routes->add('/clear', 'Home::clear');
+$routes->add('/mostrar', 'Home::mostrarArxius');
+$routes->add('/categoria', 'Home::categoriasel');
 // $routes->add('/categoria', 'Home::categoriasel');
 $routes->add('/marcar', 'Home::marcar');
-$routes->post('/pujar', 'Home::sqlpujar');
+// $routes->add('/marcar', 'Home::marcar');
+$routes->add('/pujar', 'Home::sqlpujar');
 
 /*
  * --------------------------------------------------------------------

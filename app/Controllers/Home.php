@@ -401,6 +401,7 @@ class Home extends BaseController
             $session->start();
             $session->set('eriniciar','1');
             $dades["validation"]=$this->validator;
+            $query = $db->query("SELECT * FROM `cliente`;");
             $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
             $data = array('consulta' => $query, 'consulta2' => $query2);
             return view('admin',$data);
@@ -708,21 +709,29 @@ class Home extends BaseController
         return view('compra', $dada);
     }
     public function marcar(){
-        // echo "hola";
         $db = db_connect();
         $session = session();
         $id = $session->get('id_user');
         $dades=$this->request->getVar();
-        echo $dades['anuncio'];
         if ($dades['entra']) {
-            $sql = "DELETE FROM `guardados` WHERE `guardados`.`id_servicio` = ?";
-            $db->query($sql, [$dades['anuncio']]);
-        }else{
-            $sql = "INSERT INTO `guardados` (`id_guardados`, `id_servicio`, `id_cliente`, `fecha`) VALUES (NULL, ?, ?, '2022-05-31');";
-            $db->query($sql, [$dades['anuncio'],$id]);
-        }
+                $sql = "DELETE FROM `guardados` WHERE `guardados`.`id_servicio` = ?";
+                $db->query($sql, [$dades['id_servei']]);
+            }else{
+                $sql = "INSERT INTO `guardados` (`id_guardados`, `id_servicio`, `id_cliente`, `fecha`) VALUES (NULL, ?, ?, '2022-05-31');";
+                $db->query($sql, [$dades['id_servei'],$id]);
+            }
+        $db = db_connect();
+        $session = session();
+        $id = $session->get('id_user');
+        $sql8 = "SELECT * FROM `servicio` WHERE `id_servicio` = ?";
+        $query8 = $db->query($sql8, [$dades['id_servei']]);
 
-        return view('guardats');
+        $sql9 = "SELECT * FROM `guardados` WHERE id_servicio = ? AND id_cliente = ?;";
+        $query9 = $db->query($sql9, [$dades['id_servei'], $id]);
+
+        $dada = array('consulta' => $query8, 'existe' => $query9);
+
+        return view('compra', $dada);
     }
 
     public function eliminarAdmin(){

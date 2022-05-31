@@ -335,22 +335,22 @@
       foreach ($consulta->getResultArray() as $row){
 
       $ruta = site_url()."marcar";
-      $attributes = array ('action' => "marcar", 'enctype' => "multipart/form-data", 'method' => "GET");
+      $attributes = array ('action' => "marcar", 'enctype' => "multipart/form-data", 'method' => "POST");
       // Form open que serveix per iniciar el formulari
       echo form_open($ruta, $attributes);
 
       $entrar = 0;
 
       foreach ($existe->getResultArray() as $row2){
-        echo "<div class='partDretaCompra'><a  class='btn btn-primary eric' href='pujaProductes' style='background-color: red !important;'><i class='fa-solid fa-heart-circle-plus'></i></a> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
+        echo "<div class='partDretaCompra'><button  class='btn btn-primary eric' href='pujaProductes' style='background-color: red !important;'><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
         $entrar = 1;
         echo form_hidden('entra', 'si');
       }
 
-      echo form_hidden('anuncio', $row['id_servicio']);
+      echo form_hidden('id_servei', $row['id_servicio']);
 
       if ($entrar == 0) {
-        echo "<button class='partDretaCompra'><a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></a> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></button>";
+        echo "<div class='partDretaCompra'><button class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
       }
 
       echo form_close();
