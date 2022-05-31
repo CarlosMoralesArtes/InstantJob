@@ -149,6 +149,7 @@
             <th scope="col">Nom</th>
             <th scope="col">Data</th>
             <th scope="col">Preu</th>
+            <th scope="col">Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -167,6 +168,21 @@
 
             echo "<td>".$row['precio']."</td>";
 
+            echo "<td>";
+
+            $ruta = "eliminarservicio";
+            $attributes = array ('action' => "eliminarservicio", 'enctype' => "multipart/form-data", 'method' => "POST");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
+
+            echo form_hidden('id',$row['id_servicio']);
+
+            echo "<button>Eliminar</button>";
+
+            echo form_close();
+
+            echo "</td>";
+
             echo "</tr>";
           }
         ?>
@@ -176,6 +192,73 @@
       </div>
     </div>
       
+  </div>
+
+  <div class="pujarProducteCaixa col-9">
+      <div class="card-body">
+        <p class="card-title">Completa els camps per modificar el perfil</p>
+        <div class="configuracio">
+        <div class="popupConfiguracio active">
+          <div class="targetaConfiguracio">
+          <?php
+              $ruta = "productosmodificaos";
+              $attributes = array ('action' => "productosmodificaos", 'enctype' => "multipart/form-data", 'method' => "POST");
+              // Form open que serveix per iniciar el formulari
+              echo form_open($ruta, $attributes);
+
+              echo "<select name='id_usuari'>";
+              foreach ($consulta->getResultArray() as $row) {
+                echo "<option value=".$row['id_servicio'].">".$row['nombre']."</option>";
+              }
+              echo "</select>";
+
+              echo "<div class='input-container'>";
+
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'nombre',
+                          'required' => 'required',
+                          'type' => 'text',
+                          'value' => set_value('nombre'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Nom', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
+
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'preu',
+                          'required' => 'preu',
+                          'type' => 'text',
+                          'value' => set_value('preu'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Preu', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
+
+               // En $data es coloquen els atributs de la pregunta
+               $data = array('name' => 'fitxer',
+               'value' => set_value('userfile'),
+               'class' => 'pujarProductes');
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_label('Imatge de protada del servei', '#{label}');
+              echo form_upload($data);
+
+              echo "<br>";
+              echo "<p class='petit'>Les dades s'actualitzen al instant</p>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Modificar Usuari'>";
+
+              // El form close es per tancar el formulari
+              echo form_close();
+            ?>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
   
   <!-- Scripts necesaris -->
