@@ -163,6 +163,7 @@
             // En $data es coloquen els atributs de la pregunta
             $data = array('name' => 'correo',
                           'required' => 'required',
+                          'type' => 'email',
                           'value' => set_value('email'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo "<br>";

@@ -18,3 +18,76 @@ CRITICAL - 2022-05-31 03:51:22 --> Call to a member function getResultArray() on
 #6 C:\wamp64\www\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\wamp64\www\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 {main}
+ERROR - 2022-05-31 14:40:51 --> Column 'id_cliente' cannot be null
+ERROR - 2022-05-31 15:02:56 --> Cannot delete or update a parent row: a foreign key constraint fails (`final`.`subir`, CONSTRAINT `subir_ibfk_1` FOREIGN KEY (`id_servicios`) REFERENCES `servicio` (`id_servicio`))
+CRITICAL - 2022-05-31 15:16:04 --> Invalid file: instantadmin.php
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('instantadmin.ph...')
+#1 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('instantadmin', Array, true)
+#2 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(799): view('instantadmin', Array)
+#3 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->registraradmin()
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-31 15:17:09 --> Invalid file: instantadmin.php
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('instantadmin.ph...')
+#1 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('instantadmin', Array, true)
+#2 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(813): view('instantadmin', Array)
+#3 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->registraradmin()
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-31 15:17:12 --> session_destroy(): Trying to destroy uninitialized session
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy...', 'C:\\xampp\\htdocs...', 423, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Session\Session.php(423): session_destroy()
+#2 C:\xampp\htdocs\InstantJob\app\Views\iniciar_sesion.php(401): CodeIgniter\Session\Session->destroy()
+#3 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('iniciar_sesion', Array, true)
+#6 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(27): view('iniciar_sesion', Array)
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#8 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-05-31 15:20:36 --> Invalid file: instantadmin.php
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('instantadmin.ph...')
+#1 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('instantadmin', Array, true)
+#2 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(799): view('instantadmin', Array)
+#3 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->registraradmin()
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-31 15:25:32 --> Invalid file: instantadmin.php
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('instantadmin.ph...')
+#1 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('instantadmin', Array, true)
+#2 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(799): view('instantadmin', Array)
+#3 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->registraradmin()
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-31 15:25:36 --> Invalid file: instantadmin.php
+#0 C:\xampp\htdocs\InstantJob\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('instantadmin.ph...')
+#1 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('instantadmin', Array, true)
+#2 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(813): view('instantadmin', Array)
+#3 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->registraradmin()
+#4 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-31 15:25:39 --> session_destroy(): Trying to destroy uninitialized session
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_destroy...', 'C:\\xampp\\htdocs...', 423, Array)
+#1 C:\xampp\htdocs\InstantJob\system\Session\Session.php(423): session_destroy()
+#2 C:\xampp\htdocs\InstantJob\app\Views\iniciar_sesion.php(401): CodeIgniter\Session\Session->destroy()
+#3 C:\xampp\htdocs\InstantJob\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\InstantJob\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp\htdocs\InstantJob\system\Common.php(1089): CodeIgniter\View\View->render('iniciar_sesion', Array, true)
+#6 C:\xampp\htdocs\InstantJob\app\Controllers\Home.php(27): view('iniciar_sesion', Array)
+#7 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#8 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\InstantJob\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\InstantJob\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
