@@ -518,14 +518,23 @@ class Home extends BaseController
         // Validador del formulari on es comproven que estiguin tots els requisits
         if($this->validate($regles, $missatges)){
             $db = db_connect();
+            $session = session();
+            $session->start();
+            $id = $session->get('id_user');
             $dades['contrasena'] = md5($dades['contrasenya']);
             $sql = "UPDATE `cliente` SET `nombre`= ?,`apellidos`= ?,`contrasena`= ? WHERE `id_cliente` = ?;";
             $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasena'], $dades['id_usuari']]);
 
-            $session = session();
-            $session->start();
             $session->set('user',$dades['nombre']);
-            return view('configuracio');
+            $session = session();
+            $query = "SELECT * FROM `cliente` WHERE id_cliente = ?;";
+            $query = $db->query($query, [$id]);
+
+        
+
+            $data = array('consulta' => $query);
+
+        return view('configuracio',$data);
         }
     }
 
