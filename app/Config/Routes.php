@@ -44,6 +44,7 @@ $routes->get('/instantrrhh', 'Home::rrhh');
 $routes->get('/form', 'Home::form');
 $routes->post('/iniciar', 'Home::formulariIniciSessio');
 $routes->post('/registrar', 'Home::formulari');
+$routes->post('/registraradmin', 'Home::formulariAdmin');
 $routes->post('/configuracio', 'Home::configuracioFormulari');
 $routes->post('/tarifaNormal', 'Home::tarifaNormal');
 $routes->post('/tarifaAdvanced', 'Home::tarifaAdvanced');

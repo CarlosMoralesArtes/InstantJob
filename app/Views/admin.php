@@ -3,17 +3,18 @@
 
 
 <head>
-<title>InstantJob | Home</title>
+  <title>InstantJob | Admin</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Estils de la pagina -->
+  <!-- Estils de la pàgina -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="..\styles.css">
   <!-- Estils de font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <!-- Estils de glider -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+  <!-- Icone de la pagina -->
+  <link rel="icon" type="image/png" href="./imgs/Logo_InstantJob_Blanca.png" alt="Icone de la pàgina InstantJob" />
 
   <!-- Estils de Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -140,7 +141,11 @@
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
         <p class="card-title">Usuaris Actuals</p>
-
+          <?php
+            foreach ($consulta->getResultArray() as $row) {
+              echo $row['nombre'].". ";
+            }
+          ?>
         <p class="card-text"></p>
       </div>
     </div>
@@ -151,74 +156,80 @@
         <div class="configuracio">
         <div class="popupConfiguracio active">
           <div class="targetaConfiguracio">
-            <?php
-              $ruta = "configuracio";
-              $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
-              // Form open que serveix per iniciar el formulari
-              echo form_open($ruta, $attributes);
-              echo "<div class='input-container'>";
-
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'correu',
+          <?php
+            echo "<div id='error'></div>";
+            $ruta = site_url()."registraradmin";
+            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "POST");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'nombre',
                           'required' => 'required',
-                          'type' => 'text',
-                          'value' => set_value('correu'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Correu', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
+                          'value' => set_value('nom'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
+            echo form_input($data);
+            echo form_label('Nom', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
 
-              echo "<div class='input-container'>";
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'nombre',
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'apellidos',
                           'required' => 'required',
-                          'type' => 'text',
-                          'value' => set_value('nombre'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Nom', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
+                          'value' => set_value('primerCognom'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
+            echo form_input($data);
+            echo form_label('Cognoms', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
 
-              echo form_hidden('id_usuari', $session->get('id_user'));
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'correo',
+                          'required' => 'required',
+                          'value' => set_value('email'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
+            echo form_input($data);
+            echo form_label('Email', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "</div>";
 
-              echo "<div class='input-container'>";
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'apellidos',
-                          'required' => 'apellidos',
-                          'type' => 'text',
-                          'value' => set_value('apellidos'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Cognoms', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
+            echo form_hidden('latitud', '2');
+            echo form_hidden('logitud', '2');
 
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'contrasena',
+                          'required' => 'required',
+                          'value' => set_value('contrasenya'),
+                          'type' => 'password');
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo "<br>";
+            echo form_input($data);
+            echo form_label('Contrasenya', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
 
-              echo "<div class='input-container'>";
-              // En $data es coloquen els atributs de la pregunta
-              $data = array('name' => 'contrasenya',
-                          'required' => 'contrasenya',
-                          'type' => 'password',
-                          'value' => set_value('contraseya'));
-              // En el form input es l'apartat on pots colocar text en el formulari
-              echo form_input($data);
-              echo form_label('Contrasenya', '#{label}');
-              echo "<div class='bar'></div>";
-              echo "<br>";
-              echo "</div>";
+            echo "<br>";
 
-              echo "<br>";
-              echo "<p class='petit'>Les dades es colocaran al instant</p>";
-              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Crear usuari'>";
+            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Registrar usuari'>";
+            // El form close es per tancar el formulari
+            echo form_close();
 
-              // El form close es per tancar el formulari
-              echo form_close();
-            ?>
+            if(!empty($validation)){
+              if($validation->getError('correo')) {
+                echo $validation->getError('correo');
+                echo "<br>";
+              }
+            }
+          ?>
           </div>
           </form>
         </div>
@@ -232,11 +243,18 @@
         <div class="configuracio">
         <div class="popupConfiguracio active">
           <div class="targetaConfiguracio">
-            <?php
+          <?php
               $ruta = "configuracio";
               $attributes = array ('action' => "formulari", 'enctype' => "multipart/form-data", 'method' => "POST");
               // Form open que serveix per iniciar el formulari
               echo form_open($ruta, $attributes);
+
+              echo "<select name='id_usuari'>";
+              foreach ($consulta->getResultArray() as $row) {
+                echo "<option value=".$row['id_cliente'].">".$row['nombre']."</option>";
+              }
+              echo "</select>";
+
               echo "<div class='input-container'>";
 
               // En $data es coloquen els atributs de la pregunta

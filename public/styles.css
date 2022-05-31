@@ -65,34 +65,7 @@
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) {
-	.sidenav{
-		display: none;
-	}
-
-	.form-outline{
-		display: none !important;
-	}
-
-	.col-1{
-		width: 30% !important;
-	}
-
-	.col-2{
-		width: 100% !important;
-	}
-
-	.header .btn-light{
-		font-size: 15px !important;
-		margin-top: 10px;
-	}
-
-	.header .btn-primary{
-		width: 100%;
-		margin-top: 10px;
-		font-size: 15px !important;
-	}
-	
+@media (max-width: 768px) {	
 	.sidenav{
 		display: block;
 	}
@@ -124,6 +97,34 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (max-width: 992px) { 
+	.sidenav{
+		display: none;
+	}
+
+	.form-outline{
+		display: none !important;
+	}
+
+	.col-1{
+		width: 25% !important;
+	}
+
+	.col-2{
+		width: 100% !important;
+	}
+
+	.header .btn-light{
+		width: 100%;
+		font-size: 15px !important;
+		margin-top: 10px;
+	}
+
+	.header .btn-primary{
+		width: 100%;
+		margin-top: 10px;
+		font-size: 15px !important;
+	}
+
 	.tarifaCentrada .col-3{
 		margin-left: 0px !important;
 		width: 70%;
@@ -219,9 +220,17 @@
 	padding: 0px !important;
 }
 
+/* Estils dels errors de la pagina */
 .ErrorUsuariIncorrecte{
 	padding: 20px;
 	background-color: red !important;
+	color: white;
+	margin-bottom:0px;
+}
+
+.pujatCorrectament{
+	padding: 20px;
+	background-color: green !important;
 	color: white;
 	margin-bottom:0px;
 }
@@ -1412,7 +1421,7 @@ header .btn-light{
 
 .sidebar-navigation {
 	display: inline-block;
-	height: 110vh;
+	height: 150vh;
 	width: 80px;
 	background-color: #0196C1;
 	float: left;
@@ -1509,7 +1518,9 @@ header .btn-light{
 
 .productes img{
 	width: 100% !important;
+	margin-top: 30px;
 	border-radius: 15px;
+	margin-bottom: 20px;
 }
 
 .productes .preuProducte{
