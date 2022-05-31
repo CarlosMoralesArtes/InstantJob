@@ -59,6 +59,7 @@ $routes->get('/clear', 'Home::clear');
 $routes->get('/mostrar', 'Home::mostrarArxius');
 $routes->post('/categoria', 'Home::categoriasel');
 // $routes->add('/categoria', 'Home::categoriasel');
+$routes->add('/marcar', 'Home::marcar');
 $routes->post('/pujar', 'Home::sqlpujar');
 
 /*
