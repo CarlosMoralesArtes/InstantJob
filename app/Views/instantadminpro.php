@@ -25,10 +25,9 @@
 
 <?php
       $session = session();
-      if ($session->get('user')){
-        // $userName = $session->get('codiU');
+      if ($session->get('admin')){
+          $session->get('id_user');
       } else {
-        $session->set('iniciar','1');
         // $localitzacio = site_url()."/c4morales/home/iniciarSessio";
         header("Location: ./index");
         die();
@@ -288,6 +287,73 @@
 
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
+        <p class="card-title">Completa els camps per modificar el perfil</p>
+        <div class="configuracio">
+        <div class="popupConfiguracio active">
+          <div class="targetaConfiguracio">
+          <?php
+              $ruta = "productosmodificaospro";
+              $attributes = array ('action' => "productosmodificaospro", 'enctype' => "multipart/form-data", 'method' => "POST");
+              // Form open que serveix per iniciar el formulari
+              echo form_open($ruta, $attributes);
+
+              echo "<select name='id_usuari'>";
+              foreach ($consulta2->getResultArray() as $row) {
+                echo "<option value=".$row['id_servicio'].">".$row['nombre']."</option>";
+              }
+              echo "</select>";
+
+              echo "<div class='input-container'>";
+
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'nombre',
+                          'required' => 'required',
+                          'type' => 'text',
+                          'value' => set_value('nombre'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Nom', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
+
+              echo "<div class='input-container'>";
+              // En $data es coloquen els atributs de la pregunta
+              $data = array('name' => 'preu',
+                          'required' => 'preu',
+                          'type' => 'text',
+                          'value' => set_value('preu'));
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_input($data);
+              echo form_label('Preu', '#{label}');
+              echo "<div class='bar'></div>";
+              echo "<br>";
+              echo "</div>";
+
+               // En $data es coloquen els atributs de la pregunta
+               $data = array('name' => 'fitxer',
+               'value' => set_value('userfile'),
+               'class' => 'pujarProductes');
+              // En el form input es l'apartat on pots colocar text en el formulari
+              echo form_label('Imatge de protada del servei', '#{label}');
+              echo form_upload($data);
+
+              echo "<br>";
+              echo "<p class='petit'>Les dades s'actualitzen al instant</p>";
+              echo "<input type='submit' class='btn-submit' name='mysubmit' value='Modificar Usuari'>";
+
+              // El form close es per tancar el formulari
+              echo form_close();
+            ?>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="pujarProducteCaixa col-9">
+      <div class="card-body">
         <p class="card-title">Selecciona el usuari que vols eliminar</p>
         <div class="configuracio">
         <div class="popupConfiguracio active">
@@ -299,7 +365,7 @@
               echo form_open($ruta, $attributes);
 
               echo "<select name='id_servicio'>";
-              foreach ($consulta->getResultArray() as $row) {
+              foreach ($consulta2->getResultArray() as $row) {
                 echo "<option value=".$row['id_servicio'].">".$row['nombre']."</option>";
               }
               echo "</select>";

@@ -189,6 +189,74 @@ class Home extends BaseController
         return view('modificarProductes',$data);
     }
 
+    public function productosmodificaospro(){
+        $dades=$this->request->getVar();
+        $db = db_connect();
+        $session = session();
+        $session->start();
+        $id = $session->get('id_user');
+        // $dades['contrasena'] = md5($dades['contrasenya']);
+        // $sql = "UPDATE `cliente` SET `nombre`= ?,`apellidos`= ?,`contrasena`= ? WHERE `id_cliente` = ?;";
+        // $db->query($sql, [$dades['nombre'], $dades['apellidos'], $dades['contrasena'], $dades['id_usuari']]);
+
+        // $session->set('user',$dades['nombre']);
+        // $session = session();
+        // $query = "SELECT * FROM `cliente` WHERE id_cliente = ?;";
+        // $query = $db->query($query, [$id]);
+
+
+        // $data = array('consulta' => $query);
+        // echo "<p class='PujatCorrectament'>Usuari modificat correctament</p>";
+
+        $tipusF = $_FILES["fitxer"]["type"];
+
+        if($tipusF == "image/png"){
+            $tipusF = "png";
+        }
+
+        if($tipusF == "image/jpeg"){
+            $tipusF = "png";
+        }
+
+        if($tipusF == "image/jpg"){
+            $tipusF = "png";
+        }
+
+        if(is_uploaded_file($_FILES["fitxer"]["tmp_name"]) == true){
+
+            // Agafar el nom del arxiu
+            $nomF = $_FILES["fitxer"]["name"];
+            // $arxiu = new \App\Models\ArxiuModel();
+            $data = date('y-m-d');
+            $contingut = base64_encode($_FILES["fitxer"]["tmp_name"]);
+            $codiU = $dades["codiUsuari"];
+            $numeroRandom = rand(1, 10000000);
+            move_uploaded_file($_FILES["fitxer"]["tmp_name"], "./imgs/$numeroRandom.$tipusF" );
+            // $dadesFitxer = ["nomF" => $nomF, "tipusF" => $tipusF, "data" => $data, "nomRandom" => $numeroRandom, "codiU" => $codiU];
+            // $arxiu->insert($dadesFitxer);
+            // echo "Arxiu $nomF guardat correctament. ";
+            $query3 = "UPDATE `servicio` SET `nombre` = ?, `imagen` = ?, `precio` = ? WHERE `servicio`.`id_servicio` = ?;";
+            $query3 = $db->query($query3, [$dades['nombre'],$numeroRandom,$dades['preu'], $dades['id_usuari']]);
+            // echo var_dump($dades);
+            echo "<p class='PujatCorrectament'>Producte pujat correctament</p>";
+        } else {
+            // Si no hi ha ningun tipus de arxiu
+            // echo "No hi ha ningun de arxiu.";
+        }
+
+        $query = "SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
+        $query = $db->query($query, [$id]);
+        
+
+        $query3 = $db->query("SELECT * FROM `servicio`;");
+
+
+
+        $data = array('consulta' => $query,'consulta2' => $query3);
+
+        return view('instantadminpro',$data);
+    }
+
     public function eliminarservicio(){
         $db = db_connect();
         $dades=$this->request->getVar();
@@ -402,10 +470,7 @@ class Home extends BaseController
 			$usuari->insert($dades);
             $session->set('iniciar','1');
             $query = $db->query("SELECT * FROM `servicio`");
-        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
-
-
-        
+            $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
 
         $data = array('consulta' => $query, 'consulta2' => $query2);
 
@@ -532,8 +597,27 @@ class Home extends BaseController
                     if($data["contrasena"] == md5($dades["contrasena"])){
                         $session->set('user',$data["nombre"]);
                         $session->set('id_user',$data["id_cliente"]);
+
+                        $queryad = $db->query("SELECT * FROM `admin`;");
+
+                        // $queryad = "SELECT * FROM `CLIENTE` cl JOIN admin ad ON ad.id_cliente = cl.id_cliente;";
+                        // $query = $db->query($query, [$id])
+
+                        foreach ($queryad->getResultArray() as $row) {
+                            if ($row['id_cliente'] == $data["id_cliente"]) {
+                                $db = db_connect();
+                                $query3 = $db->query("SELECT * FROM `cliente`;");
+                                $data0 = array('consulta' => $query3);
+                                $session->set('admin','si');
+                                return view('admin.php', $data0);
+                            }
+                            // echo $row['id_cliente'] . "<br>---------------";
+                            // echo $data['correo'] . "-";
+                        }
                         $data = array('consulta' => $query, 'consulta2' => $query2);
-                        return view('pujaProductes',$data);;
+                        // echo var_dump($data);
+
+                        return view('pujaProductes',$data);
                     } else {
                         echo "<p class='ErrorUsuariIncorrecte'>Usuari o contrasenya incorrecte.</p>";
                         $data = array('consulta' => $query, 'consulta2' => $query2);
@@ -784,12 +868,20 @@ class Home extends BaseController
         $sql = "SELECT * FROM `servicio` WHERE `id_servicio` = ?";
         $query = $db->query($sql, [$dades['id_servei']]);
 
+        foreach ($query->getResultArray() as $row) {
+            $lcick = $row['numero_clicks'];
+            $lcick = $lcick + 1;
+            $sqls = "UPDATE `servicio` SET `numero_clicks` = ? WHERE `id_servicio` = ?";
+            $querys = $db->query($sqls, [$lcick,$dades['id_servei']]);
+        }
+
         $sql2 = "SELECT * FROM `guardados` WHERE id_servicio = ? AND id_cliente = ?;";
         $query2 = $db->query($sql2, [$dades['id_servei'], $id]);
 
-        
+        $sql3 = "SELECT * FROM `valoraciones` WHERE id_servicio = ?;";
+        $query3 = $db->query($sql3, [$dades['id_servei']]);
 
-        $dada = array('consulta' => $query, 'existe' => $query2);
+        $dada = array('consulta' => $query, 'existe' => $query2, 'existe2' => $query3);
 
         return view('compra', $dada);
     }
@@ -814,7 +906,10 @@ class Home extends BaseController
         $sql9 = "SELECT * FROM `guardados` WHERE id_servicio = ? AND id_cliente = ?;";
         $query9 = $db->query($sql9, [$dades['id_servei'], $id]);
 
-        $dada = array('consulta' => $query8, 'existe' => $query9);
+        $sql3 = "SELECT * FROM `valoraciones` WHERE id_servicio = ?;";
+        $query3 = $db->query($sql3, [$dades['id_servei']]);
+
+        $dada = array('consulta' => $query8, 'existe' => $query9, 'existe2' => $query3);
 
         return view('compra', $dada);
     }
