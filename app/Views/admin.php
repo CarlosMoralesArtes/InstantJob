@@ -25,7 +25,7 @@
 
 <?php
       $session = session();
-      if ($session->get('user')){
+      if ($session->get('admin')){
           $session->get('id_user');
       } else {
         // $localitzacio = site_url()."/c4morales/home/iniciarSessio";

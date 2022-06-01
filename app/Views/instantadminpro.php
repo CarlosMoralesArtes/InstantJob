@@ -25,10 +25,9 @@
 
 <?php
       $session = session();
-      if ($session->get('user')){
-        // $userName = $session->get('codiU');
+      if ($session->get('admin')){
+          $session->get('id_user');
       } else {
-        $session->set('iniciar','1');
         // $localitzacio = site_url()."/c4morales/home/iniciarSessio";
         header("Location: ./index");
         die();
