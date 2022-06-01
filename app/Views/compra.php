@@ -6,6 +6,13 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 400px;
+        width: 70%;
+      }
+    </style>
   <!-- Estils de la pàgina -->
   <link rel="stylesheet" href="styles.css">
   <!-- Estils de font awesome -->
@@ -18,6 +25,7 @@
   <!-- Estils de Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
   <script src="https://kit.fontawesome.com/0859fc3634.js" crossorigin="anonymous"></script>
 </head>
 
@@ -430,6 +438,65 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<h2>Mi Mapa</h2>
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+
+      let ultimaCapa;
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([2.096726, 41.544223]),
+          zoom: 16
+        })
+      });
+      
+
+if (ultimaCapa) {
+        mapa.removeLayer(ultimaCapa);
+    }
+
+  //  var posicion1 ={ "longitud":"2.098726" , "latitud":"41.546223", "foto":"imgs/tux.jpg" };
+  //   var posicion2 ={ "longitud":"2.098826" , "latitud":"41.545223" ,"foto":"imgs/tux1.jpg"};
+    var posicion3 ={ "longitud":"2.099926" , "latitud":"41.545523" ,"foto":"imgs/mark.png"};
+
+   var coordenadas=[]
+  //  coordenadas.push(posicion1);
+  //  coordenadas.push(posicion2);
+    coordenadas.push(posicion3);
+
+
+    const marcadores = [];
+    coordenadas.forEach(coordenada => {
+        let marcador = new ol.Feature({
+            geometry: new ol.geom.Point(
+                ol.proj.fromLonLat([coordenada.longitud, coordenada.latitud])
+            ),
+        });
+        marcador.setStyle(new ol.style.Style({
+            image: new ol.style.Icon(({
+                src: coordenada.foto,
+                crossOrigin: null
+            }))
+        }));
+        marcadores.push(marcador);
+    });
+    ultimaCapa = new ol.layer.Vector({
+        source: new ol.source.Vector({
+            features: marcadores,
+        }),
+    });
+    map.addLayer(ultimaCapa);
+
+
+     
+    </script>
       </div>
     </div>
 
