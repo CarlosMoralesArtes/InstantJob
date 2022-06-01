@@ -395,96 +395,43 @@
       echo "<p>".$row['descripcion']."</p>";
       }
       ?>
-      <div class="carousel">
-            <div class="carousel__contenedor">
-              <button aria-label="Anterior" class="carousel__anterior">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <br>
-              <div class="carousel__lista">
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="1">
-                    <button><img src="imgs/fontaneriaBlau.png" alt="Categoria de lampista"></button>
-                    <p>Lampista</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="2">
-                    <button><img src="imgs/carpinteria.png" alt="Categoria de fuster"></button>
-                    <p>Fuster</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="3">
-                    <button><img src="imgs/pintor.png" alt="Categoria de pintors"></button>
-                    <p>Pintor</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="4">
-                    <button><img src="imgs/informatic_blau.png" alt="Categoria d'informatic"></button>
-                    <p>Informàtic</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                  <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/administratiu_blau.png" alt="Categoria d'administratiu"></button>
-                    <p>Administratiu</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/jardiner_blau.png" alt="Categoria de jardineria"></button>
-                    <p>Jardiner</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/medicina_blau.png" alt="Categoria de medicina"></button>
-                    <p>Medicina</p>
-                  </form>
-                </div>
-              </a>
-              <a href="serveis">
-                <div class="carousel__elemento">
-                <form action= 'categoria' method="post">
-                    <input type="hidden" name="1" value="5">
-                    <button><img src="imgs/obrer_blau.png" alt="Categoria d'obrers"></button>
-                    <p>Obrers</p>
-                  </form>
-                </div>
-              </a>
-              </div>
 
-              <button aria-label="Siguiente" class="carousel__siguiente">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
 
-            <div role="tablist" class="carousel__indicadores"></div>
-          </div>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="imgs/transparente.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Valoraciones</h5>
+        <p>Aqui se pueden ver las valoraciones de los usuarios</p>
+      </div>
     </div>
+    <?php
+            foreach ($existe2->getResultArray() as $row2){
+              echo "<div class='carousel-item'>";
+              echo "<img src='imgs/transparente.png' class='d-block w-100' alt='...'>";
+              echo "<div class='carousel-caption d-none d-md-block'>";
+              echo "<h5>". $row2['estrellitas'] ." estrellas</h5>";
+              echo "<p>Opinion: ". $row2['valoracion'] ."</p>";
+              echo "</div>";
+              echo "</div>";
+            //   // echo $row2['valoracion'];
+
+            }
+          ?>
+
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+      </div>
+    </div>
 
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   <!-- Script Global -->
@@ -492,6 +439,7 @@
   <script src="..\Typescript/script.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>

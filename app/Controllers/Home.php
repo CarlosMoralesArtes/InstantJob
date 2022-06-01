@@ -787,9 +787,10 @@ class Home extends BaseController
         $sql2 = "SELECT * FROM `guardados` WHERE id_servicio = ? AND id_cliente = ?;";
         $query2 = $db->query($sql2, [$dades['id_servei'], $id]);
 
-        
+        $sql3 = "SELECT * FROM `valoraciones` WHERE id_servicio = ?;";
+        $query3 = $db->query($sql3, [$dades['id_servei']]);
 
-        $dada = array('consulta' => $query, 'existe' => $query2);
+        $dada = array('consulta' => $query, 'existe' => $query2, 'existe2' => $query3);
 
         return view('compra', $dada);
     }
@@ -814,7 +815,10 @@ class Home extends BaseController
         $sql9 = "SELECT * FROM `guardados` WHERE id_servicio = ? AND id_cliente = ?;";
         $query9 = $db->query($sql9, [$dades['id_servei'], $id]);
 
-        $dada = array('consulta' => $query8, 'existe' => $query9);
+        $sql3 = "SELECT * FROM `valoraciones` WHERE id_servicio = ?;";
+        $query3 = $db->query($sql3, [$dades['id_servei']]);
+
+        $dada = array('consulta' => $query8, 'existe' => $query9, 'existe2' => $query3);
 
         return view('compra', $dada);
     }
