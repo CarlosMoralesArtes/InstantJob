@@ -182,7 +182,7 @@ class Home extends BaseController
             // echo "No hi ha ningun de arxiu.";
         }
 
-        $query = "SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
+        $query = "SELECT ser.id_servicio, ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
         $query = $db->query($query, [$id]);
         $data = array('consulta' => $query);
 
@@ -397,11 +397,25 @@ class Home extends BaseController
         $db = db_connect();
         $session = session();
         $id = $session->get('id_user');
-        $query = "SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
-        $query = $db->query($query, [$id]);
-        $data = array('consulta' => $query);
 
-        return view('estadistiques',$data);
+        $querysele = "SELECT * FROM `cliente`;";
+        $querysele = $db->query($querysele, [$id]);
+
+        foreach ($querysele->getResultArray() as $row) {
+            if ($row['tarifa'] == 2) {
+                $query = "SELECT ser.nombre, ser.numero_clicks, sub.fecha, ser.precio, ser.imagen  FROM `servicio` ser LEFT JOIN subir sub ON sub.id_servicios = ser.id_servicio LEFT JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.id_cliente = ?;";
+                $query = $db->query($query, [$id]);
+                $data = array('consulta' => $query);
+
+                return view('estadistiques',$data);
+            }else {
+                echo "<p class='PujatCorrectament'>Tiene que comprar Enterprise</p>";
+                return view('tarifes');
+            }
+        }
+
+
+        
     }
 
     //Redireccionament de guardats
@@ -851,7 +865,7 @@ class Home extends BaseController
             $db = db_connect();
             $sql = "UPDATE `cliente` SET `tarifa`= 2 WHERE `id_cliente` = ?";
             $db->query($sql, [$dades['id_usuari']]);
-
+            echo "<p class='PujatCorrectament'>Comprat correctament</p>";
             return view('tarifes');
         }
     }
