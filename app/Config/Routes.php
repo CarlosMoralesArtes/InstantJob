@@ -69,6 +69,7 @@ $routes->add('/pujar', 'Home::sqlpujar');
 $routes->add('/registraradmin', 'Home::registraradmin');
 $routes->add('/productosmodificaos', 'Home::productosmodificaos');
 $routes->add('/eliminarservicio', 'Home::eliminarservicio');
+$routes->add('/productosmodificaospro', 'Home::productosmodificaospro');
 
 /*
  * --------------------------------------------------------------------
