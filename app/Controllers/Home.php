@@ -402,10 +402,7 @@ class Home extends BaseController
 			$usuari->insert($dades);
             $session->set('iniciar','1');
             $query = $db->query("SELECT * FROM `servicio`");
-        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
-
-
-        
+            $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
 
         $data = array('consulta' => $query, 'consulta2' => $query2);
 
@@ -532,8 +529,27 @@ class Home extends BaseController
                     if($data["contrasena"] == md5($dades["contrasena"])){
                         $session->set('user',$data["nombre"]);
                         $session->set('id_user',$data["id_cliente"]);
+
+                        $queryad = $db->query("SELECT * FROM `admin`;");
+
+                        // $queryad = "SELECT * FROM `CLIENTE` cl JOIN admin ad ON ad.id_cliente = cl.id_cliente;";
+                        // $query = $db->query($query, [$id])
+
+                        foreach ($queryad->getResultArray() as $row) {
+                            if ($row['id_cliente'] == $data["id_cliente"]) {
+                                $db = db_connect();
+                                $query3 = $db->query("SELECT * FROM `cliente`;");
+                                $data0 = array('consulta' => $query3);
+                                $session->set('admin','si');
+                                return view('admin.php', $data0);
+                            }
+                            // echo $row['id_cliente'] . "<br>---------------";
+                            // echo $data['correo'] . "-";
+                        }
                         $data = array('consulta' => $query, 'consulta2' => $query2);
-                        return view('pujaProductes',$data);;
+                        // echo var_dump($data);
+
+                        return view('pujaProductes',$data);
                     } else {
                         echo "<p class='ErrorUsuariIncorrecte'>Usuari o contrasenya incorrecte.</p>";
                         $data = array('consulta' => $query, 'consulta2' => $query2);
