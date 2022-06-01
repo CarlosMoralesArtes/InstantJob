@@ -784,6 +784,13 @@ class Home extends BaseController
         $sql = "SELECT * FROM `servicio` WHERE `id_servicio` = ?";
         $query = $db->query($sql, [$dades['id_servei']]);
 
+        foreach ($query->getResultArray() as $row) {
+            $lcick = $row['numero_clicks'];
+            $lcick = $lcick + 1;
+            $sqls = "UPDATE `servicio` SET `numero_clicks` = ? WHERE `id_servicio` = ?";
+            $querys = $db->query($sqls, [$lcick,$dades['id_servei']]);
+        }
+
         $sql2 = "SELECT * FROM `guardados` WHERE id_servicio = ? AND id_cliente = ?;";
         $query2 = $db->query($sql2, [$dades['id_servei'], $id]);
 
