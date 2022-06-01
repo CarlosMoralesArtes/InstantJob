@@ -67,7 +67,7 @@
         </div>
         <!-- Boto per anar al apartat de pujar productes -->
         <div class="header col-2">
-        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar Producte</a>
+        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar<br> Producte</a>
       </div>
     </nav>
   </header>

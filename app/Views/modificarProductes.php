@@ -77,7 +77,7 @@
         </div>
         <!-- Boto per anar al apartat de pujar productes -->
         <div class="header col-2">
-        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar Producte</a>
+        <a class="btn btn-primary" href="pujaProductes"><i class="fa-solid fa-circle-plus"></i> Pujar<br> Producte</a>
       </div>
     </nav>
   </header>
@@ -138,7 +138,7 @@
 
   <br>
   <div class="container">
-    <div class="estadistiques col-9">
+    <div class="estadistiques col-12">
       <div class="card-body">
         <p class="card-title">Productes actuals</p>
         <p class="card-text">
@@ -191,11 +191,11 @@
         </p>
       </div>
     </div>
-      
   </div>
 
-  <div class="pujarProducteCaixa col-9">
-      <div class="card-body">
+  <div class="container">
+  <div class="pujarProducteCaixa">
+      <div class="card-body col-12">
         <p class="card-title">Completa els camps per modificar el perfil</p>
         <div class="configuracio">
         <div class="popupConfiguracio active">
@@ -259,6 +259,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
   
   <!-- Scripts necesaris -->
