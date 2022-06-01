@@ -62,6 +62,18 @@
 	.glider-dot{
 		display: none !important;
 	}
+
+	.footer-content img{
+		width: 70px !important;
+	}
+
+	.footer-content{
+		font-size: 10px !important;
+	}
+
+	.footer-content h3{
+		font-size: 12px !important;
+	}
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -119,7 +131,9 @@
 	}
 
 	.frase p{
-		font-size: 20px !important;
+		background-color: #046C95 !important;
+		font-size: 17px !important;
+		color: white !important;
 	}
 
 	.adaptacio .col-6{
@@ -142,7 +156,7 @@
 	}
 }
 
-@media (max-width: 1120px){
+@media (max-width: 1150px){
 	.sidenav{
 		display: none;
 	}
@@ -272,7 +286,7 @@
 }
 
 .segonApartat{
-	background: url('./imgs/backgroundSegonApartat.jpg') no-repeat !important;
+	background: url('./imgs/backgroundSegonApartat.png') no-repeat !important;
 	background-size: cover !important;
 	background-position: center !important;
 }
@@ -356,8 +370,11 @@
 }
 
 .politica{
+	padding: 20px;
+	background-color: white;
 	margin-left: 150px;
 	margin-right: 150px;
+	padding-bottom: 200px;
 	text-align: left;
 }
 
@@ -472,10 +489,12 @@ h1{
 
 h2{
     font-size: 20px !important;
+	color: #00094e !important;
 }
 
 h3{
 	font-size: 17px !important;
+	color: #00094e !important;
 }
 
 .title{
@@ -523,9 +542,10 @@ body{
 }
 
 .frase p{
+	background-color: #046C95 !important;
 	padding: 50px;
-	color: #00094e;
-	font-size: 30px;
+	color: white !important;
+	font-size: 20px;
 	margin-bottom: 0px !important;
 }
 
@@ -539,6 +559,11 @@ body{
 
 .titol p{
 	margin-top: 20px;
+}
+
+.titol h1{
+	font-size: 44px !important;
+	margin-bottom: 20px !important;
 }
 
 .segonApartat{
@@ -561,6 +586,17 @@ body{
 
 .serveiSeparat .card-body form{
 	margin-top: 10px;
+}
+
+.btn-submit{
+	color: white;
+	padding: 10px !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important
+}
+
+.btn-submit:hover{
+	background-color: #0196C1 !important;
 }
 
 .segonApartat h2{
@@ -737,7 +773,6 @@ body{
     display: block;
 	width: 100%;
     border-radius: 5px;
-	float: right;
 	margin-top: 20px;
 	margin-right: 12px;
 }
@@ -788,8 +823,8 @@ th, td, tr{
 
 header .btn-primary{
 	padding: 10px;
-	padding-left: 25px !important;
-	padding-right: 25px !important;
+	padding-left: 50px !important;
+	padding-right: 50px !important;
 	border-radius: 12px;
 }
 
@@ -823,7 +858,6 @@ header .btn-light{
 }
 
 .card-body button{
-	border-radius: 100%;
 	border: white solid 1px;
 }
 
@@ -883,6 +917,16 @@ header .btn-light{
 .capçaleraServeis a{
 	color: white;
 	text-decoration: none;
+}
+
+.capçaleraServeis h1{
+	font-size: 50px !important;
+	color: white !important;
+}
+
+.capçaleraServeis a{
+	font-size: 20px;
+	color:rgba(94,125,227, .9);
 }
 
 .overlay {
@@ -987,7 +1031,6 @@ header .btn-light{
 .popup form .btn-submit {
 	padding: 0 20px;
 	width: 83%;
-	height: 40px;
 	line-height: 40px;
 	border: none;
 	color: #fff;
