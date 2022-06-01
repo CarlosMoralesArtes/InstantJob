@@ -8,6 +8,12 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 670px) { 
+
+	/* Estil per a totes les pagines - Titols */
+	.titol h1{
+		font-size: 25px !important;
+	}
+
 	.dropdown a{
 		display: inline-block !important;
 	}
@@ -186,10 +192,6 @@
 	}
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1450px) { 
-}
-
 *{
     font-family: 'Montserrat', sans-serif;
 }
@@ -197,6 +199,15 @@
 .estilFormulari{
 	position: relative;
 	width: 95%;
+}
+
+.carousel{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.carousel h1{
+	color: white !important;
 }
 
 .buscadorTop{
@@ -483,13 +494,12 @@ ul a{
 
 /* Estil per a totes les pagines - Titols */
 h1{
-    font-size: 35px !important;
-	color: #00094e !important;
+    font-size: 35px;
+	color: #00094e;
 }
 
 h2{
     font-size: 20px !important;
-	color: #00094e !important;
 }
 
 h3{
@@ -1444,6 +1454,10 @@ header .btn-light{
 	border-radius: 0;
 }
 
+.carousel-item-next, .carousel-item-prev, .carousel-item.active img{
+	height: 100px !important;
+}
+
 .carousel__indicadores .glider-dot:hover {
 	opacity: .5;
 }
@@ -1460,6 +1474,11 @@ header .btn-light{
 	.contenido-principal > * {
 		width: 100%;
 	}
+}
+
+.productes h1{
+	margin-bottom: 10px;
+	color: white !important;
 }
 
 .sidebar-navigation {
@@ -1596,6 +1615,19 @@ input[type="file"] button{
 	margin-right: 30px;
 	margin-top: 30px;
 	top: 0;
+}
+
+.partEsquerraCompra{
+	position: absolute;
+	margin-bottom: 20px;
+	left: 0;
+	margin-left: 30px;
+	margin-top: 30px;
+	top: 0;
+}
+
+.map{
+	width: 100%;
 }
 
 /* Estils del footer */

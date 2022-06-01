@@ -52,14 +52,6 @@ window.onload = function(){
         btnCerrarPopup = document.getElementById('btn-cerrar-popup');
 
     if(btnAbrirPopup != null){
-      // Aquest apartat serveix per quan es dona un clic fora que es tregui el iniciar sessio
-      // var overlay2 = document.getElementById('overlay');
-
-      // overlay2.addEventListener('click', function(){
-      //   overlay.classList.remove('active');
-      //     popup.classList.remove('active');
-      // });
-
       btnAbrirPopup.addEventListener('click', function(){
           overlay.classList.add('active');
           popup.classList.add('active');
@@ -151,6 +143,26 @@ window.onload = function(){
         e5.preventDefault();
         overlay5.classList.remove('active');
         popup5.classList.remove('active');
+      });
+    }
+
+    var btnAbrirPopup6 = document.getElementById('btn-abrir-popup6'),
+    overlay6 = document.getElementById('overlay6'),
+    popup6 = document.getElementById('popup6'),
+    btnCerrarPopup6 = document.getElementById('btn-cerrar-popup6');
+
+    if(btnAbrirPopup6 != null){
+      btnAbrirPopup6.addEventListener('click', function(){
+        overlay6.classList.add('active');
+        popup6.classList.add('active');
+        overlay.classList.remove('active');
+        popup.classList.remove('active');
+      });
+
+      btnCerrarPopup6.addEventListener('click', function(e6){
+        e6.preventDefault();
+        overlay6.classList.remove('active');
+        popup6.classList.remove('active');
       });
     }
 }

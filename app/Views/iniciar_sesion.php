@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <title>InstantJob | Home</title>
@@ -345,8 +345,8 @@
           }
           
         ?>
-    <h2>La benvinguda al estiu</h2>
-    <p>Molts serveis a la teva disponibilitat!</p>
+    <h2>Molts serveis a la teva disponibilitat!</h2>
+    <p></p>
     <?php
           $contador = 1;
           foreach ($consulta->getResultArray() as $row) {
