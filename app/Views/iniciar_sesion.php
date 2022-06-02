@@ -13,7 +13,7 @@
   <!-- Estils de glider -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
   <!-- Icone de la pagina -->
-  <link rel="icon" type="image/png" href="./imgs/Logo_InstantJob_Blanca.png" alt="Icone de la pàgina InstantJob" />
+  <link rel="icon" type="image/png" href="./imgs/Logo_InstantJob_Blanca.png"/>
 
   <!-- Estils de Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -314,7 +314,7 @@
           foreach ($consulta2->getResultArray() as $row) {
             echo "<div class='serveiSeparat col-4' style='width: 21rem;'>";
             $path='imgs/'.$row['imagen'].'.png';
-            echo "<img src=" . $path . " border='0' width='300'>";
+            echo "<img alt='Imatge amb número ".$row['imagen']."' src=" . $path . " border='0' width='300'>>";
             echo "<div class='card-body'>";
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
@@ -354,7 +354,7 @@
             // echo "<img src='./imgs/imatgePre.png' ";
             // echo "<img src='data:image/jpeg; base64," . base64_encode($row['imagen']) . "'width='100%' height='150px'>";
             $path='imgs/'.$row['imagen'].'.png';
-            echo "<img src=" . $path . " border='0' width='300'>";
+            echo "<img alt='Imatge amb número ".$row['imagen']."' src=" . $path . " border='0' width='300'>";
             echo "<div class='card-body'>";
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";
