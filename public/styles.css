@@ -981,6 +981,16 @@ header .btn-light{
     margin-left: 20px;
 }
 
+#message-container{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#send-button{
+	
+}
+
 .buscadorContactes{
 	margin-left: 460px;
 }
