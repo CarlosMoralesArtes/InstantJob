@@ -29,6 +29,18 @@
   <script src="https://kit.fontawesome.com/0859fc3634.js" crossorigin="anonymous"></script>
 </head>
 
+<?php
+      $session = session();
+      if ($session->get('user')){
+        // $userName = $session->get('codiU');
+      } else {
+        $session->set('iniciar','1');
+        // $localitzacio = site_url()."/c4morales/home/iniciarSessio";
+        header("Location: ./index");
+        die();
+      }
+  ?>
+
 <body>
   <!-- Apartat de la carrega de la pàgina -->
   <div id="contenedor_carga">
