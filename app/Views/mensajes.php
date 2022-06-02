@@ -457,8 +457,8 @@
   <br>
   <div id="message-container"></div>
   <form id="send-container">
-    <input type="text" id="message-input">
-    <button type="submit" id="send-button">Send</button>
+    <input type="text" class="contenidorMissatge col-7" id="message-input">
+    <button type="submit" class="btn-primary col-2" id="send-button">Send</button>
   </form>
   
   <!-- Scripts necesaris -->
