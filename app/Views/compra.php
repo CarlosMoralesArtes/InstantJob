@@ -486,6 +486,8 @@
       <?php
       echo "<p>".$row['descripcion']."</p>";
       }
+      echo "<div class='partEsquerraCompraExtra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
+
       ?>
 
 
@@ -578,7 +580,6 @@ if (ultimaCapa) {
         }),
     });
     map.addLayer(ultimaCapa);
-
 
      
     </script>

@@ -11,6 +11,15 @@
 		width: 80% !important;
 	}
 
+	.partEsquerraCompra{
+		display: none;
+	}
+
+	.partEsquerraCompraExtra a{
+		display: block !important;
+		width: 100%;
+	}
+
 	table {
 		border: 1px solid #ccc;
 		width: 100%;
@@ -23,6 +32,10 @@
 	table tr {
 		border: 1px solid #ddd;
 		padding: 5px;
+	}
+	
+	.adaptacio{
+		width: 100% !important;
 	}
 
 	table th, table td {
@@ -37,7 +50,6 @@
 	}
 
 	@media screen and (max-width: 600px) {
-
 		table {
 		border: 0;
 		}
@@ -1719,6 +1731,12 @@ input[type="file"] button{
 	margin-left: 30px;
 	margin-top: 30px;
 	top: 0;
+}
+
+.partEsquerraCompraExtra a{
+	width: 100%;
+	margin-bottom: 10px;
+	display: none;
 }
 
 .map{
