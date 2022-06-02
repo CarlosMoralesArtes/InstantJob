@@ -982,17 +982,28 @@ header .btn-light{
 }
 
 #message-container{
-	position: absolute;
-	top: 0;
-	left: 0;
+	margin-bottom: 10px;
+	height: 100%;
+	padding: 50px;
+	text-align: left;
 }
 
 #send-button{
-	
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .buscadorContactes{
 	margin-left: 460px;
+}
+
+.contenidorMissatge{
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#send-container{
+	width: 100%;
 }
 
 .tarifes{

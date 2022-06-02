@@ -433,6 +433,7 @@
 
       foreach ($existe->getResultArray() as $row2){
         echo "<div class='partDretaCompra'><button  class='btn btn-primary eric' href='pujaProductes' style='background-color: red !important;'><i class='fa-solid fa-heart-circle-plus'></i><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
+        echo "<div class='partEsquerraCompra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
         $entrar = 1;
         echo form_hidden('entra', 'si');
       }
@@ -440,7 +441,6 @@
       echo form_hidden('id_servei', $row['id_servicio']);
 
       if ($entrar == 0) {
-        echo "<div class='partEsquerraCompra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
         echo "<div class='partDretaCompra'><button class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
       }
 
@@ -486,7 +486,7 @@
       <?php
       echo "<p>".$row['descripcion']."</p>";
       }
-      echo "<div class='partEsquerraCompraExtra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
+      echo "<div class='partEsquerraCompraExtra'> <a class='btn btn-secondary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
 
       ?>
 
