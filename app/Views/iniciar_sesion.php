@@ -314,7 +314,7 @@
           foreach ($consulta2->getResultArray() as $row) {
             echo "<div class='serveiSeparat col-4' style='width: 21rem;'>";
             $path='imgs/'.$row['imagen'].'.png';
-            echo "<img alt='Imatge amb número ".$row['imagen']."' src=" . $path . " border='0' width='300'>>";
+            echo "<img alt='Imatge amb número ".$row['imagen']."' src=" . $path . " border='0' width='300'>";
             echo "<div class='card-body'>";
 
             echo "<p id='".$row['id_servicio']."'>".$row['nombre']."</p>";

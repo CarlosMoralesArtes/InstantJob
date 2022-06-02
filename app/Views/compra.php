@@ -351,71 +351,47 @@
   <div class="overlay" id="overlay6">
     <div class="popup" id="popup6">
       <a href="#" id="btn-cerrar-popup6" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-      <h2 class="title">Registra't</h2>
+      <h2 class="title">Valora el producte</h2>
       <p>Completa els camps</p>
       <br>
       <div class="targetaIniciSessio">
           <?php
-            $ruta = site_url()."registrar";
-            $attributes = array ('action' => "registrar", 'enctype' => "multipart/form-data", 'method' => "GET");
+            $ruta = site_url()."valorar";
+            $attributes = array ('action' => "valorar", 'enctype' => "multipart/form-data", 'method' => "POST");
             // Form open que serveix per iniciar el formulari
             echo form_open($ruta, $attributes);
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'nombre',
+            $data = array('name' => 'Estrellas',
                           'required' => 'required',
-                          'value' => set_value('nom'));
+                          'value' => set_value('estrellas'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo form_label('Nom', '#{label}');
+            echo form_label('Estrellas', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
 
             echo "<div class='input-container'>";
             // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'apellidos',
+            $data = array('name' => 'valoracio',
                           'required' => 'required',
-                          'value' => set_value('primerCognom'));
+                          'value' => set_value('valoracio'));
             // En el form input es l'apartat on pots colocar text en el formulari
             echo form_input($data);
-            echo form_label('Cognoms', '#{label}');
+            echo form_label('Valoracio', '#{label}');
             echo "<div class='bar'></div>";
             echo "<br>";
             echo "</div>";
 
-            echo "<div class='input-container'>";
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'correo',
-                          'required' => 'required',
-                          'value' => set_value('email'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo form_label('Email', '#{label}');
-            echo "<div class='bar'></div>";
-            echo "<br>";
-            
+            foreach ($consulta->getResultArray() as $row){
+              echo form_hidden('id_servei', $row['id_servicio']);
+            }
+
             echo "<br>";
             echo "</div>";
 
-            echo form_hidden('latitud', '2');
-            echo form_hidden('logitud', '2');
-
-            echo "<div class='input-container'>";
-            // En $data es coloquen els atributs de la pregunta
-            $data = array('name' => 'contrasena',
-                          'required' => 'required',
-                          'value' => set_value('contrasenya'));
-            // En el form input es l'apartat on pots colocar text en el formulari
-            echo form_input($data);
-            echo form_label('Contrasenya', '#{label}');
-            echo "<div class='bar'></div>";
-            echo "<br>";
-            echo "</div>";
-
-            echo "<br>";
-
-            echo form_submit('submit', 'Registrar-se');
+            echo form_submit('submit', 'Valorar');
             // El form close es per tancar el formulari
             echo form_close();
 
@@ -444,7 +420,7 @@
       $entrar = 0;
 
       foreach ($existe->getResultArray() as $row2){
-        echo "<div class='partDretaCompra'><button  class='btn btn-primary eric' href='pujaProductes' style='background-color: red !important;'><i class='fa-solid fa-heart-circle-plus'></i><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
+        echo "<div class='partDretaCompra'><button  class='btn btn-primary eric' href='pujaProductes' style='background-color: red !important;'><i class='fa-solid fa-heart-circle-plus'></i></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
         echo "<div class='partEsquerraCompra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
         $entrar = 1;
         echo form_hidden('entra', 'si');
@@ -453,6 +429,7 @@
       echo form_hidden('id_servei', $row['id_servicio']);
 
       if ($entrar == 0) {
+        echo "<div class='partEsquerraCompra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
         echo "<div class='partDretaCompra'><button class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
       }
 

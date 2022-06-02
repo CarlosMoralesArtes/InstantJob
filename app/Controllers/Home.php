@@ -1006,5 +1006,24 @@ class Home extends BaseController
         echo "<p class='ErrorUsuariIncorrecte'>Eliminado correctament</p>";
         return view('instantadminpro', $data);
     }
+    public function valorar(){
+        $dades=$this->request->getVar();
+        // echo var_dump($dades);
+        $session = session();
+        $id = $session->get('id_user');
+        $db = db_connect();
+        $sql = "INSERT INTO `valoraciones` (`id_valoraciones`, `id_servicio`, `id_cliente`, `estrellitas`, `valoracion`, `fecha`) VALUES (NULL, ?, ?, ?, ?, '2022-06-02');;";
+        $db->query($sql, [$dades['id_servei'], $id, $dades['Estrellas'], $dades['valoracio']]);
+        $query = $db->query("SELECT * FROM `servicio`");
+        $query2 = $db->query("SELECT ser.id_servicio, ser.nombre, ser.precio, ser.imagen FROM `servicio` ser JOIN subir sub ON sub.id_servicios = ser.id_servicio JOIN cliente cli ON cli.id_cliente = sub.id_clientes WHERE cli.tarifa = 2;");
+
+
+        $titulo = 0;
+
+        $data = array('consulta' => $query, 'consulta2' => $query2, 'titulo' => $titulo);
+
+        return view('serveis',$data);
+    }
 
 }
+
