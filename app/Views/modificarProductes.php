@@ -194,7 +194,7 @@
   </div>
 
   <div class="container">
-  <div class="pujarProducteCaixa">
+  <div class="estadistiques col-12">
       <div class="card-body col-12">
         <p class="card-title">Completa els camps per modificar el perfil</p>
         <div class="configuracio">
@@ -244,6 +244,7 @@
                'value' => set_value('userfile'),
                'class' => 'pujarProductes');
               // En el form input es l'apartat on pots colocar text en el formulari
+              echo "<br>";
               echo form_label('Imatge de protada del servei', '#{label}');
               echo form_upload($data);
 
@@ -258,7 +259,6 @@
           </form>
         </div>
       </div>
-    </div>
   </div>
   </div>
   

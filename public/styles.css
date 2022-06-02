@@ -6,12 +6,81 @@
 	}
 }
 
+@media (max-width: 570px) { 
+	.col-12{
+		width: 80% !important;
+	}
+
+	table {
+		border: 1px solid #ccc;
+		width: 100%;
+		margin:0;
+		padding:0;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	table tr {
+		border: 1px solid #ddd;
+		padding: 5px;
+	}
+
+	table th, table td {
+		padding: 10px;
+		text-align: center;
+	}
+
+	table th {
+		text-transform: uppercase;
+		font-size: 14px;
+		letter-spacing: 1px;
+	}
+
+	@media screen and (max-width: 600px) {
+
+		table {
+		border: 0;
+		}
+
+		table thead {
+		display: none;
+		}
+
+		table tr {
+		margin-bottom: 10px;
+		display: block;
+		border-bottom: 2px solid #ddd;
+		}
+
+		table td {
+		display: block;
+		text-align: right;
+		font-size: 13px;
+		border-bottom: 1px dotted #ccc;
+		}
+
+		table td:last-child {
+		border-bottom: 0;
+		}
+
+		table td:before {
+		content: attr(data-label);
+		float: left;
+		text-transform: uppercase;
+		font-weight: bold;
+		}
+	}
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 670px) { 
-
 	/* Estil per a totes les pagines - Titols */
 	.titol h1{
 		font-size: 25px !important;
+	}
+
+	table{
+		font-size: 12px !important;
 	}
 
 	.dropdown a{
@@ -53,6 +122,7 @@
 	}
 
 	.carousel__contenedor{
+		width: 100%;
 		margin-top: 10px !important;
 	}
 
@@ -63,10 +133,6 @@
 
 	.input-container{
 		margin-top: 20px !important;
-	}
-
-	.glider-dot{
-		display: none !important;
 	}
 
 	.footer-content img{
@@ -199,6 +265,19 @@
 .estilFormulari{
 	position: relative;
 	width: 95%;
+}
+
+table button{
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #0196C1;
+	color: white;
+	border: 0px !important;
+	width: 100%;
+}
+
+table button:hover{
+	background-color: #046C95;
 }
 
 .carousel{
@@ -785,6 +864,7 @@ body{
     border-radius: 5px;
 	margin-top: 20px;
 	margin-right: 12px;
+	margin-left: 77px;
 }
 
 .card-body{
@@ -1113,6 +1193,21 @@ header .btn-light{
     color: white;
     border: 0px;
 	font-size: 15px !important;
+}
+
+.targetaConfiguracio select{
+	padding: 15px;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: 1px solid white;
+	border-radius: 10px;
+	color: white;
+}
+
+.targetaConfiguracio select option{
+	background-color: white;
+	color: black;
 }
 
 .targetaConfiguracio .petit{
@@ -1653,6 +1748,6 @@ footer{
 }
 
 .footer-content img{
-    width: 120px;
+    width: 150px;
 	margin-bottom: 20px;
 }

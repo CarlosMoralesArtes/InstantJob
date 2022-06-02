@@ -440,7 +440,7 @@
       echo form_hidden('id_servei', $row['id_servicio']);
 
       if ($entrar == 0) {
-        echo "<div class='partEsquerraCompra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-message'></i> Valorar Producte</a></div>";
+        echo "<div class='partEsquerraCompra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
         echo "<div class='partDretaCompra'><button class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
       }
 
