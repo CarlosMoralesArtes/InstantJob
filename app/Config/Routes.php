@@ -71,6 +71,8 @@ $routes->add('/productosmodificaos', 'Home::productosmodificaos');
 $routes->add('/eliminarservicio', 'Home::eliminarservicio');
 $routes->add('/productosmodificaospro', 'Home::productosmodificaospro');
 $routes->add('/valorar', 'Home::valorar');
+$routes->add('/serveisnom', 'Home::serveisnom');
+$routes->add('/serveispreu', 'Home::serveispreu');
 
 /*
  * --------------------------------------------------------------------

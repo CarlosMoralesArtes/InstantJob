@@ -420,7 +420,7 @@
       $entrar = 0;
 
       foreach ($existe->getResultArray() as $row2){
-        echo "<div class='partDretaCompra'><button  class='btn btn-primary eric' href='pujaProductes' style='background-color: red !important;'><i class='fa-solid fa-heart-circle-plus'></i></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
+        echo "<div class='partDretaCompra'><button  class='btn btn-primary eric' href='pujaProductes' style='background-color: red !important;'><i class='fa-solid fa-heart-circle-plus'></i></i></button> <a class='btn btn-primary' href='missatges'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
         echo "<div class='partEsquerraCompra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
         $entrar = 1;
         echo form_hidden('entra', 'si');
@@ -430,7 +430,7 @@
 
       if ($entrar == 0) {
         echo "<div class='partEsquerraCompra'> <a class='btn btn-primary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
-        echo "<div class='partDretaCompra'><button class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
+        echo "<div class='partDretaCompra'><button class='btn btn-primary' href='pujaProductes'><i class='fa-solid fa-heart-circle-plus'></i></button> <a class='btn btn-primary' href='missatges'><i class='fa-solid fa-message'></i> Chat per Comprar</a></div>";
       }
 
       echo form_close();

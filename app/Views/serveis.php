@@ -272,7 +272,7 @@
           
         ?>
     <br>
-    <h2>Mes Serveis</h2><a href="#" class="btn btn-primary organitzarPreu">Preu</a><a href="#" class="btn btn-primary organitzar">Nom</a><br>
+    <h2>Mes Serveis</h2><a href="serveispreu" class="btn btn-primary organitzarPreu">Preu</a><a href="serveisnom" class="btn btn-primary organitzar">Nom</a><br>
     <?php
           $contador = 1;
           foreach ($consulta->getResultArray() as $row) {
