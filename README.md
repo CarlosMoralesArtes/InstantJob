@@ -12,6 +12,6 @@ Seguidamente con el node instalado tenemos que ubicarnos en el termina el la car
 
 -npm i --save-dev nodemon
 
--nodemon server.js
+-npm run devStart
 
 Una vez esto ya tendria que funcionar la aplicacion perfectamente.
