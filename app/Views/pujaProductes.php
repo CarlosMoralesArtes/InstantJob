@@ -158,7 +158,7 @@
     <br>
     <div class="pujarProducteCaixa col-9">
       <div class="card-body">
-        <p class="card-title">Completa els seguents camps per pujar un servei</p>
+        <p class="card-title">Completa els següents camps per pujar un servei</p>
         <div class="configuracio">
         <div class="popupConfiguracio active">
           <div class="targetaConfiguracio">

@@ -291,7 +291,8 @@ if(isset( $_SESSION['iniciar'] ) ) {
     <div class="footer-content col-4">
     <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pagina InstantJob"></a>
       <h3>Servei Tècnic</h3>
-      <p>Tel. 99 999 999</p>
+      <a href="tel:93724382">Tel. 93724382</p>
+      <a href="mailto:info@instatjob.es">info@instantjob.es</a>
     </div>
     <div class="footer-content col-4">
       <br>

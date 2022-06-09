@@ -208,12 +208,12 @@
 
   <!-- Titul de la pàgina principal -->
     <div class="titol">
-      <p>InstantJob, es l’ajuda de creixement rápid per a la teva empresa</p>
+      <p>InstantJob, és l'ajuda de creixement ràpid per a la teva empresa</p>
       <h1>Benvingut a InstantJob</h1>
       <div class="container">
         <div class="row">
           <div class="col s12">
-            <h2 class="center-align">¿Que estas buscant avui?</h2>
+            <h2 class="center-align">Que estàs buscant avui?</h2>
             <br>
           <div class="carousel">
             <div class="carousel__contenedor">
@@ -411,7 +411,7 @@
     <div class="footer-content col-4">
     <a href="index"><img src="./imgs/Logo_InstantJob_Blanca.png" alt="Logo de la pàgina InstantJob"></a>
       <h3>Servei Tècnic</h3>
-      <a href="tel:99999999">Tel. 99 999 999</p>
+      <a href="tel:93724382">Tel. 93724382</p>
       <a href="mailto:info@instatjob.es">info@instantjob.es</a>
     </div>
     <div class="footer-content col-4">

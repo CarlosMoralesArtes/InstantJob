@@ -391,7 +391,65 @@
             echo "<br>";
             echo "</div>";
 
-            echo form_submit('submit', 'Valorar');
+            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Valorar'>";
+            // El form close es per tancar el formulari
+            echo form_close();
+
+            if(!empty($validation)){
+              if($validation->getError('correo')) {
+                echo $validation->getError('correo');
+                echo "<br>";
+              }
+            }
+          ?>
+          </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay7">
+    <div class="popup" id="popup7">
+      <a href="#" id="btn-cerrar-popup7" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+      <h2 class="title">Valora el producte</h2>
+      <p>Completa els camps</p>
+      <br>
+      <div class="targetaIniciSessio">
+          <?php
+            $ruta = site_url()."valorar";
+            $attributes = array ('action' => "valorar", 'enctype' => "multipart/form-data", 'method' => "POST");
+            // Form open que serveix per iniciar el formulari
+            echo form_open($ruta, $attributes);
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'Estrellas',
+                          'required' => 'required',
+                          'value' => set_value('estrellas'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Estrellas', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+
+            echo "<div class='input-container'>";
+            // En $data es coloquen els atributs de la pregunta
+            $data = array('name' => 'valoracio',
+                          'required' => 'required',
+                          'value' => set_value('valoracio'));
+            // En el form input es l'apartat on pots colocar text en el formulari
+            echo form_input($data);
+            echo form_label('Valoracio', '#{label}');
+            echo "<div class='bar'></div>";
+            echo "<br>";
+            echo "</div>";
+
+            foreach ($consulta->getResultArray() as $row){
+              echo form_hidden('id_servei', $row['id_servicio']);
+            }
+
+            echo "<br>";
+            echo "</div>";
+
+            echo "<input type='submit' class='btn-submit' name='mysubmit' value='Valorar'>";
             // El form close es per tancar el formulari
             echo form_close();
 
@@ -475,7 +533,7 @@
       <?php
       echo "<p>".$row['descripcion']."</p>";
       }
-      echo "<div class='partEsquerraCompraExtra'> <a class='btn btn-secondary' id='btn-abrir-popup6'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
+      echo "<div class='partEsquerraCompraExtra'> <a class='btn btn-primary' id='btn-abrir-popup7'><i class='fa-solid fa-comment'></i></i> Valorar Producte</a></div>";
 
       ?>
 

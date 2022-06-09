@@ -165,6 +165,26 @@ window.onload = function(){
         popup6.classList.remove('active');
       });
     }
+
+    var btnAbrirPopup7 = document.getElementById('btn-abrir-popup7'),
+    overlay7 = document.getElementById('overlay7'),
+    popup7 = document.getElementById('popup7'),
+    btnCerrarPopup7 = document.getElementById('btn-cerrar-popup7');
+
+    if(btnAbrirPopup7 != null){
+      btnAbrirPopup7.addEventListener('click', function(){
+        overlay7.classList.add('active');
+        popup7.classList.add('active');
+        overlay.classList.remove('active');
+        popup.classList.remove('active');
+      });
+
+      btnCerrarPopup7.addEventListener('click', function(e7){
+        e7.preventDefault();
+        overlay7.classList.remove('active');
+        popup7.classList.remove('active');
+      });
+    }
 }
 
 function openNav(){
